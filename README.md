@@ -71,17 +71,20 @@ Are you ready to compete for the top spot?
 
 After approval, you’ll receive two emails:
 
-1. **Snowflake Credentials**: Use these to connect to the pre-loaded fantasy football datasets.
-2. **Paradime Invitation**: Access Paradime to develop dbt™ models and integrate with Snowflake.
+1. **Snowflake Account Credentials**: Contains your Snowflake account details. Search for an email with subject line "*Snowflake Credentials: dbt™ Data Modleing Challenge - Fantasy Football Edition*."
+3. **Paradime Platform Invitation**: An invitation to access the Paradime Platform. Search for an email with the subject line "*[Paradime] Activate your account*."
 
-You must also create a [Lightdash](https://www.lightdash.com/) account to visualize your final insights.
+You must also create a [Lightdash](https://app.lightdash.cloud/register) account to visualize your final insights.
 
-**Additional Guidance**: Detailed setup tutorials will be provided in your confirmation emails.
+**Additional Guidance**: Detailed setup tutorials will be provided in your Snowflake confirmation email.
 
 ### 3. Support and FAQs
 
-- **Slack Community**: Join the **#fantasy-football-challenge** channel on Paradime’s Slack for real-time support.
+- **Slack Community**: Join the **#fantasy-football-challenge** channel on [Paradime’s Slack](https://paradimers.slack.com/join/shared_invite/zt-1mzax4sb8-jgw~hXRlDHAx~KN0az18bw#/shared-invite/email) for real-time support.
 - **Additional Questions**: Check out partner documentation or ask in Slack.
+- **Troubleshooting Confirmation Emails**: 
+  - Ensure you meet the [entry requirements](https://www.paradime.io/dbt-data-modeling-challenge#div-eval-criteria-summary)
+  - Search for "mail@paradime.retool-email.com" in your registration email account.
 
 ---
 
@@ -109,22 +112,32 @@ You must also create a [Lightdash](https://www.lightdash.com/) account to visual
 
 ## ⚙️ Tools and Resources
 
-**Required Tools**:  
-- [**Paradime**](https://www.paradime.io/): For SQL, dbt™ development, and AI-assisted analytics engineering.  
-- **Snowflake**: Cloud data platform for data warehousing.  
-- [**Lightdash**](https://www.lightdash.com/): Open-source BI tool for exploring dbt™ metrics and creating visualizations.  
-- **GitHub**: For version control and final submission.
+**While you're welcome to use additional tools and resources, the following are required for this challenge:**  
 
-**Learning Resources**:  
-- **Paradime**:  
-  - [Help Docs](https://docs.paradime.io/app-help)
-  - YouTube Tutorials (link provided via email)
-- **Snowflake**: Setup guides provided in your Snowflake credentials email.
-- **Lightdash**:  
-  - [Documentation](https://docs.lightdash.com/)
-  - YouTube Tutorials (link provided via email)
+1. **[Paradime](https://www.paradime.io/)**
+   - **Purpose:** SQL, dbt™ development, and AI-assisted analytics engineering.
+   - **Resources:**
+     - [Paradime Help Docs](https://docs.paradime.io/app-help): Comprehensive product documentation.
+     - [Code IDE Tutorial](https://app.arcade.software/share/7kRyaYbPoGc5ofmJfmvY): Navigate the code IDE.
+     - [Commands Panel Tutorial](https://www.youtube.com/watch?v=wQtIn-tnnbg): Explore integrated terminal, data explorer, data catalog, and data lineage features.
+     - [DinoAI Copilot Tutorial](https://www.youtube.com/watch?v=KqiosgQFsuk): Leverage AI for faster SQL/dbt™ development ([DinoAI Docs](https://docs.paradime.io/app-help/documentation/code-ide/dino-ai)).
 
----
+2. **[Lightdash](https://www.lightdash.com/)**
+   - **Purpose:** Open-source BI for exploring dbt™ metrics and creating visualizations.
+   - **Resources:**
+     - [Lightdash Documentation](https://docs.lightdash.com/)
+     - [Lightdash YouTube Tutorial](https://www.youtube.com/watch?v=Z4Y0KM0MroQ)
+
+3. **[Snowflake](https://www.snowflake.com/en/)**
+   - **Purpose:** Cloud data platform for storage and compute.
+
+4. **GitHub**
+   - **Purpose:** Version control and project submission platform.
+
+**By mastering these tools and resources, you’ll have the foundation you need to transform raw fantasy football data into impactful insights and visualizations.**
+
+
+--- 
 
 ## 🛠 Building Your Project
 
@@ -136,9 +149,8 @@ You must also create a [Lightdash](https://www.lightdash.com/) account to visual
 
 ### Step 2: Explore and Enhance the Data
 
-- Start by examining the pre-loaded fantasy football datasets in Snowflake.
-- Consider integrating external data sources to enrich your analysis (e.g., player injury reports, historic game results, weather conditions).
-- Use Paradime’s dbt™ models to stage, transform, and enhance data quality and structure.
+- Start by examining the two pre-loaded fantasy football datasets in Snowflake. You are welcome to use these data sets in your project, but it's not required. 
+- Consider which external data sources you will use to enhance your analysis (e.g., player injury reports, historic game results, weather conditions, upcoming draft prospects, etc.).
 
 ### Step 3: Generate Insights
 
