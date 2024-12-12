@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: int_fantasy_points
+    description: "Intermediate model aggregating player-level fantasy performance metrics."
+    columns:
+      - name: player_id
+        description: "Unique identifier for the player."
+      - name: player_name
+        description: "Name of the player."
+      - name: position
+        description: "Player's position (e.g., QB, RB, WR, TE)."
+      - name: recent_team
+        description: "The player's most recent team."
+      - name: season
+        description: "Season year for the stats."
+      - name: season_week
+        description: "Week number in the season for these stats."
+      - name: total_targets
+        description: "Total number of passing targets the player received in the aggregated period."
+      - name: total_fantasy_points
+        description: "Sum of all standard fantasy points scored by the player."
+      - name: total_fantasy_points_ppr
+        description: "Sum of all fantasy points scored by the player under PPR (points per reception) rules."
+      - name: games_played
+        description: "Count of distinct games (weeks) the player participated in."
+      - name: avg_fantasy_points_per_game
+        description: "Average standard fantasy points scored by the player per game."
+      - name: avg_fantasy_points_ppr_per_game
+        description: "Average PPR fantasy points scored by the player per game."
+
+  - name: int_red_zone_plays
+    description: "Intermediate model extracting plays that occur in the red zone, excluding certain penalties and non-plays."
+    columns:
+      - name: play_id
+        description: "Unique identifier for each play."
+      - name: fantasy_player_id
+        description: "Unique fantasy-related identifier for the player involved in the play."
+      - name: fantasy_player_name
+        description: "Name of the player involved in the play, relevant for fantasy purposes."
+      - name: play_type
+        description: "Type of play (e.g., run, pass)."
+      - name: incomplete_pass
+        description: "Flag (0/1) indicating if the pass was incomplete."
+      - name: complete_pass
+        description: "Flag (0/1) indicating if the pass was completed."
+      - name: pass_attempt
+        description: "Flag (0/1) indicating if a pass attempt was made."
+      - name: rush
+        description: "Flag (0/1) indicating if the play involved a rush."
+      - name: rush_attempt
+        description: "Flag (0/1) indicating a rushing attempt counted for stats."
+      - name: touchdown
+        description: "Flag (0/1) if the play resulted in a touchdown."
+      - name: penalty
+        description: "Flag (0/1) if a penalty occurred on this play."
+      - name: penalty_type
+        description: "Type of penalty called during this play, if any."
