@@ -140,7 +140,6 @@ Submissions scored 1-10 in four categories:
 
 ---
 # Example Submission template
-Here's an example project that fulfills all requirements and would be elligble eligible for cash prizes. Feel free to use this template for your submission. We also recommend diving into the the [winner's submissions](#need-a-spark-of-inspiration) from our recent NBA Data Modeling Challenge for inspiration. 
 
 ## Table of Contents
 1. [Introduction](#introduction)
