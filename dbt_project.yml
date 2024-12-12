@@ -1,0 +1,33 @@
+name: "nfl"
+version: "1.0.0"
+config-version: 2
+
+profile: "demo_project"
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  nfl:
+    staging:
+      +schema: staging
+      +materialized: view
+    intermediate:
+      +schema: intermediate
+      +materialized: view
+    marts:
+      dimensions:
+        +schema: dimensions
+        +materialized: view
+      facts:
+        +schema: facts
+        +materialized: table
+
