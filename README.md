@@ -55,8 +55,7 @@ After approval, you'll receive two emails:
 
 1. **[Paradime](https://www.paradime.io/)**
    - SQL, dbt™ development, and AI-assisted analytics engineering
-   - [Help Docs](https://docs.paradime.io/app-help) | [Code IDE Tutorial](https://app.arcade.software/share/7kRyaYbPoGc5ofmJfmvY) | [Commands Panel](https://www.youtube.com/watch?v=wQtIn-tnnbg)
-   - [DinoAI Tutorial](https://www.youtube.com/watch?v=KqiosgQFsuk) ([Documentation](https://docs.paradime.io/app-help/documentation/code-ide/dino-ai))
+   - [Documentation](https://docs.paradime.io/app-help) | [Code IDE Tutorial](https://app.arcade.software/share/7kRyaYbPoGc5ofmJfmvY) | [Commands Panel](https://www.youtube.com/watch?v=wQtIn-tnnbg) | [DinoAI Tutorial](https://www.youtube.com/watch?v=KqiosgQFsuk)
 
 2. **[Lightdash](https://www.lightdash.com/)**
    - Open-source BI for dbt™ metrics and visualizations
