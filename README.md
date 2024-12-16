@@ -118,6 +118,8 @@ For reference, the scripts we used to load the pre-loaded datasets can be found 
 4. Email parker@paradime.io:
    - Subject: "<Your_Name> - Fantasy Football Data Modeling Challenge Submission"
    - Include GitHub branch link
+  
+Need help? follow this [step-by-step tutorial](https://app.arcade.software/share/mpoE0fK5HknHZJ3xLVVs) to submit your project. 
 
 ## 🎯 Judging Criteria
 
