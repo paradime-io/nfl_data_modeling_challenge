@@ -11,10 +11,11 @@ Welcome to the **dbt™ Data Modeling Challenge - Fantasy Football Edition!** Th
 2. [Competition Details](#-competition-details)
 3. [Tools and Resources](#-tools-and-resources)
 4. [Building Your Project](#-building-your-project)
-5. [Submission Guidelines](#-submission-guidelines)
-6. [Judging Criteria](#-judging-criteria)
-7. [Prizes](#-prizes)
-8. [Example Submission](#Example-submission-template)
+5. [Additional NFL Data](#-additional-nfl-data)
+6. [Submission Guidelines](#-submission-guidelines)
+7. [Judging Criteria](#-judging-criteria)
+8. [Prizes](#-prizes)
+9. [Example Submission](#example-submission-template)
 
 ## 🏈 Getting Started
 
@@ -92,19 +93,19 @@ Uncover NFL insights related to fantasy football—the possibilities are endless
 - Impact of team matchups on player performance  
 - Identifying players with high injury propensity  
 - Forecasting 2025 draft prospects  
-- High-cost/low-value player analysis  
-- Exploring fantasy football drafting strategies:  
-  - Best Player Available (BPA)  
-  - RB-Heavy early drafting  
-  - Balanced roster construction  
-  - And more...
-
-**Note:** You are **required** to bring in external datasets to enhance your analysis and compete for the top prizes.
 
 ### Step 4: Visualize with Lightdash
 - Create clear, informative dashboards w/ written conclusions
 - Use dbt™ models as metric sources (optional)
 - Ensure visualizations support your conclusions
+
+## 🌟 Additional NFL Data
+
+If you want to pull additional NFL data for your analysis, you can use the **nfl_data_py** library, the same tool we used to pre-load datasets into Snowflake:
+
+- **GitHub Repo**: [nfl_data_py](https://github.com/nflverse/nfl_data_py)
+
+For reference, the scripts we used to load the pre-loaded datasets can be found in the [**Scripts**](https://github.com/paradime-io/nfl_data_modeling_challenge/tree/main/scripts) folder of this repository.
 
 ## 📤 Submission Guidelines
 
@@ -117,14 +118,6 @@ Uncover NFL insights related to fantasy football—the possibilities are endless
 4. Email parker@paradime.io:
    - Subject: "<Your_Name> - Fantasy Football Data Modeling Challenge Submission"
    - Include GitHub branch link
-
-### Need a spark of inspiration?
-Check out these resources:
-- **[Winning Strategies for Paradime's Movie Data Modeling Challenge](https://www.paradime.io/blog/winning-strategies-movie-challenge):** Learn the strategies, best practices, and insights uncovered from winning participants in previous Data Modeling Challenges.
-- **Explore winning submissions from Paradime's recent Data Modeling Challenges:**
-  - [Bruno Souza de Lima Submission](https://github.com/paradime-io/social-media-data-modeling-challenge/blob/bruno-lima/README.md) - 1st Place winner from Paradime's dbt Data Modeling Challenge - Social Media Edition.
-  - [Spence Perry's Submission](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/blob/nba-spence-perry/README.md) - 1st place winner from Paradime's dbt Data Modeling Challenge - NBA Edition.
-  - [Isin Pesch's Submission](https://github.com/paradime-io/paradime-dbt-movie-challenge/blob/movie-isin-pesch-deel-com/README.md) - 1st place winner from Paradime's dbt Data Modeling Challenge - Movie Edition.
 
 ## 🎯 Judging Criteria
 
@@ -148,11 +141,9 @@ A panel of five independent judges will assess each submission based on the foll
 - **2nd Place**: $1,000 Amazon gift card  
 - **3rd Place**: $500 Amazon gift card
 
-
 ---
 # Example Submission Template
 For guidance on what a successful submission may look like, check out examples from [previous dbt™ Data Modeling Challenge winners](#need-a-spark-of-inspiration).
-
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -164,15 +155,12 @@ For guidance on what a successful submission may look like, check out examples f
 
 ## Introduction
 [Brief overview: What you aimed to achieve and why it matters]
-[Include link to Lightdash dashboad]
+[Include link to Lightdash dashboard]
 
 ## Data Sources
 - [Fantasy Football Data (Snowflake)](... link or details ...)
 - [Additional Data Set 1] - [Description]
 - [Additional Data Set 2] - [Description]
-
-### Data Lineage
-[Insert lineage image + description]
 
 ## Methodology
 ### Tools Used
