@@ -6,7 +6,7 @@ sources:
     schema: PUBLIC
     tables:
       - name: play_by_play
-        description: "Granular play-level data for NFL games."
+        description: "Granular play-level data for NFL games from the 2023 season."
         columns:
           - name: PLAY_ID
             description: "Unique identifier for each play."
@@ -794,7 +794,7 @@ sources:
             description: "Indicator if the offense started pinned deep in their territory."
 
       - name: player_stats_by_game
-        description: "Player-level offensive statistics aggregated by game."
+        description: "Player-level offensive statistics aggregated by game from the 2023 season"
         columns:
           - name: PLAYER_ID
             description: "Unique identifier for the player."
