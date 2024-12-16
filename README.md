@@ -19,7 +19,7 @@ Welcome to the **dbt™ Data Modeling Challenge - Fantasy Football Edition!** Th
 ## 🏈 Getting Started
 
 ### Registration and Verification
-Note: Make sure you meet the [Entry Requirements](#) befre registering
+Make sure you meet the [Entry Requirements](#) before registering
 
 - **Register**: Complete the [registration form](#)
 - **Verification**: Paradime will review your application. If approved, you'll receive credentials via email to begin.
