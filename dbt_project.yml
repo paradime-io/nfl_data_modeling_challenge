@@ -2,7 +2,7 @@ name: "nfl"
 version: "1.0.0"
 config-version: 2
 
-profile: "demo_project"
+profile: "nfl"
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
