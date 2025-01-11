@@ -14,7 +14,7 @@ WITH red_zone_plays AS (
         touchdown,
         penalty,
         penalty_type
-    FROM {{ ref('stg_play_by_play') }}
+    FROM {{ ref('stg_play_by_play_2023') }}
     WHERE 
         in_red_zone = TRUE
         AND play_type NOT IN ('no_play')

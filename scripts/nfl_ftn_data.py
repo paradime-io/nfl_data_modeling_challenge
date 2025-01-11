@@ -10,15 +10,15 @@ import pandas as pd
 years = [2023]  # Only 2023 season
 
 # # Fetch all columns available in the play-by-play dataset and convert to a list
-pbp_columns = list(nfl.see_pbp_cols())
+##pbp_columns = list(nfl.see_pbp_cols())
 
 # # Import Play-by-Play Data for 2023
 print("Fetching play-by-play data for the 2023 season...")
-pbp_data = nfl.import_pbp_data(years=years, columns=pbp_columns)
+pbp_data = nfl.import_ftn_data(years=years)
 
 # # Save the dataset to a CSV file
-output_file = "nfl_play_by_play_2023.csv"
+output_file = "nfl_ftn_2023.csv"
 print(f"Saving data to {output_file}...")
 pbp_data.to_csv(output_file, index=False)
 
-print("Play-by-play data saved successfully!")
+print("FTN data saved successfully!")
