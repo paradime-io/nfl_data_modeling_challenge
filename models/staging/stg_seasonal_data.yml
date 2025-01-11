@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: SHYAMNS279NXRO8_ANALYTICS
+    database: SHYAMNS279NXRO8_ANALYTICS
+    schema: DBT_PARADIME_SS279
+    tables:
+      - name: NFL_SEASONAL_2020_2024
+
+    columns:
+      - name: player_id
+        description: "Unique identifier for each player."
