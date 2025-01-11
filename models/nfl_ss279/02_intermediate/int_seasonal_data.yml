@@ -1,0 +1,294 @@
+version: 2
+models:
+  - name: int_seasonal_data
+    columns:
+      - name: player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: season
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: season_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: completions
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: attempts
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: passing_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: passing_tds
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: interceptions
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: sacks
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: sack_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: sack_fumbles
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: sack_fumbles_lost
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: passing_air_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: passing_yards_after_catch
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: passing_first_downs
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: passing_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: passing_2pt_conversions
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: pacr
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: dakota
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: carries
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rushing_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rushing_tds
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rushing_fumbles
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rushing_fumbles_lost
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rushing_first_downs
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rushing_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rushing_2pt_conversions
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receptions
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: targets
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiving_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiving_tds
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiving_fumbles
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiving_fumbles_lost
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiving_air_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiving_yards_after_catch
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiving_first_downs
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiving_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiving_2pt_conversions
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: racr
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: target_share
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: air_yards_share
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: wopr_x
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: special_teams_tds
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: fantasy_points
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: fantasy_points_ppr
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: games
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: tgt_sh
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: ay_sh
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: yac_sh
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: wopr_y
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: ry_sh
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rtd_sh
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rfd_sh
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rtdfd_sh
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: dom
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: w8dom
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: yptmpa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: ppr_sh
+        description: ""
+        meta:
+          dimension:
+            type: number

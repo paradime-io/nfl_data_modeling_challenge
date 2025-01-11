@@ -6,7 +6,6 @@ sources:
     schema: DBT_PARADIME_SS279
     tables:
       - name: NFL_SEASONAL_2020_2024
-
-    columns:
-      - name: player_id
-        description: "Unique identifier for each player."
+        columns:
+          - name: PLAYER_ID
+            description: "Unique identifier for each play."
