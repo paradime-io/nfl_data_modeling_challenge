@@ -31,3 +31,6 @@ models:
         +schema: facts
         +materialized: table
 
+seeds:
+  nfl:
+    +schema: seed_data

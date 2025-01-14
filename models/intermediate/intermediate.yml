@@ -56,3 +56,6 @@ models:
         description: "Flag (0/1) if a penalty occurred on this play."
       - name: penalty_type
         description: "Type of penalty called during this play, if any."
+
+  - name: int_yearly_receiving_stats
+    description: "Intermediate model focusing on year over year receiving stats"
