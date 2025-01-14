@@ -29,6 +29,62 @@ models:
       - name: avg_fantasy_points_ppr_per_game
         description: "Average PPR fantasy points scored by the player per game."
 
+  - name: int_fantasy_points_weekly
+    description: "Intermediate model aggregating player-level fantasy performance metrics week by week."
+    columns:
+      - name: player_id
+        description: "Unique identifier for the player."
+      - name: player_name
+        description: "Name of the player."
+      - name: position
+        description: "Player's position (e.g., QB, RB, WR, TE)."
+      - name: recent_team
+        description: "The player's most recent team."
+      - name: season
+        description: "Season year for the stats."
+      - name: season_week
+        description: "Week number in the season for these stats."
+      - name: total_targets
+        description: "Total number of passing targets the player received in the aggregated period."
+      - name: weekly_points_rank
+        description: "Relative rank in standard fantasy points scored by the player per week."
+      - name: total_fantasy_points_ppr
+        description: "Relative rank in fantasy points scored by the player under PPR (points per reception) rules per week."
+      - name: avg_fantasy_points_per_game
+        description: "Average standard fantasy points scored by the player per game."
+      - name: avg_fantasy_points_ppr_per_game
+        description: "Average PPR fantasy points scored by the player per game."
+
+  - name: int_rb_stats
+    description: "Intermediate model aggregating Running Back metrics week by week."
+    columns:
+      - name: player_id
+        description: "Unique identifier for the player."
+      - name: player_name
+        description: "Name of the player."
+      - name: position
+        description: "Player's position (e.g., QB, RB, WR, TE)."
+      - name: recent_team
+        description: "The player's most recent team."
+      - name: season
+        description: "Season year for the stats."
+      - name: season_week
+        description: "Week number in the season for these stats."
+      - name: total_receiving_yards
+        description: "Total yards received by week"
+        meta: 
+          metrics:
+            avg_total_receiving_yards:
+              label: "Average receiving yards per game"
+              type: average
+
+      - name: total_receiving_yards_after_catch
+        description: "Total yards after reception by week"
+      - name: total_receiving_fumbles
+        description: "Total fumbles by week"
+      - name: total_receiving_fumbles_lost
+        description: "Total fumbles lost by week"
+
   - name: int_red_zone_plays
     description: "Intermediate model extracting plays that occur in the red zone, excluding certain penalties and non-plays."
     columns:
