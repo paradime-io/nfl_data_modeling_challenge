@@ -1,4 +1,4 @@
-SELECT * FROM select
+SELECT 
     "game_id" as game_id,
     "season" as season,
     "game_type" as game_type,

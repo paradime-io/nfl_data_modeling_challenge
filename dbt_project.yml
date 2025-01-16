@@ -22,7 +22,7 @@ models:
       +materialized: view
     intermediate:
       +schema: intermediate
-      +materialized: view
+      +materialized: table
     marts:
       dimensions:
         +schema: dimensions
