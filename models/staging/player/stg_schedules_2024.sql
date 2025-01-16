@@ -45,4 +45,4 @@ select
     "referee" as referee,
     "stadium_id" as stadium_id,
     "stadium" as stadium
-from {{ source('nfl', 'schedules_2021') }}
+from {{ source('nfl', 'schedules_2024') }}

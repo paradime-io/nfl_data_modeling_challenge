@@ -52,4 +52,4 @@ select
     "special_teams_tds" as special_teams_tds,
     "fantasy_points" as fantasy_points,
     "fantasy_points_ppr" as fantasy_points_ppr
-from {{ source('nfl', 'weekly_stats_2022') }}
+from {{ source('nfl', 'weekly_stats_2024') }}
