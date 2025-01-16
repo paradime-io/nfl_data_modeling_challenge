@@ -381,3 +381,45 @@ models:
 
   - name: stg_yearly_receiving_pfr_stats
     description: "Staging model for receiving stats for each player by year (2018-2023) from Player's Pro-Football-Reference ID"
+    columns:
+      - name: year
+        description: "Season year for these stats"
+      - name: pfr_player_id
+        description: "Player's Pro-Football-Reference ID"
+      - name: player_name
+        description: "Player's display name"
+      - name: team
+        description: "The player's team at the time of the game"
+      - name: age
+        description: "Player's age at the time of the game."
+      - name: position
+        description: "Player's position (e.g., QB, RB, WR, TE)."
+      - name: is_wide_receiver
+        description: "Boolean indicator of whether player's position is wide receiver."
+      - name: games_played
+        description: "Count of distinct games (weeks) the player participated in."
+      - name: games_started
+        description: "Count of distinct games (weeks) the player was a starter."
+      - name: targets
+        description: "Total number of passing targets the player received in the time period."
+      - name: receptions
+        description: "Total number of receptions the player had in the time period."
+      - name: receiving_yds
+        description: "Total receiving yards the player had in the time period."
+      - name: touchdowns
+      - name: receiving_yds
+        description: "Total touchdowns the player had in the time period."
+      - name: first_downs
+        description: "Total first downs the player had in the time period."
+      - name: yds_after_catch
+        description: "Total yards after the catch the player had in the time period."
+      - name: yds_after_catch_per_rec
+        description: "Total yards after the catch per reception the player had in the time period."
+      - name: broken_tackles_on_rec
+        description: "Total broken tackles on receptions the player had in the time period."
+      - name: dropped_passes
+        description: "Total dropped passes the player had in the time period."
+      - name: drop_pct
+        description: "Percent of passes that the player dropped in the time period."
+      - name: passer_rating_on_targets
+        description: "Calculated quarterback's passer rating based solely on the passes they attempt towards this specific receiver."

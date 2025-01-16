@@ -57,5 +57,61 @@ models:
       - name: penalty_type
         description: "Type of penalty called during this play, if any."
 
-  - name: int_yearly_receiving_stats
+  - name: int_player_receiving_stats
     description: "Intermediate model focusing on year over year receiving stats"
+    columns:
+      - name: year
+        description: "Season year for these stats"
+      - name: pfr_player_id
+        description: "Player's Pro-Football-Reference ID"
+      - name: player_name
+        description: "Player's display name"
+      - name: team
+        description: "The player's team at the time of the game"
+      - name: age
+        description: "Player's age at the time of the game."
+      - name: position
+        description: "Player's position (e.g., QB, RB, WR, TE)."
+      - name: is_wide_receiver
+        description: "Boolean indicator of whether player's position is wide receiver."
+      - name: games_played
+        description: "Count of distinct games (weeks) the player participated in."
+      - name: games_started
+        description: "Count of distinct games (weeks) the player was a starter."
+      - name: targets
+        description: "Total number of passing targets the player received in the time period."
+      - name: receptions
+        description: "Total number of receptions the player had in the time period."
+      - name: receiving_yds
+        description: "Total receiving yards the player had in the time period."
+      - name: touchdowns
+      - name: receiving_yds
+        description: "Total touchdowns the player had in the time period."
+      - name: first_downs
+        description: "Total first downs the player had in the time period."
+      - name: yds_after_catch
+        description: "Total yards after the catch the player had in the time period."
+      - name: yds_after_catch_per_rec
+        description: "Total yards after the catch per reception the player had in the time period."
+      - name: broken_tackles_on_rec
+        description: "Total broken tackles on receptions the player had in the time period."
+      - name: dropped_passes
+        description: "Total dropped passes the player had in the time period."
+      - name: drop_pct
+        description: "Percent of passes that the player dropped in the time period."
+      - name: passer_rating_on_targets
+        description: "Calculated quarterback's passer rating based solely on the passes they attempt towards this specific receiver."
+      - name: pct_of_games_as_starter
+        description: "Total number of games as a starter divided by total games played"
+      - name: avg_yds_per_reception
+        description: "Average number of yards per reception"
+      - name: avg_receptions_per_target
+        description: "Average number of receptions per target"
+      - name: avg_td_per_target
+        description: "Average number of touchdowns per target"
+      - name: offensive_snaps
+        description: "Total number of offensive snaps played."
+      - name: avg_targets_per_snap
+        description: "Total number of targets divided by total offensive snaps."
+      - name: avg_receptions_per_snap
+        description: "Total number of receptions divided by total offensive snaps."

@@ -34,7 +34,6 @@ renamed AS (
         brk_tkl AS broken_tackles_on_rec,
         drops AS dropped_passes,
         drop_percent AS drop_pct,
-        int AS interceptions_on_targets,
         rat AS passer_rating_on_targets
 
     FROM 
