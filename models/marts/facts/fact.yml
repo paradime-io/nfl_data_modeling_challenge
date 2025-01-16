@@ -14,6 +14,10 @@ models:
         description: "The player's most recent team."
       - name: total_fantasy_points
         description: "Total fantasy points scored by the player (standard scoring) across the considered period."
+        meta:
+          metrics:
+            grand_total_fantasy_points:
+              type: sum
       - name: total_fantasy_points_ppr
         description: "Total fantasy points scored by the player under PPR (points per reception) scoring across the considered period."
       - name: games_played
@@ -24,6 +28,10 @@ models:
         description: "Average PPR fantasy points per game played."
       - name: standard_rank
         description: "The player's rank among all players based on total standard fantasy points."
+        meta:
+          metrics:
+            fantasy_point_rank:
+              type: max
       - name: ppr_rank
         description: "The player's rank among all players based on total PPR fantasy points."
 
