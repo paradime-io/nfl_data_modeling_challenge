@@ -1,0 +1,60 @@
+version: 2
+
+sources:
+ - name: nfl
+   database: mscPsHMo_analytics
+   schema: sources
+   tables:
+     - name: seasonal_stats_2020
+       identifier: SEASONAL_STATS_2020
+     - name: seasonal_stats_2021
+       identifier: SEASONAL_STATS_2021  
+     - name: seasonal_stats_2022
+       identifier: SEASONAL_STATS_2022
+     - name: seasonal_stats_2023
+       identifier: SEASONAL_STATS_2023
+     
+     - name: weekly_stats_2020
+       identifier: WEEKLY_STATS_2020
+     - name: weekly_stats_2021
+       identifier: WEEKLY_STATS_2021
+     - name: weekly_stats_2022
+       identifier: WEEKLY_STATS_2022
+     - name: weekly_stats_2023
+       identifier: WEEKLY_STATS_2023
+     
+     - name: rosters_2020
+       identifier: ROSTERS_2020
+     - name: rosters_2021
+       identifier: ROSTERS_2021
+     - name: rosters_2022
+       identifier: ROSTERS_2022
+     - name: rosters_2023
+       identifier: ROSTERS_2023
+     
+     - name: pbp_2020
+       identifier: PBP_2020
+     - name: pbp_2021
+       identifier: PBP_2021
+     - name: pbp_2022
+       identifier: PBP_2022
+     - name: pbp_2023
+       identifier: PBP_2023
+     
+     - name: schedules_2020
+       identifier: SCHEDULES_2020
+     - name: schedules_2021
+       identifier: SCHEDULES_2021
+     - name: schedules_2022
+       identifier: SCHEDULES_2022
+     - name: schedules_2023
+       identifier: SCHEDULES_2023
+     
+     - name: injuries_2020
+       identifier: INJURIES_2020
+     - name: injuries_2021
+       identifier: INJURIES_2021
+     - name: injuries_2022
+       identifier: INJURIES_2022
+     - name: injuries_2023
+       identifier: INJURIES_2023
