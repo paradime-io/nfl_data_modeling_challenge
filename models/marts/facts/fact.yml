@@ -6,6 +6,10 @@ models:
     columns:
       - name: player_id
         description: "Unique identifier for the player."
+        meta:
+          metrics:
+            total_player_count:
+              type: count_distinct
       - name: player_name
         description: "Name of the player."
       - name: position
