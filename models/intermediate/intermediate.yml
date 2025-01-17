@@ -115,3 +115,59 @@ models:
         description: "Total number of targets divided by total offensive snaps."
       - name: avg_receptions_per_snap
         description: "Total number of receptions divided by total offensive snaps."
+
+  - name: int_touchdown_plays
+    description: "Intermediate model of all rushing and passing touchdowns in the 2023 season"
+    columns:
+      - name: player_id
+        description: "Player's Pro-Football-Reference ID"
+      - name: player_name
+        description: "Player's display name"
+      - name: team
+        description: "The player's team at the time of the game"
+      - name: position
+        description: "Player's position (e.g., QB, RB, WR, TE)."
+      - name: years_experience
+        description: "Years of experience in the league."
+        meta:
+          metrics:
+            years_played:
+              type: average
+      - name: rookie_year
+        description: "The player's rookie season."
+      - name: draft_team
+        description: "Team that drafted the player."
+      - name: draft_number
+        description: "Draft pick number used to select the player."
+        meta:
+          metrics:
+            drafted_number:
+              type: average   
+      - name: plays_for_draft_team
+        description: "Boolean indicator of whether the player's current team is the same team that drafted them"
+      - name: play_id
+        description: "Unique identifier for each play."
+        meta:
+          metrics:
+            number_of_touchdowns:
+              type: count_distinct
+      - name: td_type
+        description: "Type of touchdown, either rush or pass"
+      - name: quarter
+        description: "Current quarter of the game (1-4, or OT periods)."
+      - name: down
+        description: "The current down number (1-4)."
+      - name: distance_to_goal
+        description: "Yard distance from the defending team's end zone (1-100), representing the offense's field position."
+        meta:
+          metrics:
+            distance_to_end_zone:
+              type: average
+      - name: home_team
+        description: "Abbreviation of the home team."
+      - name: away_team
+        description: "Abbreviation of the away team."
+      - name: possession_team_type
+        description: "Indicates if the possessing team is the home or away team"
+      - name: game_type
+        description: "Indicates whether the game is regular season, postseason, etc."
