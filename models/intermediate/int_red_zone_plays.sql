@@ -5,6 +5,7 @@ WITH red_zone_plays AS (
         play_id,
         fantasy_player_id,
         fantasy_player_name,
+        possession_team,
         play_type,
         incomplete_pass,
         complete_pass,
@@ -23,3 +24,4 @@ WITH red_zone_plays AS (
 )
 
 SELECT * FROM red_zone_plays
+where possession_team = 'SF'

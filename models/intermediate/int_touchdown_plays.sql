@@ -30,3 +30,5 @@ LEFT JOIN
     {{ ref('stg_player_stats_by_game') }} as player_stats
     ON coalesce(play_by_play.rusher_player_id, play_by_play.receiver_player_id) = player_stats.player_id
 WHERE touchdown = 1
+AND play_type NOT IN ('no_play')
+AND (penalty_type NOT LIKE 'Offensive Holding' OR penalty_type IS NULL)

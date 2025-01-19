@@ -310,3 +310,105 @@ models:
         description: "Total number of targets divided by total offensive snaps"
       - name: avg_receptions_per_snap
         description: "Total number of receptions divided by total offensive snaps"
+
+  - name: fct_red_zone_team_stats
+    description: "Fact table summarizing 2023 red zone stats by team"
+    columns:
+      - name: team
+        description: "Team in possession of the ball during the play."
+      - name: num_red_zone_plays
+        description: "Number of total red zone plays (excluding extra points and plays with holding penalties)."
+        meta:
+          metrics:
+            number_of_red_zone_plays:
+              type: sum
+      - name: num_incomplete_passes
+        description: "Number of total incomplete passes on red zone plays"
+        meta:
+          metrics:
+            number_of_incomplete_passes:
+              type: sum
+      - name: num_complete_passes
+        description: "Number of total complete passes on red zone plays"
+        meta:
+          metrics:
+            number_of_complete_passes:
+              type: sum
+      - name: num_pass_attempts
+        description: "Number of red zone plays that were pass attempts, regardless of whether they were completed"
+        meta:
+          metrics:
+            number_of_pass_attempts:
+              type: sum
+      - name: num_rush_attempts
+        description: "Number of red zone plays that were rush attempts"
+        meta:
+          metrics:
+            number_of_rush_attempts:
+              type: sum
+      - name: num_total_touchdowns
+        description: "Number of red zone plays that resulted in touchdowns"
+        meta:
+          metrics:
+            number_of_total_touchdowns:
+              type: sum
+      - name: num_pass_touchdowns
+        description: "Number of red zone pass plays that resulted in touchdowns"
+        meta:
+          metrics:
+            number_of_pass_touchdowns:
+              type: sum
+      - name: num_rush_touchdowns
+        description: "Number of red zone rush plays that resulted in touchdowns"
+        meta:
+          metrics:
+            number_of_rush_touchdowns:
+              type: sum
+      - name: red_zone_td_rank
+        description: "How team ranked vs. all others for number of total red zone touchdowns"
+        meta:
+          metrics:
+            rank_num_tds:
+              type: max
+      - name: pct_pass_plays
+        description: "Percent of red zone plays that were pass plays, regardless of whether they were completed"
+        meta:
+          metrics:
+            pct_pass_play:
+              type: avg
+      - name: pct_rush_plays
+        description: "Percent of red zone plays that were rush plays"
+        meta:
+          metrics:
+            pct_rush_play:
+              type: avg
+      - name: pct_pass_attempt_td_conversion
+        description: "Percent of red zone pass attempts that resulted in a touchdown"
+        meta:
+          metrics:
+            pct_pass_att_td_conversion:
+              type: avg
+      - name: pct_rush_attempt_td_conversion
+        description: "Percent of red zone rush plays that resulted in a touchdown"
+        meta:
+          metrics:
+            pct_rush_att_td_conversion:
+              type: avg
+      - name: pct_total_td_conversions
+        description: "Percent of all red zone plays that resulted in a touchdown"
+        meta:
+          metrics:
+            pct_total_td_conversion:
+              type: avg
+      - name: pct_tds_that_were_rushes
+        description: "Percent of all red zone touchdowns that were rush plays"
+        meta:
+          metrics:
+            pct_tds_plays_that_were_rushes:
+              type: avg
+      - name: pct_tds_that_were_passes
+        description: "Percent of all red zone touchdowns that were pass plays"
+        meta:
+          metrics:
+            pct_tds_plays_that_were_passes:
+              type: avg

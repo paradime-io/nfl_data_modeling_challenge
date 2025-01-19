@@ -38,6 +38,8 @@ models:
         description: "Unique fantasy-related identifier for the player involved in the play."
       - name: fantasy_player_name
         description: "Name of the player involved in the play, relevant for fantasy purposes."
+      - name: possession_team
+        description: "Team in possession of the ball during the play."
       - name: play_type
         description: "Type of play (e.g., run, pass)."
       - name: incomplete_pass
