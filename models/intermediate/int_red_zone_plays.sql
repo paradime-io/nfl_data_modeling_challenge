@@ -24,4 +24,3 @@ WITH red_zone_plays AS (
 )
 
 SELECT * FROM red_zone_plays
-where possession_team = 'SF'
