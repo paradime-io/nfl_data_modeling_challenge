@@ -20,12 +20,28 @@ models:
               type: sum
       - name: total_fantasy_points_ppr
         description: "Total fantasy points scored by the player under PPR (points per reception) scoring across the considered period."
+        meta:
+          metrics:
+            grand_total_fantasy_points_ppr:
+              type: sum
       - name: games_played
         description: "Number of games (weeks) the player participated in."
+        meta:
+          metrics:
+            number_of_games_played:
+              type: sum
       - name: avg_fantasy_points_per_game
         description: "Average standard fantasy points per game played."
-      - name: avg_fantasy_points_ppr_per_game
+        meta:
+          metrics:
+            grand_total_fantasy_points_ppr:
+              type: max
+      - name: avge_fantasy_points_ppr_per_game
         description: "Average PPR fantasy points per game played."
+        meta:
+          metrics:
+            avg_ppr_fantasy_points_per_game:
+              type: max
       - name: standard_rank
         description: "The player's rank among all players based on total standard fantasy points."
         meta:
@@ -34,6 +50,23 @@ models:
               type: max
       - name: ppr_rank
         description: "The player's rank among all players based on total PPR fantasy points."
+        meta:
+          metrics:
+            ppr_fantasy_point_rank:
+              type: max
+      - name: standard_rank_for_position
+        description: "The player's rank among players who play the same position based on total standard fantasy points."
+        meta:
+          metrics:
+            position_fantasy_point_rank:
+              type: max
+      - name: ppr_rank_for_position
+        description: "The player's rank among players who play the same position based on total PPR fantasy points."
+        meta:
+          metrics:
+            position_ppr_fantasy_point_rank:
+              type: max
+              
 
   - name: fct_red_zone_player_stats
     description: "Fact table summarizing player performance within the red zone, capturing rushing and passing opportunities."
@@ -132,23 +165,23 @@ models:
         description: "Calculated quarterback's passer rating based solely on the passes they attempt towards this specific receiver."
       - name: pct_of_games_as_starter
         description: "Total number of games as a starter divided by total games played"
-      - name: avg_yds_per_reception
+      - name: average_yds_per_reception
         description: "Average number of yards per reception"
         meta:
           metrics:
-            avg_yards_per_rec:
+            average_yards_per_rec:
               type: average 
-      - name: avg_receptions_per_target
+      - name: average_receptions_per_target
         description: "Average number of receptions per target"
         meta:
           metrics:
-            avg_rec_per_target:
+            average_rec_per_target:
               type: average 
-      - name: avg_td_per_target
+      - name: average_td_per_target
         description: "Average number of touchdowns per target"
         meta:
           metrics:
-            avg_tds_per_target:
+            average_tds_per_target:
               type: average 
       - name: offensive_snaps
         description: "Total number of offensive snaps played"
@@ -156,9 +189,9 @@ models:
           metrics:
             total_offensive_snaps:
               type: sum
-      - name: avg_targets_per_snap
+      - name: average_targets_per_snap
         description: "Total number of targets divided by total offensive snaps"
-      - name: avg_receptions_per_snap
+      - name: average_receptions_per_snap
         description: "Total number of receptions divided by total offensive snaps"
       - name: total_fantasy_points
         description: "Total fantasy points that player received"
@@ -178,11 +211,11 @@ models:
           metrics:
             min_point_in_a_week:
               type: average 
-      - name: avg_fantasy_points_per_game
+      - name: average_fantasy_points_per_game
         description: "Average number of fantasy points that player received each week"
         meta:
           metrics:
-            avg_points_per_game:
+            average_points_per_game:
               type: average 
       - name: total_fantasy_points_ppr
         description: "Total PPR fantasy points that player received"
@@ -198,7 +231,7 @@ models:
               type: max
       - name: min_fantasy_points_ppr_in_a_week
         description: "Lowest number of PPR fantasy points that player received in a week"
-      - name: avg_fantasy_points_ppr_per_game
+      - name: average_fantasy_points_ppr_per_game
         description: "Average number of PPR fantasy points that player received each week"
 
   - name: fct_player_receiving_stats_yearly
@@ -282,23 +315,23 @@ models:
         description: "Calculated quarterback's passer rating based solely on the passes they attempt towards this specific receiver."
       - name: pct_of_games_as_starter
         description: "Total number of games as a starter divided by total games played"
-      - name: avg_yds_per_reception
+      - name: average_yds_per_reception
         description: "Average number of yards per reception"
         meta:
           metrics:
-            avg_yards_per_rec:
+            average_yards_per_rec:
               type: average 
-      - name: avg_receptions_per_target
+      - name: average_receptions_per_target
         description: "Average number of receptions per target"
         meta:
           metrics:
-            avg_rec_per_target:
+            average_rec_per_target:
               type: average 
-      - name: avg_td_per_target
+      - name: average_td_per_target
         description: "Average number of touchdowns per target"
         meta:
           metrics:
-            avg_tds_per_target:
+            average_tds_per_target:
               type: average 
       - name: offensive_snaps
         description: "Total number of offensive snaps played"
@@ -306,9 +339,9 @@ models:
           metrics:
             total_offensive_snaps:
               type: sum
-      - name: avg_targets_per_snap
+      - name: average_targets_per_snap
         description: "Total number of targets divided by total offensive snaps"
-      - name: avg_receptions_per_snap
+      - name: average_receptions_per_snap
         description: "Total number of receptions divided by total offensive snaps"
 
   - name: fct_red_zone_team_stats
@@ -375,40 +408,40 @@ models:
         meta:
           metrics:
             pct_pass_play:
-              type: avg
+              type: average
       - name: pct_rush_plays
         description: "Percent of red zone plays that were rush plays"
         meta:
           metrics:
             pct_rush_play:
-              type: avg
+              type: average
       - name: pct_pass_attempt_td_conversion
         description: "Percent of red zone pass attempts that resulted in a touchdown"
         meta:
           metrics:
             pct_pass_att_td_conversion:
-              type: avg
+              type: average
       - name: pct_rush_attempt_td_conversion
         description: "Percent of red zone rush plays that resulted in a touchdown"
         meta:
           metrics:
             pct_rush_att_td_conversion:
-              type: avg
+              type: average
       - name: pct_total_td_conversions
         description: "Percent of all red zone plays that resulted in a touchdown"
         meta:
           metrics:
             pct_total_td_conversion:
-              type: avg
+              type: average
       - name: pct_tds_that_were_rushes
         description: "Percent of all red zone touchdowns that were rush plays"
         meta:
           metrics:
             pct_tds_plays_that_were_rushes:
-              type: avg
+              type: average
       - name: pct_tds_that_were_passes
         description: "Percent of all red zone touchdowns that were pass plays"
         meta:
           metrics:
             pct_tds_plays_that_were_passes:
-              type: avg
+              type: average

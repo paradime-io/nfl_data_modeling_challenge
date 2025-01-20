@@ -17,8 +17,8 @@ SELECT
     --Percentages
     num_pass_attempts / num_red_zone_plays AS pct_pass_plays,
     num_rush_attempts / num_red_zone_plays AS pct_rush_plays,
-    num_pass_attempts / num_pass_touchdowns as pct_pass_attempt_td_conversion,
-    num_rush_attempts / num_rush_touchdowns as pct_rush_attempt_td_conversion,
+    num_pass_touchdowns / num_pass_attempts as pct_pass_attempt_td_conversion,
+    num_rush_touchdowns / num_rush_attempts as pct_rush_attempt_td_conversion,
     num_total_touchdowns / num_red_zone_plays AS pct_total_td_conversions,
     num_rush_touchdowns / num_total_touchdowns AS pct_tds_that_were_rushes,
     num_pass_touchdowns / num_total_touchdowns AS pct_tds_that_were_passes
