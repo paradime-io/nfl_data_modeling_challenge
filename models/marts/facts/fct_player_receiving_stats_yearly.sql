@@ -1,36 +1,44 @@
 SELECT 
-    receiving.year,
-
-    --Player information
-    receiving.pfr_player_id,
-    receiving.player_name,
-    receiving.team,
-    receiving.age,
-    receiving.position,
-    receiving.is_wide_receiver,
-
-    --Game stats
-    receiving.games_played,
-    receiving.games_started,
+    year,
+    player_id,
+    player_name,
+    team,
+    age,
+    position,
+    CASE WHEN position in ('WR', 'TE', 'RB') then TRUE else FALSE END AS is_rb_wr_or_te,
+    entry_year,
+    rookie_year,
+    CASE WHEN rookie_year = year then TRUE else FALSE END AS is_rookie_year,
+    draft_number,
 
     --Receiving stats
-    receiving.targets,
-    receiving.receptions,
-    receiving.receiving_yds,
-    receiving.touchdowns,
-    receiving.first_downs,
-    receiving.yds_after_catch,
-    receiving.yds_after_catch_per_rec,
-    receiving.broken_tackles_on_rec,
-    receiving.dropped_passes,
-    receiving.drop_pct,
-    receiving.passer_rating_on_targets,
+    games_played,
+    targets,
+    receptions,
+    receiving_yds,
+    touchdowns,
+    first_downs,
+    yds_after_catch,
+    air_yds,
+    target_share,
+    air_yds_share,
+    wopr_x,
+    fantasy_points,
+    fantasy_points_ppr,
+
+    --Snap count stats (for 2023 only)
+    offensive_snaps,
+    avg_targets_per_snap,
+    avg_receptions_per_snap,
 
     --Receiving calculations
-    receiving.pct_of_games_as_starter,
-    receiving.avg_yds_per_reception,
-    receiving.avg_receptions_per_target,
-    receiving.avg_td_per_target
+    receptions / targets as pct_targets_caught,
+    touchdowns / targets as pct_targets_that_were_tds,
+    targets / games_played AS avg_targets_per_game,
+    receptions / games_played AS avg_receptions_per_game,
+    
+    fantasy_points / games_played AS avg_fantasy_pts_per_game,
+    fantasy_points_ppr / games_played AS avg_ppr_fantasy_pts_per_game
 
-FROM {{ ref('int_player_receiving_stats') }} as receiving
-where year < 2024 --Remove incomplete 2024 season data
+FROM {{ ref('int_player_receiving_stats') }}
+

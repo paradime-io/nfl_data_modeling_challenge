@@ -379,13 +379,13 @@ models:
       - name: special_teams_pct
         description: "Percent of special teams snaps played"
 
-  - name: stg_yearly_receiving_pfr_stats
-    description: "Staging model for receiving stats for each player by year (2018-2023) from Player's Pro-Football-Reference ID"
+  - name: stg_yearly_player_stats
+    description: "Staging model for regular season stats for each player by year with a specific focus on receiving-related stats"
     columns:
       - name: year
         description: "Season year for these stats"
-      - name: pfr_player_id
-        description: "Player's Pro-Football-Reference ID"
+      - name: player_id
+        description: "Player's PFR ID"
       - name: player_name
         description: "Player's display name"
       - name: team
@@ -394,12 +394,20 @@ models:
         description: "Player's age at the time of the game."
       - name: position
         description: "Player's position (e.g., QB, RB, WR, TE)."
-      - name: is_wide_receiver
-        description: "Boolean indicator of whether player's position is wide receiver."
+      - name: birth_date
+        description: "Player's birth date."
+      - name: entry_year
+        description: "Year the player entered the league."
+      - name: rookie_year
+        description: "The player's rookie season."
+      - name: draft_club
+        description: "Team that drafted the player."
+      - name: draft_number
+        description: "Draft pick number used to select the player."
+      - name: game_type
+        description: "Type of the game (e.g., Regular, Postseason)."
       - name: games_played
         description: "Count of distinct games (weeks) the player participated in."
-      - name: games_started
-        description: "Count of distinct games (weeks) the player was a starter."
       - name: targets
         description: "Total number of passing targets the player received in the time period."
       - name: receptions
@@ -413,13 +421,15 @@ models:
         description: "Total first downs the player had in the time period."
       - name: yds_after_catch
         description: "Total yards after the catch the player had in the time period."
-      - name: yds_after_catch_per_rec
-        description: "Total yards after the catch per reception the player had in the time period."
-      - name: broken_tackles_on_rec
-        description: "Total broken tackles on receptions the player had in the time period."
-      - name: dropped_passes
-        description: "Total dropped passes the player had in the time period."
-      - name: drop_pct
-        description: "Percent of passes that the player dropped in the time period."
-      - name: passer_rating_on_targets
-        description: "Calculated quarterback's passer rating based solely on the passes they attempt towards this specific receiver."
+      - name: air_yds
+        description: "Yards that the football traveled in the air from the line of scrimmage to the intended receiver on a forward pass."
+      - name: target_share
+        description: "Percentage of a team's total targets that are thrown to a specific player"
+      - name: air_yds_share
+        description: "Percentage of a team's total air yards that are attributed to a specific player"
+      - name: wopr_x
+        description: "Weighted Opportunity Rating (WOPR) is calculated by combining a player's air yards share and target share. Represents the market share of targets for a received within a team."
+      - name: fantasy_points
+        description: "Standard fantasy football points scored."
+      - name: fantasy_points_ppr
+        description: "Fantasy points in PPR scoring format."
