@@ -70,6 +70,16 @@ After approval, you'll receive two emails:
 
 ## 🛠 Building Your Project
 
+### Need a Spark of Inspiration?
+
+Check out these resources:
+
+- **[Winning Strategies for Paradime's Movie Data Modeling Challenge](https://www.paradime.io/blog/winning-strategies-movie-challenge)**: Learn the strategies, best practices, and insights uncovered from winning participants in previous Data Modeling Challenges.  
+- Explore winning submissions from Paradime's recent Data Modeling Challenges:
+  - **[Bruno De Lima's Submission](https://github.com/paradime-io/social-media-data-modeling-challenge/tree/bruno-lima)**: 1st Place winner from Paradime's dbt Data Modeling Challenge - Socal Media Edition.  
+  - **[Spence Perry's Submission](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/tree/nba-spence-perry)**: 1st place winner from Paradime's dbt Data Modeling Challenge - NBA Edition.  
+  - **[Isin Pesch's Submission](https://github.com/paradime-io/paradime-dbt-movie-challenge/blob/movie-isin-pesch-deel-com/)**: 1st place winner from Paradime's dbt Data Modeling Challenge - Movie Edition.
+
 ### Step 1: Master Required Tools
 - Explore Paradime's code IDE, AI development, data explorer, and lineage tools
 - Understand Snowflake schemas and tables in your fantasy football datasets
