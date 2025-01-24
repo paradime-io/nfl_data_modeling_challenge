@@ -1,58 +1,141 @@
 version: 2
-
 models:
   - name: int_fantasy_points
-    description: "Intermediate model aggregating player-level fantasy performance metrics."
+    description: Intermediate model aggregating player-level fantasy performance metrics.
     columns:
       - name: player_id
-        description: "Unique identifier for the player."
+        description: Unique identifier for the player.
+        meta:
+          dimension:
+            type: string
       - name: player_name
-        description: "Name of the player."
+        description: Name of the player.
+        meta:
+          dimension:
+            type: string
       - name: position
-        description: "Player's position (e.g., QB, RB, WR, TE)."
+        description: Player's position (e.g., QB, RB, WR, TE).
+        meta:
+          dimension:
+            type: string
       - name: recent_team
-        description: "The player's most recent team."
+        description: The player's most recent team.
+        meta:
+          dimension:
+            type: string
       - name: season
-        description: "Season year for the stats."
+        description: Season year for the stats.
+        meta:
+          dimension:
+            type: number
       - name: season_week
-        description: "Week number in the season for these stats."
+        description: Week number in the season for these stats.
+        meta:
+          dimension:
+            type: number
       - name: total_targets
-        description: "Total number of passing targets the player received in the aggregated period."
+        description: >-
+          Total number of passing targets the player received in the aggregated
+          period.
+        meta:
+          dimension:
+            type: number
       - name: total_fantasy_points
-        description: "Sum of all standard fantasy points scored by the player."
+        description: Sum of all standard fantasy points scored by the player.
+        meta:
+          dimension:
+            type: number
       - name: total_fantasy_points_ppr
-        description: "Sum of all fantasy points scored by the player under PPR (points per reception) rules."
+        description: >-
+          Sum of all fantasy points scored by the player under PPR (points per
+          reception) rules.
+        meta:
+          dimension:
+            type: number
       - name: games_played
-        description: "Count of distinct games (weeks) the player participated in."
+        description: Count of distinct games (weeks) the player participated in.
+        meta:
+          dimension:
+            type: number
       - name: avg_fantasy_points_per_game
-        description: "Average standard fantasy points scored by the player per game."
+        description: Average standard fantasy points scored by the player per game.
+        meta:
+          dimension:
+            type: number
       - name: avg_fantasy_points_ppr_per_game
-        description: "Average PPR fantasy points scored by the player per game."
-
+        description: Average PPR fantasy points scored by the player per game.
+        meta:
+          dimension:
+            type: number
   - name: int_red_zone_plays
-    description: "Intermediate model extracting plays that occur in the red zone, excluding certain penalties and non-plays."
+    description: >-
+      Intermediate model extracting plays that occur in the red zone, excluding
+      certain penalties and non-plays.
     columns:
       - name: play_id
-        description: "Unique identifier for each play."
+        description: Unique identifier for each play.
+        meta:
+          dimension:
+            type: number
       - name: fantasy_player_id
-        description: "Unique fantasy-related identifier for the player involved in the play."
+        description: Unique fantasy-related identifier for the player involved in the play.
+        meta:
+          dimension:
+            type: string
       - name: fantasy_player_name
-        description: "Name of the player involved in the play, relevant for fantasy purposes."
+        description: >-
+          Name of the player involved in the play, relevant for fantasy
+          purposes.
+        meta:
+          dimension:
+            type: string
       - name: play_type
-        description: "Type of play (e.g., run, pass)."
+        description: Type of play (e.g., run, pass).
+        meta:
+          dimension:
+            type: string
       - name: incomplete_pass
-        description: "Flag (0/1) indicating if the pass was incomplete."
+        description: Flag (0/1) indicating if the pass was incomplete.
+        meta:
+          dimension:
+            type: number
       - name: complete_pass
-        description: "Flag (0/1) indicating if the pass was completed."
+        description: Flag (0/1) indicating if the pass was completed.
+        meta:
+          dimension:
+            type: number
       - name: pass_attempt
-        description: "Flag (0/1) indicating if a pass attempt was made."
+        description: Flag (0/1) indicating if a pass attempt was made.
+        meta:
+          dimension:
+            type: number
       - name: rush
-        description: "Flag (0/1) indicating if the play involved a rush."
+        description: Flag (0/1) indicating if the play involved a rush.
+        meta:
+          dimension:
+            type: number
       - name: rush_attempt
-        description: "Flag (0/1) indicating a rushing attempt counted for stats."
+        description: Flag (0/1) indicating a rushing attempt counted for stats.
+        meta:
+          dimension:
+            type: number
       - name: touchdown
-        description: "Flag (0/1) if the play resulted in a touchdown."
+        description: Flag (0/1) if the play resulted in a touchdown.
+        meta:
+          dimension:
+            type: number
       - name: penalty
-        description: "Flag (0/1) if a penalty occurred on this play."
+        description: Flag (0/1) if a penalty occurred on this play.
+        meta:
+          dimension:
+            type: number
       - name: penalty_type
-        description: "Type of penalty called during this play, if any."
+        description: Type of penalty called during this play, if any.
+        meta:
+          dimension:
+            type: string
+      - name: possession_team
+        description: ""
+        meta:
+          dimension:
+            type: string

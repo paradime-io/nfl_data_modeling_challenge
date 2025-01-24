@@ -2,9 +2,9 @@ SELECT
     player_id,
     player_name,
     position,
-    -- recent_team, Removing as team changes affect season totals
+    recent_team,
     season,
-    -- season_week, Removing as it throws out the granuallity going for season totals
+    season_week,
     SUM(targets) AS total_targets,
     SUM(fantasy_points) AS total_fantasy_points,
     SUM(fantasy_points_ppr) AS total_fantasy_points_ppr,
@@ -16,4 +16,4 @@ FROM
 WHERE 
     SEASON_TYPE = 'REG'
 GROUP BY 
-    player_id, player_name, position, season
+    player_id, player_name, position, recent_team, season, season_week
