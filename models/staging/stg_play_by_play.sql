@@ -62,7 +62,7 @@ renamed AS (
         receiver_player_name,
         passer_player_id,
         passer_player_name,
-        fantasy_player_name,
+        coalesce(fantasy_player_name, "UNKNOWN") as fantasy_player_name, --NULLS in raw data
         fantasy_player_id,
 
         -- Scoring and results
