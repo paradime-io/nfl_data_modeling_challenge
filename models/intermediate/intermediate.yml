@@ -56,3 +56,35 @@ models:
         description: "Flag (0/1) if a penalty occurred on this play."
       - name: penalty_type
         description: "Type of penalty called during this play, if any."
+
+  - name: int_player_details
+    description: "Intermediate model detailed player information"
+    columns:
+      - name: player_id
+        description: "Unique identifier for the player."
+      - name: player_name
+        description: "Name of the player."
+      - name: first_name
+        description: "First name of the player."
+      - name: last_name
+        description: "Last name of the player."  
+      - name: position
+        description: "Player's position (e.g., QB, RB, WR, TE)."
+      - name: position_group
+        description: "High-level position group (e.g., skill players, QBs)"  
+      - name: weight
+        description: "Player's weight in pounds."
+      - name: height
+        description: "Player's height in inches."
+      - name: age
+        description: "Player's age "
+      - name: birth_date
+        description: "Player's birth date."
+      - name: college
+        description: "College the player attended."
+      - name: entry_year
+        description: "Year the player entered the league."
+      - name: rookie_year
+        description: "Player’s rookie season year."
+ 
+

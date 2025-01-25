@@ -42,3 +42,46 @@ models:
         description: "Total number of red zone targets (pass attempts) directed to the player."
       - name: total_pass_completions
         description: "Total number of red zone passes completed to the player."
+
+  - name: fct_player_details
+    description: "Fact model detailed player information"
+    columns:
+      - name: player_id
+        description: "Unique identifier for the player."
+      - name: player_name
+        description: "Name of the player."
+      - name: first_name
+        description: "First name of the player."
+      - name: last_name
+        description: "Last name of the player."  
+      - name: position
+        description: "Player's position (e.g., QB, RB, WR, TE)."
+      - name: position_group
+        description: "High-level position group (e.g., skill players, QBs)"  
+      - name: player_weight
+        description: "Player's weight in pounds."
+        meta:
+          metrics: 
+            weight:
+              type: number
+      - name: player_height
+        description: "Player's height in inches."
+        meta:
+          metrics: 
+            height:
+              type: number
+      - name: player_age
+        description: "Player's age "
+        meta:
+          metrics: 
+            age:
+              type: number
+      - name: birth_date
+        description: "Player's birth date."
+      - name: college
+        description: "College the player attended."
+      - name: entry_year
+        description: "Year the player entered the league."
+      - name: rookie_year
+        description: "Player’s rookie season year."
+    
