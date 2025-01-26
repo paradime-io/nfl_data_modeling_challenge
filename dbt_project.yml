@@ -1,4 +1,4 @@
-name: "nfl"
+name: "ff"
 version: "1.0.0"
 config-version: 2
 
@@ -16,7 +16,7 @@ clean-targets:
   - "dbt_packages"
 
 models:
-  nfl:
+  ff:
     staging:
       +schema: staging
       +materialized: view
