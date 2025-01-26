@@ -58,24 +58,42 @@ models:
         description: "Player's position (e.g., QB, RB, WR, TE)."
       - name: position_group
         description: "High-level position group (e.g., skill players, QBs)"  
-      - name: player_weight
+      - name: weight
         description: "Player's weight in pounds."
         meta:
           metrics: 
-            weight:
+            player_weight:
               type: number
-      - name: player_height
+            avg_weight:
+              type: average
+            min_weight:
+              type: min
+            max_weight:
+              type: max  
+      - name: height
         description: "Player's height in inches."
         meta:
           metrics: 
-            height:
+            player_height:
               type: number
+            avg_height:
+              type: average
+            min_height:
+              type: min
+            max_height:
+              type: max   
       - name: player_age
         description: "Player's age "
         meta:
           metrics: 
             age:
               type: number
+            avg_age:
+              type: average
+            min_age:
+              type: min
+            max_age:
+              type: max  
       - name: birth_date
         description: "Player's birth date."
       - name: college
