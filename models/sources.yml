@@ -1,0 +1,31 @@
+
+version: 2
+
+sources:
+  - name: public
+    database: NFL
+    schema: public
+    tables:
+      - name: player_stats_by_game
+      - name: play_by_play      
+
+  - name: staging
+    database: NFL  
+    schema: dbt_parker_staging
+    tables:
+      - name: stg_player_stats_by_game    	
+      - name: stg_play_by_play
+
+  - name: intermediate
+    database: NFL
+    schema: dbt_parker_intermediate
+    tables:
+      - name: int_fantasy_points
+      - name: int_red_zone_plays
+
+  - name: fact
+    database: NFL
+    schema: dbt_parker_facts
+    tables:
+      - name: fct_fantasy_point_leaders
+      - name: fct_red_zone_player_stats

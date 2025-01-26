@@ -11,6 +11,6 @@ SELECT
     RANK() OVER (ORDER BY total_fantasy_points DESC) AS standard_rank,
     RANK() OVER (ORDER BY total_fantasy_points_ppr DESC) AS ppr_rank
 FROM 
-    {{ ref('int_fantasy_points') }}
+    {{ ref('pint_fantasy_points') }}
 ORDER BY 
     total_fantasy_points DESC

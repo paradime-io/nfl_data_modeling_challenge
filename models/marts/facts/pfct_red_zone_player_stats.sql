@@ -13,7 +13,7 @@ WITH aggregated_stats AS (
         COUNT(CASE 
             WHEN play_type = 'pass' AND complete_pass = 1 THEN 1 
         END) AS total_pass_completions
-    FROM {{ ref('int_red_zone_plays') }}
+    FROM {{ ref('pint_red_zone_plays') }}
     GROUP BY 
         fantasy_player_id, fantasy_player_name
 )
