@@ -102,4 +102,19 @@ models:
         description: "Year the player entered the league."
       - name: rookie_year
         description: "Player’s rookie season year."
+
+  - name: fct_games_result
+    columns:
+    - name: game_id
+    - name: game_date
+    - name: season_type
+    - name: home_team
+    - name: r.away_team
+    - name: r.total_home_score 
+    - name: r.total_away_score
+    - name: r.winning_team
+    - name:  home_fantasy_points
+    - name:  away_fantasy_points
+    - name:  home_fantasy_points_ppr
+    - name:  away_fantasy_points_ppr
     
