@@ -913,7 +913,7 @@ sources:
           - name: JERSEY_NUMBER
             description: "Player's jersey number."
           - name: STATUS
-            description: "Player’s game status (active, inactive, etc.)."
+            description: "Player's game status (active, inactive, etc.)."
           - name: PLAYER_NAME_Y
             description: "Player's name as given in source Y."
           - name: FIRST_NAME
