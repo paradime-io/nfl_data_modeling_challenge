@@ -117,4 +117,34 @@ models:
     - name:  away_fantasy_points
     - name:  home_fantasy_points_ppr
     - name:  away_fantasy_points_ppr
-    
+
+  - name: fct_team_scores
+    columns:
+    - name: team_name
+    - name: team_abbr 
+    - name: team_conf
+    - name: team_division
+    - name: team_nick
+    - name: wins
+    - name: loses
+    - name: total_points_scored
+    - name: total_points_lost
+    - name: total_fantasy_points
+    - name: total_fantasy_points_ppr
+
+  - name: fct_injuries
+    columns:
+    - name: week
+    - name: team
+    - name: position
+    - name: full_name
+    - name: injury
+    - name: report_status
+    - name: practice_status
+    - name: injuries_count
+      meta:
+        metrics: 
+          total_injuries:
+            type: number
+
+      
