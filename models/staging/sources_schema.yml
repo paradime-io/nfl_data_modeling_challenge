@@ -967,7 +967,7 @@ sources:
           - name: ENTRY_YEAR
             description: "Year the player entered the league."
           - name: ROOKIE_YEAR
-            description: "Player’s rookie season year."
+            description: "Player's rookie season year."
           - name: DRAFT_CLUB
             description: "Team that drafted the player."
           - name: DRAFT_NUMBER
