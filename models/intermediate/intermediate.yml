@@ -113,5 +113,25 @@ models:
     - name: season_week
     - name: fantasy_points
     - name: fantasy_points_ppr
+
+  - name: int_injuries
+    description: "Report on medical injuries"
+    columns:
+    - name: season
+    - name: week
+    - name: game_type
+    - name: team
+    - name: gsis_id
+    - name: position
+    - name: full_name
+    - name: first_name
+    - name: last_name
+    - name: report_primary_injury
+    - name: report_secondary_injury
+    - name: report_status
+    - name: practice_primary_injury
+    - name: practice_secondary_injury
+    - name: practice_status
+    - name: injury
  
 
