@@ -2,7 +2,7 @@ WITH source AS (
     SELECT 
         * 
     FROM 
-        {{ source('nfl', 'play_by_play') }}
+        {{ source('public', 'play_by_play') }}
 ),
 
 renamed AS (

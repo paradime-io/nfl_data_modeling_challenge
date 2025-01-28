@@ -17,17 +17,15 @@ clean-targets:
 
 models:
   ff:
+    public:
+      +materialized: table
     staging:
       +schema: staging
-      +materialized: view
+      +materialized: table
     intermediate:
       +schema: intermediate
-      +materialized: view
-    marts:
-      dimensions:
-        +schema: dimensions
-        +materialized: view
-      facts:
-        +schema: facts
-        +materialized: table
+      +materialized: table
+    facts:
+      +schema: facts
+      +materialized: table
 

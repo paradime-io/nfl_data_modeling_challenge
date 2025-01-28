@@ -2,7 +2,7 @@ WITH source AS (
     SELECT 
         * 
     FROM 
-        {{ source('nfl', 'player_stats_by_game') }}
+        {{ source('public', 'player_stats_by_game') }}
 ),
 
 renamed AS (
