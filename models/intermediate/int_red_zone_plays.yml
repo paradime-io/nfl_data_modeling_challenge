@@ -1,0 +1,64 @@
+version: 2
+models:
+  - name: int_red_zone_plays
+    columns:
+      - name: play_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: fantasy_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fantasy_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: play_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: incomplete_pass
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: complete_pass
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: pass_attempt
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rush
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rush_attempt
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: touchdown
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: penalty
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: penalty_type
+        description: ""
+        meta:
+          dimension:
+            type: string

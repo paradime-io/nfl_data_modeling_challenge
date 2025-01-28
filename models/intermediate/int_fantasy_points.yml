@@ -1,0 +1,64 @@
+version: 2
+models:
+  - name: int_fantasy_points
+    columns:
+      - name: player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: position
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: recent_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: season
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: season_week
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_targets
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_fantasy_points
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_fantasy_points_ppr
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: games_played
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: avg_fantasy_points_per_game
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: avg_fantasy_points_ppr_per_game
+        description: ""
+        meta:
+          dimension:
+            type: number

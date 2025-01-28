@@ -1,0 +1,1959 @@
+version: 2
+models:
+  - name: play_by_play
+    columns:
+      - name: play_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: game_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: old_game_id_x
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: home_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: away_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: season_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: week
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: posteam
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: posteam_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: defteam
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: side_of_field
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: yardline_100
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: game_date
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: quarter_seconds_remaining
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: half_seconds_remaining
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: game_seconds_remaining
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: game_half
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: quarter_end
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: drive
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: sp
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: qtr
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: down
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: goal_to_go
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: time
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: yrdln
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: ydstogo
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: ydsnet
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: desc
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: play_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: yards_gained
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: shotgun
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: no_huddle
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: qb_dropback
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: qb_kneel
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: qb_spike
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: qb_scramble
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: pass_length
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: pass_location
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: air_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: yards_after_catch
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: run_location
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: run_gap
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: field_goal_result
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: kick_distance
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: extra_point_result
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: two_point_conv_result
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: home_timeouts_remaining
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: away_timeouts_remaining
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: timeout
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: timeout_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: td_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: td_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: td_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: posteam_timeouts_remaining
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: defteam_timeouts_remaining
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_home_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_away_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: posteam_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: defteam_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: score_differential
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: posteam_score_post
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: defteam_score_post
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: score_differential_post
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: no_score_prob
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: opp_fg_prob
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: opp_safety_prob
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: opp_td_prob
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fg_prob
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: safety_prob
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: td_prob
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: extra_point_prob
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: two_point_conversion_prob
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: ep
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_home_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_away_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_home_rush_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_away_rush_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_home_pass_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_away_pass_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: air_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: yac_epa
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: comp_air_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: comp_yac_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_home_comp_air_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_away_comp_air_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_home_comp_yac_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_away_comp_yac_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_home_raw_air_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_away_raw_air_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_home_raw_yac_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_away_raw_yac_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: wp
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: def_wp
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: home_wp
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: away_wp
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: wpa
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: vegas_wpa
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: vegas_home_wpa
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: home_wp_post
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: away_wp_post
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: vegas_wp
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: vegas_home_wp
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: total_home_rush_wpa
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: total_away_rush_wpa
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: total_home_pass_wpa
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: total_away_pass_wpa
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: air_wpa
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: yac_wpa
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: comp_air_wpa
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: comp_yac_wpa
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: total_home_comp_air_wpa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_away_comp_air_wpa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_home_comp_yac_wpa
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: total_away_comp_yac_wpa
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: total_home_raw_air_wpa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_away_raw_air_wpa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_home_raw_yac_wpa
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: total_away_raw_yac_wpa
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: punt_blocked
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: first_down_rush
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: first_down_pass
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: first_down_penalty
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: third_down_converted
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: third_down_failed
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: fourth_down_converted
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: fourth_down_failed
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: incomplete_pass
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: touchback
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: interception
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: punt_inside_twenty
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: punt_in_endzone
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: punt_out_of_bounds
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: punt_downed
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: punt_fair_catch
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: kickoff_inside_twenty
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: kickoff_in_endzone
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: kickoff_out_of_bounds
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: kickoff_downed
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: kickoff_fair_catch
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: fumble_forced
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: fumble_not_forced
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: fumble_out_of_bounds
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: solo_tackle
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: safety
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: penalty
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: tackled_for_loss
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: fumble_lost
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: own_kickoff_recovery
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: own_kickoff_recovery_td
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: qb_hit
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rush_attempt
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: pass_attempt
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: sack
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: touchdown
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: pass_touchdown
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rush_touchdown
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: return_touchdown
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: extra_point_attempt
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: two_point_attempt
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: field_goal_attempt
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: kickoff_attempt
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: punt_attempt
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: fumble
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: complete_pass
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: assist_tackle
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: lateral_reception
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: lateral_rush
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: lateral_return
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: lateral_recovery
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: passer_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: passer_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: passing_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiver_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: receiver_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: receiving_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rusher_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: rusher_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: rushing_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: lateral_receiver_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: lateral_receiver_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: lateral_receiving_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: lateral_rusher_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: lateral_rusher_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: lateral_rushing_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: lateral_sack_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: lateral_sack_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: interception_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: interception_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: lateral_interception_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: lateral_interception_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: punt_returner_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: punt_returner_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: lateral_punt_returner_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: lateral_punt_returner_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: kickoff_returner_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: kickoff_returner_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: lateral_kickoff_returner_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: lateral_kickoff_returner_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: punter_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: punter_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: kicker_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: kicker_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: own_kickoff_recovery_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: own_kickoff_recovery_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: blocked_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: blocked_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: tackle_for_loss_1_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: tackle_for_loss_1_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: tackle_for_loss_2_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: tackle_for_loss_2_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: qb_hit_1_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: qb_hit_1_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: qb_hit_2_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: qb_hit_2_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: forced_fumble_player_1_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: forced_fumble_player_1_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: forced_fumble_player_1_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: forced_fumble_player_2_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: forced_fumble_player_2_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: forced_fumble_player_2_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: solo_tackle_1_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: solo_tackle_2_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: solo_tackle_1_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: solo_tackle_2_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: solo_tackle_1_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: solo_tackle_2_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: assist_tackle_1_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: assist_tackle_1_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: assist_tackle_1_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: assist_tackle_2_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: assist_tackle_2_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: assist_tackle_2_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: assist_tackle_3_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: assist_tackle_3_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: assist_tackle_3_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: assist_tackle_4_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: assist_tackle_4_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: assist_tackle_4_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: tackle_with_assist
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: tackle_with_assist_1_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: tackle_with_assist_1_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: tackle_with_assist_1_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: tackle_with_assist_2_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: tackle_with_assist_2_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: tackle_with_assist_2_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: pass_defense_1_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: pass_defense_1_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: pass_defense_2_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: pass_defense_2_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fumbled_1_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fumbled_1_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fumbled_1_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fumbled_2_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fumbled_2_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fumbled_2_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fumble_recovery_1_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fumble_recovery_1_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: fumble_recovery_1_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fumble_recovery_1_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fumble_recovery_2_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fumble_recovery_2_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: fumble_recovery_2_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fumble_recovery_2_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: sack_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: sack_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: half_sack_1_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: half_sack_1_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: half_sack_2_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: half_sack_2_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: return_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: return_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: penalty_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: penalty_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: penalty_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: penalty_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: replay_or_challenge
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: replay_or_challenge_result
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: penalty_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: defensive_two_point_attempt
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: defensive_two_point_conv
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: defensive_extra_point_attempt
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: defensive_extra_point_conv
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: safety_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: safety_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: cp
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: cpoe
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: series
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: series_success
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: series_result
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: order_sequence
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: start_time
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: time_of_day
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: stadium
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: weather
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: nfl_api_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: play_clock
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: play_deleted
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: play_type_nfl
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: special_teams_play
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: st_play_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: end_clock_time
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: end_yard_line
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fixed_drive
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: fixed_drive_result
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: drive_real_start_time
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: drive_play_count
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: drive_time_of_possession
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: drive_first_downs
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: drive_inside20
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: drive_ended_with_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: drive_quarter_start
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: drive_quarter_end
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: drive_yards_penalized
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: drive_start_transition
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: drive_end_transition
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: drive_game_clock_start
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: drive_game_clock_end
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: drive_start_yard_line
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: drive_end_yard_line
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: drive_play_id_started
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: drive_play_id_ended
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: away_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: home_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: location
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: result
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: spread_line
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_line
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: div_game
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: roof
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: surface
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: temp
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: wind
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: home_coach
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: away_coach
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: stadium_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: game_stadium
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: aborted_play
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: success
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: passer
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: passer_jersey_number
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rusher
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: rusher_jersey_number
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiver
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: receiver_jersey_number
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: pass
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rush
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: first_down
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: special
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: play
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: passer_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: rusher_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: receiver_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: jersey_number
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fantasy_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fantasy_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fantasy
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fantasy_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: out_of_bounds
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: home_opening_kickoff
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: qb_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: xyac_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: xyac_mean_yardage
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: xyac_median_yardage
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: xyac_success
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: xyac_fd
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: xpass
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: pass_oe
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: season
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: nflverse_game_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: old_game_id_y
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: possession_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: offense_formation
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: offense_personnel
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: defenders_in_box
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: defense_personnel
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: number_of_pass_rushers
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: players_on_play
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: offense_players
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: defense_players
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: n_offense
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: n_defense
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: ngs_air_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: time_to_throw
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: was_pressure
+        description: ""
+        meta:
+          dimension:
+            type: boolean
+      - name: route
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: defense_man_zone_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: defense_coverage_type
+        description: ""
+        meta:
+          dimension:
+            type: string
