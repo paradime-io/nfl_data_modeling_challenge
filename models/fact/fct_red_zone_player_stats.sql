@@ -1,4 +1,5 @@
 -- fct_red_zone_player_stats.sql
+-- comment to force commit
 
 WITH aggregated_stats AS (
     SELECT
