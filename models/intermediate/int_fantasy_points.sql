@@ -3,8 +3,8 @@ SELECT
     player_name,
     position,
     recent_team,
+    rank() over (partition by player_id order by season) - 1 as years_experience,
     season,
-    season_week,
     SUM(targets) AS total_targets,
     SUM(fantasy_points) AS total_fantasy_points,
     SUM(fantasy_points_ppr) AS total_fantasy_points_ppr,
@@ -16,4 +16,4 @@ FROM
 WHERE 
     SEASON_TYPE = 'REG'
 GROUP BY 
-    player_id, player_name, position, recent_team, season, season_week
+    player_id, player_name, position, recent_team, season

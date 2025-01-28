@@ -2,7 +2,7 @@ WITH source AS (
     SELECT 
         * 
     FROM 
-        {{ source('nfl', 'player_stats_by_game') }}
+        {{ source('external', 'NFL_PLAYER_STATS_2015_2024') }}
 ),
 
 renamed AS (
@@ -27,7 +27,7 @@ renamed AS (
         
         -- Player background
         college,
-        years_exp AS years_experience,
+        --years_exp AS years_experience,
         entry_year,
         rookie_year,
         draft_club AS draft_team,

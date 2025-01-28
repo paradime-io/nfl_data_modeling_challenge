@@ -793,7 +793,7 @@ sources:
           - name: PINNED (1)
             description: "Indicator if the offense started pinned deep in their territory."
 
-      - name: player_stats_by_game
+      - name: NFL_PLAYER_STATS_2015_2024
         description: "Player-level offensive statistics aggregated by game from the 2023 season"
         columns:
           - name: PLAYER_ID
@@ -974,4 +974,210 @@ sources:
             description: "Overall draft pick number used to select the player."
           - name: AGE
             description: "Player's age at the time of the game."
+
+  - name: external
+    database: ISTVANMOZES9MRHC_ANALYTICS
+    schema: DBT_ISTVAN_MOZES_90
+    tables:
+      - name: FANTASY_DRAFT_RANKING_PREDICTION_2023      
+        description: ""
+        columns:
+          - name: expert_ranking
+            description: ""
+          - name: tiers
+            description: ""
+          - name: player_name
+            description: ""
+          - name: team
+            description: ""
+          - name: position_rank
+            description: ""
+          - name: bye_week
+            description: ""
+          - name: ecr_vs_adp
+            description: ""
+
+
+      - name: NFL_PLAYER_STATS_2015_2024
+        description: "Player-level offensive statistics aggregated by game from the 2023 season"
+        columns:
+          - name: PLAYER_ID
+            description: "Unique identifier for the player."
+          - name: PLAYER_NAME_X
+            description: "Player's name as given in source X."
+          - name: PLAYER_DISPLAY_NAME
+            description: "Player's display name."
+          - name: POSITION_X
+            description: "Player's position from source X perspective."
+          - name: POSITION_GROUP
+            description: "General position group (e.g., QB, RB, WR)."
+          - name: HEADSHOT_URL_X
+            description: "URL for the player's headshot image."
+          - name: RECENT_TEAM
+            description: "The player's most recent team."
+          - name: SEASON_X
+            description: "Season year for these stats."
+          - name: WEEK_X
+            description: "Week number for these stats."
+          - name: SEASON_TYPE
+            description: "Indicates whether stats are from regular or postseason."
+          - name: OPPONENT_TEAM
+            description: "Opponent team for that game."
+          - name: COMPLETIONS
+            description: "Number of completed passes."
+          - name: ATTEMPTS
+            description: "Number of pass attempts."
+          - name: PASSING_YARDS
+            description: "Total passing yards in the game."
+          - name: PASSING_TDS
+            description: "Number of passing touchdowns."
+          - name: INTERCEPTIONS
+            description: "Number of passes intercepted."
+          - name: SACKS
+            description: "Number of times the QB was sacked."
+          - name: SACK_YARDS
+            description: "Total yards lost on sacks."
+          - name: SACK_FUMBLES
+            description: "Number of fumbles on sacks."
+          - name: SACK_FUMBLES_LOST
+            description: "Number of sack-related fumbles lost."
+          - name: PASSING_AIR_YARDS
+            description: "Total air yards on pass attempts."
+          - name: PASSING_YARDS_AFTER_CATCH
+            description: "Yards after catch gained through passing plays."
+          - name: PASSING_FIRST_DOWNS
+            description: "First downs gained via passing."
+          - name: PASSING_EPA
+            description: "Expected points added by passing plays."
+          - name: PASSING_2PT_CONVERSIONS
+            description: "Successful two-point conversions via passing."
+          - name: PACR
+            description: "Passing air conversion ratio (efficiency metric)."
+          - name: DAKOTA
+            description: "A proprietary QB evaluation metric."
+          - name: CARRIES
+            description: "Number of rushing attempts (carries)."
+          - name: RUSHING_YARDS
+            description: "Total rushing yards."
+          - name: RUSHING_TDS
+            description: "Number of rushing touchdowns."
+          - name: RUSHING_FUMBLES
+            description: "Number of fumbles while rushing."
+          - name: RUSHING_FUMBLES_LOST
+            description: "Number of lost fumbles while rushing."
+          - name: RUSHING_FIRST_DOWNS
+            description: "First downs achieved via rushing."
+          - name: RUSHING_EPA
+            description: "Expected points added by rushing plays."
+          - name: RUSHING_2PT_CONVERSIONS
+            description: "Successful two-point conversions via rushing."
+          - name: RECEPTIONS
+            description: "Number of caught passes."
+          - name: TARGETS
+            description: "Number of times player was targeted by a pass."
+          - name: RECEIVING_YARDS
+            description: "Total receiving yards."
+          - name: RECEIVING_TDS
+            description: "Number of receiving touchdowns."
+          - name: RECEIVING_FUMBLES
+            description: "Number of fumbles after a reception."
+          - name: RECEIVING_FUMBLES_LOST
+            description: "Number of lost fumbles after a reception."
+          - name: RECEIVING_AIR_YARDS
+            description: "Air yards for targets to this receiver."
+          - name: RECEIVING_YARDS_AFTER_CATCH
+            description: "Yards after catch for receptions."
+          - name: RECEIVING_FIRST_DOWNS
+            description: "First downs achieved via receptions."
+          - name: RECEIVING_EPA
+            description: "Expected points added by receptions."
+          - name: RECEIVING_2PT_CONVERSIONS
+            description: "Successful two-point conversions via receptions."
+          - name: RACR
+            description: "Receiver air conversion ratio."
+          - name: TARGET_SHARE
+            description: "Percentage of team targets received."
+          - name: AIR_YARDS_SHARE
+            description: "Percentage of team air yards attributed to the player."
+          - name: WOPR
+            description: "Weighted Opportunity Rating for the player."
+          - name: SPECIAL_TEAMS_TDS
+            description: "Number of touchdowns scored on special teams."
+          - name: FANTASY_POINTS
+            description: "Standard fantasy points scored."
+          - name: FANTASY_POINTS_PPR
+            description: "Fantasy points in PPR scoring format."
+          - name: SEASON_Y
+            description: "Season year (alternative field)."
+          - name: TEAM
+            description: "Player's team at the time of this game."
+          - name: POSITION_Y
+            description: "Player's position from another source (Y)."
+          - name: DEPTH_CHART_POSITION
+            description: "Player's position on the team's depth chart."
+          - name: JERSEY_NUMBER
+            description: "Player's jersey number."
+          - name: STATUS
+            description: "Player’s game status (active, inactive, etc.)."
+          - name: PLAYER_NAME_Y
+            description: "Player's name as given in source Y."
+          - name: FIRST_NAME
+            description: "Player's first name."
+          - name: LAST_NAME
+            description: "Player's last name."
+          - name: BIRTH_DATE
+            description: "Player's birth date."
+          - name: HEIGHT
+            description: "Player's height in inches."
+          - name: WEIGHT
+            description: "Player's weight in pounds."
+          - name: COLLEGE
+            description: "College the player attended."
+          - name: ESPN_ID
+            description: "Player's ESPN ID."
+          - name: SPORTRADAR_ID
+            description: "Player's Sportradar ID."
+          - name: YAHOO_ID
+            description: "Player's Yahoo ID."
+          - name: ROTOWIRE_ID
+            description: "Player's Rotowire ID."
+          - name: PFF_ID
+            description: "Player's Pro Football Focus ID."
+          - name: PFR_ID
+            description: "Player's Pro-Football-Reference ID."
+          - name: FANTASY_DATA_ID
+            description: "Player's FantasyData ID."
+          - name: SLEEPER_ID
+            description: "Player's Sleeper fantasy platform ID."
+          - name: YEARS_EXP
+            description: "Years of experience in the league."
+          - name: HEADSHOT_URL_Y
+            description: "Alternative URL for player's headshot."
+          - name: NGS_POSITION
+            description: "Position classification according to Next Gen Stats."
+          - name: WEEK_Y
+            description: "Week of the season from source Y perspective."
+          - name: GAME_TYPE
+            description: "Type of the game (Regular, Preseason, Postseason)."
+          - name: STATUS_DESCRIPTION_ABBR
+            description: "Abbreviated status description (e.g., ACT for active)."
+          - name: FOOTBALL_NAME
+            description: "Player's full football name or preferred name."
+          - name: ESB_ID
+            description: "Another external system ID (ESB)."
+          - name: GSIS_IT_ID
+            description: "NFL GSIS (Game Statistics & Information System) ID."
+          - name: SMART_ID
+            description: "A unique identifier used by another system."
+          - name: ENTRY_YEAR
+            description: "Year the player entered the league."
+          - name: ROOKIE_YEAR
+            description: "Player’s rookie season year."
+          - name: DRAFT_CLUB
+            description: "Team that drafted the player."
+          - name: DRAFT_NUMBER
+            description: "Overall draft pick number used to select the player."
+          - name: AGE
+            description: "Player's age at the time of the game."
+
 
