@@ -4,17 +4,14 @@ select
     position,
     full_name,
     injury,
-    report_status,
-    practice_status,
-    sum(first_report) as injuries_count,
-    -- potencjalnie do usunięcia, jeśli nie będzie używane
-    count(*) as weeks -- weeks_reported
+    --sum(first_report) as injuries_count,
+    duration
 from {{ ref('int_injuries') }}
+where first_report = 1
 group by
     week,
     team,
     position,
     full_name,
     injury,
-    report_status,
-    practice_status
+    duration

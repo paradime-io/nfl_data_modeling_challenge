@@ -134,5 +134,6 @@ models:
     - name: practice_status
     - name: injury
     - name: first_report
+    - name: duration
  
 

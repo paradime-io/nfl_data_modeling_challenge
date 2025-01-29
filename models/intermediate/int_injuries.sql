@@ -34,12 +34,14 @@ where report_primary_injury not ilike '%not injury related%'
   and report_primary_injury not ilike 'Coaching'
   and practice_primary_injury not ilike '%not injury related%'
   and game_type = 'REG'
+  and report_status = 'Out'
 ),
 
 medical_injury_reports_with_first_report as (
   select 
   *, 
-  rank() over (partition by full_name, injury order by week) as rank
+  rank() over (partition by full_name, injury order by week) as rank,
+  count(distinct week) over (partition by full_name, team, position, injury) as duration
   from medical_injury_reports
 )
 
@@ -60,7 +62,8 @@ select
   practice_secondary_injury,
   practice_status,
   injury,
-  case when rank = 1 then 1 else 0 end as first_report
+  case when rank = 1 then 1 else 0 end as first_report,
+  duration
 from medical_injury_reports_with_first_report
 
 

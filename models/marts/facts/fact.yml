@@ -150,18 +150,16 @@ models:
     - name: team
     - name: position
     - name: full_name
+      meta:
+        metrics: 
+          players_injured:
+            type: count_distinct
     - name: injury
-    - name: report_status
-    - name: practice_status
-    - name: injuries_count
+    #- name: injuries_count    
+    - name: duration
       meta:
         metrics: 
-          total_injuries:
-            type: sum
-    - name: weeks
-      meta:
-        metrics: 
-          weeks_reported:
-            type: sum
+          avg_duration:
+            type: average
 
       
