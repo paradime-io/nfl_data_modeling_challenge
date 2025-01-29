@@ -1,5 +1,5 @@
 -- int_red_zone_plays.sql
-
+/*
 WITH red_zone_plays AS (
     SELECT
         play_id,

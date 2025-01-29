@@ -1,3 +1,4 @@
+/*
 WITH source AS (
     SELECT 
         * 
@@ -127,3 +128,4 @@ SELECT
     *
 FROM 
     renamed
+*/

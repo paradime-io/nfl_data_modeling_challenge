@@ -1,5 +1,5 @@
 -- fct_red_zone_player_stats.sql
-
+/*
 WITH aggregated_stats AS (
     SELECT
         fantasy_player_id,
@@ -27,3 +27,4 @@ SELECT
     total_pass_completions
 FROM aggregated_stats
 ORDER BY total_rush_attempts DESC
+*/

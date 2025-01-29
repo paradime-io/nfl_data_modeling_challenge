@@ -1,3 +1,4 @@
+/*
 select
     expert_ranking,
     tiers,
@@ -7,3 +8,4 @@ select
     bye_week,
     ecr_vs_adp
 from  {{ source('external', 'FANTASY_DRAFT_RANKING_PREDICTION_2023') }}
+*/
