@@ -133,5 +133,6 @@ models:
     - name: practice_secondary_injury
     - name: practice_status
     - name: injury
+    - name: first_report
  
 

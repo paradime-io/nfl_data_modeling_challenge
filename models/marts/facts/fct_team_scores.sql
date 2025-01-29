@@ -3,7 +3,7 @@ with fantasy_points_per_team as (
     team,
     sum(fantasy_points) as total_fantasy_points,
     sum(fantasy_points_ppr) as total_fantasy_points_ppr
-  from int_player_game_fantasy_points 
+  from {{ ref('int_player_game_fantasy_points') }}
   where season_type = 'REG'
   group by team
 )
@@ -19,8 +19,8 @@ select
   sum(case when team_abbr = g.home_team then total_away_score else total_home_score end) as total_points_lost,
   total_fantasy_points,
   total_fantasy_points_ppr
-from dbt_akozubek.nfl_teams_2023 t
-join int_game_result g
+from {{ ref('nfl_teams_2023') }}  t
+join {{ ref('int_game_result') }} g
 on (t.team_abbr = g.home_team or t.team_abbr = g.away_team)
 join fantasy_points_per_team fp
 on t.team_abbr = fp.team

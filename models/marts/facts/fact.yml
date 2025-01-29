@@ -126,13 +126,25 @@ models:
     - name: team_division
     - name: team_nick
     - name: wins
+      meta:
+        metrics: 
+          total_wins:
+            type: sum
     - name: loses
+      meta: 
+        metrics: 
+          total_loses:
+            type: sum
     - name: total_points_scored
     - name: total_points_lost
     - name: total_fantasy_points
     - name: total_fantasy_points_ppr
 
   - name: fct_injuries
+    meta:
+      joins:
+        - join: fct_team_scores
+          sql_on: ${fct_injuries.team} = ${fct_team_scores.team_abbr}
     columns:
     - name: week
     - name: team
@@ -145,6 +157,11 @@ models:
       meta:
         metrics: 
           total_injuries:
-            type: number
+            type: sum
+    - name: weeks
+      meta:
+        metrics: 
+          weeks_reported:
+            type: sum
 
       
