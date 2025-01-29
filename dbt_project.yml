@@ -20,12 +20,9 @@ models:
     public:
       +materialized: table
     staging:
-      +schema: staging
       +materialized: table
     intermediate:
-      +schema: intermediate
       +materialized: table
-    facts:
-      +schema: facts
+    fact:
       +materialized: table
 

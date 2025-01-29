@@ -15,6 +15,8 @@ renamed AS (
         first_name,
         last_name,
         headshot_url_x AS headshot_url,
+        concat('<img src=\"', headshot_url_x, '\" width=\"500\" height=\"350\"/>') as headshot_html,
+        concat('[![Image alt text](', headshot_url_x, ')]') as headshot_md,
         jersey_number,
         status AS player_status,
         status_description_abbr,
