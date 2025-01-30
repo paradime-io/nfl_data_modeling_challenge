@@ -186,6 +186,10 @@ models:
         description: "Player's last name."
       - name: headshot_url
         description: "URL for the player's headshot image."
+      - name: headshot_html
+        description: "HTML for the player's headshot image."
+      - name: headshot_md
+        description: "Markdown for the player's headshot image."
       - name: jersey_number
         description: "Player's jersey number."
       - name: player_status
