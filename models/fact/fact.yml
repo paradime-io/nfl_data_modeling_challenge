@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: fct_fantasy_point_leaders
+    description: "Fact table ranking players by their fantasy performance using both standard and PPR scoring."
+    columns:
+      - name: player_id
+        description: "Unique identifier for the player."
+      - name: player_name
+        description: "Name of the player."
+      - name: position
+        description: "Player's position (e.g., QB, RB, WR, TE)."
+      - name: recent_team
+        description: "The player's most recent team."
+      - name: total_fantasy_points
+        description: "Total fantasy points scored by the player (standard scoring) across the considered period."
+      - name: total_fantasy_points_ppr
+        description: "Total fantasy points scored by the player under PPR (points per reception) scoring across the considered period."
+      - name: games_played
+        description: "Number of games (weeks) the player participated in."
+      - name: avg_fantasy_points_per_game
+        description: "Average standard fantasy points per game played."
+      - name: avg_fantasy_points_ppr_per_game
+        description: "Average PPR fantasy points per game played."
+      - name: standard_rank
+        description: "The player's rank among all players based on total standard fantasy points."
+      - name: ppr_rank
+        description: "The player's rank among all players based on total PPR fantasy points."
+
+  - name: fct_red_zone_player_stats
+    description: "Fact table summarizing player performance within the red zone, capturing rushing and passing opportunities."
+    columns:
+      - name: fantasy_player_id
+        description: "Fantasy-specific unique identifier for the player."
+      - name: fantasy_player_name
+        description: "Name of the player as recognized for fantasy purposes."
+      - name: total_opportunities
+        description: "Sum of a player's total red zone rush attempts and targets (pass attempts to them)."
+      - name: total_rush_attempts
+        description: "Total number of red zone rushing attempts by the player."
+      - name: total_targets
+        description: "Total number of red zone targets (pass attempts) directed to the player."
+      - name: total_pass_completions
+        description: "Total number of red zone passes completed to the player."

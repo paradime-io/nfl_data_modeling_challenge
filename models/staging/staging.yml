@@ -1,0 +1,336 @@
+version: 2
+
+models:
+  - name: stg_play_by_play
+    description: "Staging model for NFL play-by-play data from the 2023 season that standardizes column names and formats, enabling easier analysis downstream."
+    columns:
+      - name: play_id
+        description: "Unique identifier for each play."
+      - name: game_id
+        description: "Unique identifier for each game."
+      - name: legacy_game_id
+        description: "Legacy or alternate game identifier from the original source."
+      - name: season_type
+        description: "Indicates whether the game is regular season, postseason, etc."
+      - name: home_team
+        description: "Abbreviation of the home team."
+      - name: away_team
+        description: "Abbreviation of the away team."
+      - name: possession_team
+        description: "Team in possession of the ball during the play."
+      - name: possession_team_type
+        description: "Indicates if the possessing team is the home or away team."
+      - name: defending_team
+        description: "Team on defense during the play."
+      - name: side_of_field
+        description: "Which side of the field the offense is on (e.g., 'NE' side at NE 20)."
+      - name: distance_to_goal
+        description: "Yard distance from the defending team's end zone (1-100), representing the offense's field position."
+      - name: game_date
+        description: "Date on which the game took place."
+      - name: quarter_seconds_remaining
+        description: "Seconds remaining in the current quarter."
+      - name: half_seconds_remaining
+        description: "Seconds remaining in the current half."
+      - name: game_seconds_remaining
+        description: "Seconds remaining in the entire game."
+      - name: game_half
+        description: "Indicates if it's the first or second half of the game."
+      - name: quarter_end
+        description: "Flag indicating if this play ended the current quarter (0/1)."
+      - name: drive
+        description: "Drive number within the game for the offense."
+      - name: quarter
+        description: "Current quarter of the game (1-4, or OT periods)."
+      - name: down
+        description: "The current down number (1-4)."
+      - name: goal_to_go
+        description: "Flag indicating if the offense is in a goal-to-go situation (0/1)."
+      - name: game_clock
+        description: "Time remaining in the quarter at the start of the play (HH:MM:SS)."
+      - name: yard_line
+        description: "Text description of the yard line (e.g., 'NE 20')."
+      - name: yards_to_go
+        description: "Yards needed to achieve a first down."
+      - name: drive_net_yards
+        description: "Net yards gained on the current drive up to this play."
+      - name: play_description
+        description: "Narrative description of the play."
+      - name: play_type
+        description: "Type of play (e.g., run, pass, punt, kickoff)."
+      - name: yards_gained
+        description: "Total yards gained on this play."
+      - name: shotgun
+        description: "Flag (0/1) indicating if the play started from shotgun formation."
+      - name: no_huddle
+        description: "Flag (0/1) if the offense did not huddle prior to the snap."
+      - name: qb_dropback
+        description: "Flag (0/1) if the QB dropped back to pass."
+      - name: qb_kneel
+        description: "Flag (0/1) if the QB took a knee."
+      - name: qb_spike
+        description: "Flag (0/1) if the QB spiked the ball to stop the clock."
+      - name: qb_scramble
+        description: "Flag (0/1) if the QB scrambled (left the pocket and ran)."
+      - name: pass_length
+        description: "Categorization of pass distance (short or deep)."
+      - name: pass_location
+        description: "Direction of the pass (left, middle, right)."
+      - name: air_yards
+        description: "Distance the ball traveled in the air from the line of scrimmage to the point of reception."
+      - name: yards_after_catch
+        description: "Yards gained after the reception by the receiver."
+      - name: run_location
+        description: "Direction of the run (left, middle, right)."
+      - name: run_gap
+        description: "Specific gap or lane hit by the rusher."
+      - name: rusher_player_id
+        description: "Unique ID of the rushing player on the play, if applicable."
+      - name: rusher_player_name
+        description: "Name of the rushing player on the play, if applicable."
+      - name: receiver_player_id
+        description: "Unique ID of the receiving player on the play, if applicable."
+      - name: receiver_player_name
+        description: "Name of the receiving player on the play, if applicable."
+      - name: passer_player_id
+        description: "Unique ID of the passing player on the play, if applicable."
+      - name: passer_player_name
+        description: "Name of the passing player on the play, if applicable."
+      - name: fantasy_player_name
+        description: "Name of a player relevant for fantasy data."
+      - name: fantasy_player_id
+        description: "Unique fantasy-related identifier for the player involved in the play."
+      - name: touchdown
+        description: "Flag (0/1) if the play resulted in a touchdown."
+      - name: rush_touchdown
+        description: "Flag (0/1) if the play resulted in a rushing touchdown."
+      - name: pass_touchdown
+        description: "Flag (0/1) if the play resulted in a passing touchdown."
+      - name: field_goal_result
+        description: "Result of a field goal attempt (made, missed, blocked, etc.)."
+      - name: kick_distance
+        description: "Distance of the kick attempt."
+      - name: extra_point_result
+        description: "Result of the extra point attempt."
+      - name: two_point_conversion_result
+        description: "Result of a two-point conversion attempt."
+      - name: rush
+        description: "Flag (0/1) indicating if this play involved a rush."
+      - name: rush_attempt
+        description: "Flag (0/1) indicating a rushing attempt counted for stats."
+      - name: rushing_yards
+        description: "Yards gained by rushing on this play."
+      - name: pass_attempt
+        description: "Flag (0/1) if a pass attempt was made on this play."
+      - name: incomplete_pass
+        description: "Flag (0/1) if the pass was incomplete."
+      - name: complete_pass
+        description: "Flag (0/1) if the pass was completed."
+      - name: penalty
+        description: "Flag (0/1) if a penalty occurred on this play."
+      - name: penalty_type
+        description: "Type of penalty called during this play."
+      - name: home_timeouts_remaining
+        description: "Number of timeouts the home team had remaining at this point."
+      - name: away_timeouts_remaining
+        description: "Number of timeouts the away team had remaining at this point."
+      - name: possession_team_timeouts
+        description: "Number of timeouts remaining for the possession team at this point."
+      - name: defending_team_timeouts
+        description: "Number of timeouts remaining for the defending team at this point."
+      - name: total_home_score
+        description: "Home team's total score so far in the game."
+      - name: total_away_score
+        description: "Away team's total score so far in the game."
+      - name: possession_team_score
+        description: "Score of the team currently in possession."
+      - name: defending_team_score
+        description: "Score of the team currently on defense."
+      - name: score_differential
+        description: "Score difference (possession_team_score - defending_team_score) before the play."
+      - name: expected_points
+        description: "Expected points for the offense before the play started."
+      - name: expected_points_added
+        description: "Expected points added (EPA) by this play."
+      - name: total_home_expected_points_added
+        description: "Cumulative EPA for the home team so far."
+      - name: total_away_expected_points_added
+        description: "Cumulative EPA for the away team so far."
+      - name: air_expected_points_added
+        description: "EPA attributed to the air yards portion of the pass."
+      - name: yards_after_catch_expected_points_added
+        description: "EPA attributed to the yards after catch portion of the play."
+      - name: win_probability
+        description: "Win probability of the possession team before the play."
+      - name: defensive_win_probability
+        description: "Win probability of the defending team before the play."
+      - name: home_win_probability
+        description: "Win probability for the home team before the play."
+      - name: away_win_probability
+        description: "Win probability for the away team before the play."
+      - name: win_probability_added
+        description: "Change in win probability (WPA) resulting from this play."
+      - name: in_red_zone
+        description: "Flag (TRUE/FALSE) indicating if the offense was in the red zone (<= 20 yards to goal) at the start of the play."
+
+  - name: stg_player_stats_by_game
+    description: "Staging model for player-level statistics by game, providing standardized player information and performance metrics."
+    columns:
+      - name: player_id
+        description: "Unique identifier for the player."
+      - name: player_name
+        description: "Player's display name."
+      - name: first_name
+        description: "Player's first name."
+      - name: last_name
+        description: "Player's last name."
+      - name: headshot_url
+        description: "URL for the player's headshot image."
+      - name: jersey_number
+        description: "Player's jersey number."
+      - name: player_status
+        description: "Player’s game status (e.g., active, inactive)."
+      - name: status_description_abbr
+        description: "Abbreviated status description."
+      - name: height
+        description: "Player's height in inches."
+      - name: player_weight
+        description: "Player's weight in pounds."
+      - name: age
+        description: "Player's age at the time of the game."
+      - name: birth_date
+        description: "Player's birth date."
+      - name: college
+        description: "College the player attended."
+      - name: years_experience
+        description: "Years of experience in the league."
+      - name: entry_year
+        description: "Year the player entered the league."
+      - name: rookie_year
+        description: "The player's rookie season."
+      - name: draft_team
+        description: "Team that drafted the player."
+      - name: draft_number
+        description: "Draft pick number used to select the player."
+      - name: position
+        description: "Player's position (e.g., QB, RB, WR, TE)."
+      - name: position_group
+        description: "High-level position group (e.g., skill players, QBs)."
+      - name: team
+        description: "The player's team at the time of the game."
+      - name: recent_team
+        description: "The player's most recent team."
+      - name: season
+        description: "Season year for these stats."
+      - name: season_week
+        description: "Week of the season for these stats."
+      - name: season_type
+        description: "Indicates whether stats are from regular or postseason."
+      - name: game_type
+        description: "Type of the game (e.g., Regular, Postseason)."
+      - name: opponent_team
+        description: "Opponent team for that game."
+      - name: completions
+        description: "Number of completed passes."
+      - name: pass_attempts
+        description: "Number of pass attempts."
+      - name: pass_yards
+        description: "Total passing yards."
+      - name: passing_air_yards
+        description: "Total air yards passed."
+      - name: passing_yards_after_catch
+        description: "Yards gained after the catch on passing plays."
+      - name: passing_first_downs
+        description: "First downs earned via passing."
+      - name: passing_epa
+        description: "Expected points added via passing."
+      - name: passing_2pt_conversions
+        description: "Number of successful 2-point conversions via pass."
+      - name: interceptions
+        description: "Number of interceptions thrown."
+      - name: pacr
+        description: "Passing air conversion ratio (an efficiency metric)."
+      - name: dakota
+        description: "A proprietary QB performance metric."
+      - name: sacks
+        description: "Number of times the QB was sacked."
+      - name: sack_yards
+        description: "Yards lost due to sacks."
+      - name: sack_fumbles
+        description: "Number of fumbles occurring on sacks."
+      - name: sack_fumbles_lost
+        description: "Number of sack-related fumbles lost."
+      - name: carries
+        description: "Number of rushing attempts."
+      - name: rushing_yards
+        description: "Total rushing yards gained."
+      - name: rushing_tds
+        description: "Number of rushing touchdowns."
+      - name: rushing_fumbles
+        description: "Fumbles while rushing."
+      - name: rushing_fumbles_lost
+        description: "Number of rushing fumbles lost."
+      - name: rushing_first_downs
+        description: "First downs earned via rushing."
+      - name: rushing_epa
+        description: "Expected points added via rushing."
+      - name: rushing_2pt_conversions
+        description: "Number of successful rushing 2-point conversions."
+      - name: receptions
+        description: "Number of caught passes."
+      - name: targets
+        description: "Number of times the player was targeted on a pass."
+      - name: receiving_yards
+        description: "Total yards gained through receptions."
+      - name: receiving_tds
+        description: "Number of receiving touchdowns."
+      - name: receiving_fumbles
+        description: "Number of fumbles after a reception."
+      - name: receiving_fumbles_lost
+        description: "Number of receiving fumbles lost."
+      - name: receiving_air_yards
+        description: "Air yards attributed to this player's targets."
+      - name: receiving_yards_after_catch
+        description: "Yards gained after the catch on receptions."
+      - name: receiving_first_downs
+        description: "First downs earned via receptions."
+      - name: receiving_epa
+        description: "Expected points added via receiving."
+      - name: receiving_2pt_conversions
+        description: "Number of successful 2-point conversions via reception."
+      - name: racr
+        description: "Receiver air conversion ratio (receiving efficiency metric)."
+      - name: target_share
+        description: "Percentage of team targets this player received."
+      - name: air_yards_share
+        description: "Percentage of team air yards this player accounted for."
+      - name: wopr
+        description: "Weighted Opportunity Rating for the player."
+      - name: special_teams_tds
+        description: "Number of touchdowns scored on special teams."
+      - name: fantasy_points
+        description: "Standard fantasy football points scored."
+      - name: fantasy_points_ppr
+        description: "Fantasy points in PPR scoring format."
+      - name: espn_id
+        description: "Player's ESPN ID."
+      - name: sportradar_id
+        description: "Player's Sportradar ID."
+      - name: yahoo_id
+        description: "Player's Yahoo ID."
+      - name: rotowire_id
+        description: "Player's Rotowire ID."
+      - name: pff_id
+        description: "Player's Pro Football Focus ID."
+      - name: pfr_id
+        description: "Player's Pro-Football-Reference ID."
+      - name: fantasy_data_id
+        description: "Player's FantasyData ID."
+      - name: sleeper_id
+        description: "Player's Sleeper fantasy platform ID."
+      - name: esb_id
+        description: "Another external system ID (ESB)."
+      - name: gsis_it_id
+        description: "NFL GSIS (Game Statistics & Information System) ID."
+      - name: smart_id
+        description: "A unique identifier used internally or externally."
