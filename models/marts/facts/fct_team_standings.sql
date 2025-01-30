@@ -18,7 +18,9 @@ select
   sum(case when team_abbr = g.home_team then total_home_score else total_away_score end) as total_points_scored,
   sum(case when team_abbr = g.home_team then total_away_score else total_home_score end) as total_points_lost,
   total_fantasy_points,
-  total_fantasy_points_ppr
+  total_fantasy_points_ppr,
+  rank() over(partition by team_division order by wins desc, total_points_scored desc) as division_rank,
+  rank() over(partition by team_conf order by wins desc, total_points_scored desc) as conference_rank
 from {{ ref('nfl_teams_2023') }}  t
 join {{ ref('int_game_result') }} g
 on (t.team_abbr = g.home_team or t.team_abbr = g.away_team)

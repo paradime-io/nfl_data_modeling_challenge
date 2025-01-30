@@ -118,7 +118,7 @@ models:
     - name:  home_fantasy_points_ppr
     - name:  away_fantasy_points_ppr
 
-  - name: fct_team_scores
+  - name: fct_team_standings
     columns:
     - name: team_name
     - name: team_abbr 
@@ -139,12 +139,14 @@ models:
     - name: total_points_lost
     - name: total_fantasy_points
     - name: total_fantasy_points_ppr
+    - name: division_rank
+    - name: conference_rank
 
   - name: fct_injuries
     meta:
       joins:
-        - join: fct_team_scores
-          sql_on: ${fct_injuries.team} = ${fct_team_scores.team_abbr}
+        - join: fct_team_standings
+          sql_on: ${fct_injuries.team} = ${fct_team_standings.team_abbr}
     columns:
     - name: week
     - name: team
