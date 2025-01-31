@@ -9,7 +9,17 @@
 6. [Conclusions](#conclusions)
 
 ## Introduction
-[Brief overview: What you aimed to achieve and why it matters]
+
+I have a confession to make: I’m not American, and I’m not a sports fan. So when I decided to take on this NFL Data Modeling Challenge, I knew I was in for an uphill battle. My knowledge of (American) football before this challenge was... let’s just say, "limited." I knew that:  
+
+- The NFL is the most popular sport in the U.S.  
+- They play with an egg-shaped ball.  
+- The players are **HUGE**.  
+- Concussions are a common injury.  
+- The Super Bowl is a really big deal.  
+
+That was pretty much it.  
+
 
 [Dashboard 1: Getting to know data](https://app.lightdash.cloud/projects/36657ff5-d0ec-483b-98ad-eb25393cb88c/dashboards/1952d76f-0aad-4234-a6cf-290f5628f897/view)
 
@@ -28,21 +38,12 @@ Additional datasets:
 - Paradime for dbt™ modeling and SQL
 - Snowflake for data warehousing
 - Lightdash for visualization
+- ChatGPT as my go-to football expert and for crafting this narrative
 
 ### Applied Techniques
 [Discuss transformations, tests, and models built]
 
 ## Visualizations
-
-I have a confession to make: I’m not American, and I’m not a sports fan. So when I decided to take on this NFL Data Modeling Challenge, I knew I was in for an uphill battle. My knowledge of (American) football before this challenge was... let’s just say, "limited." I knew that:  
-
-- The NFL is the most popular sport in the U.S.  
-- They play with an egg-shaped ball.  
-- The players are **HUGE**.  
-- Concussions are a common injury.  
-- The Super Bowl is a really big deal.  
-
-That was pretty much it.  
 
 ### Step One: Understanding the Rules and the Data  
 
@@ -65,6 +66,17 @@ The good news? My data lined up with what I found on Wikipedia—so at least I d
 ![AFC Standings](images/part1/afc-standings.png)
 
 ![NFC Standings](images/part1/nfc-standings.png)
+
+### Game Duration and Overtime  
+
+I learned that each game consists of **four 15-minute quarters**, and if the game is tied at the end, there can be **overtime**.  
+
+So, how often does a game actually go into overtime? Here’s what I found:  
+
+- Out of **272 regular season games**, **259 ended in regulation**, while **13 went into overtime**—that’s roughly **95% regular time, 5% OT**.  
+- In the **playoffs**, **12 games ended in regular time**, while **1 went to overtime**, making it **92% vs. 8%**.  
+
+This suggests that overtime is relatively rare. Here are the visualizations of how often games extend beyond regulation:  
 
 ![Regular vs overtime games](images/part1/regular-vs-overtime.png)
 
