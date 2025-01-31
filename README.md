@@ -33,7 +33,34 @@ Additional datasets:
 [Discuss transformations, tests, and models built]
 
 ## Visualizations
-### Getting to know the data
+
+I have a confession to make: I’m not American, and I’m not a sports fan. So when I decided to take on this NFL Data Modeling Challenge, I knew I was in for an uphill battle. My knowledge of (American) football before this challenge was... let’s just say, "limited." I knew that:  
+
+- The NFL is the most popular sport in the U.S.  
+- They play with an egg-shaped ball.  
+- The players are **HUGE**.  
+- Concussions are a common injury.  
+- The Super Bowl is a really big deal.  
+
+That was pretty much it.  
+
+### Step One: Understanding the Rules and the Data  
+
+Before jumping into any data modeling, I had to get a grasp on how the NFL actually works. I learned that the league is split into two conferences: the AFC (American Football Conference) and the NFC (National Football Conference). Each conference has **16 teams**, further divided into **four divisions of four teams each**.  
+
+The season itself is split into the **regular season** and the **playoffs**. By the end of the regular season, **seven teams from each conference** qualify for the playoffs, leading up to the Super Bowl.  
+
+Scoring was another challenge to wrap my head around. You get **6 points for a touchdown**, **3 points for a field goal**, and a few other ways to score that I’m still trying to fully grasp. Let’s just say football rules are not as intuitive as I had hoped!  
+
+### Reconstructing the Season Results  
+
+For my first real analysis, I aimed to **recreate the results of each game** and compile the **final standings for the AFC and NFC** after the 2023 regular season. I included:  
+
+- **Number of wins and losses for each team**  
+- **Total points scored and allowed**  
+- **Who qualified for the playoffs**  
+
+The good news? My data lined up with what I found on Wikipedia—so at least I didn’t mess up too badly!  
 
 ![AFC Standings](images/part1/afc-standings.png)
 
