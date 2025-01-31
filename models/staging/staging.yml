@@ -1,340 +1,846 @@
 version: 2
-
 models:
   - name: stg_play_by_play
-    description: "Staging model for NFL play-by-play data from the 2023 season that standardizes column names and formats, enabling easier analysis downstream."
+    description: >-
+      Staging model for NFL play-by-play data from the 2023 season that
+      standardizes column names and formats, enabling easier analysis
+      downstream.
     columns:
       - name: play_id
-        description: "Unique identifier for each play."
+        description: Unique identifier for each play.
+        meta:
+          dimension:
+            type: number
       - name: game_id
-        description: "Unique identifier for each game."
+        description: Unique identifier for each game.
+        meta:
+          dimension:
+            type: string
       - name: legacy_game_id
-        description: "Legacy or alternate game identifier from the original source."
+        description: Legacy or alternate game identifier from the original source.
+        meta:
+          dimension:
+            type: number
       - name: season_type
-        description: "Indicates whether the game is regular season, postseason, etc."
+        description: Indicates whether the game is regular season, postseason, etc.
+        meta:
+          dimension:
+            type: string
       - name: home_team
-        description: "Abbreviation of the home team."
+        description: Abbreviation of the home team.
+        meta:
+          dimension:
+            type: string
       - name: away_team
-        description: "Abbreviation of the away team."
+        description: Abbreviation of the away team.
+        meta:
+          dimension:
+            type: string
       - name: possession_team
-        description: "Team in possession of the ball during the play."
+        description: Team in possession of the ball during the play.
+        meta:
+          dimension:
+            type: string
       - name: possession_team_type
-        description: "Indicates if the possessing team is the home or away team."
+        description: Indicates if the possessing team is the home or away team.
+        meta:
+          dimension:
+            type: string
       - name: defending_team
-        description: "Team on defense during the play."
+        description: Team on defense during the play.
+        meta:
+          dimension:
+            type: string
       - name: side_of_field
-        description: "Which side of the field the offense is on (e.g., 'NE' side at NE 20)."
+        description: Which side of the field the offense is on (e.g., 'NE' side at NE 20).
+        meta:
+          dimension:
+            type: string
       - name: distance_to_goal
-        description: "Yard distance from the defending team's end zone (1-100), representing the offense's field position."
+        description: >-
+          Yard distance from the defending team's end zone (1-100), representing
+          the offense's field position.
+        meta:
+          dimension:
+            type: number
       - name: game_date
-        description: "Date on which the game took place."
+        description: Date on which the game took place.
+        meta:
+          dimension:
+            type: date
       - name: quarter_seconds_remaining
-        description: "Seconds remaining in the current quarter."
+        description: Seconds remaining in the current quarter.
+        meta:
+          dimension:
+            type: number
       - name: half_seconds_remaining
-        description: "Seconds remaining in the current half."
+        description: Seconds remaining in the current half.
+        meta:
+          dimension:
+            type: number
       - name: game_seconds_remaining
-        description: "Seconds remaining in the entire game."
+        description: Seconds remaining in the entire game.
+        meta:
+          dimension:
+            type: number
       - name: game_half
-        description: "Indicates if it's the first or second half of the game."
+        description: Indicates if it's the first or second half of the game.
+        meta:
+          dimension:
+            type: string
       - name: quarter_end
-        description: "Flag indicating if this play ended the current quarter (0/1)."
+        description: Flag indicating if this play ended the current quarter (0/1).
+        meta:
+          dimension:
+            type: number
       - name: drive
-        description: "Drive number within the game for the offense."
+        description: Drive number within the game for the offense.
+        meta:
+          dimension:
+            type: number
       - name: quarter
-        description: "Current quarter of the game (1-4, or OT periods)."
+        description: Current quarter of the game (1-4, or OT periods).
+        meta:
+          dimension:
+            type: number
       - name: down
-        description: "The current down number (1-4)."
+        description: The current down number (1-4).
+        meta:
+          dimension:
+            type: number
       - name: goal_to_go
-        description: "Flag indicating if the offense is in a goal-to-go situation (0/1)."
+        description: Flag indicating if the offense is in a goal-to-go situation (0/1).
+        meta:
+          dimension:
+            type: number
       - name: game_clock
-        description: "Time remaining in the quarter at the start of the play (HH:MM:SS)."
+        description: Time remaining in the quarter at the start of the play (HH:MM:SS).
+        meta:
+          dimension:
+            type: timestamp
       - name: yard_line
-        description: "Text description of the yard line (e.g., 'NE 20')."
+        description: Text description of the yard line (e.g., 'NE 20').
+        meta:
+          dimension:
+            type: string
       - name: yards_to_go
-        description: "Yards needed to achieve a first down."
+        description: Yards needed to achieve a first down.
+        meta:
+          dimension:
+            type: number
       - name: drive_net_yards
-        description: "Net yards gained on the current drive up to this play."
+        description: Net yards gained on the current drive up to this play.
+        meta:
+          dimension:
+            type: number
       - name: play_description
-        description: "Narrative description of the play."
+        description: Narrative description of the play.
+        meta:
+          dimension:
+            type: string
       - name: play_type
-        description: "Type of play (e.g., run, pass, punt, kickoff)."
+        description: Type of play (e.g., run, pass, punt, kickoff).
+        meta:
+          dimension:
+            type: string
       - name: yards_gained
-        description: "Total yards gained on this play."
+        description: Total yards gained on this play.
+        meta:
+          dimension:
+            type: number
       - name: shotgun
-        description: "Flag (0/1) indicating if the play started from shotgun formation."
+        description: Flag (0/1) indicating if the play started from shotgun formation.
+        meta:
+          dimension:
+            type: number
       - name: no_huddle
-        description: "Flag (0/1) if the offense did not huddle prior to the snap."
+        description: Flag (0/1) if the offense did not huddle prior to the snap.
+        meta:
+          dimension:
+            type: number
       - name: qb_dropback
-        description: "Flag (0/1) if the QB dropped back to pass."
+        description: Flag (0/1) if the QB dropped back to pass.
+        meta:
+          dimension:
+            type: number
       - name: qb_kneel
-        description: "Flag (0/1) if the QB took a knee."
+        description: Flag (0/1) if the QB took a knee.
+        meta:
+          dimension:
+            type: number
       - name: qb_spike
-        description: "Flag (0/1) if the QB spiked the ball to stop the clock."
+        description: Flag (0/1) if the QB spiked the ball to stop the clock.
+        meta:
+          dimension:
+            type: number
       - name: qb_scramble
-        description: "Flag (0/1) if the QB scrambled (left the pocket and ran)."
+        description: Flag (0/1) if the QB scrambled (left the pocket and ran).
+        meta:
+          dimension:
+            type: number
       - name: pass_length
-        description: "Categorization of pass distance (short or deep)."
+        description: Categorization of pass distance (short or deep).
+        meta:
+          dimension:
+            type: string
       - name: pass_location
-        description: "Direction of the pass (left, middle, right)."
+        description: Direction of the pass (left, middle, right).
+        meta:
+          dimension:
+            type: string
       - name: air_yards
-        description: "Distance the ball traveled in the air from the line of scrimmage to the point of reception."
+        description: >-
+          Distance the ball traveled in the air from the line of scrimmage to
+          the point of reception.
+        meta:
+          dimension:
+            type: number
       - name: yards_after_catch
-        description: "Yards gained after the reception by the receiver."
+        description: Yards gained after the reception by the receiver.
+        meta:
+          dimension:
+            type: number
       - name: run_location
-        description: "Direction of the run (left, middle, right)."
+        description: Direction of the run (left, middle, right).
+        meta:
+          dimension:
+            type: string
       - name: run_gap
-        description: "Specific gap or lane hit by the rusher."
+        description: Specific gap or lane hit by the rusher.
+        meta:
+          dimension:
+            type: string
       - name: rusher_player_id
-        description: "Unique ID of the rushing player on the play, if applicable."
+        description: Unique ID of the rushing player on the play, if applicable.
+        meta:
+          dimension:
+            type: string
       - name: rusher_player_name
-        description: "Name of the rushing player on the play, if applicable."
+        description: Name of the rushing player on the play, if applicable.
+        meta:
+          dimension:
+            type: string
       - name: receiver_player_id
-        description: "Unique ID of the receiving player on the play, if applicable."
+        description: Unique ID of the receiving player on the play, if applicable.
+        meta:
+          dimension:
+            type: string
       - name: receiver_player_name
-        description: "Name of the receiving player on the play, if applicable."
+        description: Name of the receiving player on the play, if applicable.
+        meta:
+          dimension:
+            type: string
       - name: passer_player_id
-        description: "Unique ID of the passing player on the play, if applicable."
+        description: Unique ID of the passing player on the play, if applicable.
+        meta:
+          dimension:
+            type: string
       - name: passer_player_name
-        description: "Name of the passing player on the play, if applicable."
+        description: Name of the passing player on the play, if applicable.
+        meta:
+          dimension:
+            type: string
       - name: fantasy_player_name
-        description: "Name of a player relevant for fantasy data."
+        description: Name of a player relevant for fantasy data.
+        meta:
+          dimension:
+            type: string
       - name: fantasy_player_id
-        description: "Unique fantasy-related identifier for the player involved in the play."
+        description: Unique fantasy-related identifier for the player involved in the play.
+        meta:
+          dimension:
+            type: string
       - name: touchdown
-        description: "Flag (0/1) if the play resulted in a touchdown."
+        description: Flag (0/1) if the play resulted in a touchdown.
+        meta:
+          dimension:
+            type: number
       - name: rush_touchdown
-        description: "Flag (0/1) if the play resulted in a rushing touchdown."
+        description: Flag (0/1) if the play resulted in a rushing touchdown.
+        meta:
+          dimension:
+            type: number
       - name: pass_touchdown
-        description: "Flag (0/1) if the play resulted in a passing touchdown."
+        description: Flag (0/1) if the play resulted in a passing touchdown.
+        meta:
+          dimension:
+            type: number
       - name: field_goal_result
-        description: "Result of a field goal attempt (made, missed, blocked, etc.)."
+        description: Result of a field goal attempt (made, missed, blocked, etc.).
+        meta:
+          dimension:
+            type: string
       - name: kick_distance
-        description: "Distance of the kick attempt."
+        description: Distance of the kick attempt.
+        meta:
+          dimension:
+            type: number
       - name: extra_point_result
-        description: "Result of the extra point attempt."
+        description: Result of the extra point attempt.
+        meta:
+          dimension:
+            type: string
       - name: two_point_conversion_result
-        description: "Result of a two-point conversion attempt."
+        description: Result of a two-point conversion attempt.
+        meta:
+          dimension:
+            type: string
       - name: rush
-        description: "Flag (0/1) indicating if this play involved a rush."
+        description: Flag (0/1) indicating if this play involved a rush.
+        meta:
+          dimension:
+            type: number
       - name: rush_attempt
-        description: "Flag (0/1) indicating a rushing attempt counted for stats."
+        description: Flag (0/1) indicating a rushing attempt counted for stats.
+        meta:
+          dimension:
+            type: number
       - name: rushing_yards
-        description: "Yards gained by rushing on this play."
+        description: Yards gained by rushing on this play.
+        meta:
+          dimension:
+            type: number
       - name: pass_attempt
-        description: "Flag (0/1) if a pass attempt was made on this play."
+        description: Flag (0/1) if a pass attempt was made on this play.
+        meta:
+          dimension:
+            type: number
       - name: incomplete_pass
-        description: "Flag (0/1) if the pass was incomplete."
+        description: Flag (0/1) if the pass was incomplete.
+        meta:
+          dimension:
+            type: number
       - name: complete_pass
-        description: "Flag (0/1) if the pass was completed."
+        description: Flag (0/1) if the pass was completed.
+        meta:
+          dimension:
+            type: number
       - name: penalty
-        description: "Flag (0/1) if a penalty occurred on this play."
+        description: Flag (0/1) if a penalty occurred on this play.
+        meta:
+          dimension:
+            type: number
       - name: penalty_type
-        description: "Type of penalty called during this play."
+        description: Type of penalty called during this play.
+        meta:
+          dimension:
+            type: string
       - name: home_timeouts_remaining
-        description: "Number of timeouts the home team had remaining at this point."
+        description: Number of timeouts the home team had remaining at this point.
+        meta:
+          dimension:
+            type: number
       - name: away_timeouts_remaining
-        description: "Number of timeouts the away team had remaining at this point."
+        description: Number of timeouts the away team had remaining at this point.
+        meta:
+          dimension:
+            type: number
       - name: possession_team_timeouts
-        description: "Number of timeouts remaining for the possession team at this point."
+        description: Number of timeouts remaining for the possession team at this point.
+        meta:
+          dimension:
+            type: number
       - name: defending_team_timeouts
-        description: "Number of timeouts remaining for the defending team at this point."
+        description: Number of timeouts remaining for the defending team at this point.
+        meta:
+          dimension:
+            type: number
       - name: total_home_score
-        description: "Home team's total score so far in the game."
+        description: Home team's total score so far in the game.
+        meta:
+          dimension:
+            type: number
       - name: total_away_score
-        description: "Away team's total score so far in the game."
+        description: Away team's total score so far in the game.
+        meta:
+          dimension:
+            type: number
       - name: possession_team_score
-        description: "Score of the team currently in possession."
+        description: Score of the team currently in possession.
+        meta:
+          dimension:
+            type: number
       - name: defending_team_score
-        description: "Score of the team currently on defense."
+        description: Score of the team currently on defense.
+        meta:
+          dimension:
+            type: number
       - name: score_differential
-        description: "Score difference (possession_team_score - defending_team_score) before the play."
+        description: >-
+          Score difference (possession_team_score - defending_team_score) before
+          the play.
+        meta:
+          dimension:
+            type: number
       - name: expected_points
-        description: "Expected points for the offense before the play started."
+        description: Expected points for the offense before the play started.
+        meta:
+          dimension:
+            type: number
       - name: expected_points_added
-        description: "Expected points added (EPA) by this play."
+        description: Expected points added (EPA) by this play.
+        meta:
+          dimension:
+            type: number
       - name: total_home_expected_points_added
-        description: "Cumulative EPA for the home team so far."
+        description: Cumulative EPA for the home team so far.
+        meta:
+          dimension:
+            type: number
       - name: total_away_expected_points_added
-        description: "Cumulative EPA for the away team so far."
+        description: Cumulative EPA for the away team so far.
+        meta:
+          dimension:
+            type: number
       - name: air_expected_points_added
-        description: "EPA attributed to the air yards portion of the pass."
+        description: EPA attributed to the air yards portion of the pass.
+        meta:
+          dimension:
+            type: number
       - name: yards_after_catch_expected_points_added
-        description: "EPA attributed to the yards after catch portion of the play."
+        description: EPA attributed to the yards after catch portion of the play.
+        meta:
+          dimension:
+            type: string
       - name: win_probability
-        description: "Win probability of the possession team before the play."
+        description: Win probability of the possession team before the play.
+        meta:
+          dimension:
+            type: string
       - name: defensive_win_probability
-        description: "Win probability of the defending team before the play."
+        description: Win probability of the defending team before the play.
+        meta:
+          dimension:
+            type: string
       - name: home_win_probability
-        description: "Win probability for the home team before the play."
+        description: Win probability for the home team before the play.
+        meta:
+          dimension:
+            type: string
       - name: away_win_probability
-        description: "Win probability for the away team before the play."
+        description: Win probability for the away team before the play.
+        meta:
+          dimension:
+            type: string
       - name: win_probability_added
-        description: "Change in win probability (WPA) resulting from this play."
+        description: Change in win probability (WPA) resulting from this play.
+        meta:
+          dimension:
+            type: string
       - name: in_red_zone
-        description: "Flag (TRUE/FALSE) indicating if the offense was in the red zone (<= 20 yards to goal) at the start of the play."
-
+        description: >-
+          Flag (TRUE/FALSE) indicating if the offense was in the red zone (<= 20
+          yards to goal) at the start of the play.
+        meta:
+          dimension:
+            type: boolean
   - name: stg_player_stats_by_game
-    description: "Staging model for player-level statistics by game, providing standardized player information and performance metrics."
+    description: >-
+      Staging model for player-level statistics by game, providing standardized
+      player information and performance metrics.
     columns:
       - name: player_id
-        description: "Unique identifier for the player."
+        description: Unique identifier for the player.
+        meta:
+          dimension:
+            type: string
       - name: player_name
-        description: "Player's display name."
+        description: Player's display name.
+        meta:
+          dimension:
+            type: string
       - name: first_name
-        description: "Player's first name."
+        description: Player's first name.
+        meta:
+          dimension:
+            type: string
       - name: last_name
-        description: "Player's last name."
+        description: Player's last name.
+        meta:
+          dimension:
+            type: string
       - name: headshot_url
-        description: "URL for the player's headshot image."
+        description: URL for the player's headshot image.
+        meta:
+          dimension:
+            type: string
       - name: headshot_html
-        description: "HTML for the player's headshot image."
+        description: HTML for the player's headshot image.
+        meta:
+          dimension:
+            type: string
       - name: headshot_md
-        description: "Markdown for the player's headshot image."
+        description: Markdown for the player's headshot image.
+        meta:
+          dimension:
+            type: string
       - name: jersey_number
-        description: "Player's jersey number."
+        description: Player's jersey number.
+        meta:
+          dimension:
+            type: number
       - name: player_status
-        description: "Player’s game status (e.g., active, inactive)."
+        description: Player’s game status (e.g., active, inactive).
+        meta:
+          dimension:
+            type: string
       - name: status_description_abbr
-        description: "Abbreviated status description."
+        description: Abbreviated status description.
+        meta:
+          dimension:
+            type: string
       - name: height
-        description: "Player's height in inches."
+        description: Player's height in inches.
+        meta:
+          dimension:
+            type: number
       - name: player_weight
-        description: "Player's weight in pounds."
+        description: Player's weight in pounds.
+        meta:
+          dimension:
+            type: number
       - name: age
-        description: "Player's age at the time of the game."
+        description: Player's age at the time of the game.
+        meta:
+          dimension:
+            type: number
       - name: birth_date
-        description: "Player's birth date."
+        description: Player's birth date.
+        meta:
+          dimension:
+            type: date
       - name: college
-        description: "College the player attended."
+        description: College the player attended.
+        meta:
+          dimension:
+            type: string
       - name: years_experience
-        description: "Years of experience in the league."
+        description: Years of experience in the league.
+        meta:
+          dimension:
+            type: number
       - name: entry_year
-        description: "Year the player entered the league."
+        description: Year the player entered the league.
+        meta:
+          dimension:
+            type: number
       - name: rookie_year
-        description: "The player's rookie season."
+        description: The player's rookie season.
+        meta:
+          dimension:
+            type: number
       - name: draft_team
-        description: "Team that drafted the player."
+        description: Team that drafted the player.
+        meta:
+          dimension:
+            type: string
       - name: draft_number
-        description: "Draft pick number used to select the player."
+        description: Draft pick number used to select the player.
+        meta:
+          dimension:
+            type: number
       - name: position
-        description: "Player's position (e.g., QB, RB, WR, TE)."
+        description: Player's position (e.g., QB, RB, WR, TE).
+        meta:
+          dimension:
+            type: string
       - name: position_group
-        description: "High-level position group (e.g., skill players, QBs)."
+        description: High-level position group (e.g., skill players, QBs).
+        meta:
+          dimension:
+            type: string
       - name: team
-        description: "The player's team at the time of the game."
+        description: The player's team at the time of the game.
+        meta:
+          dimension:
+            type: string
       - name: recent_team
-        description: "The player's most recent team."
+        description: The player's most recent team.
+        meta:
+          dimension:
+            type: string
       - name: season
-        description: "Season year for these stats."
+        description: Season year for these stats.
+        meta:
+          dimension:
+            type: number
       - name: season_week
-        description: "Week of the season for these stats."
+        description: Week of the season for these stats.
+        meta:
+          dimension:
+            type: number
       - name: season_type
-        description: "Indicates whether stats are from regular or postseason."
+        description: Indicates whether stats are from regular or postseason.
+        meta:
+          dimension:
+            type: string
       - name: game_type
-        description: "Type of the game (e.g., Regular, Postseason)."
+        description: Type of the game (e.g., Regular, Postseason).
+        meta:
+          dimension:
+            type: string
       - name: opponent_team
-        description: "Opponent team for that game."
+        description: Opponent team for that game.
+        meta:
+          dimension:
+            type: string
       - name: completions
-        description: "Number of completed passes."
+        description: Number of completed passes.
+        meta:
+          dimension:
+            type: number
       - name: pass_attempts
-        description: "Number of pass attempts."
+        description: Number of pass attempts.
+        meta:
+          dimension:
+            type: number
       - name: pass_yards
-        description: "Total passing yards."
+        description: Total passing yards.
+        meta:
+          dimension:
+            type: number
       - name: passing_air_yards
-        description: "Total air yards passed."
+        description: Total air yards passed.
+        meta:
+          dimension:
+            type: number
       - name: passing_yards_after_catch
-        description: "Yards gained after the catch on passing plays."
+        description: Yards gained after the catch on passing plays.
+        meta:
+          dimension:
+            type: number
       - name: passing_first_downs
-        description: "First downs earned via passing."
+        description: First downs earned via passing.
+        meta:
+          dimension:
+            type: number
       - name: passing_epa
-        description: "Expected points added via passing."
+        description: Expected points added via passing.
+        meta:
+          dimension:
+            type: number
       - name: passing_2pt_conversions
-        description: "Number of successful 2-point conversions via pass."
+        description: Number of successful 2-point conversions via pass.
+        meta:
+          dimension:
+            type: number
       - name: interceptions
-        description: "Number of interceptions thrown."
+        description: Number of interceptions thrown.
+        meta:
+          dimension:
+            type: number
       - name: pacr
-        description: "Passing air conversion ratio (an efficiency metric)."
+        description: Passing air conversion ratio (an efficiency metric).
+        meta:
+          dimension:
+            type: number
       - name: dakota
-        description: "A proprietary QB performance metric."
+        description: A proprietary QB performance metric.
+        meta:
+          dimension:
+            type: string
       - name: sacks
-        description: "Number of times the QB was sacked."
+        description: Number of times the QB was sacked.
+        meta:
+          dimension:
+            type: number
       - name: sack_yards
-        description: "Yards lost due to sacks."
+        description: Yards lost due to sacks.
+        meta:
+          dimension:
+            type: number
       - name: sack_fumbles
-        description: "Number of fumbles occurring on sacks."
+        description: Number of fumbles occurring on sacks.
+        meta:
+          dimension:
+            type: number
       - name: sack_fumbles_lost
-        description: "Number of sack-related fumbles lost."
+        description: Number of sack-related fumbles lost.
+        meta:
+          dimension:
+            type: number
       - name: carries
-        description: "Number of rushing attempts."
+        description: Number of rushing attempts.
+        meta:
+          dimension:
+            type: number
       - name: rushing_yards
-        description: "Total rushing yards gained."
+        description: Total rushing yards gained.
+        meta:
+          dimension:
+            type: number
       - name: rushing_tds
-        description: "Number of rushing touchdowns."
+        description: Number of rushing touchdowns.
+        meta:
+          dimension:
+            type: number
       - name: rushing_fumbles
-        description: "Fumbles while rushing."
+        description: Fumbles while rushing.
+        meta:
+          dimension:
+            type: number
       - name: rushing_fumbles_lost
-        description: "Number of rushing fumbles lost."
+        description: Number of rushing fumbles lost.
+        meta:
+          dimension:
+            type: number
       - name: rushing_first_downs
-        description: "First downs earned via rushing."
+        description: First downs earned via rushing.
+        meta:
+          dimension:
+            type: number
       - name: rushing_epa
-        description: "Expected points added via rushing."
+        description: Expected points added via rushing.
+        meta:
+          dimension:
+            type: number
       - name: rushing_2pt_conversions
-        description: "Number of successful rushing 2-point conversions."
+        description: Number of successful rushing 2-point conversions.
+        meta:
+          dimension:
+            type: number
       - name: receptions
-        description: "Number of caught passes."
+        description: Number of caught passes.
+        meta:
+          dimension:
+            type: number
       - name: targets
-        description: "Number of times the player was targeted on a pass."
+        description: Number of times the player was targeted on a pass.
+        meta:
+          dimension:
+            type: number
       - name: receiving_yards
-        description: "Total yards gained through receptions."
+        description: Total yards gained through receptions.
+        meta:
+          dimension:
+            type: number
       - name: receiving_tds
-        description: "Number of receiving touchdowns."
+        description: Number of receiving touchdowns.
+        meta:
+          dimension:
+            type: number
       - name: receiving_fumbles
-        description: "Number of fumbles after a reception."
+        description: Number of fumbles after a reception.
+        meta:
+          dimension:
+            type: number
       - name: receiving_fumbles_lost
-        description: "Number of receiving fumbles lost."
+        description: Number of receiving fumbles lost.
+        meta:
+          dimension:
+            type: number
       - name: receiving_air_yards
-        description: "Air yards attributed to this player's targets."
+        description: Air yards attributed to this player's targets.
+        meta:
+          dimension:
+            type: number
       - name: receiving_yards_after_catch
-        description: "Yards gained after the catch on receptions."
+        description: Yards gained after the catch on receptions.
+        meta:
+          dimension:
+            type: number
       - name: receiving_first_downs
-        description: "First downs earned via receptions."
+        description: First downs earned via receptions.
+        meta:
+          dimension:
+            type: number
       - name: receiving_epa
-        description: "Expected points added via receiving."
+        description: Expected points added via receiving.
+        meta:
+          dimension:
+            type: number
       - name: receiving_2pt_conversions
-        description: "Number of successful 2-point conversions via reception."
+        description: Number of successful 2-point conversions via reception.
+        meta:
+          dimension:
+            type: number
       - name: racr
-        description: "Receiver air conversion ratio (receiving efficiency metric)."
+        description: Receiver air conversion ratio (receiving efficiency metric).
+        meta:
+          dimension:
+            type: number
       - name: target_share
-        description: "Percentage of team targets this player received."
+        description: Percentage of team targets this player received.
+        meta:
+          dimension:
+            type: number
       - name: air_yards_share
-        description: "Percentage of team air yards this player accounted for."
+        description: Percentage of team air yards this player accounted for.
+        meta:
+          dimension:
+            type: number
       - name: wopr
-        description: "Weighted Opportunity Rating for the player."
+        description: Weighted Opportunity Rating for the player.
+        meta:
+          dimension:
+            type: number
       - name: special_teams_tds
-        description: "Number of touchdowns scored on special teams."
+        description: Number of touchdowns scored on special teams.
+        meta:
+          dimension:
+            type: number
       - name: fantasy_points
-        description: "Standard fantasy football points scored."
+        description: Standard fantasy football points scored.
+        meta:
+          dimension:
+            type: number
       - name: fantasy_points_ppr
-        description: "Fantasy points in PPR scoring format."
+        description: Fantasy points in PPR scoring format.
+        meta:
+          dimension:
+            type: number
       - name: espn_id
-        description: "Player's ESPN ID."
+        description: Player's ESPN ID.
+        meta:
+          dimension:
+            type: number
       - name: sportradar_id
-        description: "Player's Sportradar ID."
+        description: Player's Sportradar ID.
+        meta:
+          dimension:
+            type: string
       - name: yahoo_id
-        description: "Player's Yahoo ID."
+        description: Player's Yahoo ID.
+        meta:
+          dimension:
+            type: number
       - name: rotowire_id
-        description: "Player's Rotowire ID."
+        description: Player's Rotowire ID.
+        meta:
+          dimension:
+            type: number
       - name: pff_id
-        description: "Player's Pro Football Focus ID."
+        description: Player's Pro Football Focus ID.
+        meta:
+          dimension:
+            type: number
       - name: pfr_id
-        description: "Player's Pro-Football-Reference ID."
+        description: Player's Pro-Football-Reference ID.
+        meta:
+          dimension:
+            type: string
       - name: fantasy_data_id
-        description: "Player's FantasyData ID."
+        description: Player's FantasyData ID.
+        meta:
+          dimension:
+            type: number
       - name: sleeper_id
-        description: "Player's Sleeper fantasy platform ID."
+        description: Player's Sleeper fantasy platform ID.
+        meta:
+          dimension:
+            type: number
       - name: esb_id
-        description: "Another external system ID (ESB)."
+        description: Another external system ID (ESB).
+        meta:
+          dimension:
+            type: string
       - name: gsis_it_id
-        description: "NFL GSIS (Game Statistics & Information System) ID."
+        description: NFL GSIS (Game Statistics & Information System) ID.
+        meta:
+          dimension:
+            type: number
       - name: smart_id
-        description: "A unique identifier used internally or externally."
+        description: A unique identifier used internally or externally.
+        meta:
+          dimension:
+            type: string
