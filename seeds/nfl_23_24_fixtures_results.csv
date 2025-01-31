@@ -1,0 +1,273 @@
+round_number,date,time,location,home_team,away_team,home_team_score,away_team_score
+1,2023-09-08,00:20,GEHA Field at Arrowhead Stadium,KC,DET,20,21
+1,2023-09-10,17:00,Mercedes-Benz Stadium,ATL,CAR,24,10
+1,2023-09-10,17:00,M&T Bank Stadium,BAL,HOU,25,9
+1,2023-09-10,17:00,Cleveland Browns Stadium,CLE,CIN,24,3
+1,2023-09-10,17:00,Lucas Oil Stadium,IND,JAX,21,31
+1,2023-09-10,17:00,U.S. Bank Stadium,MIN,TB,17,20
+1,2023-09-10,17:00,Caesars Superdome,NO,TEN,16,15
+1,2023-09-10,17:00,Acrisure Stadium,PIT,SF,7,30
+1,2023-09-10,17:00,FedExField,WAS,ARI,20,16
+1,2023-09-10,20:25,Soldier Field,CHI,GB,20,38
+1,2023-09-10,20:25,Empower Field at Mile High,DEN,LV,16,17
+1,2023-09-10,20:25,SoFi Stadium,LAC,MIA,34,36
+1,2023-09-10,20:25,Gillette Stadium,NE,PHI,20,25
+1,2023-09-10,20:25,Lumen Field,SEA,LA,13,30
+1,2023-09-11,00:20,MetLife Stadium,NYG,DAL,0,40
+1,2023-09-12,00:15,MetLife Stadium,NYJ,BUF,22,16
+2,2023-09-15,00:15,Lincoln Financial Field,PHI,MIN,34,28
+2,2023-09-17,17:00,Mercedes-Benz Stadium,ATL,GB,25,24
+2,2023-09-17,17:00,Highmark Stadium,BUF,LV,38,10
+2,2023-09-17,17:00,Paycor Stadium,CIN,BAL,24,27
+2,2023-09-17,17:00,Ford Field,DET,SEA,31,37
+2,2023-09-17,17:00,NRG Stadium,HOU,IND,20,31
+2,2023-09-17,17:00,EverBank Stadium,JAX,KC,9,17
+2,2023-09-17,17:00,Raymond James Stadium,TB,CHI,27,17
+2,2023-09-17,17:00,Nissan Stadium,TEN,LAC,27,24
+2,2023-09-17,20:05,State Farm Stadium,ARI,NYG,28,31
+2,2023-09-17,20:05,SoFi Stadium,LA,SF,23,30
+2,2023-09-17,20:25,AT&T Stadium,DAL,NYJ,30,10
+2,2023-09-17,20:25,Empower Field at Mile High,DEN,WAS,33,35
+2,2023-09-18,00:20,Gillette Stadium,NE,MIA,17,24
+2,2023-09-18,23:15,Bank of America Stadium,CAR,NO,17,20
+2,2023-09-19,00:15,Acrisure Stadium,PIT,CLE,26,22
+3,2023-09-22,00:15,Levi's® Stadium,SF,NYG,30,12
+3,2023-09-24,17:00,M&T Bank Stadium,BAL,IND,19,22
+3,2023-09-24,17:00,Cleveland Browns Stadium,CLE,TEN,27,3
+3,2023-09-24,17:00,Ford Field,DET,ATL,20,6
+3,2023-09-24,17:00,Lambeau Field,GB,NO,18,17
+3,2023-09-24,17:00,EverBank Stadium,JAX,HOU,17,37
+3,2023-09-24,17:00,Hard Rock Stadium,MIA,DEN,70,20
+3,2023-09-24,17:00,U.S. Bank Stadium,MIN,LAC,24,28
+3,2023-09-24,17:00,MetLife Stadium,NYJ,NE,10,15
+3,2023-09-24,17:00,FedExField,WAS,BUF,3,37
+3,2023-09-24,20:05,Lumen Field,SEA,CAR,37,27
+3,2023-09-24,20:25,State Farm Stadium,ARI,DAL,28,16
+3,2023-09-24,20:25,GEHA Field at Arrowhead Stadium,KC,CHI,41,10
+3,2023-09-25,00:20,Allegiant Stadium,LV,PIT,18,23
+3,2023-09-25,23:15,Raymond James Stadium,TB,PHI,11,25
+3,2023-09-26,00:15,Paycor Stadium,CIN,LA,19,16
+4,2023-09-29,00:15,Lambeau Field,GB,DET,20,34
+4,2023-10-01,13:30,Wembley Stadium,JAX,ATL,23,7
+4,2023-10-01,17:00,Highmark Stadium,BUF,MIA,48,20
+4,2023-10-01,17:00,Bank of America Stadium,CAR,MIN,13,21
+4,2023-10-01,17:00,Soldier Field,CHI,DEN,28,31
+4,2023-10-01,17:00,Cleveland Browns Stadium,CLE,BAL,3,28
+4,2023-10-01,17:00,NRG Stadium,HOU,PIT,30,6
+4,2023-10-01,17:00,Lucas Oil Stadium,IND,LA,23,29
+4,2023-10-01,17:00,Caesars Superdome,NO,TB,9,26
+4,2023-10-01,17:00,Lincoln Financial Field,PHI,WAS,34,31
+4,2023-10-01,17:00,Nissan Stadium,TEN,CIN,27,3
+4,2023-10-01,20:05,SoFi Stadium,LAC,LV,24,17
+4,2023-10-01,20:25,AT&T Stadium,DAL,NE,38,3
+4,2023-10-01,20:25,Levi's® Stadium,SF,ARI,35,16
+4,2023-10-02,00:20,MetLife Stadium,NYJ,KC,20,23
+4,2023-10-03,00:15,MetLife Stadium,NYG,SEA,3,24
+5,2023-10-06,00:15,FedExField,WAS,CHI,20,40
+5,2023-10-08,13:30,Tottenham Hotspur Stadium,BUF,JAX,20,25
+5,2023-10-08,17:00,Mercedes-Benz Stadium,ATL,HOU,21,19
+5,2023-10-08,17:00,Ford Field,DET,CAR,42,24
+5,2023-10-08,17:00,Lucas Oil Stadium,IND,TEN,23,16
+5,2023-10-08,17:00,Hard Rock Stadium,MIA,NYG,31,16
+5,2023-10-08,17:00,Gillette Stadium,NE,NO,0,34
+5,2023-10-08,17:00,Acrisure Stadium,PIT,BAL,17,10
+5,2023-10-08,20:05,State Farm Stadium,ARI,CIN,20,34
+5,2023-10-08,20:05,SoFi Stadium,LA,PHI,14,23
+5,2023-10-08,20:25,Empower Field at Mile High,DEN,NYJ,21,31
+5,2023-10-08,20:25,U.S. Bank Stadium,MIN,KC,20,27
+5,2023-10-09,00:20,Levi's® Stadium,SF,DAL,42,10
+5,2023-10-10,00:15,Allegiant Stadium,LV,GB,17,13
+6,2023-10-13,00:15,GEHA Field at Arrowhead Stadium,KC,DEN,19,8
+6,2023-10-15,13:30,Tottenham Hotspur Stadium,TEN,BAL,16,24
+6,2023-10-15,17:00,Mercedes-Benz Stadium,ATL,WAS,16,24
+6,2023-10-15,17:00,Soldier Field,CHI,MIN,13,19
+6,2023-10-15,17:00,Paycor Stadium,CIN,SEA,17,13
+6,2023-10-15,17:00,Cleveland Browns Stadium,CLE,SF,19,17
+6,2023-10-15,17:00,NRG Stadium,HOU,NO,20,13
+6,2023-10-15,17:00,EverBank Stadium,JAX,IND,37,20
+6,2023-10-15,17:00,Hard Rock Stadium,MIA,CAR,42,21
+6,2023-10-15,20:05,Allegiant Stadium,LV,NE,21,17
+6,2023-10-15,20:25,SoFi Stadium,LA,ARI,26,9
+6,2023-10-15,20:25,MetLife Stadium,NYJ,PHI,20,14
+6,2023-10-15,20:25,Raymond James Stadium,TB,DET,6,20
+6,2023-10-16,00:20,Highmark Stadium,BUF,NYG,14,9
+6,2023-10-17,00:15,SoFi Stadium,LAC,DAL,17,20
+7,2023-10-20,00:15,Caesars Superdome,NO,JAX,24,31
+7,2023-10-22,17:00,M&T Bank Stadium,BAL,DET,38,6
+7,2023-10-22,17:00,Soldier Field,CHI,LV,30,12
+7,2023-10-22,17:00,Lucas Oil Stadium,IND,CLE,38,39
+7,2023-10-22,17:00,Gillette Stadium,NE,BUF,29,25
+7,2023-10-22,17:00,MetLife Stadium,NYG,WAS,14,7
+7,2023-10-22,17:00,Raymond James Stadium,TB,ATL,13,16
+7,2023-10-22,20:05,SoFi Stadium,LA,PIT,17,24
+7,2023-10-22,20:05,Lumen Field,SEA,ARI,20,10
+7,2023-10-22,20:25,Empower Field at Mile High,DEN,GB,19,17
+7,2023-10-22,20:25,GEHA Field at Arrowhead Stadium,KC,LAC,31,17
+7,2023-10-23,00:20,Lincoln Financial Field,PHI,MIA,31,17
+7,2023-10-24,00:15,U.S. Bank Stadium,MIN,SF,22,17
+8,2023-10-27,00:15,Highmark Stadium,BUF,TB,24,18
+8,2023-10-29,17:00,Bank of America Stadium,CAR,HOU,15,13
+8,2023-10-29,17:00,AT&T Stadium,DAL,LA,43,20
+8,2023-10-29,17:00,Lambeau Field,GB,MIN,10,24
+8,2023-10-29,17:00,Lucas Oil Stadium,IND,NO,27,38
+8,2023-10-29,17:00,Hard Rock Stadium,MIA,NE,31,17
+8,2023-10-29,17:00,MetLife Stadium,NYG,NYJ,10,13
+8,2023-10-29,17:00,Acrisure Stadium,PIT,JAX,10,20
+8,2023-10-29,17:00,Nissan Stadium,TEN,ATL,28,23
+8,2023-10-29,17:00,FedExField,WAS,PHI,31,38
+8,2023-10-29,20:05,Lumen Field,SEA,CLE,24,20
+8,2023-10-29,20:25,State Farm Stadium,ARI,BAL,24,31
+8,2023-10-29,20:25,Empower Field at Mile High,DEN,KC,24,9
+8,2023-10-29,20:25,Levi's® Stadium,SF,CIN,17,31
+8,2023-10-30,00:20,SoFi Stadium,LAC,CHI,30,13
+8,2023-10-31,00:15,Ford Field,DET,LV,26,14
+9,2023-11-03,00:15,Acrisure Stadium,PIT,TEN,20,16
+9,2023-11-05,14:30,Frankfurt Stadium,KC,MIA,21,14
+9,2023-11-05,18:00,Mercedes-Benz Stadium,ATL,MIN,28,31
+9,2023-11-05,18:00,M&T Bank Stadium,BAL,SEA,37,3
+9,2023-11-05,18:00,Cleveland Browns Stadium,CLE,ARI,27,0
+9,2023-11-05,18:00,Lambeau Field,GB,LA,20,3
+9,2023-11-05,18:00,NRG Stadium,HOU,TB,39,37
+9,2023-11-05,18:00,Gillette Stadium,NE,WAS,17,20
+9,2023-11-05,18:00,Caesars Superdome,NO,CHI,24,17
+9,2023-11-05,21:05,Bank of America Stadium,CAR,IND,13,27
+9,2023-11-05,21:25,Allegiant Stadium,LV,NYG,30,6
+9,2023-11-05,21:25,Lincoln Financial Field,PHI,DAL,28,23
+9,2023-11-06,01:20,Paycor Stadium,CIN,BUF,24,18
+9,2023-11-07,01:15,MetLife Stadium,NYJ,LAC,6,27
+10,2023-11-10,01:15,Soldier Field,CHI,CAR,16,13
+10,2023-11-12,14:30,Frankfurt Stadium,NE,IND,6,10
+10,2023-11-12,18:00,M&T Bank Stadium,BAL,CLE,31,33
+10,2023-11-12,18:00,Paycor Stadium,CIN,HOU,27,30
+10,2023-11-12,18:00,EverBank Stadium,JAX,SF,3,34
+10,2023-11-12,18:00,U.S. Bank Stadium,MIN,NO,27,19
+10,2023-11-12,18:00,Acrisure Stadium,PIT,GB,23,19
+10,2023-11-12,18:00,Raymond James Stadium,TB,TEN,20,6
+10,2023-11-12,21:05,State Farm Stadium,ARI,ATL,25,23
+10,2023-11-12,21:05,SoFi Stadium,LAC,DET,38,41
+10,2023-11-12,21:25,AT&T Stadium,DAL,NYG,49,17
+10,2023-11-12,21:25,Lumen Field,SEA,WAS,29,26
+10,2023-11-13,01:20,Allegiant Stadium,LV,NYJ,16,12
+10,2023-11-14,01:15,Highmark Stadium,BUF,DEN,22,24
+11,2023-11-17,01:15,M&T Bank Stadium,BAL,CIN,34,20
+11,2023-11-19,18:00,Bank of America Stadium,CAR,DAL,10,33
+11,2023-11-19,18:00,Cleveland Browns Stadium,CLE,PIT,13,10
+11,2023-11-19,18:00,Ford Field,DET,CHI,31,26
+11,2023-11-19,18:00,Lambeau Field,GB,LAC,23,20
+11,2023-11-19,18:00,NRG Stadium,HOU,ARI,21,16
+11,2023-11-19,18:00,EverBank Stadium,JAX,TEN,34,14
+11,2023-11-19,18:00,Hard Rock Stadium,MIA,LV,20,13
+11,2023-11-19,18:00,FedExField,WAS,NYG,19,31
+11,2023-11-19,21:05,Levi's® Stadium,SF,TB,27,14
+11,2023-11-19,21:25,Highmark Stadium,BUF,NYJ,32,6
+11,2023-11-19,21:25,SoFi Stadium,LA,SEA,17,16
+11,2023-11-20,01:20,Empower Field at Mile High,DEN,MIN,21,20
+11,2023-11-21,01:15,GEHA Field at Arrowhead Stadium,KC,PHI,17,21
+12,2023-11-23,17:30,Ford Field,DET,GB,22,29
+12,2023-11-23,21:30,AT&T Stadium,DAL,WAS,45,10
+12,2023-11-24,01:20,Lumen Field,SEA,SF,13,31
+12,2023-11-24,20:00,MetLife Stadium,NYJ,MIA,13,34
+12,2023-11-26,18:00,Mercedes-Benz Stadium,ATL,NO,24,15
+12,2023-11-26,18:00,Paycor Stadium,CIN,PIT,10,16
+12,2023-11-26,18:00,NRG Stadium,HOU,JAX,21,24
+12,2023-11-26,18:00,Lucas Oil Stadium,IND,TB,27,20
+12,2023-11-26,18:00,MetLife Stadium,NYG,NE,10,7
+12,2023-11-26,18:00,Nissan Stadium,TEN,CAR,17,10
+12,2023-11-26,21:05,State Farm Stadium,ARI,LA,14,37
+12,2023-11-26,21:05,Empower Field at Mile High,DEN,CLE,29,12
+12,2023-11-26,21:25,Allegiant Stadium,LV,KC,17,31
+12,2023-11-26,21:25,Lincoln Financial Field,PHI,BUF,37,34
+12,2023-11-27,01:20,SoFi Stadium,LAC,BAL,10,20
+12,2023-11-28,01:15,U.S. Bank Stadium,MIN,CHI,10,12
+13,2023-12-01,01:15,AT&T Stadium,DAL,SEA,41,35
+13,2023-12-03,18:00,NRG Stadium,HOU,DEN,22,17
+13,2023-12-03,18:00,Gillette Stadium,NE,LAC,0,6
+13,2023-12-03,18:00,Caesars Superdome,NO,DET,28,33
+13,2023-12-03,18:00,MetLife Stadium,NYJ,ATL,8,13
+13,2023-12-03,18:00,Acrisure Stadium,PIT,ARI,10,24
+13,2023-12-03,18:00,Nissan Stadium,TEN,IND,28,31
+13,2023-12-03,18:00,FedExField,WAS,MIA,15,45
+13,2023-12-03,21:05,Raymond James Stadium,TB,CAR,21,18
+13,2023-12-03,21:25,SoFi Stadium,LA,CLE,36,19
+13,2023-12-03,21:25,Lincoln Financial Field,PHI,SF,19,42
+13,2023-12-04,01:20,Lambeau Field,GB,KC,27,19
+13,2023-12-05,01:15,EverBank Stadium,JAX,CIN,31,34
+14,2023-12-08,01:15,Acrisure Stadium,PIT,NE,18,21
+14,2023-12-10,18:00,Mercedes-Benz Stadium,ATL,TB,25,29
+14,2023-12-10,18:00,M&T Bank Stadium,BAL,LA,37,31
+14,2023-12-10,18:00,Soldier Field,CHI,DET,28,13
+14,2023-12-10,18:00,Paycor Stadium,CIN,IND,34,14
+14,2023-12-10,18:00,Cleveland Browns Stadium,CLE,JAX,31,27
+14,2023-12-10,18:00,Caesars Superdome,NO,CAR,28,6
+14,2023-12-10,18:00,MetLife Stadium,NYJ,HOU,30,6
+14,2023-12-10,21:05,Allegiant Stadium,LV,MIN,0,3
+14,2023-12-10,21:05,Levi's® Stadium,SF,SEA,28,16
+14,2023-12-10,21:25,GEHA Field at Arrowhead Stadium,KC,BUF,17,20
+14,2023-12-10,21:25,SoFi Stadium,LAC,DEN,7,24
+14,2023-12-11,01:20,AT&T Stadium,DAL,PHI,33,13
+14,2023-12-12,01:15,Hard Rock Stadium,MIA,TEN,27,28
+14,2023-12-12,01:15,MetLife Stadium,NYG,GB,24,22
+15,2023-12-15,01:15,Allegiant Stadium,LV,LAC,63,21
+15,2023-12-16,18:00,Paycor Stadium,CIN,MIN,27,24
+15,2023-12-16,21:30,Lucas Oil Stadium,IND,PIT,30,13
+15,2023-12-17,01:15,Ford Field,DET,DEN,42,17
+15,2023-12-17,18:00,Bank of America Stadium,CAR,ATL,9,7
+15,2023-12-17,18:00,Cleveland Browns Stadium,CLE,CHI,20,17
+15,2023-12-17,18:00,Gillette Stadium,NE,KC,17,27
+15,2023-12-17,18:00,Lambeau Field,GB,TB,20,34
+15,2023-12-17,18:00,Hard Rock Stadium,MIA,NYJ,30,0
+15,2023-12-17,18:00,Caesars Superdome,NO,NYG,24,6
+15,2023-12-17,18:00,Nissan Stadium,TEN,HOU,16,19
+15,2023-12-17,21:05,State Farm Stadium,ARI,SF,29,45
+15,2023-12-17,21:05,SoFi Stadium,LA,WAS,28,20
+15,2023-12-17,21:25,Highmark Stadium,BUF,DAL,31,10
+15,2023-12-18,01:20,EverBank Stadium,JAX,BAL,7,23
+15,2023-12-19,01:15,Lumen Field,SEA,PHI,20,17
+16,2023-12-22,01:15,SoFi Stadium,LA,NO,30,22
+16,2023-12-23,21:30,Acrisure Stadium,PIT,CIN,34,11
+16,2023-12-24,01:00,SoFi Stadium,LAC,BUF,22,24
+16,2023-12-24,18:00,Mercedes-Benz Stadium,ATL,IND,29,10
+16,2023-12-24,18:00,Bank of America Stadium,CAR,GB,30,33
+16,2023-12-24,18:00,NRG Stadium,HOU,CLE,22,36
+16,2023-12-24,18:00,U.S. Bank Stadium,MIN,DET,24,30
+16,2023-12-24,18:00,MetLife Stadium,NYJ,WAS,30,28
+16,2023-12-24,18:00,Nissan Stadium,TEN,SEA,17,20
+16,2023-12-24,21:05,Raymond James Stadium,TB,JAX,30,12
+16,2023-12-24,21:25,Soldier Field,CHI,ARI,27,16
+16,2023-12-24,21:25,Hard Rock Stadium,MIA,DAL,22,20
+16,2023-12-25,01:15,Empower Field at Mile High,DEN,NE,23,26
+16,2023-12-25,18:00,GEHA Field at Arrowhead Stadium,KC,LV,14,20
+16,2023-12-25,21:30,Lincoln Financial Field,PHI,NYG,33,25
+16,2023-12-26,01:15,Levi's® Stadium,SF,BAL,19,33
+17,2023-12-29,01:15,Cleveland Browns Stadium,CLE,NYJ,37,20
+17,2023-12-31,01:15,AT&T Stadium,DAL,DET,20,19
+17,2023-12-31,18:00,M&T Bank Stadium,BAL,MIA,56,19
+17,2023-12-31,18:00,Highmark Stadium,BUF,NE,27,21
+17,2023-12-31,18:00,Soldier Field,CHI,ATL,37,17
+17,2023-12-31,18:00,NRG Stadium,HOU,TEN,26,3
+17,2023-12-31,18:00,Lucas Oil Stadium,IND,LV,23,20
+17,2023-12-31,18:00,EverBank Stadium,JAX,CAR,26,0
+17,2023-12-31,18:00,MetLife Stadium,NYG,LA,25,26
+17,2023-12-31,18:00,Lincoln Financial Field,PHI,ARI,31,35
+17,2023-12-31,18:00,Raymond James Stadium,TB,NO,13,23
+17,2023-12-31,18:00,FedExField,WAS,SF,10,27
+17,2023-12-31,21:05,Lumen Field,SEA,PIT,23,30
+17,2023-12-31,21:25,Empower Field at Mile High,DEN,LAC,16,9
+17,2023-12-31,21:25,GEHA Field at Arrowhead Stadium,KC,CIN,25,17
+17,2024-01-01,01:20,U.S. Bank Stadium,MIN,GB,10,33
+18,2024-01-06,21:30,M&T Bank Stadium,BAL,PIT,10,17
+18,2024-01-07,01:15,Lucas Oil Stadium,IND,HOU,19,23
+18,2024-01-07,18:00,Bank of America Stadium,CAR,TB,0,9
+18,2024-01-07,18:00,Paycor Stadium,CIN,CLE,31,14
+18,2024-01-07,18:00,Ford Field,DET,MIN,30,20
+18,2024-01-07,18:00,Gillette Stadium,NE,NYJ,3,17
+18,2024-01-07,18:00,Caesars Superdome,NO,ATL,48,17
+18,2024-01-07,18:00,Nissan Stadium,TEN,JAX,28,20
+18,2024-01-07,21:25,State Farm Stadium,ARI,SEA,20,21
+18,2024-01-07,21:25,Lambeau Field,GB,CHI,17,9
+18,2024-01-07,21:25,SoFi Stadium,LAC,KC,12,13
+18,2024-01-07,21:25,Allegiant Stadium,LV,DEN,27,14
+18,2024-01-07,21:25,MetLife Stadium,NYG,PHI,27,10
+18,2024-01-07,21:25,Levi's® Stadium,SF,LA,20,21
+18,2024-01-07,21:25,FedExField,WAS,DAL,10,38
+18,2024-01-08,01:20,Hard Rock Stadium,MIA,BUF,14,21
