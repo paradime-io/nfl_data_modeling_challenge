@@ -45,9 +45,9 @@ Additional datasets:
 
 ![Home wins vs away wins](images/part1/home-wins-vs-away-wins.png)
 
-![Home wins vs away wins percent](images/part1/home-wins-vs-away-percent.png)
+![Home wins vs away wins percent](images/part1/home-wins-vs-away-wins-percent.png)
 
-![Average height and weight for different positions](images/part1/heights-weight-for-positions.png)
+![Average height and weight for different positions](images/part1/height-weight-for-positions.png)
 
 ### Insights
 [Detail your findings, supported by data and visuals]
