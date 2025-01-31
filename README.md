@@ -124,17 +124,48 @@ I simplified the data by only counting the first reported injury for each player
 
 ### **Injury Trends by Week**  
 
-The first thing I looked at was how many players were **first reported as injured each week**. Here’s what I found:  
+The first thing I looked at was how many players were **first reported as injured each week**.  I noticed a fairly steady trend, with around 30-35 players getting injured per week. There was, however, a slight dip around Week 13.
+
+This could be explained by the fact that Week 13 falls around Thanksgiving, possibly leading to fewer injuries due to the holiday spirit—or maybe just coincidence. Another factor could be the slightly lower number of games played that week, which naturally means fewer chances for injuries. Or perhaps players somehow managed to take it easy for the holidays, though that seems unlikely in the NFL.
+
+Here’s a visualization showing both the number of new injuries and the number of games played each week:
 
 ![Players injured per week](images/part2/players-injured-per-week.png)
 
+### Do Injuries Affect Team Performance?
+
+Next, I compared the number of injured players per team to the number of wins each team had in the regular season. You’d expect that teams with more injuries would struggle more, but the relationship isn’t that straightforward.  
+
+There’s no clear correlation—teams with a higher number of injured players tend to have fewer wins, but it’s not a hard rule. Some teams managed to perform well despite a high number of injuries, while others with relatively fewer injuries still didn’t win many games.  
+
+Here’s a visualization of the relationship between injuries and wins:  
+
 ![Players injured vs team wins](images/part2/players-injured-vs-team-wins.png)
+
+### Which Injuries Are Most Common?
+
+I looked at which types of injuries happened most often and which parts of the body were affected the most. The results weren’t too surprising—legs take the most damage.  
+
+Knee injuries were the most common, followed by thigh injuries (quadriceps and hamstrings). Concussions came in third, with ankle injuries in fourth. The graph below shows how many players suffered injuries to each body part during the regular season.  
 
 ![Injury types](images/part2/injury-types.png)
 
+### How Long Do Injuries Keep Players Out?
+
+Next, I analyzed how long different injuries typically last by counting how many weeks a player was marked out. This led to my biggest surprise: concussions are not the longest-lasting injury.  
+
+On average, players were out for 1.4 weeks with a concussion, while foot, thigh, ankle, knee injuries, and even illnesses kept players sidelined for longer.  
+
+This made me wonder—does the NFL not take concussions seriously enough, or are even mild concussions being reported? I don’t have the medical expertise to say, but it definitely stood out.
+
 ![Injury duration](images/part2/injury-duration.png)
 
-*(Let me know if you want to include specific numbers or visualizations here!)* 🚀
+### Insights
+
+- **Leg injuries dominate**—knee and thigh injuries are the most common, followed by concussions and ankle injuries.  
+- **Injuries don’t always predict team performance**—teams with more injuries tend to win less, but there’s no strict correlation.  
+- **Concussions don’t sideline players for long**—on average, players miss only **1.4 weeks** for a concussion, while foot, thigh, ankle, and knee injuries, as well as illnesses, take longer to recover from.  
+
 
 ## Conclusions
 [Summarize key takeaways and recommendations]
