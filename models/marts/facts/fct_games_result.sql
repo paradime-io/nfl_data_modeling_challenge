@@ -1,6 +1,7 @@
 select
    r.game_id,
    r.game_date,
+   dense_rank() over(order by date_trunc('week', game_date)) as season_week,
    r.season_type,
    r.home_team,
    r.away_team,

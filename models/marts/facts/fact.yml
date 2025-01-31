@@ -137,6 +137,7 @@ models:
         metrics:
           overtime_games:
             type: sum
+    - name: season_week
 
   - name: fct_team_standings
     columns:
@@ -177,6 +178,8 @@ models:
       joins:
         - join: fct_team_standings
           sql_on: ${fct_injuries.team} = ${fct_team_standings.team_abbr}
+        - join: fct_games_result
+          sql_on: ${fct_games_result.season_week} = ${fct_injuries.week}
     columns:
     - name: week
     - name: team
