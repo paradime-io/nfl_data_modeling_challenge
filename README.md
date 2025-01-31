@@ -5,6 +5,11 @@
 2. [Data Sources](#data-sources)
 3. [Methodology](#methodology)
 4. [Visualizations](#visualizations)
+   - [Step One: Understanding the Rules and the Data](#step-one-understanding-the-rules-and-the-data)
+      - [Reconstructing the Season Results](#reconstructing-the-season-results)
+      - [Game Duration and Overtime](#game-duration-and-overtime)
+      - [Does Home-Field Advantage Matter?](#does-home-field-advantage-matter)
+      - [Insights](#insights-1)
 5. [Insights](#insights)
 6. [Conclusions](#conclusions)
 
@@ -53,7 +58,7 @@ The season itself is split into the **regular season** and the **playoffs**. By 
 
 Scoring was another challenge to wrap my head around. You get **6 points for a touchdown**, **3 points for a field goal**, and a few other ways to score that I’m still trying to fully grasp. Let’s just say football rules are not as intuitive as I had hoped!  
 
-### Reconstructing the Season Results  
+#### Reconstructing the Season Results  
 
 For my first real analysis, I aimed to **recreate the results of each game** and compile the **final standings for the AFC and NFC** after the 2023 regular season. I included:  
 
@@ -67,7 +72,7 @@ The good news? My data lined up with what I found on Wikipedia—so at least I d
 
 ![NFC Standings](images/part1/nfc-standings.png)
 
-### Game Duration and Overtime  
+#### Game Duration and Overtime  
 
 I learned that each game consists of **four 15-minute quarters**, and if the game is tied at the end, there can be **overtime**.  
 
@@ -82,7 +87,7 @@ This suggests that overtime is relatively rare. Here are the visualizations of h
 
 ![Regular vs overtime games percent](images/part1/regular-vs-overtime-percent.png)
 
-### Does Home-Field Advantage Matter?
+#### Does Home-Field Advantage Matter?
 
 Next, I looked into how often the **home team wins** compared to the **away team**.  During the **regular season**, home teams won **55%** of the time, while away teams took **45%** of the victories. The advantage is there, but it’s not overwhelming.  
 
@@ -92,7 +97,7 @@ However, in the **postseason**, the gap widened significantly—**home teams won
 
 ![Home wins vs away wins percent](images/part1/home-wins-vs-away-wins-percent.png)
 
-### Just How Big Are NFL Players?
+#### Just How Big Are NFL Players?
 Finally, I analyzed the average height and weight for each position—and let me tell you, there are a lot of positions.
 
 To make sense of the data, I included reference lines at 100 kg (220 lbs) and 140 kg (310 lbs) for weight, and 190 cm (6’3”) and 200 cm (6’7”) for height—helpful for those of us using the metric system.
@@ -101,7 +106,7 @@ The results? All players are undeniably large, but there’s quite a range. Some
 
 ![Average height and weight for different positions](images/part1/height-weight-for-positions.png)
 
-### Insights
+#### Insights 1
 
 - **Football rules are complicated**—I learned the basics, but there’s a lot to keep track of.  
 - **Overtime is rare**—only **5% of regular season** games and **8% of playoff games** went beyond regulation time.  
