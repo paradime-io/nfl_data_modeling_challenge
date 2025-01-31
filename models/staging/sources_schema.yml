@@ -372,3 +372,9 @@ sources:
             description: "Player's age at the time of the game."
 
 
+      - name: NFL_CONTRACTS
+        description: "Player-level offensive statistics aggregated by game from the 2024 season"
+        columns:
+          - name: player_name
+            description: 'Name of the player'
+ 
