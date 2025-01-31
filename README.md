@@ -82,14 +82,31 @@ This suggests that overtime is relatively rare. Here are the visualizations of h
 
 ![Regular vs overtime games percent](images/part1/regular-vs-overtime-percent.png)
 
+### Does Home-Field Advantage Matter?
+
+Next, I looked into how often the **home team wins** compared to the **away team**.  During the **regular season**, home teams won **55%** of the time, while away teams took **45%** of the victories. The advantage is there, but it’s not overwhelming.  
+
+However, in the **postseason**, the gap widened significantly—**home teams won 77%** of the time, leaving away teams with just **23%** of the wins. This suggests that home-field advantage might play a much bigger role in the playoffs.  
+
 ![Home wins vs away wins](images/part1/home-wins-vs-away-wins.png)
 
 ![Home wins vs away wins percent](images/part1/home-wins-vs-away-wins-percent.png)
 
+### Just How Big Are NFL Players?
+Finally, I analyzed the average height and weight for each position—and let me tell you, there are a lot of positions.
+
+To make sense of the data, I included reference lines at 100 kg (220 lbs) and 140 kg (310 lbs) for weight, and 190 cm (6’3”) and 200 cm (6’7”) for height—helpful for those of us using the metric system.
+
+The results? All players are undeniably large, but there’s quite a range. Some positions have players who are "normal-sized" humans, while others are absolute giants. It’s fascinating to see how different body types fit into different roles on the field!
+
 ![Average height and weight for different positions](images/part1/height-weight-for-positions.png)
 
 ### Insights
-[Detail your findings, supported by data and visuals]
+
+- **Football rules are complicated**—I learned the basics, but there’s a lot to keep track of.  
+- **Overtime is rare**—only **5% of regular season** games and **8% of playoff games** went beyond regulation time.  
+- **Home teams have an advantage**, winning **55% of regular season** games and a dominant **77% in the playoffs**.  
+- **NFL players are huge**, but size varies by position—some are within "normal human" range, while others are absolute giants, often exceeding **140 kg (308 lbs) and 200 cm (6'7")**.
 
 ## Conclusions
 [Summarize key takeaways and recommendations]
