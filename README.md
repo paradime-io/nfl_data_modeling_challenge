@@ -9,7 +9,7 @@
       - [Reconstructing the Season Results](#reconstructing-the-season-results)
       - [Game Duration and Overtime](#game-duration-and-overtime)
       - [Does Home-Field Advantage Matter?](#does-home-field-advantage-matter)
-      - [Insights](#insights-1)
+      - [Just How Big Are NFL Players?](#just-how-big-are-nfl-players)
 5. [Insights](#insights)
 6. [Conclusions](#conclusions)
 
