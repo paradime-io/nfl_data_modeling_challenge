@@ -106,17 +106,37 @@ models:
   - name: fct_games_result
     columns:
     - name: game_id
+      meta:
+        metrics:
+          games:
+            type: count_distinct
+    - name: is_away_team_win
     - name: game_date
     - name: season_type
     - name: home_team
-    - name: r.away_team
-    - name: r.total_home_score 
-    - name: r.total_away_score
-    - name: r.winning_team
-    - name:  home_fantasy_points
-    - name:  away_fantasy_points
-    - name:  home_fantasy_points_ppr
-    - name:  away_fantasy_points_ppr
+    - name: away_team
+    - name: total_home_score 
+    - name: total_away_score
+    - name: winning_team
+    - name: home_fantasy_points
+    - name: away_fantasy_points
+    - name: home_fantasy_points_ppr
+    - name: away_fantasy_points_ppr
+    - name: is_home_team_win
+      meta:
+        metrics:
+          home_team_wins:
+            type: sum
+    - name: is_away_team_win
+      meta:
+        metrics:
+          away_team_wins:
+            type: sum
+    - name: is_overtime
+      meta:
+        metrics:
+          overtime_games:
+            type: sum
 
   - name: fct_team_standings
     columns:
@@ -141,6 +161,16 @@ models:
     - name: total_fantasy_points_ppr
     - name: division_rank
     - name: conference_rank
+    - name: home_wins
+      meta:
+        metrics: 
+          total_home_wins:
+            type: sum
+    - name: away_wins
+      meta: 
+        metrics: 
+          total_away_wins:
+            type: sum
 
   - name: fct_injuries
     meta:

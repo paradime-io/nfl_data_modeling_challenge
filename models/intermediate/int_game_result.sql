@@ -1,5 +1,21 @@
+with overtime_games as (
+  select 
+    distinct game_id
+  from {{ ref('stg_play_by_play') }}  
+  where game_half = 'Overtime'
+),
+
+overtime as (
+  select 
+    p.game_id,
+    case when o.game_id is not null then 1 else 0 end as is_overtime
+  from {{ ref('stg_play_by_play') }}  p
+  left join overtime_games o
+  on p.game_id = o.game_id
+)
+
 select distinct 
-  game_id, 
+  p.game_id, 
   game_date, 
   season_type, 
   home_team, 
@@ -8,6 +24,9 @@ select distinct
   case 
     when max(total_home_score) > max(total_away_score) then home_team
     when max(total_home_score) < max(total_away_score) then away_team
-    else null end as winning_team
-from {{ ref('stg_play_by_play') }}
-group by game_id, season_type, home_team, away_team, game_date
+    else null end as winning_team,
+  is_overtime
+from {{ ref('stg_play_by_play') }} p
+join overtime o
+on p.game_id = o.game_id
+group by p.game_id, season_type, home_team, away_team, game_date, is_overtime

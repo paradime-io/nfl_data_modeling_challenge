@@ -20,7 +20,10 @@ select
   total_fantasy_points,
   total_fantasy_points_ppr,
   rank() over(partition by team_division order by wins desc, total_points_scored desc) as division_rank,
-  rank() over(partition by team_conf order by wins desc, total_points_scored desc) as conference_rank
+  rank() over(partition by team_conf order by wins desc, total_points_scored desc) as conference_rank,
+
+  sum(case when winning_team = team_abbr and home_team = team_abbr then 1 end) as home_wins,
+  sum(case when winning_team = team_abbr and away_team = team_abbr then 1 end) as away_wins
 from {{ ref('nfl_teams_2023') }}  t
 join {{ ref('int_game_result') }} g
 on (t.team_abbr = g.home_team or t.team_abbr = g.away_team)
