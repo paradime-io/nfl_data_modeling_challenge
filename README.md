@@ -11,7 +11,7 @@
 ## Introduction
 [Brief overview: What you aimed to achieve and why it matters]
 
-[Getting to know data dashboard](https://app.lightdash.cloud/projects/36657ff5-d0ec-483b-98ad-eb25393cb88c/dashboards/1952d76f-0aad-4234-a6cf-290f5628f897/view)
+[Dashboard 1: Getting to know data](https://app.lightdash.cloud/projects/36657ff5-d0ec-483b-98ad-eb25393cb88c/dashboards/1952d76f-0aad-4234-a6cf-290f5628f897/view)
 
 ## Data Sources
 - Fantasy Football Data (Snowflake):
@@ -35,6 +35,19 @@ Additional datasets:
 ## Visualizations
 ### Getting to know the data
 
+![AFC Standings](images/part1/afc-standings.png)
+
+![NFC Standings](images/part1/nfc-standings.png)
+
+![Regular vs overtime games](images/part1/regular-vs-overtime.png)
+
+![Regular vs overtime games percent](images/part1/regular-vs-overtime-percent.png)
+
+![Home wins vs away wins](images/part1/home-wins-vs-away-wins.png)
+
+![Home wins vs away wins percent](images/part1/home-wins-vs-away-percent.png)
+
+![Average height and weight for different positions](images/part1/heights-weight-for-positions.png)
 
 ### Insights
 [Detail your findings, supported by data and visuals]
