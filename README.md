@@ -60,11 +60,11 @@ Scoring was another challenge to wrap my head around. You get **6 points for a t
 
 #### Reconstructing the Season Results  
 
-For my first real analysis, I aimed to **recreate the results of each game** and compile the **final standings for the AFC and NFC** after the 2023 regular season. I included:  
+For my first real analysis, I aimed to recreate the results of each game and compile the **final standings for the AFC and NFC** after the 2023 regular season. I included:  
 
-- **Number of wins and losses for each team**  
-- **Total points scored and allowed**  
-- **Who qualified for the playoffs**  
+- Number of wins and losses for each team
+- Total points scored and allowed  
+- Who qualified for the playoffs
 
 The good news? My data lined up with what I found on Wikipedia—so at least I didn’t mess up too badly!  
 
@@ -78,8 +78,8 @@ I learned that each game consists of **four 15-minute quarters**, and if the gam
 
 So, how often does a game actually go into overtime? Here’s what I found:  
 
-- Out of **272 regular season games**, **259 ended in regulation**, while **13 went into overtime**—that’s roughly **95% regular time, 5% OT**.  
-- In the **playoffs**, **12 games ended in regular time**, while **1 went to overtime**, making it **92% vs. 8%**.  
+- Out of 272 regular season games, 259 ended in regulation, while 13 went into overtime—that’s roughly **95% regular time, 5% OT**.  
+- In the playoffs, 12 games ended in regular time, while 1 went to overtime, making it **92% vs. 8%**.  
 
 This suggests that overtime is relatively rare. Here are the visualizations of how often games extend beyond regulation:  
 
@@ -109,9 +109,9 @@ The results? All players are undeniably large, but there’s quite a range. Some
 #### Insights 1
 
 - **Football rules are complicated**—I learned the basics, but there’s a lot to keep track of.  
-- **Overtime is rare**—only **5% of regular season** games and **8% of playoff games** went beyond regulation time.  
-- **Home teams have an advantage**, winning **55% of regular season** games and a dominant **77% in the playoffs**.  
-- **NFL players are huge**, but size varies by position—some are within "normal human" range, while others are absolute giants, often exceeding **140 kg (308 lbs) and 200 cm (6'7")**.
+- **Overtime is rare**—only around 6-8% went beyond regulation time.  
+- **Home teams have an advantage**, winning 55% of regular season games and a dominant 77% in the playoffs.  
+- **NFL players are huge**, but size varies by position—some are within "normal human" range, while others are absolute giants, often exceeding 140 kg (310 lbs) and 200 cm (6'7").
 
 ## Conclusions
 [Summarize key takeaways and recommendations]
