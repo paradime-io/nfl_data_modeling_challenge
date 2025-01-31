@@ -25,8 +25,9 @@ I have a confession to make: I’m not American, and I’m not a sports fan. So 
 
 That was pretty much it.  
 
-
+## My Lightdash Dashboards
 [Dashboard 1: Getting to know data](https://app.lightdash.cloud/projects/36657ff5-d0ec-483b-98ad-eb25393cb88c/dashboards/1952d76f-0aad-4234-a6cf-290f5628f897/view)
+[Dashboard 2: NFL Injuries in 2023](https://app.lightdash.cloud/projects/36657ff5-d0ec-483b-98ad-eb25393cb88c/dashboards/4b526e28-a13d-45bb-83f8-14efd23b7e4c/view)
 
 ## Data Sources
 - Fantasy Football Data (Snowflake):
@@ -106,12 +107,34 @@ The results? All players are undeniably large, but there’s quite a range. Some
 
 ![Average height and weight for different positions](images/part1/height-weight-for-positions.png)
 
-#### Insights 1
+#### Insights
 
 - **Football rules are complicated**—I learned the basics, but there’s a lot to keep track of.  
 - **Overtime is rare**—only around 6-8% went beyond regulation time.  
 - **Home teams have an advantage**, winning 55% of regular season games and a dominant 77% in the playoffs.  
 - **NFL players are huge**, but size varies by position—some are within "normal human" range, while others are absolute giants, often exceeding 140 kg (310 lbs) and 200 cm (6'7").
+
+### Injuries in the 2023 Season
+
+For the next part of my analysis, I focused on **injuries**. I imported 2023 injury data from the `nfl_data_package`, which only includes injuries from the **regular season**, so that’s what I’ll be analyzing here.  
+
+To keep things focused, I only looked at **serious injuries**—specifically, injuries that caused a player to be marked **OUT** for that week’s game.  
+
+I simplified the data by only counting the first reported injury for each player and injury type. If the same injury appeared in later weeks, I assumed it was a continuation or recurrence rather than a new injury. Of course, this is an oversimplification, but it helps provide a clear picture of the overall trends.  
+
+### **Injury Trends by Week**  
+
+The first thing I looked at was how many players were **first reported as injured each week**. Here’s what I found:  
+
+![Players injured per week](images/part2/players-injured-per-week.png)
+
+![Players injured vs team wins](images/part2/players-injured-vs-team-wins.png)
+
+![Injury types](images/part2/injury-types.png)
+
+![Injury duration](images/part2/injury-duration.png)
+
+*(Let me know if you want to include specific numbers or visualizations here!)* 🚀
 
 ## Conclusions
 [Summarize key takeaways and recommendations]
