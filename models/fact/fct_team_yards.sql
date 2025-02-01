@@ -18,7 +18,6 @@ aggregated_stats AS (
             ELSE
                 'A'
         END AS home_or_away,
-        play_type,
         SUM(yards_gained)       AS total_yards_gained,
         SUM(passing_yards)      AS total_passing_yards,
         SUM(rushing_yards)      AS total_rushing_yards,
@@ -35,7 +34,7 @@ aggregated_stats AS (
     FROM 
         {{ ref('int_play_by_play_yards') }}
     GROUP BY 
-        1, 2, 3, 4, 5, 6
+        1, 2, 3, 4, 5
     ),
 
 stats_with_game_details AS (
@@ -51,9 +50,56 @@ stats_with_game_details AS (
         {{ ref('int_game_details') }} gd
     ON
         aggs.game_id = gd.game_id
-    )
+    ),
+
+win_or_loss AS (
+    SELECT
+        *,
+        CASE
+            WHEN
+                home_score > away_score
+            THEN
+                1
+            ELSE
+                0
+        END AS home_win,
+        CASE
+            WHEN
+                home_score < away_score
+            THEN
+                1
+            ELSE
+                0
+        END AS home_loss,
+        CASE
+            WHEN
+                home_score = away_score
+            THEN
+                1
+            ELSE
+                0
+        END AS tie,
+        CASE
+            WHEN
+                away_score > home_score
+            THEN
+                1
+            ELSE
+                0
+        END AS away_win,
+        CASE
+            WHEN
+                away_score < home_score
+            THEN
+                1
+            ELSE
+                0
+        END AS away_loss
+    FROM
+        stats_with_game_details
+)
 
 SELECT
     *
 FROM
-    stats_with_game_details
+    win_or_loss

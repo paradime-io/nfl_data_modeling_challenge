@@ -27,11 +27,6 @@ models:
         meta:
           dimension:
             type: string
-      - name: play_type
-        description: ""
-        meta:
-          dimension:
-            type: string
       - name: total_yards_gained
         description: ""
         meta:
@@ -83,6 +78,31 @@ models:
           dimension:
             type: number
       - name: away_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: home_win
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: home_loss
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: tie
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: away_win
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: away_loss
         description: ""
         meta:
           dimension:
