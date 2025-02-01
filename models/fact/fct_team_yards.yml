@@ -1,0 +1,89 @@
+version: 2
+models:
+  - name: fct_team_yards
+    columns:
+      - name: possession_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: possession_team_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: season_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: game_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: home_or_away
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: play_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: total_yards_gained
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_passing_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_rushing_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_penalty_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_rush_attempts
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_targets
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_pass_completions
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: game_date
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: game_details
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: home_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: away_score
+        description: ""
+        meta:
+          dimension:
+            type: number

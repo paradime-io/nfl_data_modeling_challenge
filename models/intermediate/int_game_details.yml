@@ -1,0 +1,29 @@
+version: 2
+models:
+  - name: int_game_details
+    columns:
+      - name: game_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: game_date
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: home_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: away_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: game_details
+        description: ""
+        meta:
+          dimension:
+            type: string

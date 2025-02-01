@@ -15,7 +15,6 @@ renamed AS (
         home_team,
         away_team,
         posteam AS possession_team,
-        posteam_type AS possession_team_type,
         defteam AS defending_team,
 
         -- Field position and game context
@@ -25,31 +24,13 @@ renamed AS (
         -- Play details
         play_type,
         yards_gained,
-        pass_length,
-        pass_location,
-        air_yards,
-        yards_after_catch,
 
         -- Player involvement
-        passer_player_name,
-        passing_yards,        
+        passer_player_name,       
         receiver_player_name,
-        receiving_yards,
-        lateral_rusher_player_name,
-        lateral_rushing_yards,
-        lateral_receiver_player_name,
-        lateral_receiving_yards,
         fantasy_player_name,
 
-        -- Fumbles & penalties
-        fumble_recovery_1_team,
-        fumble_recovery_1_yards,
-        fumble_recovery_1_player_name,
-        fumble_recovery_2_team,
-        fumble_recovery_2_yards,
-        fumble_recovery_2_player_name,
-        return_team,
-        return_yards,
+        -- Penalties
         penalty_team,
         penalty_player_name,
         penalty_yards,
@@ -64,6 +45,7 @@ renamed AS (
         pass_attempt,
         incomplete_pass,
         complete_pass,
+        passing_yards,
 
         -- Red zone indicator
         CASE 

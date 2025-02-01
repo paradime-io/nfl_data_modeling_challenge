@@ -27,11 +27,6 @@ models:
         meta:
           dimension:
             type: string
-      - name: possession_team_type
-        description: ""
-        meta:
-          dimension:
-            type: string
       - name: defending_team
         description: ""
         meta:
@@ -57,26 +52,6 @@ models:
         meta:
           dimension:
             type: number
-      - name: pass_length
-        description: ""
-        meta:
-          dimension:
-            type: string
-      - name: pass_location
-        description: ""
-        meta:
-          dimension:
-            type: string
-      - name: air_yards
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: yards_after_catch
-        description: ""
-        meta:
-          dimension:
-            type: number
       - name: passer_player_name
         description: ""
         meta:
@@ -92,76 +67,11 @@ models:
         meta:
           dimension:
             type: string
-      - name: receiving_yards
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: lateral_rusher_player_name
-        description: ""
-        meta:
-          dimension:
-            type: string
-      - name: lateral_rushing_yards
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: lateral_receiver_player_name
-        description: ""
-        meta:
-          dimension:
-            type: string
-      - name: lateral_receiving_yards
-        description: ""
-        meta:
-          dimension:
-            type: number
       - name: fantasy_player_name
         description: ""
         meta:
           dimension:
             type: string
-      - name: fumble_recovery_1_team
-        description: ""
-        meta:
-          dimension:
-            type: string
-      - name: fumble_recovery_1_yards
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: fumble_recovery_1_player_name
-        description: ""
-        meta:
-          dimension:
-            type: string
-      - name: fumble_recovery_2_team
-        description: ""
-        meta:
-          dimension:
-            type: string
-      - name: fumble_recovery_2_yards
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: fumble_recovery_2_player_name
-        description: ""
-        meta:
-          dimension:
-            type: string
-      - name: return_team
-        description: ""
-        meta:
-          dimension:
-            type: string
-      - name: return_yards
-        description: ""
-        meta:
-          dimension:
-            type: number
       - name: penalty_team
         description: ""
         meta:
