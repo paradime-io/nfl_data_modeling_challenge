@@ -1,6 +1,6 @@
 version: 2
 models:
-  - name: fct_team_yards
+  - name: int_team_play_by_play_yards
     columns:
       - name: possession_team
         description: ""
@@ -62,6 +62,16 @@ models:
         meta:
           dimension:
             type: number
+      - name: total_adj_passing_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_adj_rushing_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
       - name: game_date
         description: ""
         meta:
@@ -103,36 +113,6 @@ models:
           dimension:
             type: number
       - name: away_loss
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: total_adj_passing_yards
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: total_adj_rushing_yards
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: opponent_yards_gained
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: yards_win
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: yards_loss
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: yards_tied
         description: ""
         meta:
           dimension:
