@@ -10,6 +10,11 @@
       - [Game Duration and Overtime](#game-duration-and-overtime)
       - [Does Home-Field Advantage Matter?](#does-home-field-advantage-matter)
       - [Just How Big Are NFL Players?](#just-how-big-are-nfl-players)
+   - [Injuries in the 2023 Season](#injuries-in-the-2023-season)
+      - [Injury Trends by Week](#injury-trends-by-week)
+      - [Do Injuries Affect Team Performance?](#do-injuries-affect-team-performance)
+      - [Which Injuries Are Most Common?](#which-injuries-are-most-common)
+      - [How Long Do Injuries Keep Players Out?](#how-long-do-injuries-keep-players-out)
 5. [Insights](#insights)
 6. [Conclusions](#conclusions)
 
@@ -25,8 +30,12 @@ I have a confession to make: I’m not American, and I’m not a sports fan. So 
 
 That was pretty much it.  
 
+My goal was to get familiar with the data and analyze injuries—especially concussions. I’d heard they were a big concern in football, so I wanted to see how common they actually were. Were certain positions more at risk? 
+
+
 ## My Lightdash Dashboards
 [Dashboard 1: Getting to know data](https://app.lightdash.cloud/projects/36657ff5-d0ec-483b-98ad-eb25393cb88c/dashboards/1952d76f-0aad-4234-a6cf-290f5628f897/view)
+
 [Dashboard 2: NFL Injuries in 2023](https://app.lightdash.cloud/projects/36657ff5-d0ec-483b-98ad-eb25393cb88c/dashboards/4b526e28-a13d-45bb-83f8-14efd23b7e4c/view)
 
 ## Data Sources
