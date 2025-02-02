@@ -38,19 +38,19 @@ Staging Layer
 * `stg_yearly_player_stats`
 
 Intermediate Layer
-`int_player_receiving_stats` - Intermediate model combining yearly regular season receiving stats and 2023 snap counts
-`int_fantasy_points_leaders` - Preloaded intermediate model of player fantasy points for 2023 season. I identified an issue in the grain of this model. It was shown by week, but I believe it was intended to represent yearly aggregations. I updated this model and `fct_fantasy_points_leaders` accordingly.
+* `int_player_receiving_stats` - Intermediate model combining yearly regular season receiving stats and 2023 snap counts
+* `int_fantasy_points_leaders` - Preloaded intermediate model of player fantasy points for 2023 season. I identified an issue in the grain of this model. It was shown by week, but I believe it was intended to represent yearly aggregations. I updated this model and `fct_fantasy_points_leaders` accordingly.
 
 Mart Layer
-`fct_player_receiving_stats_yearly` - Model for receiving player stats and fantasy points for 2018-2023 regular seasons
-`fct_fantasy_points_leaders` - Preloaded model of player fantasy points for 2023 season
+* `fct_player_receiving_stats_yearly` - Model for receiving player stats and fantasy points for 2018-2023 regular seasons
+* `fct_fantasy_points_leaders` - Preloaded model of player fantasy points for 2023 season
 
 ## Visualizations
 My first step was to educate myself about fantasy football scoring. Most fantasy leagues now use a PPR (Points Per Reception) format. I found that:
 You receive points for touchdowns and yards as with standard scoring. However, you also receive points for each reception with PPR scoring. 
 
 For the 2023 season, 4 of the top 10 players in terms of PPR fantasy points were wide receivers.
-![Top 10 Players](./Visualizations/2023_Top_10_Players.png)
+![Top 10 Players](./analyses/Visualizations/2023_Top_10_Players.png)
 
 While QBs often score a lot of points, it is typical to draft just 1 QB, but multiple receiving players (e.g., 2-3 WRs and 1 TE) in most fantasy leagues With this knowledge in hand, I decided to focus on receiving players in my analysis.
 
