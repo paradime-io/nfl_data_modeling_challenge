@@ -86,54 +86,82 @@ stats_with_game_details AS (
         aggs.game_id = gd.game_id
     ),
 
-win_or_loss AS (
-    SELECT
-        *,
-        CASE
-            WHEN
-                home_score > away_score
-            THEN
-                1
-            ELSE
-                0
-        END AS home_win,
-        CASE
-            WHEN
-                home_score < away_score
-            THEN
-                1
-            ELSE
-                0
-        END AS home_loss,
-        CASE
-            WHEN
-                home_score = away_score
-            THEN
-                1
-            ELSE
-                0
-        END AS tie,
-        CASE
-            WHEN
-                away_score > home_score
-            THEN
-                1
-            ELSE
-                0
-        END AS away_win,
-        CASE
-            WHEN
-                away_score < home_score
-            THEN
-                1
-            ELSE
-                0
-        END AS away_loss
-    FROM
-        stats_with_game_details
-)
+home_win_or_loss AS (
+        SELECT
+            *,
+            CASE
+                WHEN
+                    home_score > away_score
+                THEN
+                    1
+                ELSE
+                    0
+            END AS home_win,
+            CASE
+                WHEN
+                    home_score < away_score
+                THEN
+                    1
+                ELSE
+                    0
+            END AS home_loss,
+            CASE
+                WHEN
+                    home_score = away_score
+                THEN
+                    1
+                ELSE
+                    0
+            END AS tie,
+            0 AS away_win,
+            0 AS away_loss
+        FROM
+            stats_with_game_details
+        WHERE
+            home_or_away = 'H'
+    ),
+
+away_win_or_loss AS (
+        SELECT
+            *,
+            0 as home_win,
+            0 as home_loss,
+            CASE
+                WHEN
+                    home_score = away_score
+                THEN
+                    1
+                ELSE
+                    0
+            END AS tie,            
+            CASE
+                WHEN
+                    home_score < away_score
+                THEN
+                    1
+                ELSE
+                    0
+            END AS away_win,
+            CASE
+                WHEN
+                    home_score > away_score
+                THEN
+                    1
+                ELSE
+                    0
+            END AS away_loss
+        FROM
+            stats_with_game_details
+        WHERE
+            home_or_away = 'A'
+    )
 
 SELECT
     *
 FROM
-    win_or_loss
+    home_win_or_loss
+UNION
+SELECT
+    *
+FROM
+    away_win_or_loss
