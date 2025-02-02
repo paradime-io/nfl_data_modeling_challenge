@@ -110,11 +110,10 @@ models:
         meta:
           dimension:
             type: number
-
   - name: fct_weekly_top_performers
     description: >-
-      Weekly rankings of players by fantasy performance, both within position
-      and overall
+      Weekly rankings of players by fantasy performance, analyzing position
+      rankings, overall performance, and moon phase correlations.
     columns:
       - name: player_id
         description: Unique identifier for the player
@@ -149,37 +148,49 @@ models:
         meta:
           dimension:
             type: number
+      - name: current_moon_phase
+        description: Moon phase during the game
+        tests:
+          - not_null
+        meta:
+          dimension:
+            type: string
+      - name: moon_phase_timestamp
+        description: Timestamp of the most recent moon phase before the game
+        meta:
+          dimension:
+            type: timestamp
       - name: total_fantasy_points
-        description: "Total fantasy points scored in standard scoring"
+        description: Total fantasy points scored in standard scoring
         meta:
           metrics:
             weekly_avg_fantasy_points:
               type: average
-              description: "Average weekly fantasy points across all players"
+              description: Average weekly fantasy points across all players
             weekly_total_fantasy_points:
               type: sum
-              description: "Total weekly fantasy points scored"
+              description: Total weekly fantasy points scored
           dimension:
             type: number
       - name: total_fantasy_points_ppr
-        description: "Total fantasy points scored in PPR scoring"
+        description: Total fantasy points scored in PPR scoring
         meta:
           metrics:
             weekly_avg_fantasy_points_ppr:
               type: average
-              description: "Average weekly PPR fantasy points across all players"
+              description: Average weekly PPR fantasy points across all players
             weekly_total_fantasy_points_ppr:
               type: sum
-              description: "Total weekly PPR fantasy points scored"
+              description: Total weekly PPR fantasy points scored
           dimension:
             type: number
       - name: position_rank_standard
-        description: "Player's rank within their position for standard scoring"
+        description: Player's rank within their position for standard scoring
         meta:
           metrics:
             avg_position_rank:
               type: average
-              description: "Average position rank in standard scoring"
+              description: Average position rank in standard scoring
           dimension:
             type: number
       - name: position_rank_ppr
@@ -197,17 +208,43 @@ models:
         meta:
           dimension:
             type: number
+      - name: moon_phase_position_rank
+        description: Player's rank within their position for this moon phase
+        meta:
+          dimension:
+            type: number
+      - name: avg_points_in_moon_phase
+        description: Average fantasy points scored during this moon phase
+        meta:
+          dimension:
+            type: number
       - name: position_leader_standard
-        description: ""
+        description: Boolean indicating if player led their position in standard scoring
         meta:
           dimension:
             type: boolean
       - name: position_leader_ppr
-        description: ""
+        description: Boolean indicating if player led their position in PPR scoring
         meta:
           dimension:
             type: boolean
-
+      - name: moon_phase_position_leader
+        description: Boolean indicating if player led their position during this moon phase
+        meta:
+          dimension:
+            type: boolean
+      - name: points_vs_moon_phase_avg
+        description: Points scored above/below average for this moon phase
+        meta:
+          dimension:
+            type: number
+      - name: top_10_position_leader
+        description: >-
+          Boolean indicating if player was both position leader and top 10
+          overall
+        meta:
+          dimension:
+            type: boolean
   - name: fct_defense_vs_position
     description: >-
       Analysis of how each team's defense performs against different positions
@@ -238,18 +275,18 @@ models:
           dimension:
             type: number
       - name: avg_fantasy_points_allowed
-        description: "Average fantasy points allowed to this position per game"
+        description: Average fantasy points allowed to this position per game
         meta:
           metrics:
             avg_defense_points_allowed:
               type: average
-              description: "Average fantasy points allowed by defenses"
+              description: Average fantasy points allowed by defenses
             worst_defense_points_allowed:
               type: max
-              description: "Highest average points allowed by any defense"
+              description: Highest average points allowed by any defense
             best_defense_points_allowed:
               type: min
-              description: "Lowest average points allowed by any defense"
+              description: Lowest average points allowed by any defense
           dimension:
             type: number
       - name: avg_fantasy_points_ppr_allowed
@@ -258,12 +295,12 @@ models:
           dimension:
             type: number
       - name: total_fantasy_points_allowed
-        description: "Total fantasy points allowed to this position"
+        description: Total fantasy points allowed to this position
         meta:
           metrics:
             total_points_allowed_all_defenses:
               type: sum
-              description: "Total fantasy points allowed by all defenses"
+              description: Total fantasy points allowed by all defenses
           dimension:
             type: number
       - name: total_fantasy_points_ppr_allowed
@@ -285,7 +322,6 @@ models:
         meta:
           dimension:
             type: number
-
   - name: fct_red_zone_player_stats
     description: Player-level analysis of red zone opportunities and efficiency
     columns:
@@ -304,15 +340,15 @@ models:
           dimension:
             type: string
       - name: total_opportunities
-        description: "Total red zone opportunities (rush attempts + targets)"
+        description: Total red zone opportunities (rush attempts + targets)
         meta:
           metrics:
             total_red_zone_opportunities:
               type: sum
-              description: "Total red zone opportunities across all players"
+              description: Total red zone opportunities across all players
             avg_red_zone_opportunities:
               type: average
-              description: "Average red zone opportunities per player"
+              description: Average red zone opportunities per player
           dimension:
             type: number
       - name: total_rush_attempts
@@ -338,16 +374,18 @@ models:
           dimension:
             type: number
       - name: total_touchdowns
-        description: "Total touchdowns scored in red zone"
+        description: Total touchdowns scored in red zone
         meta:
           metrics:
             total_red_zone_tds:
               type: sum
-              description: "Total red zone touchdowns scored"
+              description: Total red zone touchdowns scored
             red_zone_td_rate:
               type: number
-              sql: "SUM(total_touchdowns)::float / NULLIF(SUM(total_opportunities), 0) * 100"
-              description: "Percentage of red zone opportunities resulting in touchdowns"
+              sql: >-
+                SUM(total_touchdowns)::float / NULLIF(SUM(total_opportunities),
+                0) * 100
+              description: Percentage of red zone opportunities resulting in touchdowns
           dimension:
             type: number
       - name: completion_percentage
@@ -360,7 +398,6 @@ models:
         meta:
           dimension:
             type: number
-
   - name: fct_team_red_zone_stats
     description: Team-level analysis of red zone performance and efficiency
     columns:
@@ -402,29 +439,33 @@ models:
           dimension:
             type: number
       - name: rush_touchdowns
-        description: "Number of rushing touchdowns in the red zone"
+        description: Number of rushing touchdowns in the red zone
         meta:
           metrics:
             total_rush_touchdowns:
               type: sum
-              description: "Total rushing touchdowns in red zone"
+              description: Total rushing touchdowns in red zone
             rush_td_efficiency:
               type: number
-              sql: "SUM(rush_touchdowns)::float / NULLIF(SUM(rush_attempts), 0) * 100"
-              description: "Rushing touchdown percentage in red zone"
+              sql: >-
+                SUM(rush_touchdowns)::float / NULLIF(SUM(rush_attempts), 0) *
+                100
+              description: Rushing touchdown percentage in red zone
           dimension:
             type: number
       - name: pass_touchdowns
-        description: "Number of passing touchdowns in the red zone"
+        description: Number of passing touchdowns in the red zone
         meta:
           metrics:
             total_pass_touchdowns:
               type: sum
-              description: "Total passing touchdowns in red zone"
+              description: Total passing touchdowns in red zone
             pass_td_efficiency:
               type: number
-              sql: "SUM(pass_touchdowns)::float / NULLIF(SUM(pass_attempts), 0) * 100"
-              description: "Passing touchdown percentage in red zone"
+              sql: >-
+                SUM(pass_touchdowns)::float / NULLIF(SUM(pass_attempts), 0) *
+                100
+              description: Passing touchdown percentage in red zone
           dimension:
             type: number
       - name: team
@@ -452,3 +493,194 @@ models:
         meta:
           dimension:
             type: number
+  - name: fct_game_outcomes_by_moon
+    description: >
+      Fact table analyzing NFL game outcomes in relation to moon phases,
+      including scoring patterns and game characteristics.
+    columns:
+      - name: game_timestamp
+        description: Date and time when the game was played
+        tests:
+          - not_null
+        meta:
+          dimension:
+            type: timestamp
+      - name: current_moon_phase
+        description: Moon phase at the time of the game
+        tests:
+          - not_null
+        meta:
+          dimension:
+            type: string
+      - name: moon_phase_timestamp
+        description: Timestamp of the most recent moon phase before the game
+        tests:
+          - not_null
+        meta:
+          dimension:
+            type: timestamp
+      - name: week_number
+        description: NFL week number
+        tests:
+          - not_null
+        meta:
+          dimension:
+            type: number
+      - name: location
+        description: Stadium where the game was played
+        meta:
+          dimension:
+            type: string
+      - name: home_team
+        description: Home team abbreviation
+        tests:
+          - not_null
+        meta:
+          dimension:
+            type: string
+      - name: home_team_name
+        description: Home team full name
+        tests:
+          - not_null
+        meta:
+          dimension:
+            type: string
+      - name: away_team
+        description: Away team abbreviation
+        tests:
+          - not_null
+        meta:
+          dimension:
+            type: string
+      - name: away_team_name
+        description: Away team full name
+        tests:
+          - not_null
+        meta:
+          dimension:
+            type: string
+      - name: home_team_score
+        description: Points scored by home team
+        tests:
+          - not_null
+        meta:
+          metrics:
+            avg_home_team_score:
+              type: average
+              description: Average points scored by home teams
+            total_home_team_points:
+              type: sum
+              description: Total points scored by home teams
+          dimension:
+            type: number
+      - name: away_team_score
+        description: Points scored by away team
+        tests:
+          - not_null
+        meta:
+          metrics:
+            avg_away_team_score:
+              type: average
+              description: Average points scored by away teams
+            total_away_team_points:
+              type: sum
+              description: Total points scored by away teams
+          dimension:
+            type: number
+      - name: total_points
+        description: Total points scored in the game
+        tests:
+          - not_null
+        meta:
+          metrics:
+            avg_total_points:
+              type: average
+              description: Average total points per game
+            total_points_scored:
+              type: sum
+              description: Total points scored across all games
+            avg_points_by_moon_phase:
+              type: average
+              description: Average points scored per game by moon phase
+              dimensions:
+                - current_moon_phase
+          dimension:
+            type: number
+      - name: winning_team
+        description: Abbreviation of the winning team
+        meta:
+          dimension:
+            type: string
+      - name: losing_team
+        description: Abbreviation of the losing team
+        meta:
+          dimension:
+            type: string
+      - name: is_home_team_win
+        description: Boolean indicating if the home team won
+        tests:
+          - not_null
+        meta:
+          metrics:
+            home_team_win_percentage:
+              type: number
+              sql: >-
+                COUNT(CASE WHEN is_home_team_win THEN 1 END)::float /
+                NULLIF(COUNT(*), 0) * 100
+              description: Percentage of games won by home team
+          dimension:
+            type: boolean
+      - name: is_away_team_win
+        description: Boolean indicating if the away team won
+        tests:
+          - not_null
+        meta:
+          metrics:
+            away_team_win_percentage:
+              type: number
+              sql: >-
+                COUNT(CASE WHEN is_away_team_win THEN 1 END)::float /
+                NULLIF(COUNT(*), 0) * 100
+              description: Percentage of games won by away team
+          dimension:
+            type: boolean
+      - name: score_differential
+        description: Absolute difference between home and away team scores
+        tests:
+          - not_null
+        meta:
+          metrics:
+            avg_score_differential:
+              type: average
+              description: Average margin of victory
+            max_score_differential:
+              type: max
+              description: Largest margin of victory
+          dimension:
+            type: number
+      - name: is_close_game
+        description: Boolean indicating if the game was decided by 7 or fewer points
+        tests:
+          - not_null
+        meta:
+          metrics:
+            close_game_percentage:
+              type: number
+              sql: >-
+                COUNT(CASE WHEN is_close_game THEN 1 END)::float /
+                NULLIF(COUNT(*), 0) * 100
+              description: Percentage of games that were close (within 7 points)
+          dimension:
+            type: boolean
+      - name: scoring_category
+        description: Categorization of game scoring (High/Medium/Low)
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - High Scoring
+                - Medium Scoring
+                - Low Scoring
+        meta:
+          dimension:
+            type: string

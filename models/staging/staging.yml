@@ -834,3 +834,105 @@ models:
         meta:
           dimension:
             type: string
+  - name: stg_nfl_teams
+    description: Standardized NFL team names and abbreviations
+    columns:
+      - name: team_name
+        description: Full team name
+        meta:
+          dimension:
+            type: string
+      - name: team_abbreviation
+        description: Team abbreviation code
+        tests:
+          - unique
+          - not_null
+        meta:
+          dimension:
+            type: string
+  - name: stg_moon_phases
+    description: Moon phase calendar for 2023-2024
+    columns:
+      - name: moon_phase
+        description: Type of moon phase
+        meta:
+          dimension:
+            type: string
+      - name: phase_date
+        description: Date of the moon phase
+        meta:
+          dimension:
+            type: date
+      - name: phase_time
+        description: Time of the moon phase
+        meta:
+          dimension:
+            type: timestamp
+      - name: phase_timestamp
+        description: Combined date and time of the moon phase
+        meta:
+          dimension:
+            type: timestamp
+  - name: stg_nfl_fixtures
+    description: NFL game results and fixtures for 2023-2024 season
+    columns:
+      - name: round_number
+        description: Week number in the NFL season
+        meta:
+          dimension:
+            type: number
+      - name: game_date
+        description: Date of the game
+        meta:
+          dimension:
+            type: date
+      - name: game_time
+        description: Start time of the game
+        meta:
+          dimension:
+            type: timestamp
+      - name: game_timestamp
+        description: Combined date and time of the game
+        meta:
+          dimension:
+            type: timestamp
+      - name: location
+        description: Stadium where the game was played
+        meta:
+          dimension:
+            type: string
+      - name: home_team
+        description: Home team abbreviation
+        meta:
+          dimension:
+            type: string
+      - name: away_team
+        description: Away team abbreviation
+        meta:
+          dimension:
+            type: string
+      - name: home_team_score
+        description: Points scored by home team
+        meta:
+          dimension:
+            type: number
+      - name: away_team_score
+        description: Points scored by away team
+        meta:
+          dimension:
+            type: number
+      - name: winning_team
+        description: Abbreviation of the winning team
+        meta:
+          dimension:
+            type: string
+      - name: losing_team
+        description: Abbreviation of the losing team
+        meta:
+          dimension:
+            type: string
+      - name: total_points
+        description: Total points scored in the game
+        meta:
+          dimension:
+            type: number

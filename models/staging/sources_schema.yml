@@ -974,4 +974,53 @@ sources:
             description: "Overall draft pick number used to select the player."
           - name: AGE
             description: "Player's age at the time of the game."
+seeds:
+  - name: nfl_teams_mapping
+    description: Mapping of NFL team names to their abbreviations
+    columns:
+      - name: team_name
+        tests:
+          - unique
+          - not_null
+      - name: team_abbreviation
+        tests:
+          - unique
+          - not_null
 
+  - name: moon_phases_23_24
+    description: Calendar of moon phases for 2023-2024
+    columns:
+      - name: moon_phase
+        tests:
+          - not_null
+      - name: date
+        tests:
+          - not_null
+      - name: time
+        tests:
+          - not_null
+
+  - name: nfl_23_24_fixtures_results
+    description: NFL game results and fixtures for 2023-2024 season
+    columns:
+      - name: round_number
+        tests:
+          - not_null
+      - name: date
+        tests:
+          - not_null
+      - name: time
+        tests:
+          - not_null
+      - name: home_team
+        tests:
+          - not_null
+          - relationships:
+              to: ref('nfl_teams_mapping')
+              field: team_abbreviation
+      - name: away_team
+        tests:
+          - not_null
+          - relationships:
+              to: ref('nfl_teams_mapping')
+              field: team_abbreviation 

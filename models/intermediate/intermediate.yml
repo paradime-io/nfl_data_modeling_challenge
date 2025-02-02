@@ -1,7 +1,9 @@
 version: 2
 models:
   - name: int_fantasy_points
-    description: Intermediate model aggregating player-level fantasy performance metrics.
+    description: >
+      Intermediate model aggregating player-level fantasy performance metrics,
+      enriched with moon phase data.
     columns:
       - name: player_id
         description: Unique identifier for the player.
@@ -67,6 +69,16 @@ models:
         meta:
           dimension:
             type: number
+      - name: current_moon_phase
+        description: Moon phase during the game
+        meta:
+          dimension:
+            type: string
+      - name: moon_phase_timestamp
+        description: Timestamp of the most recent moon phase before the game
+        meta:
+          dimension:
+            type: timestamp
   - name: int_red_zone_plays
     description: >-
       Intermediate model extracting plays that occur in the red zone, excluding
@@ -139,3 +151,88 @@ models:
         meta:
           dimension:
             type: string
+  - name: int_nfl_games_enhanced
+    description: >
+      Enriched NFL games data including team full names and moon phases. Each
+      row represents a single NFL game with additional context.
+    columns:
+      - name: round_number
+        description: Week number in the NFL season
+        meta:
+          dimension:
+            type: number
+      - name: game_date
+        description: Date of the game
+        meta:
+          dimension:
+            type: date
+      - name: game_time
+        description: Start time of the game
+        meta:
+          dimension:
+            type: timestamp
+      - name: game_timestamp
+        description: Combined date and time of the game
+        meta:
+          dimension:
+            type: timestamp
+      - name: location
+        description: Stadium where the game was played
+        meta:
+          dimension:
+            type: string
+      - name: home_team
+        description: Home team abbreviation
+        meta:
+          dimension:
+            type: string
+      - name: home_team_name
+        description: Home team full name
+        meta:
+          dimension:
+            type: string
+      - name: home_team_score
+        description: Points scored by home team
+        meta:
+          dimension:
+            type: number
+      - name: away_team
+        description: Away team abbreviation
+        meta:
+          dimension:
+            type: string
+      - name: away_team_name
+        description: Away team full name
+        meta:
+          dimension:
+            type: string
+      - name: away_team_score
+        description: Points scored by away team
+        meta:
+          dimension:
+            type: number
+      - name: winning_team
+        description: Abbreviation of the winning team
+        meta:
+          dimension:
+            type: string
+      - name: losing_team
+        description: Abbreviation of the losing team
+        meta:
+          dimension:
+            type: string
+      - name: total_points
+        description: Total points scored in the game
+        meta:
+          dimension:
+            type: number
+      - name: current_moon_phase
+        description: Moon phase at the time of the game
+        meta:
+          dimension:
+            type: string
+      - name: moon_phase_timestamp
+        description: Timestamp of the most recent moon phase before the game
+        meta:
+          dimension:
+            type: timestamp
