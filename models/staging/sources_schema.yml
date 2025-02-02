@@ -6,7 +6,7 @@ sources:
     schema: DBT_ISTVAN_MOZES_90
     tables:
 
-      - name: NFL_PLAYER_STATS_2015_2024
+      - name: NFL_PLAYERS_STATS_2015_2025  
         description: "Player-level offensive statistics aggregated by game from the seasons from 2015 to 2023"
         columns:
           - name: PLAYER_ID
@@ -373,8 +373,19 @@ sources:
 
 
       - name: NFL_CONTRACTS
+        description: ""
+        columns:
+          - name: player_name
+            description: 'Name of the player'
+      
+      - name: NFL_INJURIES_2015_2024
+        description: ""
+        columns:
+          - name: player_name
+            description: 'Name of the player'
+
+      - name: NFL_COMBINE_2024
         description: "Player-level offensive statistics aggregated by game from the 2024 season"
         columns:
           - name: player_name
             description: 'Name of the player'
- 

@@ -3,15 +3,15 @@ WITH source AS (
     SELECT 
         * 
     FROM 
-        {{ source('external', 'NFL_PLAYER_STATS_2015_2024')}}
-
+        {{ source('external', 'NFL_PLAYERS_STATS_2015_2025')}}
+/*
     UNION ALL
 
     SELECT 
         * 
     FROM 
         {{ source('external', 'NFL_PLAYER_STATS_2024_2025') }}
-
+*/
 ),
 
 renamed AS (

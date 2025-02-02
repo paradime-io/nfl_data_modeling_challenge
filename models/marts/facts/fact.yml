@@ -1,28 +1,130 @@
 version: 2
 
 models:
-  - name: fct_fantasy_point_leaders
-    description: "Fact table ranking players by their fantasy performance using both standard and PPR scoring."
+  - name: fct_contract_year
+    description: "Combines fantasy football player performance data with contract details, spanning from 2000 to 2025."
     columns:
       - name: player_id
-        description: "Unique identifier for the player."
+        description: "Unique identifier for each player."
+        tests:
+          - not_null
+          - unique
+
       - name: player_name
-        description: "Name of the player."
+        description: "Full name of the player."
+        tests:
+          - not_null
+
+      - name: season
+        description: "The NFL season year."
+        tests:
+          - not_null
+          - accepted_values:
+              values: [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]
+
       - name: position
-        description: "Player's position (e.g., QB, RB, WR, TE)."
-      - name: recent_team
-        description: "The player's most recent team."
+        description: "Player's position on the field (e.g., QB, RB, WR, TE)."
+
+      - name: years_experience
+        description: "Number of years the player has been in the NFL."
+
+      - name: total_targets
+        description: "Total number of targets the player received in a season."
+
       - name: total_fantasy_points
-        description: "Total fantasy points scored by the player (standard scoring) across the considered period."
+        description: "Total fantasy points accumulated in standard scoring."
+
       - name: total_fantasy_points_ppr
-        description: "Total fantasy points scored by the player under PPR (points per reception) scoring across the considered period."
+        description: "Total fantasy points accumulated in PPR scoring."
+
       - name: games_played
-        description: "Number of games (weeks) the player participated in."
+        description: "Number of games played in the given season."
+
       - name: avg_fantasy_points_per_game
-        description: "Average standard fantasy points per game played."
+        description: "Average fantasy points per game in standard scoring."
+
       - name: avg_fantasy_points_ppr_per_game
-        description: "Average PPR fantasy points per game played."
+        description: "Average fantasy points per game in PPR scoring."
+
       - name: standard_rank
-        description: "The player's rank among all players based on total standard fantasy points."
+        description: "Player ranking based on total fantasy points in standard scoring."
+
       - name: ppr_rank
-        description: "The player's rank among all players based on total PPR fantasy points."
+        description: "Player ranking based on total fantasy points in PPR scoring."
+
+      - name: standard_rank_by_avg
+        description: "Player ranking based on average fantasy points per game in standard scoring."
+
+      - name: ppr_rank_by_avg
+        description: "Player ranking based on average fantasy points per game in PPR scoring."
+
+      - name: year_signed
+        description: "The year the player signed a contract."
+
+      - name: contract_length_years
+        description: "Length of the contract in years."
+
+      - name: value
+        description: "Total value of the contract in dollars."
+
+      - name: apy
+        description: "Average per year (APY) contract value in dollars."
+
+      - name: guaranteed
+        description: "Guaranteed money in the player's contract."
+
+      - name: apy_as_percent_of_cap_at_signing
+        description: "APY as a percentage of the salary cap at the time of signing."
+
+      - name: inflated_value
+        description: "Inflation-adjusted contract value."
+
+      - name: inflated_apy
+        description: "Inflation-adjusted APY."
+
+      - name: inflated_guaranteed
+        description: "Inflation-adjusted guaranteed money."
+
+      - name: is_contract_year
+        description: "Indicator if the current season is the final year of the player's contract (1 = Yes, 0 = No)."
+        tests:
+          - not_null
+
+  - name: fct_player_availability
+    description: "Aggregates player availability and performance metrics over multiple seasons."
+    columns:
+      - name: player_name
+        description: "The name of the player."
+        tests:
+          - not_null
+          - unique
+
+      - name: number_of_season
+        description: "The total number of seasons the player has participated in."
+        tests:
+          - not_null
+
+      - name: years_experience
+        description: "The maximum years of experience for the player."
+        tests:
+          - not_null
+
+      - name: avg_games_played
+        description: "The average number of games played by the player per season."
+        tests:
+          - not_null
+
+      - name: total_games_played
+        description: "The total number of games played across all seasons."
+        tests:
+          - not_null
+
+      - name: avg_total_fantasy_points_ppr
+        description: "The average total PPR fantasy points scored per season."
+        tests:
+          - not_null
+
+      - name: avg_fantasy_points_per_ppr_per_game
+        description: "The average PPR fantasy points scored per game."
+        tests:
+          - not_null

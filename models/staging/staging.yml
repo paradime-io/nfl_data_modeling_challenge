@@ -163,8 +163,23 @@ models:
       - name: smart_id
         description: "A unique identifier used internally or externally."
 
+  - name: stg_combine
+    description: "Staging model for nfl contracts."
+    columns:
+      - name: player_id
+        description: "Unique identifier for the player."
+
+  - name: stg_injuries
+    description: "Staging model for nfl contracts."
+    columns:
+      - name: player_id
+        description: "Unique identifier for the player."
+
+
   - name: stg_contracts
     description: "Staging model for nfl contracts."
     columns:
       - name: player_id
         description: "Unique identifier for the player."
+
+  
