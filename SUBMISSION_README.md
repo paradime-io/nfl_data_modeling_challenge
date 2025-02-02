@@ -29,7 +29,7 @@ Beyond the analysis itself, this challenge has been an excellent learning experi
 - **Lightdash**: Data visualization and dashboard creation
 - **dbt**: Data transformation and modeling
 - **Git**: Version control and project management
-- **Cursor**: Code editor and AI assistant
+- **Claude 3.5 Sonnet**: AI assistants
 
 ### Applied Techniques
 1. **Data Modeling**:
