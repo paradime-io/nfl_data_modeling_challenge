@@ -114,7 +114,8 @@ home_win_or_loss AS (
                     0
             END AS tie,
             0 AS away_win,
-            0 AS away_loss
+            0 AS away_loss,
+            home_win + home_loss + tie + away_win + away_loss AS games_played
         FROM
             stats_with_game_details
         WHERE
@@ -149,12 +150,13 @@ away_win_or_loss AS (
                     1
                 ELSE
                     0
-            END AS away_loss
+            END AS away_loss,
+            home_win + home_loss + tie + away_win + away_loss AS games_played
         FROM
             stats_with_game_details
         WHERE
             home_or_away = 'A'
-    ),
+    )
 
 SELECT
     *

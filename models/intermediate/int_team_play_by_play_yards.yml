@@ -117,3 +117,8 @@ models:
         meta:
           dimension:
             type: number
+      - name: games_played
+        description: ""
+        meta:
+          dimension:
+            type: number
