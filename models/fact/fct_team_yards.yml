@@ -142,3 +142,8 @@ models:
         meta:
           dimension:
             type: number
+      - name: yards_differential
+        description: ""
+        meta:
+          dimension:
+            type: number

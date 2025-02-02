@@ -5,7 +5,8 @@ Pull in opponent_yards_gained via self-join
 WITH opponent_yards AS (
     SELECT
         a.*,
-        b.total_yards_gained            AS opponent_yards_gained,
+        b.total_yards_gained                            AS opponent_yards_gained,
+        (a.total_yards_gained - b.total_yards_gained)   AS yards_differential,
         CASE
             WHEN
                 a.total_yards_gained > b.total_yards_gained
