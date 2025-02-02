@@ -38,14 +38,16 @@ My goal was to get familiar with the data and analyze injuries—especially conc
 [Dashboard 2: NFL Injuries in 2023](https://app.lightdash.cloud/projects/36657ff5-d0ec-483b-98ad-eb25393cb88c/dashboards/4b526e28-a13d-45bb-83f8-14efd23b7e4c/view)
 
 ## Data Sources
-- Fantasy Football Data (Snowflake):
-   - play-by-play data
-   - player stats by game data
 
-Additional datasets:
-- NFL Teams Data Set - Team description from nfl_data_py Python package
-- NFL Injuries Data Set - Injury data for the 2023 season from nfl_data_py Python package
+I used the following data sources:  
 
+- **Fantasy Football Data (Snowflake)** (provided by the organizers):  
+  - **Play-by-play data** – Detailed records of every play in a game, including actions, outcomes, and player involvement.  
+  - **Player stats by game** – Aggregated player performance metrics for each game.  
+
+Additionally, I used two datasets from the **nfl_data_py** Python package:  
+- **NFL Teams Data Set** for team descriptions.  
+- **NFL Injuries Data Set** for injury data from the **2023 season**.
 
 ## Methodology
 ### Tools Used
@@ -54,8 +56,16 @@ Additional datasets:
 - Lightdash for visualization
 - ChatGPT as my go-to football expert and for crafting this narrative
 
-### Applied Techniques
-[Discuss transformations, tests, and models built]
+### Applied Techniques  
+
+I used SQL, dbt, and Snowflake to build the core entities from the provided data sources:  
+
+- Player info and stats  
+- Game results  
+- Team standings  
+- Injury stats  
+
+After modeling the data, I used Lightdash for exploration and visualizations.  
 
 ## Visualizations
 
@@ -218,4 +228,7 @@ Breaking injuries down further, certain patterns emerged based on position type:
 
 
 ## Conclusions
-[Summarize key takeaways and recommendations]
+
+This analysis showed me that familiarity with the subject—like game rules and terminology—is crucial for in-depth and meaningful data analysis.  
+
+It also raised more questions than answers. For example, why do concussions sideline players for an average of 1.4 weeks, while foot injuries keep them out for 2 weeks? I don’t have the knowledge to explain that.
