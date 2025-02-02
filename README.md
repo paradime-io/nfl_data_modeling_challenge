@@ -168,7 +168,32 @@ This made me wonder—does the NFL not take concussions seriously enough, or are
 
 ![Injury duration](images/part2/injury-duration.png)
 
-![Injury duration](images/part2/injuries-by-position.png)
+Got it! Here’s a continuation of your narrative incorporating your injury analysis by position type:
+
+---
+
+### Analyzing Injuries by Position  
+
+Next, I wanted to break injuries down by position to see which players were most affected. The results were pretty interesting.  
+
+Cornerbacks (CB) had the highest number of injuries, with **87** players sidelined. That made sense—CBs are constantly sprinting, cutting, and colliding with receivers, making them prone to injuries.  
+
+Linebackers (LB), wide receivers (WR), and safeties (S) weren’t far behind, with **66, 64, and 59** injured players, respectively. These positions involve a lot of high-speed impacts, which likely explains their high injury counts.  
+
+Tackles (T) rounded out the top five with **45** injuries. As part of the offensive and defensive lines, tackles engage in constant physical battles in the trenches, though their injuries seem slightly less frequent than skill-position players.  
+
+Seeing the breakdown by position helped put things into perspective—it’s not just about how physical football is but also about how different roles in the game come with different injury risks.
+
+![Injuries by position](images/part2/injuries-by-position.png)
+
+Breaking injuries down further, certain patterns emerged based on position type:  
+
+- **Cornerbacks (CB)** were most affected by **thigh injuries**.  
+- **Linebackers (LB)** had the most **knee injuries**.  
+- **Wide receivers (WR) and safeties (S)** had the most **thigh injuries**.  
+- **Tackles (T)** were most affected by **knee injuries**.  
+
+![Common injuries](images/part2/injuries-by-position-common.png)
 
 ### Insights
 
