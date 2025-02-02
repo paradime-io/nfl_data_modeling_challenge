@@ -196,12 +196,14 @@ Breaking injuries down further, certain patterns emerged based on position type:
 ![Common injuries](images/part2/injuries-by-position-common.png)
 
 
-| ![Thigh injuries by position](images/part2/thigh-injuries-by-position.png) | ![Knee injuries by position](images/part2/knee-injuries-by-position.png) |
-| **Label 1**            | **Label 2**            |
-|-------------------------|-------------------------|
-| ![Concussions by position](images/part2/concussions-by-position.png) | ![Ankle injuries by position](images/part2/ankle-injuries-by-position.png) |
-| **Label 3**            | **Label 4**            |
 
+![Thigh injuries by position](images/part2/thigh-injuries-by-position.png) 
+
+![Knee injuries by position](images/part2/knee-injuries-by-position.png) 
+
+![Concussions by position](images/part2/concussions-by-position.png) 
+
+![Ankle injuries by position](images/part2/ankle-injuries-by-position.png) 
 
 
 
