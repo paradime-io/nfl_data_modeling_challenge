@@ -92,3 +92,13 @@ models:
         meta:
           dimension:
             type: number
+      - name: game_date
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: game_details
+        description: ""
+        meta:
+          dimension:
+            type: string

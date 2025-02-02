@@ -70,10 +70,23 @@ adjusted_stats AS (
         END AS total_adj_rushing_yards
     FROM
         aggregated_stats            
+    ),
+
+stats_with_game_details AS (
+    SELECT
+        aggs.*,
+        gd.game_date                        AS game_date,
+        gd.game_details                     AS game_details
+    FROM 
+        adjusted_stats aggs
+    LEFT JOIN
+        {{ ref('int_game_details') }} gd
+    ON
+        aggs.game_id = gd.game_id
     )
 
 SELECT
     *
 FROM
-    adjusted_stats
+    stats_with_game_details
 
