@@ -117,7 +117,7 @@ However, in the **postseason**, the gap widened significantly—**home teams won
 #### Just How Big Are NFL Players?
 Finally, I analyzed the average height and weight for each position—and let me tell you, there are a lot of positions.
 
-To make sense of the data, I included reference lines at 100 kg (220 lbs) and 140 kg (310 lbs) for weight, and 190 cm (6’3”) and 200 cm (6’7”) for height—helpful for those of us using the metric system.
+To make sense of the data, I included reference lines at 100 kg (220 lbs) and 140 kg (308 lbs) for weight, and 190 cm (6’3”) and 200 cm (6’7”) for height—helpful for those of us using the metric system.
 
 The results? All players are undeniably large, but there’s quite a range. Some positions have players who are "normal-sized" humans, while others are absolute giants. It’s fascinating to see how different body types fit into different roles on the field!
 
@@ -128,7 +128,7 @@ The results? All players are undeniably large, but there’s quite a range. Some
 - **Football rules are complicated**—I learned the basics, but there’s a lot to keep track of.  
 - **Overtime is rare**—only around 6-8% went beyond regulation time.  
 - **Home teams have an advantage**, winning 55% of regular season games and a dominant 77% in the playoffs.  
-- **NFL players are huge**, but size varies by position—some are within "normal human" range, while others are absolute giants, often exceeding 140 kg (310 lbs) and 200 cm (6'7").
+- **NFL players are huge**, but size varies by position—some are within "normal human" range, while others are absolute giants, often exceeding 140 kg (308 lbs) and 200 cm (6'7").
 
 ### Injuries in the 2023 Season
 
@@ -176,40 +176,48 @@ This made me wonder—does the NFL not take concussions seriously enough, or are
 
 ![Injury duration](images/part2/injury-duration.png)
 
-Got it! Here’s a continuation of your narrative incorporating your injury analysis by position type:
-
----
-
 ### Analyzing Injuries by Position  
 
 Next, I wanted to break injuries down by position to see which players were most affected. The results were pretty interesting.  
 
-Cornerbacks (CB) had the highest number of injuries, with **87** players sidelined. That made sense—CBs are constantly sprinting, cutting, and colliding with receivers, making them prone to injuries.  
-
-Linebackers (LB), wide receivers (WR), and safeties (S) weren’t far behind, with **66, 64, and 59** injured players, respectively. These positions involve a lot of high-speed impacts, which likely explains their high injury counts.  
-
-Tackles (T) rounded out the top five with **45** injuries. As part of the offensive and defensive lines, tackles engage in constant physical battles in the trenches, though their injuries seem slightly less frequent than skill-position players.  
-
-Seeing the breakdown by position helped put things into perspective—it’s not just about how physical football is but also about how different roles in the game come with different injury risks.
+Cornerbacks (CB) had the highest number of injuries, with **87** players sidelined. Linebackers (LB), wide receivers (WR), and safeties (S) weren’t far behind, with **66, 64, and 59** injured players, respectively. Tackles (T) rounded out the top five with **45** injuries.   
 
 ![Injuries by position](images/part2/injuries-by-position.png)
 
-Breaking injuries down further, certain patterns emerged based on position type:  
+I looked at injuries for the positions with the highest injury counts:  
 
-- **Cornerbacks (CB)** were most affected by **thigh injuries**.  
-- **Linebackers (LB)** had the most **knee injuries**.  
-- **Wide receivers (WR) and safeties (S)** had the most **thigh injuries**.  
-- **Tackles (T)** were most affected by **knee injuries**.  
+- Cornerbacks were most affected by thigh injuries.  
+- Linebackers and wide receivers had a fairly even spread of injuries, with linebackers most affected by knee injuries and wide receivers by thigh injuries.  
+- Safeties were also most affected by thigh injuries.  
+- Tackles had the most injuries in the knee.
 
 ![Common injuries](images/part2/injuries-by-position-common.png)
 
+### Who Gets the Most Concussions and Common Injuries?  
 
+I analyzed which positions had the highest counts of the most common injuries—thigh, knee, concussions, and ankle injuries—to see which player roles were most affected by each type.
+
+### Concussions by positions
+
+Concussions were most common among cornerbacks, wide receivers, and linebackers.
+
+![Concussions by position](images/part2/concussions-by-position.png) 
+
+### Thigh injuries by positions
+
+Thigh injuries were most frequent for cornerbacks, safeties, and wide receivers.
 
 ![Thigh injuries by position](images/part2/thigh-injuries-by-position.png) 
 
+### Knee injuries by positions
+
+Knee injuries were most common among tackles, linebackers, and cornerbacks.
+
 ![Knee injuries by position](images/part2/knee-injuries-by-position.png) 
 
-![Concussions by position](images/part2/concussions-by-position.png) 
+### Ankle injuries by positions
+
+Ankle injuries affected wide receivers, linebackers, cornbacks, and running backs the most.
 
 ![Ankle injuries by position](images/part2/ankle-injuries-by-position.png) 
 
