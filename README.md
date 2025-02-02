@@ -15,8 +15,7 @@
       - [Do Injuries Affect Team Performance?](#do-injuries-affect-team-performance)
       - [Which Injuries Are Most Common?](#which-injuries-are-most-common)
       - [How Long Do Injuries Keep Players Out?](#how-long-do-injuries-keep-players-out)
-5. [Insights](#insights)
-6. [Conclusions](#conclusions)
+5. [Conclusions](#conclusions)
 
 ## Introduction
 
@@ -168,6 +167,8 @@ On average, players were out for 1.4 weeks with a concussion, while foot, thigh,
 This made me wonder—does the NFL not take concussions seriously enough, or are even mild concussions being reported? I don’t have the medical expertise to say, but it definitely stood out.
 
 ![Injury duration](images/part2/injury-duration.png)
+
+![Injury duration](images/part2/injuries-by-position.png)
 
 ### Insights
 
