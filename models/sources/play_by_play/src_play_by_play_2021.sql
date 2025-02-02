@@ -1,31 +1,20 @@
-WITH source AS (
-    SELECT * FROM {{ ref('src_play_by_play_2021') }}
-    UNION ALL
-    SELECT * FROM {{ ref('src_play_by_play_2022') }}
-    UNION ALL 
-    SELECT * FROM {{ ref('src_play_by_play_2023') }}
-    UNION ALL 
-    SELECT * FROM {{ ref('src_play_by_play_2024') }}
-),
-
-add_red_zone AS (
-    SELECT 
+SELECT 
         -- Play identifiers
         play_id,
         game_id,
-        legacy_game_id,
+        old_game_id_x AS legacy_game_id,
         season_type,
         
         -- Team information
         home_team,
         away_team,
-        possession_team,
-        possession_team_type,
-        defending_team,
+        posteam AS possession_team,
+        posteam_type AS possession_team_type,
+        defteam AS defending_team,
 
         -- Field position and game context
         side_of_field,
-        distance_to_goal,
+        yardline_100 AS distance_to_goal,
         game_date,
         quarter_seconds_remaining,
         half_seconds_remaining,
@@ -33,14 +22,14 @@ add_red_zone AS (
         game_half,
         quarter_end,
         drive,
-        quarter,
+        qtr AS quarter,
         down,
         goal_to_go,
-        game_clock,
-        yard_line,
-        yards_to_go,
-        drive_net_yards,
-        play_description,
+        time AS game_clock,
+        yrdln AS yard_line,
+        ydstogo AS yards_to_go,
+        ydsnet AS drive_net_yards,
+        desc AS play_description,
 
         -- Play details
         play_type,
@@ -75,8 +64,8 @@ add_red_zone AS (
         field_goal_result,
         kick_distance,
         extra_point_result,
-        two_point_conversion_result,
-        
+        two_point_conv_result AS two_point_conversion_result,
+
         -- Rushing stats
         rush,
         rush_attempt,
@@ -90,43 +79,32 @@ add_red_zone AS (
         -- Penalty information
         penalty,
         penalty_type,
-
         -- Team stats
         home_timeouts_remaining,
         away_timeouts_remaining,
-        possession_team_timeouts,
-        defending_team_timeouts,
+        posteam_timeouts_remaining AS possession_team_timeouts,
+        defteam_timeouts_remaining AS defending_team_timeouts,
         total_home_score,
         total_away_score,
-        possession_team_score,
-        defending_team_score,
+        posteam_score AS possession_team_score,
+        defteam_score AS defending_team_score,
         score_differential,
 
         -- Advanced metrics
-        expected_points,
-        expected_points_added,
-        total_home_expected_points_added,
-        total_away_expected_points_added,
-        air_expected_points_added,
-        yards_after_catch_expected_points_added,
+        ep AS expected_points,
+        epa AS expected_points_added,
+        total_home_epa AS total_home_expected_points_added,
+        total_away_epa AS total_away_expected_points_added,
+        air_epa AS air_expected_points_added,
+        yac_epa AS yards_after_catch_expected_points_added,
 
         -- Win probabilities
-        win_probability,
-        defensive_win_probability,
-        home_win_probability,
-        away_win_probability,
-        win_probability_added,
+        wp AS win_probability,
+        def_wp AS defensive_win_probability,
+        home_wp AS home_win_probability,
+        away_wp AS away_win_probability,
+        wpa AS win_probability_added,
 
-        -- Red zone indicator
-        CASE 
-            WHEN yardline_100 <= 20 THEN TRUE 
-            ELSE FALSE 
-        END AS in_red_zone
-    FROM 
-        source
-)
+        yardline_100
 
-SELECT 
-    *
-FROM 
-    add_red_zone
+    FROM {{ source('nfl_ella', 'NFL_PLAY_BY_PLAY_2021') }}

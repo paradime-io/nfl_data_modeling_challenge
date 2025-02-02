@@ -17,6 +17,9 @@ clean-targets:
 
 models:
   nfl:
+    sources:
+      +schema: source
+      +materialized: view
     staging:
       +schema: staging
       +materialized: view

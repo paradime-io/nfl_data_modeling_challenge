@@ -1,58 +1,47 @@
-WITH source AS (
-    SELECT * FROM {{ ref('src_player_stats_2021') }}
-    UNION ALL
-    SELECT * FROM {{ ref('src_player_stats_2022') }}
-    UNION ALL 
-    SELECT * FROM {{ ref('src_player_stats_2023') }}
-    UNION ALL 
-    SELECT * FROM {{ ref('src_player_stats_2024') }}
-),
-
-renamed AS (
     SELECT 
         -- Player identifiers
         player_id,
         
         -- Player basic info
-        player_name,
+        player_display_name AS player_name,
         first_name,
         last_name,
-        headshot_url,
+        headshot_url_x AS headshot_url,
         jersey_number,
-        player_status,
+        status AS player_status,
         status_description_abbr,
         
         -- Physical attributes
         height,
-        player_weight,
+        weight AS player_weight,
         age,
         birth_date,
         
         -- Player background
         college,
-        years_experience,
+        years_exp AS years_experience,
         entry_year,
         rookie_year,
-        draft_team,
+        draft_club AS draft_team,
         draft_number,
         
         -- Position and team
-        position,
+        position_x AS position,
         position_group,
         team,
-        recent_team,
+        recent_team AS recent_team,
         
         -- Game context
-        season, 
-        season_week,
+        season_x AS season, 
+        week_x AS season_week,
         season_type,
         game_type,
         opponent_team,
         
         -- Passing stats
         completions,
-        pass_attempts,
-        pass_yards,
+        attempts AS pass_attempts,
+        passing_yards AS pass_yards,
         passing_air_yards,
         passing_yards_after_catch,
         passing_first_downs,
@@ -114,11 +103,5 @@ renamed AS (
         esb_id,
         gsis_it_id,
         smart_id
-    FROM 
-        source
-)
-
-SELECT 
-    *
-FROM 
-    renamed
+        
+    FROM {{ source('nfl_ella', 'NFL_PLAYER_STATS_2021') }}

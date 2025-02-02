@@ -975,3 +975,23 @@ sources:
           - name: AGE
             description: "Player's age at the time of the game."
 
+  - name: nfl_ella
+    database: ELLARUNCIMANMEMLL_ANALYTICS
+    schema: DBT_ELLA_RUNCIMAN
+    tables:
+      - name: NFL_PLAY_BY_PLAY_2024
+        description: "Granular play-level data for NFL games from the 2024 season."
+      - name: NFL_PLAY_BY_PLAY_2023
+        description: "Granular play-level data for NFL games from the 2023 season."
+      - name: NFL_PLAY_BY_PLAY_2022
+        description: "Granular play-level data for NFL games from the 2022 season."
+      - name: NFL_PLAY_BY_PLAY_2021
+        description: "Granular play-level data for NFL games from the 2021 season."
+      - name: NFL_PLAYER_STATS_2021
+        description: "Player-level offensive statistics aggregated by game from the 2021 season."
+      - name: NFL_PLAYER_STATS_2022
+        description: "Player-level offensive statistics aggregated by game from the 2022 season."
+      - name: NFL_PLAYER_STATS_2023
+        description: "Player-level offensive statistics aggregated by game from the 2023 season."
+      - name: NFL_PLAYER_STATS_2024
+        description: "Player-level offensive statistics aggregated by game from the 2024 season."
