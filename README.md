@@ -19,15 +19,13 @@
 
 ## Introduction
 
-I have a confession to make: I’m not American, and I’m not a sports fan. So when I decided to take on this NFL Data Modeling Challenge, I knew I was in for an uphill battle. My knowledge of (American) football before this challenge was... let’s just say, "limited." I knew that:  
+I have a confession to make: I’m not American, and I’m not a sports fan. So when I decided to take on this NFL Data Modeling Challenge, I knew I was in for an uphill battle. My knowledge of (American) football before this challenge was very limited. I knew that:  
 
 - The NFL is the most popular sport in the U.S.  
 - They play with an egg-shaped ball.  
 - The players are **HUGE**.  
 - Concussions are a common injury.  
 - The Super Bowl is a really big deal.  
-
-That was pretty much it.  
 
 My goal was to get familiar with the data and analyze injuries—especially concussions. I’d heard they were a big concern in football, so I wanted to see how common they actually were. Were certain positions more at risk? 
 
