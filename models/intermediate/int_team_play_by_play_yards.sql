@@ -154,7 +154,7 @@ away_win_or_loss AS (
             stats_with_game_details
         WHERE
             home_or_away = 'A'
-    )
+    ),
 
 SELECT
     *
