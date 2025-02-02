@@ -104,76 +104,110 @@ models:
         description: "Player’s rookie season year."
 
   - name: fct_games_result
+    description: "Fact table containing results of NFL games, including scores, outcomes, and fantasy points."
     columns:
-    - name: game_id
-      meta:
-        metrics:
-          games:
-            type: count_distinct
-    - name: is_away_team_win
-    - name: game_date
-    - name: season_type
-    - name: home_team
-    - name: away_team
-    - name: total_home_score 
-    - name: total_away_score
-    - name: winning_team
-    - name: home_fantasy_points
-    - name: away_fantasy_points
-    - name: home_fantasy_points_ppr
-    - name: away_fantasy_points_ppr
-    - name: is_home_team_win
-      meta:
-        metrics:
-          home_team_wins:
-            type: sum
-    - name: is_away_team_win
-      meta:
-        metrics:
-          away_team_wins:
-            type: sum
-    - name: is_overtime
-      meta:
-        metrics:
-          overtime_games:
-            type: sum
-    - name: season_week
+      - name: game_id
+        description: "Unique identifier for each game."
+        meta:
+          metrics:
+            games:
+              type: count_distinct    
+      - name: game_date
+        description: "Date the game was played."
+      - name: season_type
+        description: "Type of season (e.g., regular season or post season)."
+      - name: season_week
+        description: "Week of the season in which the game was played."
+      - name: home_team
+        description: "Abbreviation of the home team."
+      - name: away_team
+        description: "Abbreviation of the away team."
+      - name: total_home_score
+        description: "Total points scored by the home team."
+      - name: total_away_score
+        description: "Total points scored by the away team."
+      - name: winning_team
+        description: "Abbreviation of the team that won the game. Null in case of a tie."
+      - name: is_home_team_win
+        description: "Boolean flag indicating if the home team won (1) or not (0)."
+        meta:
+          metrics:
+            home_team_wins:
+              type: sum
+      - name: is_away_team_win
+        description: "Boolean flag indicating if the away team won (1) or not (0)."
+        meta:
+          metrics:
+            away_team_wins:
+              type: sum
+      - name: is_overtime
+        description: "Boolean flag indicating if the game went into overtime (1) or not (0)."
+        meta:
+          metrics:
+            overtime_games:
+              type: sum
+      - name: home_fantasy_points
+        description: "Total fantasy points scored by the home team based on standard scoring rules."
+      - name: away_fantasy_points
+        description: "Total fantasy points scored by the away team based on standard scoring rules."
+      - name: home_fantasy_points_ppr
+        description: "Total fantasy points scored by the home team based on PPR (points per reception) scoring."
+      - name: away_fantasy_points_ppr
+        description: "Total fantasy points scored by the away team based on PPR (points per reception) scoring."
 
   - name: fct_team_standings
+    description: "Fact table containing team standings, including wins, rankings, and fantasy points."
     columns:
-    - name: team_name
-    - name: team_abbr 
-    - name: team_conf
-    - name: team_division
-    - name: team_nick
-    - name: wins
-      meta:
-        metrics: 
-          total_wins:
-            type: sum
-    - name: loses
-      meta: 
-        metrics: 
-          total_loses:
-            type: sum
-    - name: total_points_scored
-    - name: total_points_lost
-    - name: total_fantasy_points
-    - name: total_fantasy_points_ppr
-    - name: division_rank
-    - name: conference_rank
-    - name: home_wins
-      meta:
-        metrics: 
-          total_home_wins:
-            type: sum
-    - name: away_wins
-      meta: 
-        metrics: 
-          total_away_wins:
-            type: sum
+      - name: team_name
+        description: "Full name of the team."
+      - name: team_abbr
+        description: "Abbreviation of the team name."
+      - name: team_conf
+        description: "Conference the team belongs to (e.g., AFC or NFC)."
+      - name: team_division
+        description: "Division the team belongs to within its conference."
+      - name: team_nick
+        description: "Team's nickname or mascot."
+      - name: wins
+        description: "Total number of wins by the team."
+        meta:
+          metrics: 
+            total_wins:
+              type: sum
+      - name: loses
+        description: "Total number of losses by the team."
+        meta: 
+          metrics: 
+            total_loses:
+              type: sum
+      - name: total_points_scored
+        description: "Total points scored by the team throughout the season."
+      - name: total_points_lost
+        description: "Total points conceded by the team throughout the season."
+      - name: total_fantasy_points
+        description: "Total fantasy points accumulated by the team based on standard scoring rules."
+      - name: total_fantasy_points_ppr
+        description: "Total fantasy points accumulated by the team based on PPR (points per reception) scoring."
+      - name: division_rank
+        description: "Team's rank within its division."
+      - name: conference_rank
+        description: "Team's rank within its conference."
+      - name: home_wins
+        description: "Total number of games won at home."
+        meta:
+          metrics: 
+            total_home_wins:
+              type: sum
+      - name: away_wins
+        description: "Total number of games won away from home."
+        meta: 
+          metrics: 
+            total_away_wins:
+              type: sum
+
 
   - name: fct_injuries
+    description: "Fact table containing injury data for NFL players, including injury type and duration."
     meta:
       joins:
         - join: fct_team_standings
@@ -181,20 +215,26 @@ models:
         - join: fct_games_result
           sql_on: ${fct_games_result.season_week} = ${fct_injuries.week}
     columns:
-    - name: week
-    - name: team
-    - name: position
-    - name: full_name
-      meta:
-        metrics: 
-          players_injured:
-            type: count_distinct
-    - name: injury
-    #- name: injuries_count    
-    - name: duration
-      meta:
-        metrics: 
-          avg_duration:
-            type: average
+      - name: week
+        description: "Week of the season when the injury was reported."
+      - name: team
+        description: "Abbreviation of the team the injured player belongs to."
+      - name: position
+        description: "Player's position on the field (e.g., QB, RB, WR, etc.)."
+      - name: full_name
+        description: "Full name of the injured player."
+        meta:
+          metrics: 
+            players_injured:
+              type: count_distinct
+      - name: injury
+        description: "Description of the player's injury."
+      - name: duration
+        description: "Estimated duration of time the player is expected to be out due to injury."
+        meta:
+          metrics: 
+            avg_duration:
+              type: average
+
 
       
