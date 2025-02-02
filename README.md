@@ -15,6 +15,8 @@
       - [Do Injuries Affect Team Performance?](#do-injuries-affect-team-performance)
       - [Which Injuries Are Most Common?](#which-injuries-are-most-common)
       - [How Long Do Injuries Keep Players Out?](#how-long-do-injuries-keep-players-out)
+      - [Analyzing Injuries by Position](#analyzing-injuries-by-position)
+      - [Who Gets the Most Concussions and Common Injuries?](#who-gets-the-most-concussions-and-common-injuries)
 5. [Conclusions](#conclusions)
 
 ## Introduction
