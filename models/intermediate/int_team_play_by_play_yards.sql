@@ -74,10 +74,10 @@ adjusted_stats AS (
 stats_with_game_details AS (
     SELECT
         aggs.*,
-        gd.game_date            AS game_date,
-        gd.game_details         AS game_details,
-        gd.home_score           AS home_score,
-        gd.away_score           AS away_score
+        gd.game_date                        AS game_date,
+        gd.game_details                     AS game_details,
+        CAST(gd.home_score AS INT)          AS home_score,
+        CAST(gd.away_score AS INT)          AS away_score
     FROM 
         adjusted_stats aggs
     LEFT JOIN

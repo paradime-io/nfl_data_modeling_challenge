@@ -1,0 +1,94 @@
+version: 2
+models:
+  - name: int_team_play_by_player_yards
+    columns:
+      - name: possession_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: possession_team_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: season_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: game_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: home_or_away
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: passer_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: passer_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: rusher_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: rusher_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: total_yards_gained
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_passing_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_rushing_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_penalty_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_rush_attempts
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_targets
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_pass_completions
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_adj_passing_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_adj_rushing_yards
+        description: ""
+        meta:
+          dimension:
+            type: number

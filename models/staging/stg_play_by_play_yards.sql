@@ -26,8 +26,14 @@ renamed AS (
         yards_gained,
 
         -- Player involvement
-        passer_player_name,       
+
+        passer_player_id,
+        passer_player_name,
+        receiver_player_id,      
         receiver_player_name,
+        rusher_player_id,
+        rusher_player_name,
+        fantasy_player_id,
         fantasy_player_name,
 
         -- Penalties
@@ -38,7 +44,6 @@ renamed AS (
         -- Rushing stats
         rush,
         rush_attempt,
-        rusher_player_name,
         rushing_yards,
 
         -- Passing stats

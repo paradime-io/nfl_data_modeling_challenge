@@ -147,3 +147,23 @@ models:
         meta:
           dimension:
             type: string
+      - name: passer_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: receiver_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: rusher_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fantasy_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string

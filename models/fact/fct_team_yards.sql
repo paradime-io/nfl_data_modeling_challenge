@@ -1,6 +1,4 @@
-/*
-Pull in opponent_yards_gained via self-join
-*/
+-- self-join to add opponent_yards_gained
 
 WITH opponent_yards AS (
     SELECT
