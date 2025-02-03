@@ -106,5 +106,7 @@ models:
         description: "Injury type."
       - name: fantasy_status
         description: "Fantasy status."
-      - name: probabilty_play
-        description: "Calculate the likelihood of a player participating in a game based on their injury status."
+      - name: injuries_in_area
+        description: "TODO"
+      - name: body_area
+        description: "TODO"

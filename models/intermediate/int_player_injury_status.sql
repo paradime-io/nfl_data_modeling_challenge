@@ -11,6 +11,7 @@ SELECT
         CASE 
             -- Lower body injuries
             WHEN lower(injury_details) IN ('hip', 'lower_leg', 'knee', 'ankle', 'groin', 'achilles', 'calf', 'hamstring', 'foot') THEN 'Lower Body'
+            -- There are many types of knee injuries
             WHEN lower(injury_details) LIKE '%knee%' THEN 'Lower Body'
             -- Upper body injuries
             WHEN lower(injury_details) IN ('shoulder', 'collarbone', 'ribs', 'pectoral', 'triceps', 'elbow', 'forearm', 'wrist', 'hand') THEN 'Upper Body'
