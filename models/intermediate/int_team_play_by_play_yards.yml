@@ -132,3 +132,8 @@ models:
         meta:
           dimension:
             type: number
+      - name: score_differential
+        description: ""
+        meta:
+          dimension:
+            type: number

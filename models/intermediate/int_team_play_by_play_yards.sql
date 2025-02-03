@@ -4,7 +4,7 @@ WITH game_details AS (
         *
     FROM
         {{ ref('int_game_details')}}
-    ),
+),
 
 aggregated_stats AS (
     SELECT
@@ -41,7 +41,7 @@ aggregated_stats AS (
         {{ ref('int_play_by_play_yards') }}
     GROUP BY 
         1, 2, 3, 4, 5
-    ),
+),
 
 /*
 The number for total_passing_yards + total_rushing_yards do not always =
@@ -69,7 +69,7 @@ adjusted_stats AS (
         END AS total_adj_rushing_yards
     FROM
         aggregated_stats            
-    ),
+),
 
 stats_with_game_details AS (
     SELECT
@@ -102,7 +102,7 @@ stats_with_game_details AS (
         game_details gd
     ON
         aggs.game_id = gd.game_id
-    ),
+),
 
 home_win_or_loss AS (
         SELECT
@@ -138,7 +138,7 @@ home_win_or_loss AS (
             stats_with_game_details
         WHERE
             home_or_away = 'H'
-    ),
+),
 
 away_win_or_loss AS (
         SELECT
@@ -169,19 +169,27 @@ away_win_or_loss AS (
                 ELSE
                     0
             END AS away_loss,
-            home_win + home_loss + tie + away_win + away_loss AS games_played
+            home_win + home_loss + tie + away_win + away_loss   AS games_played
         FROM
             stats_with_game_details
         WHERE
             home_or_away = 'A'
-    )
+),
+
+home_and_away AS (
+    SELECT
+        *   
+    FROM
+        home_win_or_loss
+    UNION
+    SELECT
+        *
+    FROM
+        away_win_or_loss
+)
 
 SELECT
-    *
+    *,
+    CAST(offense_score - opponent_score AS INT)                 AS score_differential 
 FROM
-    home_win_or_loss
-UNION
-SELECT
-    *
-FROM
-    away_win_or_loss
+    home_and_away

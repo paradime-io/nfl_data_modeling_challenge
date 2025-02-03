@@ -75,7 +75,7 @@ adjusted_stats AS (
         END AS total_adj_rushing_yards
     FROM
         aggregated_stats            
-    )
+)
 
 SELECT
     *
