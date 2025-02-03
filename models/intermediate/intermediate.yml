@@ -107,6 +107,8 @@ models:
       - name: fantasy_status
         description: "Fantasy status."
       - name: injuries_in_area
-        description: "TODO"
+        description: "Number of injuries reported in the same body area for this player."
       - name: body_area
-        description: "TODO"
+        description: "The specific area of the body affected by the injury (e.g., lower, upper)."
+      - name: injury_severity
+        description: "Classification of the injury severity, typically on a scale (e.g., mild, moderate, severe)."
