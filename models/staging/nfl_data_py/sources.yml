@@ -1,0 +1,222 @@
+version: 2
+
+sources:
+  - name: nfl_data_py
+    database: RAMYASHREESHETTY85PLR_ANALYTICS
+    schema: STAGING
+    tables:
+      - name: DRAFT_DATA
+        description: "Contains draft data for NFL players."
+        columns:
+          - name: SEASON
+            description: "The season year."
+          - name: ROUND
+            description: "The draft round."
+          - name: PICK
+            description: "The draft pick number."
+          - name: TEAM
+            description: "The team that drafted the player."
+          - name: GSIS_ID
+            description: "Unique identifier for the player."
+          - name: PFR_PLAYER_NAME
+            description: "Player's name as per Pro Football Reference."
+          - name: POSITION
+            description: "Player's position."
+          - name: COLLEGE
+            description: "College the player attended."
+          - name: AGE
+            description: "Player's age at the time of the draft."
+          - name: ALLPRO
+            description: "Number of All-Pro selections."
+          - name: PROBOWLS
+            description: "Number of Pro Bowl selections."
+          - name: SEASONS_STARTED
+            description: "Number of seasons started."
+          - name: GAMES
+            description: "Total games played."
+          - name: PASS_YARDS
+            description: "Total passing yards."
+          - name: RUSH_YARDS
+            description: "Total rushing yards."
+          - name: REC_YARDS
+            description: "Total receiving yards."
+          - name: DEF_SACKS
+            description: "Total sacks by the player (if defensive)."
+
+      - name: INJURY_DATA
+        description: "Contains injury data for NFL players."
+        columns:
+          - name: SEASON
+            description: "The season year."
+          - name: TEAM
+            description: "The player's team."
+          - name: WEEK
+            description: "The week of the season."
+          - name: GSIS_ID
+            description: "Unique identifier for the player."
+          - name: FULL_NAME
+            description: "Player's full name."
+          - name: REPORT_PRIMARY_INJURY
+            description: "Primary injury reported."
+          - name: REPORT_STATUS
+            description: "Injury status (e.g., Out, Questionable)."
+          - name: DATE_MODIFIED
+            description: "Date the injury report was modified."
+
+      - name: PLAYER_BY_PLAYER_DATA
+        description: "Play-by-play data for NFL games."
+        columns:
+          - name: GAME_ID
+            description: "Unique identifier for the game."
+          - name: SEASON
+            description: "The season year."
+          - name: WEEK
+            description: "The week of the season."
+          - name: POSTEAM
+            description: "Team on offense."
+          - name: DEFTEAM
+            description: "Team on defense."
+          - name: YARDLINE_100
+            description: "Yard line (distance from opponent's end zone)."
+          - name: DOWN
+            description: "Down number."
+          - name: YDSTOGO
+            description: "Yards to go for a first down."
+          - name: PLAY_TYPE
+            description: "Type of play (e.g., pass, rush)."
+          - name: YARDS_GAINED
+            description: "Yards gained on the play."
+          - name: TOUCHDOWN
+            description: "Whether the play resulted in a touchdown."
+          - name: PASSER_PLAYER_ID
+            description: "Player ID of the passer."
+          - name: RUSHER_PLAYER_ID
+            description: "Player ID of the rusher."
+          - name: RECEIVER_PLAYER_ID
+            description: "Player ID of the receiver."
+          - name: FANTASY_PLAYER_ID
+            description: "Player ID for fantasy purposes."
+          - name: FANTASY
+            description: "Fantasy points for the play."
+
+      - name: PLAYER_STATS
+        description: "Weekly player statistics."
+        columns:
+          - name: PLAYER_ID
+            description: "Unique identifier for the player."
+          - name: PLAYER_NAME
+            description: "Player's name."
+          - name: POSITION
+            description: "Player's position."
+          - name: SEASON
+            description: "The season year."
+          - name: WEEK
+            description: "The week of the season."
+          - name: OPPONENT_TEAM
+            description: "Opponent team."
+          - name: COMPLETIONS
+            description: "Pass completions."
+          - name: ATTEMPTS
+            description: "Pass attempts."
+          - name: PASSING_YARDS
+            description: "Passing yards."
+          - name: PASSING_TDS
+            description: "Passing touchdowns."
+          - name: INTERCEPTIONS
+            description: "Interceptions thrown."
+          - name: SACKS
+            description: "Sacks taken."
+          - name: CARRIES
+            description: "Rushing attempts."
+          - name: RUSHING_YARDS
+            description: "Rushing yards."
+          - name: RUSHING_TDS
+            description: "Rushing touchdowns."
+          - name: RECEPTIONS
+            description: "Receptions."
+          - name: TARGETS
+            description: "Targets."
+          - name: RECEIVING_YARDS
+            description: "Receiving yards."
+          - name: RECEIVING_TDS
+            description: "Receiving touchdowns."
+          - name: FANTASY_POINTS
+            description: "Fantasy points scored."
+            tests:
+              - not_null
+
+      - name: SCHEDULES
+        description: "NFL game schedules."
+        columns:
+          - name: GAME_ID
+            description: "Unique identifier for the game."
+          - name: SEASON
+            description: "The season year."
+          - name: WEEK
+            description: "The week of the season."
+          - name: AWAY_TEAM
+            description: "Away team."
+          - name: HOME_TEAM
+            description: "Home team."
+          - name: GAMEDAY
+            description: "Date of the game."
+          - name: AWAY_SCORE
+            description: "Away team's score."
+          - name: HOME_SCORE
+            description: "Home team's score."
+
+      - name: SEASONAL_DATA
+        description: "Seasonal player statistics."
+        columns:
+          - name: PLAYER_ID
+            description: "Unique identifier for the player."
+          - name: SEASON
+            description: "The season year."
+          - name: COMPLETIONS
+            description: "Pass completions."
+          - name: ATTEMPTS
+            description: "Pass attempts."
+          - name: PASSING_YARDS
+            description: "Passing yards."
+          - name: PASSING_TDS
+            description: "Passing touchdowns."
+          - name: INTERCEPTIONS
+            description: "Interceptions thrown."
+          - name: SACKS
+            description: "Sacks taken."
+          - name: CARRIES
+            description: "Rushing attempts."
+          - name: RUSHING_YARDS
+            description: "Rushing yards."
+          - name: RUSHING_TDS
+            description: "Rushing touchdowns."
+          - name: RECEPTIONS
+            description: "Receptions."
+          - name: TARGETS
+            description: "Targets."
+          - name: RECEIVING_YARDS
+            description: "Receiving yards."
+          - name: RECEIVING_TDS
+            description: "Receiving touchdowns."
+          - name: FANTASY_POINTS
+            description: "Fantasy points scored."
+            tests:
+              - not_null
+
+      - name: SEASONAL_ROSTERS
+        description: "Seasonal rosters for NFL teams."
+        columns:
+          - name: SEASON
+            description: "The season year."
+          - name: TEAM
+            description: "The player's team."
+          - name: POSITION
+            description: "Player's position."
+          - name: PLAYER_NAME
+            description: "Player's name."
+          - name: PLAYER_ID
+            description: "Unique identifier for the player."
+          - name: YEARS_EXP
+            description: "Years of experience in the NFL."
+          - name: AGE
+            description: "Player's age."

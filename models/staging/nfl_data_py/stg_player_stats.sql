@@ -1,0 +1,29 @@
+WITH player_stats AS (
+    SELECT
+        PLAYER_ID,
+        PLAYER_NAME,
+        POSITION,
+        SEASON,
+        WEEK,
+        OPPONENT_TEAM,
+        COMPLETIONS,
+        ATTEMPTS,
+        PASSING_YARDS,
+        PASSING_TDS,
+        INTERCEPTIONS,
+        SACKS,
+        CARRIES,
+        RUSHING_YARDS,
+        RUSHING_TDS,
+        RECEPTIONS,
+        TARGETS,
+        RECEIVING_YARDS,
+        RECEIVING_TDS,
+        FANTASY_POINTS
+    FROM
+        {{ source('nfl_data_py', 'PLAYER_STATS') }}
+)
+SELECT
+    *
+FROM
+    player_stats

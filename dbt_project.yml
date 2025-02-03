@@ -19,15 +19,11 @@ models:
   nfl:
     staging:
       +schema: staging
-      +materialized: view
-    intermediate:
-      +schema: intermediate
-      +materialized: view
+      +materialized: table
+    # intermediate:
+    #   +schema: intermediate
+    #   +materialized: view
     marts:
-      dimensions:
-        +schema: dimensions
-        +materialized: view
-      facts:
-        +schema: facts
-        +materialized: table
+      +schema: marts
+      +materialized: table
 
