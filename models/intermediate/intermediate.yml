@@ -89,7 +89,7 @@ models:
               fantasy_points,
             ]
 
-  - name: int_injury_status
+  - name: int_player_injury_status
     description: "Intermediate model for injury data."
     columns:
       - name: year
