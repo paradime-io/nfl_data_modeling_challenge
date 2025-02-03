@@ -122,3 +122,13 @@ models:
         meta:
           dimension:
             type: number
+      - name: offense_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: opponent_score
+        description: ""
+        meta:
+          dimension:
+            type: number

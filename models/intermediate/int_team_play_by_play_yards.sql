@@ -77,11 +77,29 @@ stats_with_game_details AS (
         gd.game_date                        AS game_date,
         gd.game_details                     AS game_details,
         CAST(gd.home_score AS INT)          AS home_score,
-        CAST(gd.away_score AS INT)          AS away_score
+        CAST(gd.away_score AS INT)          AS away_score,
+        CAST(
+            CASE
+                WHEN
+                    home_or_away = 'H'
+                THEN
+                    home_score
+                ELSE
+                    away_score
+            END AS INT)                     AS offense_score,
+        CAST(
+            CASE
+                WHEN
+                    home_or_away = 'A'
+                THEN
+                    home_score
+                ELSE
+                    away_score
+            END AS INT)                     AS opponent_score
     FROM 
         adjusted_stats aggs
     LEFT JOIN
-        {{ ref('int_game_details') }} gd
+        game_details gd
     ON
         aggs.game_id = gd.game_id
     ),
