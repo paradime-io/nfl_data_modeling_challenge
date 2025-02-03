@@ -13,6 +13,13 @@ nfl_teams AS (
         {{ ref('nfl_teams') }}
 ),
 
+player_stats_by_game AS (
+    SELECT
+        *
+    FROM
+        {{ ref('player_stats_by_game')}}
+),
+
 pass_and_run AS (
     SELECT
         game_id,
@@ -33,16 +40,28 @@ pass_and_run AS (
         penalty = 1
 ),
 
-pos_team_plays AS (
+player_display_name AS (
     SELECT
         par.*,
+        psg.player_display_name             AS player_display_name
+    FROM
+        pass_and_run par
+    JOIN
+        player_stats_by_game psg
+    ON
+        par.penalty_player_id = psg.player_id
+),
+
+pos_team_plays AS (
+    SELECT
+        pdn.*,
         nt.name AS offense_team_name
     FROM 
-        pass_and_run par
+        player_display_name pdn
     JOIN
         nfl_teams nt 
     ON
-        par.offense_team = nt.abbreviation        
+        pdn.offense_team = nt.abbreviation        
     ),
 
 def_team_plays AS (

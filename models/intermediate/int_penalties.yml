@@ -122,3 +122,8 @@ models:
         meta:
           dimension:
             type: string
+      - name: player_display_name
+        description: ""
+        meta:
+          dimension:
+            type: string
