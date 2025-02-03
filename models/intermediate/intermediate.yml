@@ -90,14 +90,16 @@ models:
             ]
 
   - name: int_player_injury_status
-    description: "Intermediate model for injury data."
+    description: "Intermediate model for injury data. Aggregated based on team_id, year and position."
     columns:
       - name: year
         description: "Year of injury."
-      - name: player_id
-        description: "Player ID."
+      - name: position
+        description: "Position."
       - name: team_id
         description: "Team ID."
+      - name: team_name
+        description: "Team Name."
       - name: injury_details
         description: "Injury details."
       - name: injury_status
@@ -106,8 +108,6 @@ models:
         description: "Injury type."
       - name: fantasy_status
         description: "Fantasy status."
-      - name: injuries_in_area
-        description: "Number of injuries reported in the same body area for this player."
       - name: body_area
         description: "The specific area of the body affected by the injury (e.g., lower, upper)."
       - name: injury_severity

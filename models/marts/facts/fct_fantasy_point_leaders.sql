@@ -3,6 +3,7 @@ SELECT
     player_name,
     position,
     recent_team,
+    season,
     total_fantasy_points,
     total_fantasy_points_ppr,
     games_played,

@@ -7,6 +7,12 @@ sources:
     tables:
       - name: play_by_play
         description: "Granular play-level data for NFL games from the 2023 season."
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - play_id
+                - game_id
+                - week
         columns:
           - name: PLAY_ID
             description: "Unique identifier for each play."
@@ -795,9 +801,17 @@ sources:
 
       - name: player_stats_by_game
         description: "Player-level offensive statistics aggregated by game from the 2023 season"
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - player_id
+                - season_x
+                - week_x
         columns:
           - name: PLAYER_ID
             description: "Unique identifier for the player."
+            tests:
+              - not_null
           - name: PLAYER_NAME_X
             description: "Player's name as given in source X."
           - name: PLAYER_DISPLAY_NAME
@@ -812,8 +826,12 @@ sources:
             description: "The player's most recent team."
           - name: SEASON_X
             description: "Season year for these stats."
+            tests:
+              - not_null
           - name: WEEK_X
             description: "Week number for these stats."
+            tests:
+              - not_null
           - name: SEASON_TYPE
             description: "Indicates whether stats are from regular or postseason."
           - name: OPPONENT_TEAM
@@ -982,19 +1000,69 @@ sources:
       ## Had to split the data into multiple tables as Snowflake had a size limit
       - name: NFL_PLAY_BY_PLAY_2024
         description: "Granular play-level data for NFL games from the 2024 season."
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - play_id
+                - game_id
+                - week
       - name: NFL_PLAY_BY_PLAY_2023
         description: "Granular play-level data for NFL games from the 2023 season."
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - play_id
+                - game_id
+                - week
       - name: NFL_PLAY_BY_PLAY_2022
         description: "Granular play-level data for NFL games from the 2022 season."
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - play_id
+                - game_id
+                - week
       - name: NFL_PLAY_BY_PLAY_2021
         description: "Granular play-level data for NFL games from the 2021 season."
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - play_id
+                - game_id
+                - week
       - name: NFL_PLAYER_STATS_2021
         description: "Player-level offensive statistics aggregated by game from the 2021 season."
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - player_id
+                - season_x
+                - week_x
       - name: NFL_PLAYER_STATS_2022
         description: "Player-level offensive statistics aggregated by game from the 2022 season."
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - player_id
+                - season_x
+                - week_x
       - name: NFL_PLAYER_STATS_2023
         description: "Player-level offensive statistics aggregated by game from the 2023 season."
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - player_id
+                - season_x
+                - week_x
       - name: NFL_PLAYER_STATS_2024
         description: "Player-level offensive statistics aggregated by game from the 2024 season."
-      - name: NFL_INJURY_DATA_2021_2025
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - player_id
+                - season_x
+                - week_x
+      - name: NFL_INJURY_DATA_2021_2024
         description: "NFL injury statistics aggregated by year, team_id, player_id and injury status."
+      - name: NFL_TEAM
+        description: "NFL ID and Team Name."

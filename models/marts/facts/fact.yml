@@ -3,11 +3,20 @@ version: 2
 models:
   - name: fct_fantasy_point_leaders
     description: "Fact table ranking players by their fantasy performance using both standard and PPR scoring."
+    tests:
+        - dbt_utils.unique_combination_of_columns:
+            combination_of_columns:
+              - player_id
+              - position
+              - season
+              - recent_team
     columns:
       - name: player_id
         description: "Unique identifier for the player."
       - name: player_name
         description: "Name of the player."
+      - name: season
+        description: "Season."
       - name: position
         description: "Player's position (e.g., QB, RB, WR, TE)."
       - name: recent_team
@@ -45,6 +54,12 @@ models:
 
   - name: fct_fantasy_points_allowed_by_defense
     description: Fact table summarizing how each defense performed against different offensive positions in terms of fantasy points and yardage allowed, along with the variety of players they faced.
+    tests:
+        - dbt_utils.unique_combination_of_columns:
+            combination_of_columns:
+              - year
+              - defteam
+              - season_type  
     columns:
       - name: year
         description: "The year of the season"
@@ -71,6 +86,13 @@ models:
 
   - name: fct_player_injury_history
     description: Fact table containing the historical injury records for players.
+    tests:
+        - dbt_utils.unique_combination_of_columns:
+            combination_of_columns:
+              - team_id
+              - year
+              - position
+              - body_area
     columns:
       - name: severe_injuries
         description: "Count of severe injuries for the player and given year."
@@ -78,25 +100,16 @@ models:
         description: "Count of moderate injuries for the player and given year."
       - name: minor_injuries
         description: "Count of minor injuries for the player and given year."
-      - name: player_id
-        description: "Unique identifier for the player."
+      - name: position
+        description: "Unique identifier for the position."
+      - name: body_area
+        description: "Body area."
       - name: team_id
         description: "Identifier for the player's team."
+      - name: team_name
+        description: "Name for the player's team."
       - name: year
         description: "The season year for which injury data is recorded."
       - name: injuries_in_year
         description: "Total number of injuries a player had in the given year."
-      - name: severe_injuries
-        description: "Count of severe injuries in the given year."
-      - name: moderate_injuries
-        description: "Count of moderate injuries in the given year."
-      - name: minor_injuries
-        description: "Count of minor injuries in the given year."
-      - name: injuries_in_next_year
-        description: "Total number of injuries the player had in the following year."
-      - name: severe_injuries_in_next_year
-        description: "Number of severe injuries the player had in the following year."
-      - name: has_recurring_injury
-        description: "Indicates whether the player had any injuries in the next season."
-      - name: has_recurring_severe_injury
-        description: "Indicates whether the player had severe injuries in the next season."
+
