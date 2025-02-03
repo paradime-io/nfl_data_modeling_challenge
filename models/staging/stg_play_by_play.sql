@@ -16,8 +16,8 @@ renamed AS (
         -- Team information
         home_team,
         away_team,
-        posteam AS possession_team,
-        posteam_type AS possession_team_type,
+        posteam AS offense_team,
+        posteam_type AS offense_team_type,
         defteam AS defending_team,
 
         -- Field position and game context
@@ -86,16 +86,21 @@ renamed AS (
 
         -- Penalty information
         penalty,
+        first_down_penalty,
         penalty_type,
+        penalty_team,
+        penalty_player_id,
+        penalty_player_name,
+        penalty_yards,
 
         -- Team stats
         home_timeouts_remaining,
         away_timeouts_remaining,
-        posteam_timeouts_remaining AS possession_team_timeouts,
+        posteam_timeouts_remaining AS offense_team_timeouts,
         defteam_timeouts_remaining AS defending_team_timeouts,
         total_home_score,
         total_away_score,
-        posteam_score AS possession_team_score,
+        posteam_score AS offense_team_score,
         defteam_score AS defending_team_score,
         score_differential,
 

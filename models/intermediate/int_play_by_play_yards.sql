@@ -10,6 +10,13 @@ WITH pass_and_run AS (
         play_type = 'run'
 ),
 
+nfl_teams AS (
+    SELECT
+        *
+    FROM
+        {{ ref('nfl_teams') }}
+),
+
 home_team_plays AS (
     SELECT
         pbp.*,
@@ -17,7 +24,7 @@ home_team_plays AS (
     FROM 
         pass_and_run pbp
     JOIN
-        {{ ref('nfl_teams') }} nt 
+        nfl_teams nt 
     ON
         pbp.home_team = nt.abbreviation
     ),
@@ -29,7 +36,7 @@ away_team_plays AS (
     FROM 
         home_team_plays pbp
     JOIN
-        {{ ref('nfl_teams') }} nt 
+        nfl_teams nt 
     ON
         pbp.away_team = nt.abbreviation        
     ),
@@ -41,7 +48,7 @@ pos_team_plays AS (
     FROM 
         away_team_plays pbp
     JOIN
-        {{ ref('nfl_teams') }} nt 
+        nfl_teams nt 
     ON
         pbp.offense_team = nt.abbreviation        
     ),
@@ -53,7 +60,7 @@ def_team_plays AS (
     FROM 
         pos_team_plays pbp
     JOIN
-        {{ ref('nfl_teams') }} nt 
+        nfl_teams nt 
     ON
         pbp.defending_team = nt.abbreviation        
     )

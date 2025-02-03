@@ -37,7 +37,12 @@ renamed AS (
         fantasy_player_name,
 
         -- Penalties
+        
+        penalty,
+        first_down_penalty,
+        penalty_type,
         penalty_team,
+        penalty_player_id,
         penalty_player_name,
         penalty_yards,
         
