@@ -167,3 +167,23 @@ models:
         meta:
           dimension:
             type: string
+      - name: penalty
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: first_down_penalty
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: penalty_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: penalty_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string

@@ -1,17 +1,17 @@
 version: 2
 models:
-  - name: stg_play_by_play_yards
+  - name: int_penalties
     columns:
       - name: game_id
         description: ""
         meta:
           dimension:
             type: string
-      - name: season_type
+      - name: game_date
         description: ""
         meta:
           dimension:
-            type: string
+            type: date
       - name: home_team
         description: ""
         meta:
@@ -22,52 +22,27 @@ models:
         meta:
           dimension:
             type: string
+      - name: offense_team
+        description: ""
+        meta:
+          dimension:
+            type: string
       - name: defending_team
         description: ""
         meta:
           dimension:
             type: string
-      - name: distance_to_goal
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: game_date
-        description: ""
-        meta:
-          dimension:
-            type: date
-      - name: play_type
-        description: ""
-        meta:
-          dimension:
-            type: string
-      - name: yards_gained
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: passer_player_name
-        description: ""
-        meta:
-          dimension:
-            type: string
-      - name: passing_yards
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: receiver_player_name
-        description: ""
-        meta:
-          dimension:
-            type: string
-      - name: fantasy_player_name
+      - name: penalty_type
         description: ""
         meta:
           dimension:
             type: string
       - name: penalty_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: penalty_player_id
         description: ""
         meta:
           dimension:
@@ -82,88 +57,63 @@ models:
         meta:
           dimension:
             type: number
-      - name: rush
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: rush_attempt
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: rusher_player_name
-        description: ""
-        meta:
-          dimension:
-            type: string
-      - name: rushing_yards
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: pass_attempt
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: incomplete_pass
-        description: ""
-        meta:
-          dimension:
-            type: number
-      - name: complete_pass
-        description: ""
-        meta:
-          dimension:
-            type: number
       - name: in_red_zone
         description: ""
         meta:
           dimension:
             type: boolean
-      - name: passer_player_id
+      - name: offense_team_name
         description: ""
         meta:
           dimension:
             type: string
-      - name: receiver_player_id
+      - name: defending_team_name
         description: ""
         meta:
           dimension:
             type: string
-      - name: rusher_player_id
-        description: ""
-        meta:
-          dimension:
-            type: string
-      - name: fantasy_player_id
-        description: ""
-        meta:
-          dimension:
-            type: string
-      - name: offense_team
-        description: ""
-        meta:
-          dimension:
-            type: string
-      - name: penalty
+      - name: offense_penalty
         description: ""
         meta:
           dimension:
             type: number
-      - name: first_down_penalty
+      - name: defense_penalty
         description: ""
         meta:
           dimension:
             type: number
-      - name: penalty_type
+      - name: game_details
         description: ""
         meta:
           dimension:
             type: string
-      - name: penalty_player_id
+      - name: home_score
         description: ""
         meta:
           dimension:
-            type: string
+            type: number
+      - name: away_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: penalty_team_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: opponent_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: penalty_team_win
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: penalty_team_loss
+        description: ""
+        meta:
+          dimension:
+            type: number

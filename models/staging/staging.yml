@@ -36,16 +36,6 @@ models:
         meta:
           dimension:
             type: string
-      - name: possession_team
-        description: Team in possession of the ball during the play.
-        meta:
-          dimension:
-            type: string
-      - name: possession_team_type
-        description: Indicates if the possessing team is the home or away team.
-        meta:
-          dimension:
-            type: string
       - name: defending_team
         description: Team on defense during the play.
         meta:
@@ -335,11 +325,6 @@ models:
         meta:
           dimension:
             type: number
-      - name: possession_team_timeouts
-        description: Number of timeouts remaining for the possession team at this point.
-        meta:
-          dimension:
-            type: number
       - name: defending_team_timeouts
         description: Number of timeouts remaining for the defending team at this point.
         meta:
@@ -352,11 +337,6 @@ models:
             type: number
       - name: total_away_score
         description: Away team's total score so far in the game.
-        meta:
-          dimension:
-            type: number
-      - name: possession_team_score
-        description: Score of the team currently in possession.
         meta:
           dimension:
             type: number
@@ -434,6 +414,51 @@ models:
         meta:
           dimension:
             type: boolean
+      - name: offense_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: offense_team_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: first_down_penalty
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: penalty_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: penalty_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: penalty_player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: penalty_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: offense_team_timeouts
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: offense_team_score
+        description: ""
+        meta:
+          dimension:
+            type: number
   - name: stg_player_stats_by_game
     description: >-
       Staging model for player-level statistics by game, providing standardized
