@@ -13,7 +13,7 @@ For my entry, I leveraged Lightdash’s self-service analytics capabilities to e
 - Enabled end users to explore the data with ease, ensuring that common joins (e.g., Players -> Teams) were straightforward.
 - **Ensured consistent data granularity**: Each view maintains a single level of granularity (e.g., clicking on 'plays' only returns play-level data), preventing user confusion over perceived "duplicate" rows.
 - Incorporated **user-friendly hyperlinks** for all common sites and identifiers, allowing users to click through data to relevant sites.
-- Developed **out-of-the-box dashboards** for exploring  data on a specific team / quarterback, something that a less technical user could start with.
+- Developed **out-of-the-box dashboards** for exploring  data on a specific [team](https://app.lightdash.cloud/projects/9eae00da-f6c7-4b90-b7ca-3eb9069a3577/dashboards/8db88403-3f35-4fb5-bdf1-2c81e5a8a383/view) / [quarterback](https://app.lightdash.cloud/projects/9eae00da-f6c7-4b90-b7ca-3eb9069a3577/dashboards/5aeda06b-db7b-44ff-aeda-f56516af3f1c/view), something that a less technical user could start with.
 - Set **team colors** in the mart’s `.yml` file for easy plotting, eliminating the need to manually search for color hex codes.
 - Implemented **~50 tests** to ensure a high quality of data for future NFL seasons. Examples include correct team names, limited jersey numbers (0-99), and primary key validations. 
 
@@ -23,7 +23,7 @@ For my entry, I leveraged Lightdash’s self-service analytics capabilities to e
 
 ---
 
-## Part 2 - Fantasy Site Scoring Rule Difference Comparison
+## Part 2 - [Fantasy Site Scoring Rule Difference Comparison](https://app.lightdash.cloud/projects/9eae00da-f6c7-4b90-b7ca-3eb9069a3577/dashboards/f49c6647-cc17-44f8-9f03-58de924e05c8/view)
 
 ###  Objectives
 
@@ -79,3 +79,6 @@ Below are profiles of the top five impacted players and the reasoning behind the
 
 - **Yahoo Scoring Outlook**: **23% fewer points** in Yahoo leagues, causing Kincaid to fall just below **Dalton Schultz (HOU)** in Yahoo rankings.
 - **Takeaway**: Despite the scoring discrepancies, Kincaid remains a **low-end TE1** across platforms.
+
+
+![Calculation Impact Differences](media/receivers.png)
