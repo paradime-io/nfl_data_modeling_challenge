@@ -199,28 +199,6 @@ I looked at injuries for the positions with the highest injury counts:
 
 I analyzed which positions had the highest counts of the most common injuries—thigh, knee, concussions, and ankle injuries—to see which player roles were most affected by each type.
 
-### Concussions by positions
-
-Concussions were most common among cornerbacks, wide receivers, and linebackers.
-
-![Concussions by position](images/part2/concussions-by-position.png) 
-
-### 
-
-Thigh injuries were most frequent for cornerbacks, safeties, and wide receivers.
-
-![Thigh injuries by position](images/part2/thigh-injuries-by-position.png) 
-
-### Knee injuries by positions
-
-Knee injuries were most common among tackles, linebackers, and cornerbacks.
-
-![Knee injuries by position](images/part2/knee-injuries-by-position.png) 
-
-### Ankle injuries by positions
-
-Ankle injuries affected wide receivers, linebackers, cornbacks, and running backs the most.
-
 ![Ankle injuries by position](images/part2/ankle-injuries-by-position.png) 
 
 | **Concussions by positions**                                                  | **Thigh injuries by positions** | 
