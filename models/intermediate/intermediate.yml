@@ -88,3 +88,23 @@ models:
               player_position,
               fantasy_points,
             ]
+
+  - name: int_injury_status
+    description: "Intermediate model for injury data."
+    columns:
+      - name: year
+        description: "Year of injury."
+      - name: player_id
+        description: "Player ID."
+      - name: team_id
+        description: "Team ID."
+      - name: injury_details
+        description: "Injury details."
+      - name: injury_status
+        description: "Injury status."
+      - name: injury_type
+        description: "Injury type."
+      - name: fantasy_status
+        description: "Fantasy status."
+      - name: probabilty_play
+        description: "Calculate the likelihood of a player participating in a game based on their injury status."
