@@ -1,3 +1,4 @@
+-- example model
 SELECT
     player_id,
     player_name,

@@ -20,7 +20,8 @@ select distinct
   season_type, 
   home_team, 
   away_team, 
-  max(total_home_score) as total_home_score, max(total_away_score) as total_away_score,
+  max(total_home_score) as total_home_score, 
+  max(total_away_score) as total_away_score,
   case 
     when max(total_home_score) > max(total_away_score) then home_team
     when max(total_home_score) < max(total_away_score) then away_team

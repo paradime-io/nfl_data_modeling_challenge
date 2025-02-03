@@ -88,52 +88,91 @@ models:
         description: "Player’s rookie season year."
 
   - name: int_game_result
-    description: "Intermediate model for game result"
+    description: "This intermediate model processes and stores game results, including team details, scores, and the winning team."
     columns:
-    - name: game_id
-    - name: game_date 
-    - name: season_type
-    - name: home_team
-    - name: away_team 
-    - name: total_home_score 
-    - name: total_away_score
-    - name: winning_team
+      - name: game_id
+        description: "Unique identifier for each game."
+      - name: game_date
+        description: "The date on which the game took place."
+      - name: season_type
+        description: "Indicates the type of season (e.g., Regular, Postseason)."
+      - name: home_team
+        description: "The identifier of the home team."
+      - name: away_team
+        description: "The identifier of the away team."
+      - name: total_home_score
+        description: "Total points scored by the home team."
+      - name: total_away_score
+        description: "Total points scored by the away team."
+      - name: winning_team
+        description: "The identifier of the team that won the game. NULL if tied"
 
+ 
   - name: int_player_game_fantasy_points
-    description: ""
+    description: "This intermediate model calculates and stores fantasy points for players on a per-game basis. It includes player details, team and opponent information, and fantasy point calculations."
     columns:
-    - name: player_id
-    - name: player_name
-    - name: team
-    - name: opponent_team
-    - name: position
-    - name: position_group
-    - name: season
-    - name: season_type
-    - name: season_week
-    - name: fantasy_points
-    - name: fantasy_points_ppr
+      - name: player_id
+        description: "Unique identifier for the player."
+      - name: player_name
+        description: "Full name of the player."
+      - name: team
+        description: "Team the player was part of during the game."
+      - name: opponent_team
+        description: "Opponent team the player faced in the game."
+      - name: position
+        description: "Player's position (e.g., QB, RB, WR, TE, etc.)."
+      - name: position_group
+        description: "Broader position category."
+      - name: season
+        description: "Season in which the game took place."
+      - name: season_type
+        description: "Type of season (e.g., Regular, Post season)."
+      - name: season_week
+        description: "Week of the season in which the game occurred."
+      - name: fantasy_points
+        description: "Total fantasy points scored by the player in the game (standard scoring format)."
+      - name: fantasy_points_ppr
+        description: "Total fantasy points scored by the player in the game using PPR (Points Per Reception) scoring format."
 
   - name: int_injuries
-    description: "Report on medical injuries"
+    description: "This intermediate model provides a detailed report on player injuries, including their status in medical reports and practice reports."
     columns:
-    - name: season
-    - name: week
-    - name: game_type
-    - name: team
-    - name: gsis_id
-    - name: position
-    - name: full_name
-    - name: first_name
-    - name: last_name
-    - name: report_primary_injury
-    - name: report_secondary_injury
-    - name: report_status
-    - name: practice_primary_injury
-    - name: practice_secondary_injury
-    - name: practice_status
-    - name: injury
-    - name: first_report
-    - name: duration
+      - name: season
+        description: "The season in which the injury occurred."
+      - name: week
+        description: "The week of the season when the injury was reported."
+      - name: game_type
+        description: "Type of game (e.g., Regular, Post season)."
+      - name: team
+        description: "The team the injured player is associated with."
+      - name: gsis_id
+        description: "Unique identifier for the player in the GSIS system."
+      - name: position
+        description: "The player's position (e.g., QB, RB, WR, etc.)."
+      - name: full_name
+        description: "The player's full name."
+      - name: first_name
+        description: "The player's first name."
+      - name: last_name
+        description: "The player's last name."
+      - name: report_primary_injury
+        description: "Primary injury reported in the official injury report."
+      - name: report_secondary_injury
+        description: "Secondary injury reported in the official injury report."
+      - name: report_status
+        description: "Player's game availability status from the official injury report (e.g., Questionable, Out, Doubtful)."
+      - name: practice_primary_injury
+        description: "Primary injury affecting the player as reported during practice."
+      - name: practice_secondary_injury
+        description: "Secondary injury affecting the player as reported during practice."
+      - name: practice_status
+        description: "Player's practice participation status (e.g., Full, Limited, Did Not Practice)."
+      - name: injury
+        description: "Injured part of the body"
+      - name: first_report
+        description: "Is this the week when the injury was first reported."
+      - name: duration
+        description: "Duration of time (in weejs) the player was OUT because of the injury."
+
  
 
