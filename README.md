@@ -167,6 +167,7 @@ For guidance on what a successful submission may look like, check out examples f
 
 ## Introduction
 [Brief overview: What you aimed to achieve and why it matters]
+This is an overview of my NFL Project
 [Include link to Lightdash dashboard]
 
 ## Data Sources
