@@ -37,13 +37,13 @@ away_team_plays AS (
 pos_team_plays AS (
     SELECT
         pbp.*,
-        nt.name AS possession_team_name
+        nt.name AS offense_team_name
     FROM 
         away_team_plays pbp
     JOIN
         {{ ref('nfl_teams') }} nt 
     ON
-        pbp.possession_team = nt.abbreviation        
+        pbp.offense_team = nt.abbreviation        
     ),
 
 def_team_plays AS (

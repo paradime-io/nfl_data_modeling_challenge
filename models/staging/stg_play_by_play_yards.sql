@@ -14,7 +14,7 @@ renamed AS (
         -- Team information
         home_team,
         away_team,
-        posteam AS possession_team,
+        posteam AS offense_team,
         defteam AS defending_team,
 
         -- Field position and game context

@@ -22,11 +22,6 @@ models:
         meta:
           dimension:
             type: string
-      - name: possession_team
-        description: ""
-        meta:
-          dimension:
-            type: string
       - name: defending_team
         description: ""
         meta:
@@ -143,6 +138,11 @@ models:
           dimension:
             type: string
       - name: fantasy_player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: offense_team
         description: ""
         meta:
           dimension:

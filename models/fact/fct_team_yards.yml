@@ -2,12 +2,12 @@ version: 2
 models:
   - name: fct_team_yards
     columns:
-      - name: possession_team
+      - name: offense_team
         description: ""
         meta:
           dimension:
             type: string
-      - name: possession_team_name
+      - name: offense_team_name
         description: ""
         meta:
           dimension:

@@ -4,23 +4,28 @@ WITH game_details AS (
         *
     FROM
         {{ ref('int_game_details')}}
-    ),
+),
+
+play_by_play AS (
+    SELECT
+        *
+    FROM
+        {{ ref('int_play_by_play_yards') }}
+),
 
 aggregated_stats AS (
     SELECT
-        possession_team,
-        possession_team_name,
+        offense_team,
+        offense_team_name,
         season_type,
         game_id,
         CASE 
-            WHEN possession_team = home_team 
+            WHEN offense_team = home_team 
                 THEN 'H'
             ELSE
                 'A'
         END AS home_or_away,
-        passer_player_id,
         passer_player_name,
-        rusher_player_id,
         rusher_player_name,
         SUM(yards_gained)       AS total_yards_gained,
         SUM(passing_yards)      AS total_passing_yards,
@@ -44,8 +49,8 @@ aggregated_stats AS (
     FROM 
         {{ ref('int_play_by_play_yards') }}
     GROUP BY 
-        1, 2, 3, 4, 5, 6, 7, 8, 9
-    ),
+        1, 2, 3, 4, 5, 6, 7
+),
 
 adjusted_stats AS (
     SELECT
@@ -70,23 +75,10 @@ adjusted_stats AS (
         END AS total_adj_rushing_yards
     FROM
         aggregated_stats            
-    ),
-
-stats_with_game_details AS (
-    SELECT
-        aggs.*,
-        gd.game_date                        AS game_date,
-        gd.game_details                     AS game_details
-    FROM 
-        adjusted_stats aggs
-    LEFT JOIN
-        {{ ref('int_game_details') }} gd
-    ON
-        aggs.game_id = gd.game_id
     )
 
 SELECT
     *
 FROM
-    stats_with_game_details
+    adjusted_stats
 

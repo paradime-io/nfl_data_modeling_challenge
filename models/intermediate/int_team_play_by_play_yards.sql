@@ -8,12 +8,12 @@ WITH game_details AS (
 
 aggregated_stats AS (
     SELECT
-        possession_team,
-        possession_team_name,
+        offense_team,
+        offense_team_name,
         season_type,
         game_id,
         CASE 
-            WHEN possession_team = home_team 
+            WHEN offense_team = home_team 
                 THEN 'H'
             ELSE
                 'A'

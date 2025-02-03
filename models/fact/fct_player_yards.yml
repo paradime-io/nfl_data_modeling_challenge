@@ -2,12 +2,12 @@ version: 2
 models:
   - name: fct_player_yards
     columns:
-      - name: possession_team
+      - name: offense_team
         description: ""
         meta:
           dimension:
             type: string
-      - name: possession_team_name
+      - name: offense_team_name
         description: ""
         meta:
           dimension:
@@ -33,11 +33,6 @@ models:
           dimension:
             type: string
       - name: passer_player_name
-        description: ""
-        meta:
-          dimension:
-            type: string
-      - name: rusher_player_id
         description: ""
         meta:
           dimension:
@@ -98,6 +93,16 @@ models:
           dimension:
             type: date
       - name: game_details
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: player_display_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: position
         description: ""
         meta:
           dimension:

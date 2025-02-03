@@ -28,7 +28,7 @@ WITH opponent_yards AS (
         {{ ref('int_team_play_by_play_yards')}} b
     WHERE
         a.game_id = b.game_id AND
-        a.possession_team != b.possession_team
+        a.offense_team != b.offense_team
 )
 
 SELECT
