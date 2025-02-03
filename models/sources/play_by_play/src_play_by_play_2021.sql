@@ -103,8 +103,6 @@ SELECT
         def_wp AS defensive_win_probability,
         home_wp AS home_win_probability,
         away_wp AS away_win_probability,
-        wpa AS win_probability_added,
-
-        yardline_100
+        wpa AS win_probability_added
 
     FROM {{ source('nfl_ella', 'NFL_PLAY_BY_PLAY_2021') }}

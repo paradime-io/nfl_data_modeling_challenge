@@ -13,6 +13,7 @@ add_red_zone AS (
         -- Play identifiers
         play_id,
         game_id,
+        SUBSTRING(game_id, 0, 4) AS year,
         legacy_game_id,
         season_type,
         
@@ -119,7 +120,7 @@ add_red_zone AS (
 
         -- Red zone indicator
         CASE 
-            WHEN yardline_100 <= 20 THEN TRUE 
+            WHEN distance_to_goal <= 20 THEN TRUE 
             ELSE FALSE 
         END AS in_red_zone
     FROM 

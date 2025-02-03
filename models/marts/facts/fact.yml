@@ -42,3 +42,29 @@ models:
         description: "Total number of red zone targets (pass attempts) directed to the player."
       - name: total_pass_completions
         description: "Total number of red zone passes completed to the player."
+
+  - name: fct_fantasy_points_allowed_by_defense
+    description: Fact table summarizing how each defense performed against different offensive positions in terms of fantasy points and yardage allowed, along with the variety of players they faced.
+    columns:
+      - name: year
+        description: "The year of the season"
+      - name: season_type
+        description: "Type of season (e.g., regular, postseason)"
+      - name: defteam
+        description: "The defending team"
+      - name: total_fantasy_points_allowed_qb
+        description: "Total fantasy points allowed to quarterbacks"
+      - name: total_fantasy_points_allowed_rb
+        description: "Total fantasy points allowed to running backs"
+      - name: total_fantasy_points_allowed_wrte
+        description: "Total fantasy points allowed to wide receivers and tight ends"
+      - name: total_rushing_yards_allowed
+        description: "Total rushing yards allowed"
+      - name: games_played
+        description: "Number of games played"
+      - name: unique_qbs_faced
+        description: "Number of unique quarterbacks faced"
+      - name: unique_rbs_faced
+        description: "Number of unique running backs faced"
+      - name: unique_wrs_faced
+        description: "Number of unique wide receivers faced"

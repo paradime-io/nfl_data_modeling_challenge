@@ -20,6 +20,7 @@ Welcome to the **dbt™ Data Modeling Challenge - Fantasy Football Edition!** Th
 ## 🏈 Getting Started
 
 ### Registration and Verification
+
 Make sure you meet the [Entry Requirements](#) before registering
 
 - **Register**: Complete the [registration form](#)
@@ -29,8 +30,8 @@ Make sure you meet the [Entry Requirements](#) before registering
 
 After approval, you'll receive two emails:
 
-1. **Snowflake Account Credentials**: Contains your Snowflake account details. Search for "*Snowflake Credentials: dbt™ Data Modeling Challenge - Fantasy Football Edition*."
-2. **Paradime Platform Invitation**: An invitation to access the Paradime Platform. Search for "*[Paradime] Activate your account*."
+1. **Snowflake Account Credentials**: Contains your Snowflake account details. Search for "_Snowflake Credentials: dbt™ Data Modeling Challenge - Fantasy Football Edition_."
+2. **Paradime Platform Invitation**: An invitation to access the Paradime Platform. Search for "_[Paradime] Activate your account_."
 
 **Additional Guidance**: Detailed setup tutorials will be provided in your Snowflake confirmation email.
 
@@ -43,11 +44,13 @@ After approval, you'll receive two emails:
 ## 🏈 Competition Details
 
 **Key Dates:**
+
 - **Start:** January 2, 2025
 - **Submission Deadline:** February 4, 2025, 11:59 PM PT
 - **Winners Announced:** February 6, 2025 (right before the Superbowl!)
 
 **Who Should Participate?**
+
 - Data Analysts, Analytics Engineers, Data Engineers, Data Scientists, and SQL/dbt™ enthusiasts
 - Individual submissions only (no teams)
 - Experience with SQL, dbt™, Git, and basic data visualization required
@@ -55,14 +58,17 @@ After approval, you'll receive two emails:
 ## ⚙️ Tools and Resources
 
 1. **[Paradime](https://www.paradime.io/)**
+
    - SQL, dbt™ development, and AI-assisted analytics engineering
    - [Documentation](https://docs.paradime.io/app-help) | [Code IDE Tutorial](https://app.arcade.software/share/7kRyaYbPoGc5ofmJfmvY) | [Commands Panel](https://www.youtube.com/watch?v=wQtIn-tnnbg) | [DinoAI Tutorial](https://www.youtube.com/watch?v=KqiosgQFsuk)
 
 2. **[Lightdash](https://www.lightdash.com/)**
+
    - Open-source BI for dbt™ metrics and visualizations
    - [Documentation](https://docs.lightdash.com/) | [Tutorial](https://www.youtube.com/watch?v=Z4Y0KM0MroQ)
 
 3. **[Snowflake](https://www.snowflake.com/en/)**
+
    - Cloud data platform for storage and compute
 
 4. **GitHub**
@@ -74,37 +80,43 @@ After approval, you'll receive two emails:
 
 Check out these resources:
 
-- **[Winning Strategies for Paradime's Movie Data Modeling Challenge](https://www.paradime.io/blog/winning-strategies-movie-challenge)**: Learn the strategies, best practices, and insights uncovered from winning participants in previous Data Modeling Challenges.  
+- **[Winning Strategies for Paradime's Movie Data Modeling Challenge](https://www.paradime.io/blog/winning-strategies-movie-challenge)**: Learn the strategies, best practices, and insights uncovered from winning participants in previous Data Modeling Challenges.
 - Explore winning submissions from Paradime's recent Data Modeling Challenges:
-  - **[Bruno De Lima's Submission](https://github.com/paradime-io/social-media-data-modeling-challenge/tree/bruno-lima)**: 1st Place winner from Paradime's dbt Data Modeling Challenge - Socal Media Edition.  
-  - **[Spence Perry's Submission](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/tree/nba-spence-perry)**: 1st place winner from Paradime's dbt Data Modeling Challenge - NBA Edition.  
+  - **[Bruno De Lima's Submission](https://github.com/paradime-io/social-media-data-modeling-challenge/tree/bruno-lima)**: 1st Place winner from Paradime's dbt Data Modeling Challenge - Socal Media Edition.
+  - **[Spence Perry's Submission](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/tree/nba-spence-perry)**: 1st place winner from Paradime's dbt Data Modeling Challenge - NBA Edition.
   - **[Isin Pesch's Submission](https://github.com/paradime-io/paradime-dbt-movie-challenge/blob/movie-isin-pesch-deel-com/)**: 1st place winner from Paradime's dbt Data Modeling Challenge - Movie Edition.
 
 ### Step 1: Master Required Tools
+
 - Explore Paradime's code IDE, AI development, data explorer, and lineage tools
 - Understand Snowflake schemas and tables in your fantasy football datasets
 - Learn to connect dbt™ models and build Lightdash dashboards
 
 ### Step 2: Explore and Enhance the Data
+
 - Examine pre-loaded fantasy football datasets
 - Consider external data sources to enhance analysis (injury reports, game results, weather conditions, draft prospects, depth charts, etc.)
 
 ### Step 3: Generate Insights
+
 Uncover NFL insights related to fantasy football—the possibilities are endless!
 
-**Potential Insight Areas with Pre-Loaded Datasets:**  
-- **Top Performers by Week/Season**: Using [player_stats_by_game](https://github.com/paradime-io/nfl_data_modeling_challenge/blob/main/models/staging/stg_player_stats_by_game.sql), identify highest-scoring players each week and over the season.  
-- **Team Defense Impact**: Using [play_by_play](https://github.com/paradime-io/nfl_data_modeling_challenge/blob/main/models/staging/stg_play_by_play.sql), determine which defenses give up the most fantasy points by position.  
+**Potential Insight Areas with Pre-Loaded Datasets:**
+
+- **Top Performers by Week/Season**: Using [player_stats_by_game](https://github.com/paradime-io/nfl_data_modeling_challenge/blob/main/models/staging/stg_player_stats_by_game.sql), identify highest-scoring players each week and over the season.
+- **Team Defense Impact**: Using [play_by_play](https://github.com/paradime-io/nfl_data_modeling_challenge/blob/main/models/staging/stg_play_by_play.sql), determine which defenses give up the most fantasy points by position.
 - **Red Zone Efficiency**: Using [play_by_play](https://github.com/paradime-io/nfl_data_modeling_challenge/blob/main/models/staging/stg_play_by_play.sql), pinpoint which players or teams excel in scoring opportunities inside the 20-yard line.
 
-**Potential Insight Areas with External Datasets:**  
-- Top scoring players by week/season  
-- Player consistency analysis (boom/bust metrics)  
-- Impact of team matchups on player performance  
-- Identifying players with high injury propensity  
-- Forecasting 2025 draft prospects  
+**Potential Insight Areas with External Datasets:**
+
+- Top scoring players by week/season
+- Player consistency analysis (boom/bust metrics)
+- Impact of team matchups on player performance
+- Identifying players with high injury propensity
+- Forecasting 2025 draft prospects
 
 ### Step 4: Visualize with Lightdash
+
 - Create clear, informative dashboards w/ written conclusions
 - Use dbt™ models as metric sources (optional)
 - Ensure visualizations support your conclusions
@@ -122,14 +134,15 @@ For reference, the scripts we used to load the pre-loaded datasets can be found 
 **Deadline**: February 4, 2025, 11:59 PM PT
 
 **Submission Process**:
+
 1. Complete your dbt™ project in Paradime
 2. Build Lightdash visualizations
 3. Commit code, documentation, and README.md to GitHub
 4. Email parker@paradime.io:
    - Subject: "<Your_Name> - Fantasy Football Data Modeling Challenge Submission"
    - Include GitHub branch link
-  
-Need help? follow this [step-by-step tutorial](https://app.arcade.software/share/mpoE0fK5HknHZJ3xLVVs) to submit your project. 
+
+Need help? follow this [step-by-step tutorial](https://app.arcade.software/share/mpoE0fK5HknHZJ3xLVVs) to submit your project.
 
 ## 🎯 Judging Criteria
 
@@ -149,15 +162,19 @@ A panel of five independent judges will assess each submission based on the foll
 - **Win Prizes**: Compete for Amazon gift cards worth up to $1,500!
 
 **Prizes:**
-- **1st Place**: $1,500 Amazon gift card  
-- **2nd Place**: $1,000 Amazon gift card  
+
+- **1st Place**: $1,500 Amazon gift card
+- **2nd Place**: $1,000 Amazon gift card
 - **3rd Place**: $500 Amazon gift card
 
 ---
+
 # Example Submission Template
+
 For guidance on what a successful submission may look like, check out examples from [previous dbt™ Data Modeling Challenge winners](#need-a-spark-of-inspiration).
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
 2. [Data Sources](#data-sources)
 3. [Methodology](#methodology)
@@ -166,29 +183,37 @@ For guidance on what a successful submission may look like, check out examples f
 6. [Conclusions](#conclusions)
 
 ## Introduction
+
 [Brief overview: What you aimed to achieve and why it matters]
 [Include link to Lightdash dashboard]
 
 ## Data Sources
+
 - [Fantasy Football Data (Snowflake)](... link or details ...)
 - [Additional Data Set 1] - [Description]
 - [Additional Data Set 2] - [Description]
 
 ## Methodology
+
 ### Tools Used
+
 - Paradime for dbt™ modeling and SQL
 - Snowflake for data warehousing
 - Lightdash for visualization
 - [Any other tools/techniques used]
 
 ### Applied Techniques
+
 [Discuss transformations, tests, and models built]
 
 ## Visualizations
+
 [Include screenshots or links to Lightdash dashboards]
 
 ## Insights
+
 [Detail your findings, supported by data and visuals]
 
 ## Conclusions
+
 [Summarize key takeaways and recommendations]

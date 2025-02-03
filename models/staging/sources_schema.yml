@@ -979,6 +979,7 @@ sources:
     database: ELLARUNCIMANMEMLL_ANALYTICS
     schema: DBT_ELLA_RUNCIMAN
     tables:
+      ## Had to split the data into multiple tables as Snowflake had a size limit
       - name: NFL_PLAY_BY_PLAY_2024
         description: "Granular play-level data for NFL games from the 2024 season."
       - name: NFL_PLAY_BY_PLAY_2023
@@ -995,3 +996,5 @@ sources:
         description: "Player-level offensive statistics aggregated by game from the 2023 season."
       - name: NFL_PLAYER_STATS_2024
         description: "Player-level offensive statistics aggregated by game from the 2024 season."
+      - name: NFL_INJURY_DATA_2021_2025
+        description: "NFL injury statistics aggregated by year, team_id, player_id and injury status."

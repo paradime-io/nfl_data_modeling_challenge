@@ -33,4 +33,3 @@ models:
       facts:
         +schema: facts
         +materialized: table
-
