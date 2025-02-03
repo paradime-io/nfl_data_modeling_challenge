@@ -1,0 +1,1848 @@
+models:
+  - name: teams
+    description: "A table containing information about sports teams"
+    meta:
+      group_label: 'Self-Service Explore'
+      default_time_dimension:
+        field: event_date
+        interval: YEAR
+    columns:
+      - name: team
+        description: "The name of the team"
+        meta:
+          dimension:
+            label: Name
+      - name: abvr
+        description: "The abbreviation of the team"
+        meta:
+          dimension:
+            label: 'Team Abbreviation'
+            type: string
+            colors:
+              DET: '#0076B6'
+              NYJ: '#17B03B'
+              LAC: '#1D64B6'
+              HOU: '#03202F'
+              TEN: '#4B92DB'
+              KC: '#E31837'
+              BAL: '#241773'
+              NYG: '#0B2265'
+              DAL: '#0061A8'
+              NE: '#002244'
+              CAR: '#0085CA'
+              MIA: '#00A3A0'
+              MIN: '#4F92B7'
+              CIN: '#FF5910'
+              IND: '#002C5F'
+              GB: '#1D3C20'
+              WAS: '#7A1C1F'
+              CLE: '#311F1B'
+              'NO': '#D3BC8D'
+              CHI: '#0B162A'
+              BUF: '#00338D'
+              ATL: '#A5ACAF'
+              LV: '#000000'
+              ARI: '#E63946'
+              JAX: '#006778'
+              DEN: '#FB4F14'
+              LA: '#0038A8'
+              PHI: '#004C54'
+              SF: '#AA0000'
+              PIT: '#FFB81C'
+              TB: '#D04E5C'
+              SEA: '#002A5C'
+        tests:
+          - unique
+          - not_null
+          - accepted_values:
+              values:
+                - DET
+                - NYJ
+                - LAC
+                - HOU
+                - TEN
+                - KC
+                - BAL
+                - NYG
+                - DAL
+                - NE
+                - CAR
+                - MIA
+                - MIN
+                - CIN
+                - IND
+                - GB
+                - WAS
+                - CLE
+                - 'NO'
+                - CHI
+                - BUF
+                - ATL
+                - LV
+                - ARI
+                - JAX
+                - DEN
+                - LA
+                - PHI
+                - SF
+                - PIT
+                - TB
+                - SEA
+      - name: founded
+        description: "The year the team was founded"
+        tests:
+          - not_null
+        meta:
+          dimension:
+            label: 'Founded'
+            type: number
+            round: 0
+      - name: wins
+        description: "Number of wins"
+        tests:
+          - not_null
+        meta:
+          dimension:
+            label: 'All-Time Wins'
+            type: number
+            round: 0
+      - name: losses
+        description: "Number of losses"
+        tests:
+          - not_null
+        meta:
+          dimension:
+            label: 'All-Time Losses'
+            type: number
+            round: 0
+      - name: ties
+        description: "Number of ties"
+        meta:
+          dimension:
+            label: 'All-Time Ties'
+            type: number
+            round: 0
+      - name: wl_pct
+        description: "Win-loss percentage"
+        tests:
+          - not_null
+        meta:
+          dimension:
+            label: 'All-Time Winning Percentage'
+            type: number
+            format: percent
+            round: 2
+      - name: yr_plyf
+        description: "Years in playoffs"
+        meta:
+          dimension:
+            type: number
+            label: 'Years in the Playoffs'
+            round: 0
+      - name: w_plyf
+        description: "Playoff wins"
+        meta:
+          dimension:
+            type: number
+            label: 'All-Time Playoff Wins'
+            round: 0
+      - name: l_plyf
+        description: "Playoff losses"
+        meta:
+          dimension:
+            type: number
+            label: 'All-Time Playoff Losses'
+            round: 0
+      - name: wl_pct_plyf
+        description: "Playoff win-loss percentage"
+        meta:
+          dimension:
+            type: number
+            format: percent
+            label: 'All-Time Playoff Winning Percentage'
+            round: 2
+      - name: chmp
+        description: "Number of championships, including pre-Super Bowl era"
+        meta:
+          dimension:
+            type: number
+            label: 'Number of Championships'
+            round: 0
+      - name: sbwl
+        description: "Number of Super Bowl wins"
+        meta:
+          dimension:
+            type: number
+            label: 'Number of Super Bowls'
+            round: 0
+      - name: conf
+        description: "Conference"
+        meta:
+          dimension:
+            type: number
+            label: 'Number of Conference Titles'
+            round: 0
+      - name: div
+        description: "Division"
+        meta:
+          dimension:
+            type: number
+            label: 'Number of Divisional Titles'
+            round: 0
+  - name: players
+    description: Aggregates the latest player stats for each game from the source table.
+    meta:
+      default_time_dimension:
+        field: event_date
+        interval: YEAR
+      group_label: 'Self-Service Explore'
+      joins:
+        - join: teams
+          alias: Team
+          sql_on: ${players.team} = ${Team.abvr}
+    columns:
+      - name: player_id
+        description: Unique identifier for the player.
+        tests:
+          - unique
+          - not_null
+        meta:
+          dimension:
+            type: string
+            groups:
+              - Identifiers
+          metrics:
+            distinct_player_count:
+              type: count_distinct
+              label: Count of Distinct Players
+      - name: player_name
+        description: Name of the player.
+        meta:
+          dimension:
+            type: string
+      - name: headshot_url
+        description: URL of the player's headshot image.
+        meta:
+          dimension:
+            type: string
+            urls:
+              - label: Open
+                url: '${ value.raw }'
+      - name: jersey_number
+        description: Player's jersey number.
+        meta:
+          dimension:
+            type: number
+            round: 0
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: BETWEEN 0 AND 99
+      - name: height
+        description: Height of the player.
+        meta:
+          dimension:
+            type: number
+            label: Height (Inches)
+          metrics:
+            sum_of_height:
+              type: sum
+              label: 'Sum of Height (Inches)'
+      - name: weight
+        description: Weight of the player.
+        meta:
+          dimension:
+            type: number
+            label: Weight (Pounds)
+          metrics:
+            sum_of_weight:
+              type: sum
+              label: 'Sum of Weight (Pounds)'
+      - name: age
+        description: Age of the player.
+        meta:
+          dimension:
+            type: number
+          metrics:
+            sum_of_age:
+              type: sum
+              label: 'Sum of Age'
+            average_age:
+              type: average
+              label: 'Average Age'
+      - name: birth_date
+        description: Birth date of the player.
+        meta:
+          dimension:
+            type: date
+      - name: college
+        description: College attended by the player.
+        meta:
+          dimension:
+            type: string
+            groups:
+              - College/Draft
+      - name: years_experience
+        description: Number of years of professional experience.
+        meta:
+          dimension:
+            type: number
+          metrics:
+            sum_of_years_experience:
+              type: sum
+              label: Total Years of Experience
+      - name: entry_year
+        description: Year the player entered the league.
+        meta:
+          dimension:
+            type: number
+            round: 0
+      - name: rookie_year
+        description: Year the player was a rookie.
+        meta:
+          dimension:
+            type: number
+            round: 0
+            groups:
+              - College/Draft
+      - name: draft_team
+        description: Team that drafted the player.
+        meta:
+          dimension:
+            type: string
+            groups:
+              - College/Draft
+            colors:
+              DET: '#0076B6'
+              NYJ: '#17B03B'
+              LAC: '#1D64B6'
+              HOU: '#03202F'
+              TEN: '#4B92DB'
+              KC: '#E31837'
+              BAL: '#241773'
+              NYG: '#0B2265'
+              DAL: '#0061A8'
+              NE: '#002244'
+              CAR: '#0085CA'
+              MIA: '#00A3A0'
+              MIN: '#4F92B7'
+              CIN: '#FF5910'
+              IND: '#002C5F'
+              GB: '#1D3C20'
+              WAS: '#7A1C1F'
+              CLE: '#311F1B'
+              'NO': '#D3BC8D'
+              CHI: '#0B162A'
+              BUF: '#00338D'
+              ATL: '#A5ACAF'
+              LV: '#000000'
+              ARI: '#E63946'
+              JAX: '#006778'
+              DEN: '#FB4F14'
+              LA: '#0038A8'
+              PHI: '#004C54'
+              SF: '#AA0000'
+              PIT: '#FFB81C'
+              TB: '#D04E5C'
+              SEA: '#002A5C'
+        tests:
+          - accepted_values:
+              values:
+                - DET
+                - NYJ
+                - LAC
+                - HOU
+                - TEN
+                - KC
+                - BAL
+                - NYG
+                - DAL
+                - NE
+                - CAR
+                - MIA
+                - MIN
+                - CIN
+                - IND
+                - GB
+                - WAS
+                - CLE
+                - 'NO'
+                - CHI
+                - BUF
+                - ATL
+                - LV
+                - ARI
+                - JAX
+                - DEN
+                - LA
+                - PHI
+                - SF
+                - PIT
+                - TB
+                - SEA
+                - SD
+                - OAK
+      - name: draft_number
+        description: Draft number of the player. Null if undrafted.
+        meta:
+          dimension:
+            type: number
+            groups:
+              - College/Draft
+          metrics:
+            average_draft_position:
+              type: average
+              label: Average Draft Position
+      - name: position
+        description: Player's primary position.
+        meta:
+          dimension:
+            type: string
+      - name: position_group
+        description: Group of positions the player belongs to.
+        meta:
+          dimension:
+            type: string
+      - name: team
+        description: Team the player was associated with at the end of the 2023 season.
+        meta:
+          dimension:
+            type: string
+            colors:
+              DET: '#0076B6'
+              NYJ: '#17B03B'
+              LAC: '#1D64B6'
+              HOU: '#03202F'
+              TEN: '#4B92DB'
+              KC: '#E31837'
+              BAL: '#241773'
+              NYG: '#0B2265'
+              DAL: '#0061A8'
+              NE: '#002244'
+              CAR: '#0085CA'
+              MIA: '#00A3A0'
+              MIN: '#4F92B7'
+              CIN: '#FF5910'
+              IND: '#002C5F'
+              GB: '#1D3C20'
+              WAS: '#7A1C1F'
+              CLE: '#311F1B'
+              'NO': '#D3BC8D'
+              CHI: '#0B162A'
+              BUF: '#00338D'
+              ATL: '#A5ACAF'
+              LV: '#000000'
+              ARI: '#E63946'
+              JAX: '#006778'
+              DEN: '#FB4F14'
+              LA: '#0038A8'
+              PHI: '#004C54'
+              SF: '#AA0000'
+              PIT: '#FFB81C'
+              TB: '#D04E5C'
+              SEA: '#002A5C'
+        tests:
+          - accepted_values:
+              values:
+                - DET
+                - NYJ
+                - LAC
+                - HOU
+                - TEN
+                - KC
+                - BAL
+                - NYG
+                - DAL
+                - NE
+                - CAR
+                - MIA
+                - MIN
+                - CIN
+                - IND
+                - GB
+                - WAS
+                - CLE
+                - 'NO'
+                - CHI
+                - BUF
+                - ATL
+                - LV
+                - ARI
+                - JAX
+                - DEN
+                - LA
+                - PHI
+                - SF
+                - PIT
+                - TB
+                - SEA
+      - name: espn_id
+        description: ESPN identifier for the player.
+        tests:
+          - unique
+        meta:
+          dimension:
+            type: string
+            groups:
+              - Identifiers
+            urls:
+              - label: Open in ESPN
+                url: 'https://www.espn.com/nfl/player/_/id/${ value.raw }'
+      - name: yahoo_id
+        description: Yahoo identifier for the player.
+        tests:
+          - unique
+        meta:
+          dimension:
+            type: string
+            groups:
+              - Identifiers
+            urls:
+              - label: Open in Yahoo
+                url: 'https://sports.yahoo.com/nfl/players/${ value.raw }'
+      - name: sleeper_id
+        description: Sleeper identifier for the player.
+        tests:
+          - unique
+        meta:
+          dimension:
+            type: string
+            groups:
+              - Identifiers
+      - name: rotowire_id
+        description: Rotowire identifier for the player.
+        tests:
+          - unique
+        meta:
+          dimension:
+            type: string
+            groups:
+              - Identifiers
+            urls:
+              - label: Open in Rotowire
+                url: >-
+                  https://www.rotowire.com/football/player/${
+                  row.table_name.player_name |split: "-" |join: "/"}-${
+                  value.raw }
+      - name: pff_id
+        description: Pro Football Focus identifier for the player.
+        tests:
+          - unique
+        meta:
+          dimension:
+            type: string
+            groups:
+              - Identifiers
+            urls:
+              - label: Open in Pro Football Focus
+                url: >-
+                  https://www.pff.com/nfl/players/${ row.table_name.player_name
+                  |split: "-" |join: "/"}/${ value.raw }
+      - name: pfr_id
+        description: Pro Football Reference identifier for the player.
+        tests:
+          - unique
+        meta:
+          dimension:
+            type: string
+            groups:
+              - Identifiers
+            urls:
+              - label: Open in Pro Football Reference
+                url: >-
+                  https://www.pro-football-reference.com/players/${
+                  row.table_name.player_name|first }/${ value.raw }.htm
+      - name: sportradar_id
+        description: Sportradar identifier for the player.
+        tests:
+          - unique
+        meta:
+          dimension:
+            type: string
+            groups:
+              - Identifiers
+      - name: esb_id
+        description: ESB identifier for the player.
+        tests:
+          - unique
+        meta:
+          dimension:
+            type: string
+            groups:
+              - Identifiers
+      - name: gsis_it_id
+        description: GSIS IT identifier for the player.
+        tests:
+          - unique
+        meta:
+          dimension:
+            type: string
+            groups:
+              - Identifiers
+      - name: smart_id
+        description: Smart identifier for the player.
+        tests:
+          - unique
+        meta:
+          dimension:
+            type: string
+            groups:
+              - Identifiers
+  - name: games
+    description: >-
+      Provides a summary of game details, including final scores and the winning
+      team.
+    meta:
+      default_time_dimension:
+        field: event_date
+        interval: YEAR
+      group_label: 'Self-Service Explore'     
+      joins:       
+        - join: teams
+          alias: home_team
+          sql_on: ${games.home_team} = ${home_team.abvr}
+        - join: teams
+          alias: away_team
+          sql_on: ${games.away_team} = ${away_team.abvr}
+    columns:
+      - name: game_id
+        description: Unique identifier for the game.
+        meta:
+          dimension:
+            type: string
+          metrics:
+            number_of_games:
+              type: count_distinct
+              label: Number of Games
+        tests:
+          - unique
+          - not_null
+      - name: final_home_score
+        description: The final score of the home team.
+        meta:
+          dimension:
+            type: number
+            round: 0
+          metrics:
+            total_home_score:
+              type: sum
+              label: Total Home Score
+            median_home_score:
+              type: median
+              label: Median Home Score
+      - name: final_away_score
+        description: The final score of the away team.
+        meta:
+          dimension:
+            type: number
+            round: 0
+          metrics:
+            total_away_score:
+              type: sum
+              label: Total Away Score
+            median_away_score:
+              type: median
+              label: Median Away Score
+      - name: winning_team_side
+        description: 'The side of the winning team (e.g., home or away)'
+        meta:
+          dimension:
+            type: string
+        tests:
+          - accepted_values:
+              values:
+                - Home
+                - Away
+                - Tie
+      - name: winning_team
+        description: 'The winning team abbreviation (e.g., LAC)'
+        meta:
+          dimension:
+            type: string
+            colors:
+              DET: '#0076B6'
+              NYJ: '#17B03B'
+              LAC: '#1D64B6'
+              HOU: '#03202F'
+              TEN: '#4B92DB'
+              KC: '#E31837'
+              BAL: '#241773'
+              NYG: '#0B2265'
+              DAL: '#0061A8'
+              NE: '#002244'
+              CAR: '#0085CA'
+              MIA: '#00A3A0'
+              MIN: '#4F92B7'
+              CIN: '#FF5910'
+              IND: '#002C5F'
+              GB: '#1D3C20'
+              WAS: '#7A1C1F'
+              CLE: '#311F1B'
+              'NO': '#D3BC8D'
+              CHI: '#0B162A'
+              BUF: '#00338D'
+              ATL: '#A5ACAF'
+              LV: '#000000'
+              ARI: '#E63946'
+              JAX: '#006778'
+              DEN: '#FB4F14'
+              LA: '#0038A8'
+              PHI: '#004C54'
+              SF: '#AA0000'
+              PIT: '#FFB81C'
+              TB: '#D04E5C'
+              SEA: '#002A5C'
+        tests:
+          - accepted_values:
+              values:
+                - DET
+                - NYJ
+                - LAC
+                - HOU
+                - TEN
+                - KC
+                - BAL
+                - NYG
+                - DAL
+                - NE
+                - CAR
+                - MIA
+                - MIN
+                - CIN
+                - IND
+                - GB
+                - WAS
+                - CLE
+                - 'NO'
+                - CHI
+                - BUF
+                - ATL
+                - LV
+                - ARI
+                - JAX
+                - DEN
+                - LA
+                - PHI
+                - SF
+                - PIT
+                - TB
+                - SEA
+                - Tie
+      - name: season_type
+        description: 'Type of the season (e.g., reg or post).'
+        tests:
+          - accepted_values:
+              values:
+                - REG
+                - POST
+      - name: home_team
+        description: The home team for the game.
+        meta:
+          dimension:
+            type: string
+            colors:
+              DET: '#0076B6'
+              NYJ: '#17B03B'
+              LAC: '#1D64B6'
+              HOU: '#03202F'
+              TEN: '#4B92DB'
+              KC: '#E31837'
+              BAL: '#241773'
+              NYG: '#0B2265'
+              DAL: '#0061A8'
+              NE: '#002244'
+              CAR: '#0085CA'
+              MIA: '#00A3A0'
+              MIN: '#4F92B7'
+              CIN: '#FF5910'
+              IND: '#002C5F'
+              GB: '#1D3C20'
+              WAS: '#7A1C1F'
+              CLE: '#311F1B'
+              'NO': '#D3BC8D'
+              CHI: '#0B162A'
+              BUF: '#00338D'
+              ATL: '#A5ACAF'
+              LV: '#000000'
+              ARI: '#E63946'
+              JAX: '#006778'
+              DEN: '#FB4F14'
+              LA: '#0038A8'
+              PHI: '#004C54'
+              SF: '#AA0000'
+              PIT: '#FFB81C'
+              TB: '#D04E5C'
+              SEA: '#002A5C'
+        tests:
+          - accepted_values:
+              values:
+                - DET
+                - NYJ
+                - LAC
+                - HOU
+                - TEN
+                - KC
+                - BAL
+                - NYG
+                - DAL
+                - NE
+                - CAR
+                - MIA
+                - MIN
+                - CIN
+                - IND
+                - GB
+                - WAS
+                - CLE
+                - 'NO'
+                - CHI
+                - BUF
+                - ATL
+                - LV
+                - ARI
+                - JAX
+                - DEN
+                - LA
+                - PHI
+                - SF
+                - PIT
+                - TB
+                - SEA
+      - name: away_team
+        description: The away team for the game.
+        meta:
+          dimension:
+            type: string
+            colors:
+              DET: '#0076B6'
+              NYJ: '#17B03B'
+              LAC: '#1D64B6'
+              HOU: '#03202F'
+              TEN: '#4B92DB'
+              KC: '#E31837'
+              BAL: '#241773'
+              NYG: '#0B2265'
+              DAL: '#0061A8'
+              NE: '#002244'
+              CAR: '#0085CA'
+              MIA: '#00A3A0'
+              MIN: '#4F92B7'
+              CIN: '#FF5910'
+              IND: '#002C5F'
+              GB: '#1D3C20'
+              WAS: '#7A1C1F'
+              CLE: '#311F1B'
+              'NO': '#D3BC8D'
+              CHI: '#0B162A'
+              BUF: '#00338D'
+              ATL: '#A5ACAF'
+              LV: '#000000'
+              ARI: '#E63946'
+              JAX: '#006778'
+              DEN: '#FB4F14'
+              LA: '#0038A8'
+              PHI: '#004C54'
+              SF: '#AA0000'
+              PIT: '#FFB81C'
+              TB: '#D04E5C'
+              SEA: '#002A5C'
+        tests:
+          - accepted_values:
+              values:
+                - DET
+                - NYJ
+                - LAC
+                - HOU
+                - TEN
+                - KC
+                - BAL
+                - NYG
+                - DAL
+                - NE
+                - CAR
+                - MIA
+                - MIN
+                - CIN
+                - IND
+                - GB
+                - WAS
+                - CLE
+                - 'NO'
+                - CHI
+                - BUF
+                - ATL
+                - LV
+                - ARI
+                - JAX
+                - DEN
+                - LA
+                - PHI
+                - SF
+                - PIT
+                - TB
+                - SEA
+      - name: game_date
+        description: Date the game was played.
+        meta:
+          dimension:
+            type: date
+  - name: plays
+    description: >-
+      Detailed play-by-play data with comprehensive metrics, probabilities, and
+      player involvement.
+    meta:
+      default_time_dimension:
+        field: event_date
+        interval: YEAR
+      group_label: 'Self-Service Explore'
+      joins:
+        - join: games
+          sql_on: ${plays.game_id} = ${games.game_id}
+        - join: players
+          alias: passer
+          sql_on: ${plays.passer_player_id} = ${passer.player_id}
+        - join: players
+          alias: receiver
+          sql_on: ${plays.receiver_player_id} = ${receiver.player_id}
+        - join: players
+          alias: rusher
+          sql_on: ${plays.rusher_player_id} = ${rusher.player_id}
+        - join: teams
+          alias: home_team
+          sql_on: ${games.home_team} = ${home_team.abvr}
+        - join: teams
+          alias: away_team
+          sql_on: ${games.away_team} = ${away_team.abvr}
+        - join: players
+          alias: first_down_achiever
+          sql_on: ${plays.first_down_player_id} = ${first_down_achiever.player_id}
+    columns:
+      - name: unique_play_id
+        description: Unique identifier for each play.
+        meta:
+          dimension:
+            type: string
+            groups: 
+              - Identifiers
+          metrics:
+            count_of_plays:
+              type: count_distinct
+              label: Number of Plays
+        tests:
+          - unique
+          - not_null
+      - name: game_play_id
+        description: Unique identifier for the play within the game.
+        meta:
+          dimension:
+            type: number
+            round: 0
+            groups: 
+              - Identifiers
+      - name: play_description
+        description: Description of the play.
+        meta:
+          dimension:
+            type: string
+            label: Description
+      - name: game_id
+        description: Unique identifier for the game.
+        meta:
+          dimension:
+            type: string
+            hidden: true
+      - name: play_type
+        description: 'Type of play (e.g., pass, rush, kick).'
+        meta:
+          dimension:
+            type: string
+            label: type
+        tests:
+          - accepted_values:
+              values:
+                - punt
+                - pass
+                - run
+                - extra_point
+                - kickoff
+                - no_play
+                - field_goal
+                - qb_kneel
+                - qb_spike
+      - name: yards_gained
+        description: Yards gained during the play.
+        meta:
+          dimension:
+            type: number
+            round: 0
+          metrics:
+            total_yards_gained:
+              type: sum
+              label: Total Yards
+              groups:
+                - Yardage
+            average_yards_gained:
+              type: average
+              label: Average Yards
+              groups:
+                - Yardage
+      - name: penalty
+        description: >-
+          Indicates if a penalty occurred during the play. Zero indicates no
+          penalty occurred.
+        meta:
+          dimension:
+            type: boolean
+          metrics:
+            count_of_penalties:
+              type: sum
+              label: Number of Penalties
+      - name: penalty_type
+        description: Type of penalty if applicable.
+        meta:
+          dimension:
+            type: string
+      - name: score_differential
+        description: Score difference at the time of the play.
+        meta:
+          dimension:
+            type: number
+            groups:
+              - Scoring
+            round: 0
+          metrics:
+            average_score_differential:
+              type: average
+              label: Average Score Differential
+              groups:
+                - Scoring
+            median_score_differential:
+              type: median
+              label: Median Score Differential
+              groups:
+                - Scoring
+      - name: possession_team
+        description: Team in possession during the play.
+        meta:
+          dimension:
+            type: string
+            groups:
+              - Possession Team
+            colors:
+              "DET": "#0076B6"
+              "NYJ": "#17B03B"
+              "LAC": "#1D64B6"
+              "HOU": "#03202F"
+              "TEN": "#4B92DB"
+              "KC": "#E31837"
+              "BAL": "#241773"
+              "NYG": "#0B2265"
+              "DAL": "#0061A8"
+              "NE": "#002244"
+              "CAR": "#0085CA"
+              "MIA": "#00A3A0"
+              "MIN": "#4F92B7"
+              "CIN": "#FF5910"
+              "IND": "#002C5F"
+              "GB": "#1D3C20"
+              "WAS": "#7A1C1F"
+              "CLE": "#311F1B"
+              "NO": "#D3BC8D"
+              "CHI": "#0B162A"
+              "BUF": "#00338D"
+              "ATL": "#A5ACAF"
+              "LV": "#000000"
+              "ARI": "#E63946"
+              "JAX": "#006778"
+              "DEN": "#FB4F14"
+              "LA": "#0038A8"
+              "PHI": "#004C54"
+              "SF": "#AA0000"
+              "PIT": "#FFB81C"
+              "TB": "#D04E5C"
+              "SEA": "#002A5C"
+        tests:
+          - accepted_values:
+              values:
+                - DET
+                - NYJ
+                - LAC
+                - HOU
+                - TEN
+                - KC
+                - BAL
+                - NYG
+                - DAL
+                - NE
+                - CAR
+                - MIA
+                - MIN
+                - CIN
+                - IND
+                - GB
+                - WAS
+                - CLE
+                - 'NO'
+                - CHI
+                - BUF
+                - ATL
+                - LV
+                - ARI
+                - JAX
+                - DEN
+                - LA
+                - PHI
+                - SF
+                - PIT
+                - TB
+                - SEA
+      - name: possession_team_score
+        description: Score of the possession team.
+        meta:
+          dimension:
+            type: number
+            groups:
+              - Possession Team
+            round: 0
+      - name: possession_team_timeouts
+        description: Number of timeouts remaining for the possession team.
+        meta:
+          dimension:
+            type: number
+            groups:
+              - Possession Team
+            round: 0
+      - name: possession_team_type
+        description: Type of possession team (home or away).
+        meta:
+          dimension:
+            type: string
+            groups:
+              - Possession Team
+        tests:
+          - accepted_values:
+              values:
+                - home
+                - away
+      - name: defending_team
+        description: Team defending during the play.
+        meta:
+          dimension:
+            type: string
+            groups:
+              - Defending Team
+            colors:
+              DET: '#0076B6'
+              NYJ: '#17B03B'
+              LAC: '#1D64B6'
+              HOU: '#03202F'
+              TEN: '#4B92DB'
+              KC: '#E31837'
+              BAL: '#241773'
+              NYG: '#0B2265'
+              DAL: '#0061A8'
+              NE: '#002244'
+              CAR: '#0085CA'
+              MIA: '#00A3A0'
+              MIN: '#4F92B7'
+              CIN: '#FF5910'
+              IND: '#002C5F'
+              GB: '#1D3C20'
+              WAS: '#7A1C1F'
+              CLE: '#311F1B'
+              'NO': '#D3BC8D'
+              CHI: '#0B162A'
+              BUF: '#00338D'
+              ATL: '#A5ACAF'
+              LV: '#000000'
+              ARI: '#E63946'
+              JAX: '#006778'
+              DEN: '#FB4F14'
+              LA: '#0038A8'
+              PHI: '#004C54'
+              SF: '#AA0000'
+              PIT: '#FFB81C'
+              TB: '#D04E5C'
+              SEA: '#002A5C'
+        tests:
+          - accepted_values:
+              values:
+                - DET
+                - NYJ
+                - LAC
+                - HOU
+                - TEN
+                - KC
+                - BAL
+                - NYG
+                - DAL
+                - NE
+                - CAR
+                - MIA
+                - MIN
+                - CIN
+                - IND
+                - GB
+                - WAS
+                - CLE
+                - 'NO'
+                - CHI
+                - BUF
+                - ATL
+                - LV
+                - ARI
+                - JAX
+                - DEN
+                - LA
+                - PHI
+                - SF
+                - PIT
+                - TB
+                - SEA
+      - name: defending_team_score
+        description: Score of the defending team.
+        meta:
+          dimension:
+            type: number
+            groups:
+              - Defending Team
+            round: 0
+      - name: defending_team_timeouts
+        description: Number of timeouts remaining for the defending team.
+        meta:
+          dimension:
+            type: number
+            groups:
+              - Defending Team
+            round: 0
+      - name: defending_team_type
+        description: Type of defending team (home or away).
+        meta:
+          dimension:
+            type: string
+            groups:
+              - Defending Team
+        tests:
+          - accepted_values:
+              values:
+                - home
+                - away
+      - name: drive
+        description: Drive number of the play.
+        meta:
+          dimension:
+            type: number
+            round: 0
+            groups: 
+              - Drive Details
+      - name: down
+        description: Down number during the play.
+        meta:
+          dimension:
+            type: number
+            round: 0
+            groups: 
+              - Drive Details
+        tests:
+          - accepted_values:
+              values:
+                - 1
+                - 2
+                - 3
+                - 4
+              quote: false
+      - name: side_of_field
+        description: Field side where the play occurred.
+        meta:
+          dimension:
+            type: string
+            groups: 
+              - Drive Details
+      - name: yard_line
+        description: Yard line at the start of the play.
+        meta:
+          dimension:
+            type: string
+            groups: 
+              - Drive Details
+      - name: yards_to_go
+        description: Yards to go for a first down.
+        meta:
+          dimension:
+            type: number
+            groups: 
+              - Drive Details
+            round: 0
+          metrics:
+            average_yards_to_go:
+              type: average
+              label: Average Yards to Go
+              groups:
+                - Yardage
+            median_yards_to_go:
+              type: median
+              label: Median Yards to Go
+              groups:
+                - Yardage
+      - name: drive_net_yards
+        description: Net yards for the drive.
+        meta:
+          dimension:
+            type: number
+            groups: 
+              - Drive Details
+            round: 0
+      - name: distance_to_goal
+        description: Distance to the goal line.
+        meta:
+          dimension:
+            type: number
+            groups: 
+              - Drive Details
+            round: 0
+      - name: goal_to_go
+        description: Indicates if it is a goal-to-go situation.
+        meta:
+          dimension:
+            type: boolean
+            groups: 
+              - Drive Details
+      - name: in_red_zone
+        description: Indicates if the play occurred in the red zone.
+        meta:
+          dimension:
+            type: boolean
+      - name: game_clock
+        description: Time remaining on the game clock.
+        meta:
+          dimension:
+            type: timestamp
+            groups: 
+              - Clock
+      - name: quarter
+        description: Quarter of the game.
+        meta:
+          dimension:
+            type: number
+            groups: 
+              - Clock
+            round: 0
+        tests:
+          - accepted_values:
+              values:
+                - 1
+                - 2
+                - 3
+                - 4
+                - 5
+              quote: false
+      - name: quarter_seconds_remaining
+        description: Seconds remaining in the quarter.
+        meta:
+          dimension:
+            type: number
+            groups: 
+              - Clock
+            round: 0
+      - name: quarter_end
+        description: Indicates if it is the end of the quarter.
+        meta:
+          dimension:
+            type: boolean
+            groups: 
+              - Clock
+      - name: game_half
+        description: 'Half of the game (e.g., Half1 or Half2).'
+        meta:
+          dimension:
+            type: string
+            groups: 
+              - Clock
+      - name: half_seconds_remaining
+        description: Seconds remaining in the half.
+        meta:
+          dimension:
+            type: number
+            groups: 
+              - Clock
+            round: 0
+      - name: game_seconds_remaining
+        description: Total seconds remaining in the game.
+        meta:
+          dimension:
+            type: number
+            groups: 
+              - Clock
+            round: 0
+      - name: shotgun
+        description: Indicates if the play used a shotgun formation.
+        meta:
+          dimension:
+            type: boolean
+            groups: 
+              - Formation
+      - name: no_huddle
+        description: Indicates if the play used a no-huddle offense.
+        meta:
+          dimension:
+            type: boolean
+            groups: 
+              - Formation
+      - name: qb_dropback
+        description: Indicates if the quarterback dropped back.
+        meta:
+          dimension:
+            type: boolean
+            groups: 
+              - Formation
+      - name: qb_kneel
+        description: Indicates if the quarterback kneeled.
+        meta:
+          dimension:
+            type: boolean
+            groups: 
+              - Formation
+      - name: qb_spike
+        description: Indicates if the quarterback spiked the ball.
+        meta:
+          dimension:
+            type: boolean
+            groups: 
+              - Formation
+      - name: qb_scramble
+        description: Indicates if the quarterback scrambled.
+        meta:
+          dimension:
+            type: boolean
+            groups: 
+              - Rushing
+      - name: passer_player_id
+        description: Unique identifier for the player who passed the ball.
+        meta:
+          dimension:
+            type: string
+            hidden: true
+            groups: 
+              - Passing
+      - name: pass_length
+        description: 'Length of the pass (e.g., Short or Deep).'
+        meta:
+          dimension:
+            type: string
+            groups: 
+              - Passing
+      - name: pass_attempt
+        description: Indicates if it was a pass attempt.
+        meta:
+          dimension:
+            type: boolean
+            groups: 
+              - Passing
+      - name: incomplete_pass
+        description: Indicates if the pass was incomplete.
+        meta:
+          dimension:
+            type: boolean
+            groups: 
+              - Passing
+          metrics:
+            number_of_incomplete_passes:
+              type: sum
+              label: Number of Incomplete Passes
+              groups:
+                - Passing
+      - name: complete_pass
+        description: Indicates if the pass was completed.
+        meta:
+          dimension:
+            type: boolean
+            groups: 
+              - Passing
+          metrics:
+            number_of_complete_passes:
+              type: sum
+              label: Number of Complete Passes
+              groups:
+                - Passing
+            number_of_receptions:
+              type: sum
+              label: Number of Receptions
+              groups:
+                - Receiving
+      - name: pass_location
+        description: Location of the pass (e.g. right or middle).
+        meta:
+          dimension:
+            type: string
+            groups: 
+              - Passing
+      - name: pass_touchdown
+        description: Indicates if the pass resulted in a touchdown.
+        meta:
+          dimension:
+            type: boolean
+            groups: 
+              - Passing
+          metrics:
+            count_of_passing_touchdowns:
+              type: sum
+              label: Number of Passing Touchdowns
+              groups:
+                - Scoring
+      - name: air_yards
+        description: Air yards of the pass.
+        meta:
+          dimension:
+            type: number
+            groups: 
+              - Passing
+            round: 0
+          metrics:
+            total_air_yards:
+              type: sum
+              label: Total Air Yards
+              description: For a given pass, the total number of yards a pass travelled in the air.
+              groups:
+                - Yardage
+            average_air_yards:
+              type: average
+              label: Average Air Yards
+              description: For a given pass, the average number of yards a pass travelled in the air.
+              groups:
+                - Yardage
+      - name: yards_after_catch
+        description: Yards gained after the catch.
+        meta:
+          dimension:
+            groups: 
+              - Receiving
+          metrics:
+            total_yards_after_catch:
+              type: sum
+              label: Total Yards After Catch (YAC)
+              groups:
+                - Yardage
+            average_yards_after_catch:
+              type: average
+              label: Average Yards After Catch (YAC)
+              groups:
+                - Yardage
+      - name: receiver_player_id
+        description: Unique identifier for the player who received the ball.
+        meta:
+          dimension:
+            type: string
+            hidden: true
+            groups: 
+              - Receiving
+      - name: receiving_touchdown
+        description: Indicates if the play resulted in a receiving touchdown.
+        meta:
+          dimension:
+            type: boolean
+            groups: 
+              - Receiving
+          metrics:
+            number_of_receiving_touchdowns:
+              type: sum
+              label: Number of Receiving Touchdowns
+              groups:
+                - Receiving
+      - name: rusher_player_id
+        description: Unique identifier for the player who rushed the ball.
+        meta:
+          dimension:
+            type: string
+            hidden: true
+            groups: 
+              - Rushing
+      - name: rush
+        description: Indicates if the play was a rush.
+        meta:
+          dimension:
+            type: boolean
+            groups: 
+              - Rushing
+      - name: rush_attempt
+        description: Indicates if it was a rushing attempt.
+        meta:
+          dimension:
+            type: boolean
+            groups: 
+              - Rushing
+          metrics:
+            number_of_rushing_attempts:
+              type: sum
+              label: Number of Rushing Attempts
+              groups:
+                - Rushing
+      - name: run_location
+        description: Location of the rush (e.g. left or middle).
+        meta:
+          dimension:
+            type: string
+            groups: 
+              - Rushing
+      - name: run_gap
+        description: Gap targeted during the rush (e.g. end or guard).
+        meta:
+          dimension:
+            type: string
+            groups: 
+              - Rushing
+      - name: rushing_yards
+        description: Yards gained by rushing.
+        meta:
+          dimension:
+            type: number
+            groups: 
+              - Rushing
+            round: 0
+          metrics:
+            total_rushing_yards:
+              type: sum
+              label: Total Rushing Yards
+              groups:
+                - Yardage
+      - name: rush_touchdown
+        description: Indicates if the rush resulted in a touchdown.
+        meta:
+          dimension:
+            type: boolean
+            groups: 
+              - Rushing
+            metrics:
+              number_of_rushing_touchdowns:
+                type: sum
+                label: Number of Rushing Touchdowns
+                groups:
+                  - Rushing
+      - name: touchdown
+        description: Indicates if the play resulted in a touchdown.
+        meta:
+          dimension:
+            type: boolean
+            groups: 
+              - Scoring
+          metrics:
+            number_of_touchdowns:
+              type: sum
+              label: Number of Touchdowns
+              groups:
+                - Scoring
+      - name: two_point_conversion_result
+        description: Result of the two-point conversion attempt (i.e. success or failure).
+        meta:
+          dimension:
+            type: string
+            groups: 
+              - Scoring
+          metrics:
+            number_of_2pt_attempts:
+              type: count
+              label: Number of Two Point Conversion Attempts
+              groups:
+                - Scoring
+        tests:
+          - accepted_values:
+              values:
+                - success
+                - failure
+      - name: kick_distance
+        description: Distance of the kick.
+        meta:
+          dimension:
+            type: number
+            groups: 
+              - Scoring
+            round: 0
+          metrics:
+            average_kick_distance:
+              type: average
+              label: Average Kick Distance
+            median_kick_distance:
+              type: median
+              label: Median Kick Distance
+      - name: field_goal_result
+        description: Result of the field goal attempt (e.g. made or missed).
+        meta:
+          dimension:
+            type: string
+            groups: 
+              - Scoring
+          metrics:
+            number_of_field_goal_attempts:
+              type: count
+              label: Number of Field Goal Attempts
+              groups:
+                - Scoring
+        tests:
+          - accepted_values:
+              values:
+                - made
+                - missed
+                - blocked
+      - name: extra_point_result
+        description: Result of the extra point attempt (e.g. good or failed).
+        meta:
+          dimension:
+            type: string
+            groups: 
+              - Scoring
+          metrics:
+            number_of_extra_point_attempts:
+              type: count
+              label: Number of Extra Point Attempts
+              groups:
+                - Scoring
+        tests:
+          - accepted_values:
+              values:
+                - good
+                - failed
+                - blocked
+      - name: offensive_win_probability
+        description: Win probability for the offensive team.
+        meta:
+          dimension:
+            type: number
+            groups: 
+              - Win Probabilities & Expected Points
+          metrics:
+            average_offensive_win_probability:
+              type: average
+              label: Average Offensive Win Probability
+              groups:
+                - Win Probabilities & Expected Points
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: BETWEEN -1 AND 1
+      - name: offensive_win_probability_added
+        description: Change in win probability for the offensive team.
+        meta:
+          dimension:
+            type: number
+            groups: 
+              - Win Probabilities & Expected Points
+          metrics:
+            average_offensive_win_probability_added:
+              type: average
+              label: Average Offensive Win Probability Added
+              groups:
+                - Win Probabilities & Expected Points
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: BETWEEN -1 AND 1
+      - name: defensive_win_probability
+        description: Win probability for the defensive team.
+        meta:
+          dimension:
+            type: number
+            groups: 
+              - Win Probabilities & Expected Points
+          metrics:
+            average_defensive_win_probability:
+              type: average
+              label: Average Defensive Win Probability
+              groups:
+                - Win Probabilities & Expected Points
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: BETWEEN -1 AND 1
+      - name: defensive_win_probability_added
+        description: Change in win probability for the defensive team.
+        meta:
+          dimension:
+            type: number
+            groups: 
+              - Win Probabilities & Expected Points
+          metrics:
+            average_defensive_win_probability_added:
+              type: average
+              label: Average Defensive Win Probability Added
+              groups:
+                - Win Probabilities & Expected Points
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: BETWEEN -1 AND 1
+      - name: expected_points
+        description: Expected points for the play.
+        meta:
+          dimension:
+            type: number
+            groups: 
+              - Win Probabilities & Expected Points
+          metrics:
+            average_expected_points:
+              type: average
+              label: Average Expected Points
+              groups: 
+              - Win Probabilities & Expected Points
+      - name: expected_points_added
+        description: Expected points added by the play.
+        meta:
+          dimension:
+            type: number
+            groups: 
+              - Win Probabilities & Expected Points
+          metrics:
+            total_expected_points_added:
+              type: sum
+              label: Total Expected Points Added
+              groups: 
+              - Win Probabilities & Expected Points
+            average_expected_points_added:
+              type: average
+              label: Average Expected Points Added
+              groups: 
+              - Win Probabilities & Expected Points
+      - name: air_expected_points_added
+        description: Expected points added through the air.
+        meta:
+          dimension:
+            type: number
+            groups: 
+              - Win Probabilities & Expected Points
+          metrics:
+            total_expected_points_added_through_air:
+              type: sum
+              label: Total Expected Points Added Through the Air
+              groups: 
+              - Win Probabilities & Expected Points
+            average_expected_points_added_through_air:
+              type: average
+              label: Average Expected Points Added Through the Air
+              groups: 
+              - Win Probabilities & Expected Points
+      - name: yards_after_catch_expected_points_added
+        description: Expected points added after the catch.
+        meta:
+          dimension:
+            type: number
+            groups: 
+              - Win Probabilities & Expected Points
+          metrics:
+            total_expected_points_added_after_catch:
+              type: sum
+              label: Total Expected Points Added After the Catch
+              groups: 
+              - Win Probabilities & Expected Points
+            average_expected_points_added_after_catch:
+              type: average
+              label: Average Expected Points Added After the Catch
+              groups: 
+              - Win Probabilities & Expected Points
+      - name: first_down
+        description: Whether the play was a first down
+        meta:
+          dimension:
+            type: boolean
+          metrics:
+            count_of_first_downs:
+              type: sum
+              label: Count of First Downs
+      - name: first_down_player_id
+        description: The player who achieved the first down
+        meta:
+          dimension:
+            type: string
+            hidden: true

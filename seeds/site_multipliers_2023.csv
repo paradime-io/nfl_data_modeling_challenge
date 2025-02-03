@@ -1,0 +1,4 @@
+site,fgm_0_19,fgm_20_29,fgm_30_39,fgm_40_49,fgm_50p,fgmiss,fum_lost,pass_2pt,pass_int,pass_td,pass_yd,rec,rec_2pt,rec_td,rec_yd,rush_2pt,rush_td,rush_yd,xpm,xpmiss
+SLEEPER,3,3,3,4,5,-1,-2,2,-1,4,0.04,1,2,6,0.1,2,6,0.1,1,-1
+ESPN,3,3,3,4,5,-1,-2,2,-2,4,0.04,1,2,6,0.1,2,6,0.1,1,-1
+YAHOO,3,3,3,4,5,0,-2,2,-1,4,0.04,0.5,2,6,0.1,2,6,0.1,1,0

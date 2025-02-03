@@ -24,10 +24,16 @@ models:
       +schema: intermediate
       +materialized: view
     marts:
-      dimensions:
-        +schema: dimensions
-        +materialized: view
       facts:
         +schema: facts
         +materialized: table
+      explore:
+        +schema: explore
+        +materialized: table  
 
+seeds:
+  nfl:
+    site_multipliers_2023:
+      enabled: true
+    football_teams:
+      enabled: true

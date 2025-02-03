@@ -3,6 +3,8 @@ version: 2
 models:
   - name: stg_play_by_play
     description: "Staging model for NFL play-by-play data from the 2023 season that standardizes column names and formats, enabling easier analysis downstream."
+    meta:
+      group_label: 'Staging'
     columns:
       - name: play_id
         description: "Unique identifier for each play."
@@ -175,6 +177,8 @@ models:
 
   - name: stg_player_stats_by_game
     description: "Staging model for player-level statistics by game, providing standardized player information and performance metrics."
+    meta:
+      group_label: 'Staging'
     columns:
       - name: player_id
         description: "Unique identifier for the player."
@@ -334,3 +338,241 @@ models:
         description: "NFL GSIS (Game Statistics & Information System) ID."
       - name: smart_id
         description: "A unique identifier used internally or externally."
+
+  - name: stg_site_multipliers_2023
+    description: "Staging model for site multipliers in 2023"
+    meta:
+      group_label: 'Staging'
+    columns:
+      - name: SITE
+        description: "The fantasy sports site"
+        tests:
+          - unique
+          - not_null
+      - name: FGM_0_19
+        description: "Multiplier for field goals made from 0-19 yards"
+      - name: FGM_20_29
+        description: "Multiplier for field goals made from 20-29 yards"
+      - name: FGM_30_39
+        description: "Multiplier for field goals made from 30-39 yards"
+      - name: FGM_40_49
+        description: "Multiplier for field goals made from 40-49 yards"
+      - name: FGM_50P
+        description: "Multiplier for field goals made from 50+ yards"
+      - name: FGMISS
+        description: "Multiplier for missed field goals"
+      - name: FUM_LOST
+        description: "Multiplier for fumbles lost"
+      - name: PASS_2PT
+        description: "Multiplier for passing 2-point conversions"
+      - name: PASS_INT
+        description: "Multiplier for passing interceptions"
+      - name: PASS_TD
+        description: "Multiplier for passing touchdowns"
+      - name: PASS_YD
+        description: "Multiplier for passing yards"
+      - name: REC
+        description: "Multiplier for receptions"
+      - name: REC_2PT
+        description: "Multiplier for receiving 2-point conversions"
+      - name: REC_TD
+        description: "Multiplier for receiving touchdowns"
+      - name: REC_YD
+        description: "Multiplier for receiving yards"
+      - name: RUSH_2PT
+        description: "Multiplier for rushing 2-point conversions"
+      - name: RUSH_TD
+        description: "Multiplier for rushing touchdowns"
+      - name: RUSH_YD
+        description: "Multiplier for rushing yards"
+      - name: XPM
+        description: "Multiplier for extra points made"
+      - name: XPMISS
+        description: "Multiplier for missed extra points"
+
+  - name: stg_fantasy_ppg_by_site
+    description: >
+      A table materialized with player fantasy stats by game, with the data granularity of a site/player/game level.
+    meta:
+      group_label: 'Staging'
+    config:
+      clustering_keys:
+        - player_id
+        - player_name
+    columns:
+      - name: player_id
+        description: Unique identifier for the player.
+        meta:
+          dimension:
+            label: Player ID
+            type: number
+          metrics:
+            unique_players:
+              type: count_distinct
+      - name: player_name
+        description: Full name of the player.
+        meta:
+          dimension:
+            label: "Player Name"
+      - name: headshot_url
+        description: URL to the player's headshot image.
+        meta:
+          dimension:
+            label: Headshot URL
+            url: ${ value.raw }
+      - name: player_position
+        description: The position the player plays in.
+        meta:
+          dimension:
+            label: Player Position
+      - name: team
+        description: The team the player belongs to during the game.
+      - name: season
+        description: The NFL season in which the game was played.
+      - name: season_week
+        description: The week of the NFL season.
+        meta:
+          dimension:
+            label: Season Week
+      - name: season_type
+        description: The type of season (e.g., regular, postseason).
+        meta:
+          dimension:
+            label: Season Type
+      - name: opponent
+        description: The opponent team during the game.
+      - name: fantasy_site
+        description: The fantasy sports site used for multiplier values.
+        meta:
+          dimension:
+            label: Fantasy Site
+      - name: fum_lost_pts
+        description: Fantasy points deducted for fumbles lost.
+        meta:
+          dimension:
+            hidden: true
+          metrics:
+            fumbles_lost:
+              label: Fumbles
+              type: sum
+              groups: Fantasy Points
+      - name: pass_2pt_pts
+        description: Fantasy points for passing 2-point conversions.
+        meta:
+          dimension:
+            hidden: true
+          metrics:
+            passing_two_point_conversions:
+              label: Passing Two Point Conversions
+              type: sum
+              groups: ['Fantasy Points', 'Passing']
+      - name: pass_int_pts
+        description: Fantasy points deducted for interceptions.
+        meta:
+          dimension:
+            hidden: true
+          metrics:
+            passing_interceptions:
+              label: Passing Interceptions
+              type: sum
+              groups: ['Fantasy Points', 'Passing']
+      - name: pass_td_pts
+        description: Fantasy points for passing touchdowns.
+        meta:
+          dimension:
+            hidden: true
+          metrics:
+            passing_touchdowns:
+              label: Passing Touchdowns
+              type: sum
+              groups: ['Fantasy Points', 'Passing']
+      - name: pass_yd_pts
+        description: Fantasy points for passing yards.
+        meta:
+          dimension:
+            hidden: true
+          metrics:
+            passing_yards:
+              label: Passing Yards
+              type: sum
+              groups: ['Fantasy Points', 'Passing']
+      - name: rec_pts
+        description: Fantasy points for receptions.
+        meta:
+          dimension:
+            hidden: true
+          metrics:
+            receptions:
+              label: Receptions
+              type: sum
+              groups: ['Fantasy Points', 'Receiving']
+      - name: rec_2pt_pts
+        description: Fantasy points for receiving 2-point conversions.
+        meta:
+          dimension:
+            hidden: true
+          metrics:
+            receiving_two_point_conversions:
+              label: Receiving Two Point Conversions
+              type: sum
+              groups: ['Fantasy Points', 'Receiving']
+      - name: rec_td_pts
+        description: Fantasy points for receiving touchdowns.
+        meta:
+          dimension:
+            hidden: true
+          metrics:
+            receiving_touchdowns:
+              label: Rushing Touchdowns
+              type: sum
+              groups: ['Fantasy Points', 'Receiving']
+      - name: rec_yd_pts
+        description: Fantasy points for receiving yards.
+        meta:
+          dimension:
+            hidden: true
+          metrics:
+            receiving_yards:
+              label: Receiving Yards
+              type: sum
+              groups: ['Fantasy Points', 'Receiving']
+      - name: rush_2pt_pts
+        description: Fantasy points for rushing 2-point conversions.
+        meta:
+          dimension:
+            hidden: true
+          metrics:
+            rushing_two_point_conversions:
+              label: Rushing Two Point Conversions
+              type: sum
+              groups: ['Fantasy Points', 'Rushing']
+      - name: rush_td_pts
+        description: Fantasy points for rushing touchdowns.
+        meta:
+          dimension:
+            hidden: true
+          metrics:
+            rushing_touchdowns:
+              label: Rushing Touchdowns
+              type: sum
+              groups: ['Fantasy Points', 'Rushing']
+      - name: rush_yd_pts
+        description: Fantasy points for rushing yards.
+        meta:
+          dimension:
+            hidden: true
+          metrics:
+            rushing_yards:
+              label: Rushing Yards
+              type: sum
+              groups: ['Fantasy Points', 'Rushing']
+      - name: total_pts
+        description: Total fantasy points for the game/site across all categories.
+        meta:
+          dimension:
+            hidden: true
+          metrics:
+            total_points:
+              label: Total Game Points
+              type: sum
+              groups: Fantasy Points 

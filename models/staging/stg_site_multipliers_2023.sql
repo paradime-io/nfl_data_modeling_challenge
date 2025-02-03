@@ -1,0 +1,23 @@
+select 
+    SITE,
+    FGM_0_19,
+    FGM_20_29,
+    FGM_30_39,
+    FGM_40_49,
+    FGM_50P,
+    FGMISS,
+    FUM_LOST,
+    PASS_2PT,
+    PASS_INT,
+    PASS_TD,
+    PASS_YD,
+    REC,
+    REC_2PT,
+    REC_TD,
+    REC_YD,
+    RUSH_2PT,
+    RUSH_TD,
+    RUSH_YD,
+    XPM,
+    XPMISS
+from {{ ref('site_multipliers_2023') }}

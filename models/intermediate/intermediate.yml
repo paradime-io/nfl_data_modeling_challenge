@@ -3,6 +3,8 @@ version: 2
 models:
   - name: int_fantasy_points
     description: "Intermediate model aggregating player-level fantasy performance metrics."
+    meta:
+      group_label: 'Intermediate'
     columns:
       - name: player_id
         description: "Unique identifier for the player."
@@ -31,6 +33,8 @@ models:
 
   - name: int_red_zone_plays
     description: "Intermediate model extracting plays that occur in the red zone, excluding certain penalties and non-plays."
+    meta:
+      group_label: 'Intermediate'
     columns:
       - name: play_id
         description: "Unique identifier for each play."
@@ -56,3 +60,25 @@ models:
         description: "Flag (0/1) if a penalty occurred on this play."
       - name: penalty_type
         description: "Type of penalty called during this play, if any."
+
+  - name: int_player_stats_by_site
+    description: "Aggregated player statistics by fantasy site"
+    meta:
+      group_label: 'Intermediate'
+    columns:
+      - name: player_id
+        description: "Unique identifier for the player"
+      - name: player_name
+        description: "Name of the player"
+      - name: player_position
+        description: "Player's position (QB, WR, RB, TE)"
+      - name: fantasy_site
+        description: "Name of the fantasy site"
+      - name: total_season_points
+        description: "Total fantasy points for the season"
+      - name: site_rank
+        description: "Rank of the player within their position and fantasy site"
+
+    tests:
+      - unique:
+          column_name: "player_id || '-' || fantasy_site"
