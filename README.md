@@ -227,7 +227,8 @@ Ankle injuries affected wide receivers, linebackers, cornbacks, and running back
 |---------------------------------------------|---------------------------------------------|
 | Concussions were most common among cornerbacks, wide receivers, and linebackers. | Thigh injuries were most frequent for cornerbacks, safeties, and wide receivers. |
 | ![Concussions by position](images/part2/concussions-by-position.png)  | ![Thigh injuries by position](images/part2/thigh-injuries-by-position.png)  |
-|---------------------------------------------|---------------------------------------------|
+| **Knee injuries by positions**                                                  | **Ankle injuries by positions** | 
+| Knee injuries were most common among tackles, linebackers, and cornerbacks. |  Ankle injuries affected wide receivers, linebackers, cornbacks, and running backs the most. |
 | ![Knee injuries by position](images/part2/knee-injuries-by-position.png)  | ![Ankle injuries by position](images/part2/ankle-injuries-by-position.png)  |
 
 
