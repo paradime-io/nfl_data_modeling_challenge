@@ -57,9 +57,21 @@ def_team_plays AS (
         pbp.defending_team = nt.abbreviation        
     ),
 
+pen_team_plays AS (
+    SELECT
+        dfp.*,
+        nt.name AS penalty_team_name
+    FROM
+        def_team_plays dfp
+    JOIN
+        nfl_teams nt 
+    ON
+        dfp.penalty_team = nt.abbreviation      
+),
+
 offense_or_defense AS (
     SELECT
-        dtp.*,
+        ptp.*,
         CASE
             WHEN
                 penalty_team = offense_team
@@ -73,7 +85,7 @@ offense_or_defense AS (
             ELSE 0
         END AS defense_penalty
     FROM
-        def_team_plays dtp
+        pen_team_plays ptp
 ),
 
 /*

@@ -117,3 +117,8 @@ models:
         meta:
           dimension:
             type: number
+      - name: penalty_team_name
+        description: ""
+        meta:
+          dimension:
+            type: string
