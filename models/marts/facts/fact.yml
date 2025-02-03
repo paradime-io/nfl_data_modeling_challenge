@@ -8,7 +8,6 @@ models:
         description: "Unique identifier for each player."
         tests:
           - not_null
-          - unique
 
       - name: player_name
         description: "Full name of the player."
@@ -25,6 +24,9 @@ models:
       - name: position
         description: "Player's position on the field (e.g., QB, RB, WR, TE)."
 
+      - name: rookie_year
+        description: "Year when the player got drafted."
+
       - name: years_experience
         description: "Number of years the player has been in the NFL."
 
@@ -34,8 +36,13 @@ models:
       - name: total_fantasy_points
         description: "Total fantasy points accumulated in standard scoring."
 
+
       - name: total_fantasy_points_ppr
         description: "Total fantasy points accumulated in PPR scoring."
+        meta:
+          metrics:
+            total_ppr:
+              type: average
 
       - name: games_played
         description: "Number of games played in the given season."
@@ -45,18 +52,32 @@ models:
 
       - name: avg_fantasy_points_ppr_per_game
         description: "Average fantasy points per game in PPR scoring."
+        meta:
+          metrics:
+            avg_ppr:
+              description: "Average PPR fantasy points per game."
+              type: average
 
       - name: standard_rank
         description: "Player ranking based on total fantasy points in standard scoring."
 
       - name: ppr_rank
         description: "Player ranking based on total fantasy points in PPR scoring."
+        meta:
+          metrics:
+            avg_ppr_rank:
+              type: average
 
       - name: standard_rank_by_avg
         description: "Player ranking based on average fantasy points per game in standard scoring."
 
+
       - name: ppr_rank_by_avg
         description: "Player ranking based on average fantasy points per game in PPR scoring."
+        meta:
+          metrics:
+            avg_ppr_rank_by_avg:
+              type: average
 
       - name: year_signed
         description: "The year the player signed a contract."
@@ -85,8 +106,27 @@ models:
       - name: inflated_guaranteed
         description: "Inflation-adjusted guaranteed money."
 
-      - name: is_contract_year
+      - name: contract_start_year
+        description: "First year of the active contract at that season."
+
+      - name: contract_end_year
+        description: "Final year of the active contract at that season."
+
+      - name: contract_year
+        description: "Indicates at which year of the active contract the player is in at that season."
+
+      - name: is_final_year
         description: "Indicator if the current season is the final year of the player's contract (1 = Yes, 0 = No)."
+        tests:
+          - not_null
+
+      - name: is_first_year
+        description: "Indicator if the current season is the first year of the player's contract (1 = Yes, 0 = No)."
+        tests:
+          - not_null
+
+      - name: contract_status
+        description: "Categorizes a player's contract status in a given season."
         tests:
           - not_null
 
@@ -97,7 +137,9 @@ models:
         description: "The name of the player."
         tests:
           - not_null
-          - unique
+
+      - name: position
+        description: "Position of the player."
 
       - name: number_of_season
         description: "The total number of seasons the player has participated in."
@@ -128,3 +170,8 @@ models:
         description: "The average PPR fantasy points scored per game."
         tests:
           - not_null
+        meta:
+          metrics:
+            avg_ppr:
+              type: average
+

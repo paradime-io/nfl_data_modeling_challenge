@@ -1,6 +1,7 @@
 WITH player_availability AS (
     SELECT 
         PLAYER_NAME,
+        POSITION,
         SEASON,
         YEARS_EXPERIENCE,
         GAMES_PLAYED,
@@ -29,7 +30,8 @@ WITH player_availability AS (
     --where player_name = 'Russell Wilson'
 ), aggregated as (
     SELECT 
-        PLAYER_NAME,
+        player_name,
+        position,
         count(season) as number_of_season,
         max(YEARS_EXPERIENCE) as YEARS_EXPERIENCE,
         avg(games_played) as avg_games_played,
@@ -37,8 +39,12 @@ WITH player_availability AS (
         avg(total_fantasy_points_ppr) as avg_total_fantasy_points_ppr,
         avg(AVG_FANTASY_POINTS_PPR_PER_GAME) as avg_fantasy_points_per_ppr_per_game
     FROM player_availability
-    group by PLAYER_NAME
+    group by 
+        player_name,
+        position
+        
 )
 select
     *
 from aggregated
+order by 1
