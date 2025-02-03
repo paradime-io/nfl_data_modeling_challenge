@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: stg_draft_data
+    description: "Staging model for draft data."
+    # columns:
+    #   - name: PLAYER_ID
+    #     tests:
+    #       - not_null
+    #       - unique
+
+  - name: stg_injury_data
+    description: "Staging model for injury data."
+    columns:
+      - name: PLAYER_ID
+        tests:
+          - not_null
+
+  - name: stg_player_by_player_data
+    description: "Staging model for play-by-play data."
+    columns:
+      - name: GAME_ID
+        tests:
+          - not_null
+
+  - name: stg_player_stats
+    description: "Staging model for player stats."
+    columns:
+      - name: PLAYER_ID
+        tests:
+          - not_null
+      - name: FANTASY_POINTS
+        tests:
+          - not_null
+
+  - name: stg_schedules
+    description: "Staging model for schedules."
+    columns:
+      - name: GAME_ID
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_seasonal_data
+    description: "Staging model for seasonal data."
+    columns:
+      - name: PLAYER_ID
+        tests:
+          - not_null
+      - name: FANTASY_POINTS
+        tests:
+          - not_null
+
+  - name: stg_seasonal_rosters
+    description: "Staging model for seasonal rosters."
+    columns:
+      - name: PLAYER_ID
+        tests:
+          - not_null

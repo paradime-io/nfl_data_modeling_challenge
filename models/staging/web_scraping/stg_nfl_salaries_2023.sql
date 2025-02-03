@@ -1,6 +1,6 @@
-WITH nfl_salary AS (
+WITH nfl_salaries AS (
     SELECT
-        NAME as PLAYER_NAME,
+        NAME AS PLAYER_NAME,
         TEAM,
         SALARY
     FROM
@@ -9,4 +9,4 @@ WITH nfl_salary AS (
 SELECT
     *
 FROM
-    nfl_salary
+    nfl_salaries
