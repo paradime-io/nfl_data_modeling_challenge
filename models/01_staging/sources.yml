@@ -1,0 +1,123 @@
+version: 2
+
+sources:
+  - name: nfl
+    database: arthurogerio800ur1m8_analytics
+    schema: raw_data
+    tables:
+      - name: nfl_injuries
+        description: Raw nfl injury reports data
+        columns:
+          - name: season
+            description: season year
+
+          - name: game_type
+            description: type of game (e.g. regular, postseason)
+
+          - name: team
+            description: team associated with the injury report
+
+          - name: week
+            description: game week of the injury report
+
+          - name: gsis_id
+            description: unique nfl identifier for the player
+
+          - name: full_name
+            description: player full name
+
+          - name: position
+            description: player position
+
+          - name: report_primary_injury
+            description: primary injury reported
+
+          - name: report_status
+            description: status of the reported injury
+
+          - name: practice_status
+            description: player practice status
+
+          - name: date_modified
+            description: timestamp of last modification
+          
+      - name: nfl_player_stats_by_game
+        description: raw fantasy football player stats by game
+        columns:
+          - name: player_id
+            description: unique player identifier
+
+          - name: player_name_x
+            description: player name (source x)
+
+          - name: position_x
+            description: player position
+
+          - name: season_x
+            description: season year
+
+          - name: week_x
+            description: game week
+
+          - name: team
+            description: team abbreviation
+
+          - name: passing_yards
+            description: passing yards achieved in game
+
+          - name: passing_tds
+            description: passing touchdowns
+
+          - name: rushing_yards
+            description: rushing yards achieved in game
+
+          - name: rushing_tds
+            description: rushing touchdowns
+
+          - name: receptions
+            description: number of receptions
+
+          - name: receiving_yards
+            description: receiving yards achieved in game
+
+          - name: receiving_tds
+            description: receiving touchdowns
+
+          - name: fantasy_points
+            description: standard fantasy football points
+
+          - name: fantasy_points_ppr
+            description: ppr fantasy football points
+
+      - name: nfl_play_by_play
+        description: raw play-by-play data for fantasy football analysis
+        columns:
+          - name: play_id
+            description: unique play identifier
+
+          - name: game_id
+            description: unique game identifier
+
+          - name: game_date
+            description: date of the game
+
+          - name: week
+            description: game week
+
+          - name: posteam
+            description: offensive team in the play
+
+          - name: defteam
+            description: defensive team in the play
+
+          - name: play_type
+            description: type of play (e.g. pass, rush, etc.)
+
+          - name: yards_gained
+            description: yards gained in the play
+
+          - name: epa
+            description: expected points added for the play
+
+          - name: touchdown
+            description: indicator if the play resulted in a touchdown
