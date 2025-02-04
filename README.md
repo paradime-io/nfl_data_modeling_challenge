@@ -94,6 +94,12 @@ The number of receiving touchdowns has been declining since 2020 and dropped pre
 
 Despite this decline, WRs and TEs still accounted for 55% of regular season touchdowns in 2023 (41% and 14%, respectively.)
 
+Given the decline in receiving TDs, I wanted to see how 2023's top PPR scores stacked up to prior seasons (starting in 2018). Here are the top 10 PPR scores by a wide receiver in the last 5 seasons.
+
+![Top 10 PPR Scores for WR](./analyses/Visualizations/Top_10_PPR_Scores_2018_to_2023.png)
+
+CeeDee Lamb and Tyreek Hill's 2023 were only outdone by Cooper Kupp's 2021 season. Also, Tyreek Hill's 2022 season also made the top 10. Devante Adams is Mr. Consistent, scoring at least 336 points for 3 straight seasons. It is also worth highlighting that each of the past 5 seasons has had a different WR as number 1 in PPR.
+
 ### Tight ends
 
 ![TE and RB Receptions by Year](./analyses/Visualizations/TE_and_RB_Recs_by_Year.png)
@@ -107,9 +113,9 @@ When looking at reception rates for WR/TEs with at least 80 targets, there are 7
 ## Conclusions
 Make sure you have a good understanding of the scoring system for your specific fantasy league before drafting any players. If you are in a league with PPR scoring, drafting top receiving players will be crucial to your success. Wide receivers will typically deliver the most points, as they have more targets, receptions, and touchdowns than other positions (despite an overall decline in passing TDs over the years).
 
-A player who is on the field more has more chances to score points. Though, some players like Tyreek Hill and Keenan Allen are highly efficient and scored in the top 10, even with fewer snaps than their counterparts. CeeDee Lamb was highly consistent overall, combining a high snap count and high scoring efficiency to be the top player in the league at any position.
+A player who is on the field more has more chances to score points. Though, some players like Tyreek Hill and Keenan Allen are highly efficient and scored in the top 10, even with fewer snaps than their counterparts. CeeDee Lamb was incredibly consistent, combining a high snap count and scoring efficiency to be the top player in the league at any position. However, each of the past 5 seasons has seen a different top scoring WR, so it will be tough for Lamb to retain his top spot in 2024. (Spoiler alert: He was indeed dethroned, finishing 5th among WRs in 2024.)
 
-Don't be tempted by the top draft picks. These players will likely be more expensive and draft number is not always a good indicator of performance (at least it wasn't for wide receivers in 2023).
+Don't be tempted by the top draft picks. These players will likely be more expensive and draft number is not always a good indicator of performance (at least it wasn't for wide receivers in 2023). 
 
 While wide receivers get a lot of attention, don't sleep on tight ends. The number of receptions by tight ends has been trending upwards over the last several seasons. In 2023, they surpassed running backs for number of receptions. In terms of reception rates, many of the top players were tight ends.
 
