@@ -226,25 +226,27 @@ In the final section, I focused on analyzing Fantasy Football (FF) data, as this
 
 To understand how different positions contribute to fantasy football scoring, I analyzed the average points scored per position during the regular season. I found that only five positions—Quarterback (QB), Running Back (RB), Wide Receiver (WR), Tight End (TE), and Fullback (FB)—significantly impact fantasy points. Other positions scored six or fewer points on average, with some even averaging below zero!  
 
-To keep the focus on key contributors, the bar chart highlights only the top five scoring positions.
+The bar chart highlights only the top five scoring positions.
 
 ![Average fantasy points by position](images/part3/avg-fantasy-points-by-position.png)
 
 #### Top Fantasy Scorers by Position
 
-To highlight the standout performers, I identified the top-scoring player at each key fantasy position (QB, RB, WR, TE, and FB).
+Next, I identified the top-scoring player at each key fantasy position (QB, RB, WR, TE, and FB).
 
 ![Top scoring players](images/part3/top-scorers.png)
 
 #### Most Consistent Top Fantasy Players
 
-Consistency is key in fantasy football, so I analyzed the 20 highest-scoring players at each position and identified the most consistent performer based on the lowest standard deviation in their weekly scores. The graph below shows each player’s weekly fantasy points, revealing that even the most consistent players still experience notable variance in their performance.
+My go-to football expert, ChatGPT, keeps telling me that consistency is important in fantasy football. Plus, analyzing player consistency is fun and not so obvious. I looked at the 20 highest-scoring players at each position and then identified the one with the lowest standard deviation in their weekly fantasy points. This helped me find the most stable performers, which you can see in the chart below.
+
+The graph shows how much each of these players scored each week. It's worth noting that even the most consistent players still experience notable variance in their performance.
 
 ![Most consistent top scoring players](images/part3/most-consistent-players.png)
 
 #### Team Fantasy Points: Scoring and Defense Trends
 
-To analyze team performance in fantasy football, I looked at fantasy points scored and allowed by position. Some teams, like San Francisco (SF), Detroit (DET), Baltimore (BAL), Buffalo (BUF), Dallas (DAL), Kansas City (KC), and Miami (MIA), scored the most fantasy points, meaning their players were strong fantasy assets.
+Finally, I analyzed team performance in fantasy football. I looked at fantasy points scored and allowed by position. Some teams, like San Francisco (SF), Detroit (DET), Baltimore (BAL), Buffalo (BUF), Dallas (DAL), Kansas City (KC), and Miami (MIA), scored the most fantasy points, meaning their players were strong fantasy assets.
 
 ![Fantasy points scored by position](images/part3/fantasy-points-scored-by-position.png)
 
@@ -252,8 +254,14 @@ On the other hand, Detroit (DET), Philadelphia (PHI), Washington (WAS), and Ariz
 
 ![Fantasy points allowed by position](images/part3/fantasy-points-allowed-by-position.png)
 
+### Insights
+
+No insights here—analyzing this data is beyond my knowledge level. But if you understand the rules of fantasy football, I imagine there’s a lot of interesting takeaways hidden in these numbers. Either way, exploring the data was fun, and it gave me a better appreciation for how fantasy football works!
+
 ## Conclusions
 
-This analysis showed me that familiarity with the subject—like game rules and terminology—is crucial for in-depth and meaningful data analysis.  
+This challenge showed me that knowing the game rules and terminology is really important for making sense of the data. ChatGPT and internet searches helped, but there’s only so much you can do without a deeper understanding of football.
 
-It also raised more questions than answers. For example, why do concussions sideline players for an average of 1.4 weeks, while foot injuries keep them out for 2 weeks? I don’t have the knowledge to explain that.
+Still, I had a lot of fun with this analysis. Instead of finding clear answers, I ended up with more questions—like why concussions only sideline players for 1.4 weeks on average, or why cornerbacks get injured the most. Fantasy football has way more layers than I expected!
+
+I feel inspired to try something similar one day with soccer data—this time with my soccer-loving nephew. It could be fun to dig into the stats of a sport I actually understand (at least a little)!
