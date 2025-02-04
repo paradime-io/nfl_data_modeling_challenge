@@ -188,7 +188,7 @@ I'll admit — I don't know much about sports. The only reason I’ve heard of T
 
 That said, I wanted to challenge myself by working with sports data for the first time and experimenting with Paradmine/Lightdash.
 
-I chose to focus on NFL performance post-COVID, expanding the dataset with additional years and incorporating injury data—a topic that naturally piqued my curiosity.
+I chose to focus on NFL performance post-COVID, expanding the dataset with additional years and incorporating injury data — a topic that naturally piqued my curiosity.
 
 Lightdash Dashboard: https://app.lightdash.cloud/projects/13c79b94-129c-4176-aa3e-aba26d4cbacf/dashboards/e7677c88-1a3e-4d0f-b654-f57e188871f2.
 
@@ -202,7 +202,7 @@ Lightdash Dashboard: https://app.lightdash.cloud/projects/13c79b94-129c-4176-aa3
 
 1. Executed nfl_play_by_play_2023.py and nfl_player_stats_by_game_2023.py to retrieve historical data from 2021 to 2024.
 2. Loaded the historical performance data into Snowflake, built source models, and combined them into a staging model in dbt.
-3. Ran a script to ingest NFL injury data, deduplicated the dataset, and excluded player names due to inconsistencies—focusing instead on team and position. Created a source model and an intermediate model for injury data.
+3. Ran a script to ingest NFL injury data, deduplicated the dataset, and excluded player names due to inconsistencies — focusing instead on team and position. Created a source model and an intermediate model for injury data.
 
 ### Tools Used
 
@@ -220,7 +220,7 @@ Lightdash Dashboard: https://app.lightdash.cloud/projects/13c79b94-129c-4176-aa3
 4. Developed additional intermediate and fact models for injury history and points allowed by defense.
 5. Implemented tests (not-null, uniqueness) where applicable. There’s an opportunity to enhance testing with additional packages. I’d recommend involving someone with domain expertise to define acceptable behavior.
 
-## Visualizations 
+## Visualizations
 
 TODO
 
@@ -262,6 +262,7 @@ Defensive Ends (DEs) and Running Backs (RBs) are the only positions where sprain
 Across teams from 2021 to 2024, the average per game included nearly 5 targets, 5 rushing attempts, 3 pass completions, and 10 red zone opportunities.
 
 Performance Trends Over Time:
+
 - Opportunities remained the highest over time, which aligns with their definition as chances to make a play.
 - 2021 was the strongest year for red zone performance across teams, except for total rush attempts, where 2024 showed slightly better results.
 - 2022 was the weakest year, showing the lowest totals for opportunities, pass completions, and rush attempts, though these metrics improved over time.
@@ -273,11 +274,13 @@ Performance Trends Over Time:
 A clear trend emerges among the top red zone performers over the years.
 
 Rushing & Total Opportunities:
+
 - The top 5 players for total opportunities and red zone rush attempts feature the same key names: J. Jacobs, B. Robinson, J. Mixon, and J. Taylor.
 - J. Taylor leads in total opportunities over the years, followed closely by J. Jacobs.
 - However, when looking at total rush attempts, their rankings flip, with J. Jacobs surpassing J. Taylor.
 
 Pass Completions & Targets:
+
 - The top 5 for total pass completions and targets introduce new names, including T. Kelce, A. St. Brown, and J. Chase.
 - T. Kelce and A. St. Brown tie for the most pass completions in the red zone.
 - D. Adams leads all players in total targets.
@@ -289,9 +292,5 @@ Lower Body Injuries Are the Most Common for NFL players, which suggests leg stre
 Defensive Players (LBs, CBs, and Safeties) have high injury rates, likely due to tackling and coverage responsibilities.
 
 **Red Zone Performance**
-The red zone remains a key battleground, with J. Taylor and J. Jacobs dominating rushing opportunities, while T. Kelce and A. St. Brown lead in pass completions. 
+The red zone remains a key battleground, with J. Taylor and J. Jacobs dominating rushing opportunities, while T. Kelce and A. St. Brown lead in pass completions.
 Over the years, 2021 stood out as the strongest for overall performance, while 2022 saw the biggest decline, with gradual recovery since.
-
-
-
-

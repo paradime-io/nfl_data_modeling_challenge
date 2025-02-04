@@ -105,11 +105,11 @@ models:
   - name: fct_fantasy_points_allowed_by_defense
     description: Fact table summarizing how each defense performed against different offensive positions in terms of fantasy points and yardage allowed, along with the variety of players they faced.
     tests:
-        - dbt_utils.unique_combination_of_columns:
-            combination_of_columns:
-              - year
-              - defteam
-              - season_type  
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - year
+            - defteam
+            - season_type
     columns:
       - name: year
         description: "The year of the season"
@@ -119,31 +119,71 @@ models:
         description: "The defending team"
       - name: total_fantasy_points_allowed_qb
         description: "Total fantasy points allowed to quarterbacks"
+        meta:
+          metrics:
+            fantasy_points_allowed_qb:
+              type: sum
+              label: "Total fantasy points allowed to quarterbacks"
       - name: total_fantasy_points_allowed_rb
         description: "Total fantasy points allowed to running backs"
+        meta:
+          metrics:
+            fantasy_points_allowed_rb:
+              type: sum
+              label: "Total fantasy points allowed to running backs"
       - name: total_fantasy_points_allowed_wrte
         description: "Total fantasy points allowed to wide receivers and tight ends"
+        meta:
+          metrics:
+            fantasy_points_allowed_wrte:
+              type: sum
+              label: "Total fantasy points allowed to wide receivers and tight ends"
       - name: total_rushing_yards_allowed
         description: "Total rushing yards allowed"
+        meta:
+          metrics:
+            rushing_yards_allowed:
+              type: sum
+              label: "Total rushing yards allowed"
       - name: games_played
         description: "Number of games played"
+        meta:
+          metrics:
+            games_played:
+              type: sum
+              label: "Number of games played"
       - name: unique_qbs_faced
         description: "Number of unique quarterbacks faced"
+        meta:
+          metrics:
+            unique_qbs_faced:
+              type: sum
+              label: "Number of unique quarterbacks faced"
       - name: unique_rbs_faced
         description: "Number of unique running backs faced"
+        meta:
+          metrics:
+            sum_rbs_faced:
+              type: sum
+              label: "Sum of unique running backs faced"
       - name: unique_wrs_faced
         description: "Number of unique wide receivers faced"
+        meta:
+          metrics:
+            sum_unique_wrs_faced:
+              type: sum
+              label: "Sum of unique wide receivers faced"
 
   - name: fct_player_injury_history
     description: Fact table containing the historical injury records for players.
     tests:
-        - dbt_utils.unique_combination_of_columns:
-            combination_of_columns:
-              - team_id
-              - injury_status
-              - injury_details
-              - position
-              - body_area
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - team_id
+            - injury_status
+            - injury_details
+            - position
+            - body_area
     columns:
       - name: severe_injuries
         description: "Count of severe injuries for the player and given year."
@@ -189,4 +229,3 @@ models:
             impact_index:
               type: sum
               label: "Injury impact Index"
-
