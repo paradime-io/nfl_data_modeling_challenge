@@ -105,7 +105,7 @@ models:
         meta:
           dimension:
             type: number
-  - name: fct_weight
+  - name: fct_weight_by_pos
     description: Weight of players by position and season
     columns:
       - name: player_id
@@ -132,3 +132,4 @@ models:
         meta:
           dimension:
             type: string
+  - name: fct_weight_by_season_pos
