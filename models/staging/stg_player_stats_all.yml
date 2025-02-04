@@ -1,0 +1,449 @@
+version: 2
+models:
+  - name: stg_player_stats_all
+    columns:
+      - name: player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: player_name_x
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: player_display_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: position_x
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: position_group
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: headshot_url_x
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: recent_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: season_x
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: week_x
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: season_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: opponent_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: completions
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: attempts
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: passing_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: passing_tds
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: interceptions
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: sacks
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: sack_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: sack_fumbles
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: sack_fumbles_lost
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: passing_air_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: passing_yards_after_catch
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: passing_first_downs
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: passing_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: passing_2pt_conversions
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: pacr
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: dakota
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: carries
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rushing_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rushing_tds
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rushing_fumbles
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rushing_fumbles_lost
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rushing_first_downs
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rushing_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rushing_2pt_conversions
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receptions
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: targets
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiving_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiving_tds
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiving_fumbles
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiving_fumbles_lost
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiving_air_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiving_yards_after_catch
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiving_first_downs
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiving_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: receiving_2pt_conversions
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: racr
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: target_share
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: air_yards_share
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: wopr
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: special_teams_tds
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: fantasy_points
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: fantasy_points_ppr
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: season_y
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: position_y
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: depth_chart_position
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: jersey_number
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: status
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: player_name_y
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: first_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: last_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: birth_date
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: height
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: weight
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: college
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: espn_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: sportradar_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: yahoo_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rotowire_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: pff_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: pfr_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: fantasy_data_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: sleeper_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: years_exp
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: headshot_url_y
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: ngs_position
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: week_y
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: game_type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: status_description_abbr
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: football_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: esb_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: gsis_it_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: smart_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: entry_year
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: rookie_year
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: draft_club
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: draft_number
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: age
+        description: ""
+        meta:
+          dimension:
+            type: number
