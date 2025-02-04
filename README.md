@@ -84,6 +84,9 @@ I used two primary datasets:
 
 ### Availability & Fantasy Performance
 8. **PPR vs. Average Games Played**  
+
+![Visualization](viz/avg_ppr_by_avg_games_played.png)
+
 9. **Availability breakdown by position**  
 
 ---
