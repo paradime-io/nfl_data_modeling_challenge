@@ -69,9 +69,9 @@ I pulled a list of the the top 10 WRs or TEs in 2023 based on PPR points. There 
 
 It stood out to me that one player, Puka Nacua, was a rookie in 2023. After doing some research, I learned that Nacua:
 * Was drafted with the 177th pick, meaning he has the highest draft number of the 10 players in this list.
-* Broke the rookie records for both receiving yards and receptions [Source](https://www.espn.com/nfl/story/_/id/39261306/rams-puka-nacua-breaks-nfl-rookie-receiving-yards-record)
+* Broke the rookie records for both receiving yards and receptions ([Source](https://www.espn.com/nfl/story/_/id/39261306/rams-puka-nacua-breaks-nfl-rookie-receiving-yards-record))
 
-In general, for the top WRs, draft number was not a good predictor of their performance. 4 of the top 10 were drafted with the 112th or later pick.
+In general, for the top WRs, draft number was not a good predictor of performance. 4 of the top 10 were drafted with the 112th pick or later.
 ![Top 10 WRs Draft Numbers](./analyses/Visualizations/2023_Top_WR_Draft_Numbers.png)
 
 ## Snap Counts
@@ -81,7 +81,7 @@ For these top 10 players, I looked at offensive snap counts. Did all these playe
 
 Tyreek Hill was by far the most efficient point scorer. Every other player in the top 5 had over 1,000 snaps, but Hill played only 735 offensive snaps. He averaged a very impressive 0.51 PPR points per snap played! 
 
-Also of note, Keenan Allen, who ranked 8th for WR, played only 13 regular season games. All other players in this list played at least 16 games. CeeDee Lamb had the second highest snap count in the list (1,075) and still maintained a ridiculous PPR per snap of 0.38.
+Also of note, Keenan Allen, played only 13 regular season games. All other players in this list played at least 16 games. CeeDee Lamb had the second highest snap count in the list (1,075) and still maintained a ridiculous PPR per snap of 0.38.
 
 ### Receiving Touchdowns
 I looked at receiving statistics over the past several seasons (2018-2023) in order to get an idea of any trends over time. 
@@ -105,9 +105,9 @@ When looking at reception rates for WR/TEs with at least 80 targets, there are 7
 ![Top Reception Rates](./analyses/Visualizations/2023_Reception_Rates.png)
 
 ## Conclusions
-Make sure you have a good understanding of the scoring system for your specific fantasy league before you start drafting any players. If you are in a league with PPR scoring, drafting top receiving players will be crucial to your success. Wide receivers will typically deliver the most points, as they have more targets, receptions, and touchdowns than other positions (despite an overall decline in passing TDs over the years).
+Make sure you have a good understanding of the scoring system for your specific fantasy league before drafting any players. If you are in a league with PPR scoring, drafting top receiving players will be crucial to your success. Wide receivers will typically deliver the most points, as they have more targets, receptions, and touchdowns than other positions (despite an overall decline in passing TDs over the years).
 
-A player who is on the field more has more chances to score points. Though, some players like Tyreek Hill and Keenan Allen are highly efficient and scored in the top 10 with fewer snaps than their counterparts. CeeDee Lamb was highly consistent overall, combining a high snap count and high scoring efficiency to be the top player in the league at any position.
+A player who is on the field more has more chances to score points. Though, some players like Tyreek Hill and Keenan Allen are highly efficient and scored in the top 10, even with fewer snaps than their counterparts. CeeDee Lamb was highly consistent overall, combining a high snap count and high scoring efficiency to be the top player in the league at any position.
 
 Don't be tempted by the top draft picks. These players will likely be more expensive and draft number is not always a good indicator of performance (at least it wasn't for wide receivers in 2023).
 
