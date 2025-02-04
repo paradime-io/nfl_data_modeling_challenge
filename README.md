@@ -216,6 +216,15 @@ I analyzed which positions had the highest counts of the most common injuries—
 - **Injuries don’t always predict team performance**—teams with more injuries tend to win less, but there’s no strict correlation.  
 - **Concussions don’t sideline players for long**—on average, players miss only **1.4 weeks** for a concussion, while foot, thigh, ankle, and knee injuries, as well as illnesses, take longer to recover from.  
 
+### Fantasy Points in Season 2023
+
+![Average fantasy points by position](images/part3/avg-fantasy-points-by-position.png)
+
+![Top scoring players](images/part3/top-scorers.png)
+
+![Fantasy points scored by position](images/part3/fantasy-points-scored-by-position.png)
+
+![Fantasy points allowed by position](images/part3/fantasy-points-allowed-by-position.png)
 
 ## Conclusions
 
