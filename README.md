@@ -21,9 +21,9 @@ For this edition of Paradime's data modeling challenge, I set out to uncover ins
 1. **Player Contracts** – How does a player's contract status (rookie year, final year, mid-contract) relate to their fantasy performance?  
 2. **Player Availability** – Does past availability (games played) predict future fantasy output?  
 
-To explore these questions, I combined player performance data with contract history, using dbt™, Snowflake, and visualization tools.
+To explore these questions, I combined player performance data with contract history, using dbt™, Snowflake, and Lightdash.
 
-[Dashboard](https://app.lightdash.cloud/projects/df0c18fb-7380-4ffb-97ff-8807c7bcf839/dashboards/d4b436c0-d2a8-48de-aa2a-ead861aff88a/view)
+[Lightdash Dashboard](https://app.lightdash.cloud/projects/df0c18fb-7380-4ffb-97ff-8807c7bcf839/dashboards/d4b436c0-d2a8-48de-aa2a-ead861aff88a/view)
 
 ---
 
