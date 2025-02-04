@@ -2792,5 +2792,4 @@ models:
         meta:
           dimension:
             type: string
-  - name: stg_player_stats_all
-    description: Player stats for Seasons 2018-2023
+
