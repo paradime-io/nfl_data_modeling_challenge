@@ -7,7 +7,7 @@
 # import pandas as pd
 
 # # Specify the year for the NFL season
-# season_year = [2023]
+# season_year = [2023, 2024]
 
 # # Import seasonal data
 # print("Fetching seasonal data...")
@@ -26,9 +26,6 @@
 # combined_data = pd.merge(weekly_data, roster_data, on="player_id", how="left")
 
 # # Save the dataset to a CSV file
-# output_file = "nfl_players_stats_2023-24.csv"
+# output_file = "nfl_players_stats_by_game.csv"
 # print(f"Saving data to {output_file}...")
 # combined_data.to_csv(output_file, index=False)
-
-# print("Data saved successfully!")
-
