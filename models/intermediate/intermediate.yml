@@ -176,3 +176,35 @@ models:
         meta:
           dimension:
             type: number
+  - name: int_win_prob
+    columns:
+      - name: game_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: game_seconds_remaining
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_home_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_away_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: winning_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: winning_team_wp
+        description: ""
+        meta:
+          dimension:
+            type: string

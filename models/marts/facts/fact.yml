@@ -146,4 +146,26 @@ models:
             avg_bmi:
               type: average
               round: 1
-  - name: fct_weight_by_season_pos
+  - name: fct_win_prob
+    columns:
+      - name: game_time
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: winning_team_wp
+        description: ""
+        meta:
+          dimension:
+            type: string
+          metrics:
+            avg_winning_wp:
+              type: average
+      - name: losing_team_wp
+        description: ""
+        meta:
+          dimension:
+            type: number
+          metrics:
+            avg_losing_team_wp:
+              type: average
