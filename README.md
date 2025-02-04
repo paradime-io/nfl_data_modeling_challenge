@@ -65,7 +65,11 @@ I used two primary datasets:
    - `fct_player_availability` – Focuses on how **games played** affects fantasy performance.  
 
 ### Model Lineage
-[Insert lineage diagram here]
+
+![Visualization](viz/lineage_fct_contract.png)
+
+![Visualization](viz/lineage_fct_player_av.png)
+
 
 ---
 
