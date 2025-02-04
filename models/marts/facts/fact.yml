@@ -123,6 +123,9 @@ models:
         meta:
           dimension:
             type: number
+          metrics:
+            name: avg_weight
+            type: average
       - name: position_x
         description: ""
         meta:
@@ -138,8 +141,3 @@ models:
         meta:
           dimension:
             type: string
-    measures:
-      - name: avg_weight
-        description: "Average player weight"
-        type: average
-        sql: weight
