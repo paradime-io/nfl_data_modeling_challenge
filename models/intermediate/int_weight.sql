@@ -2,8 +2,9 @@ with stats as (
     select distinct
         player_id,
         season_x,
+        position_x,
         weight,
-        position_x
+        height
     from {{ ref('stg_player_stats_all') }}
 ),
 pos as (

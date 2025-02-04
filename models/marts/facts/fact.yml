@@ -132,4 +132,18 @@ models:
         meta:
           dimension:
             type: string
+      - name: height
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: bmi
+        description: ""
+        meta:
+          dimension:
+            type: number
+          metrics:
+            avg_bmi:
+              type: average
+              round: 1
   - name: fct_weight_by_season_pos

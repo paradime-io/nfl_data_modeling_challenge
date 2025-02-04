@@ -171,3 +171,8 @@ models:
         meta:
           dimension:
             type: string
+      - name: height
+        description: ""
+        meta:
+          dimension:
+            type: number
