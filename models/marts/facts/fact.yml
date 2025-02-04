@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: fct_fantasy_point_leaders
+  - name: fct_fantasy_points
     description: "Fact table ranking players by their fantasy performance using both standard and PPR scoring."
     columns:
       - name: player_id
@@ -12,20 +12,28 @@ models:
         description: "Player's position (e.g., QB, RB, WR, TE)."
       - name: recent_team
         description: "The player's most recent team."
-      - name: total_fantasy_points
+      - name: fantasy_points
         description: "Total fantasy points scored by the player (standard scoring) across the considered period."
-      - name: total_fantasy_points_ppr
+        meta:
+          metrics:
+            total_fantasy_points:
+              type: sum
+            avg_fantasy_points:
+              type: average
+      - name: fantasy_points_ppr
         description: "Total fantasy points scored by the player under PPR (points per reception) scoring across the considered period."
+        meta:
+          metrics:
+            total_fantasy_points_ppr:
+              type: sum
+            avg_fantasy_points_ppr:
+              type: average
       - name: games_played
         description: "Number of games (weeks) the player participated in."
       - name: avg_fantasy_points_per_game
         description: "Average standard fantasy points per game played."
       - name: avg_fantasy_points_ppr_per_game
         description: "Average PPR fantasy points per game played."
-      - name: standard_rank
-        description: "The player's rank among all players based on total standard fantasy points."
-      - name: ppr_rank
-        description: "The player's rank among all players based on total PPR fantasy points."
 
   - name: fct_red_zone_player_stats
     description: "Fact table summarizing player performance within the red zone, capturing rushing and passing opportunities."

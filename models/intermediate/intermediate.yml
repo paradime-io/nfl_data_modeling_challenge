@@ -15,11 +15,15 @@ models:
       - name: season
         description: "Season year for the stats."
       - name: season_week
-        description: "Week number in the season for these stats."
+        description: "Season week for the stats."
       - name: total_targets
         description: "Total number of passing targets the player received in the aggregated period."
       - name: total_fantasy_points
         description: "Sum of all standard fantasy points scored by the player."
+        meta:
+          metrics:
+            fantasy_points:
+              type: sum
       - name: total_fantasy_points_ppr
         description: "Sum of all fantasy points scored by the player under PPR (points per reception) rules."
       - name: games_played
@@ -131,6 +135,12 @@ models:
         description: "Week of the season in which the game occurred."
       - name: fantasy_points
         description: "Total fantasy points scored by the player in the game (standard scoring format)."
+        meta:
+          metrics:
+            total_fantasy_points:
+              type: sum
+            avg_fantasy_points:
+              type: average
       - name: fantasy_points_ppr
         description: "Total fantasy points scored by the player in the game using PPR (Points Per Reception) scoring format."
 
