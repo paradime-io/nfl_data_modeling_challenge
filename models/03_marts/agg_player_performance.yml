@@ -4,10 +4,19 @@ models:
   - name: agg_player_performance
     description: Aggregated performance metrics for NFL players per week and season
     columns:
+      - name: agg_player_performance_sk
+        description: Surrogate key
+        tests:
+          - not_null
+          - unique
+
       - name: player_id
         description: Unique identifier for the player
         tests:
           - not_null
+
+      - name: player_nm
+        description: Player name
 
       - name: season_nr
         description: Season year

@@ -19,5 +19,12 @@ with
         order by player_nm, season_nr, week_nr
     )
 
+    , final as (
+        select
+            hash(player_id, season_nr, week_nr) as agg_player_performance_sk
+            , *
+        from aggregated
+    )
+
 select *
-from aggregated
+from final

@@ -4,6 +4,12 @@ models:
   - name: agg_team_defense
     description: Aggregated defensive performance metrics per team and week
     columns:
+      - name: agg_team_defense_sk
+        description: Surrogate key
+        tests:
+          - not_null
+          - unique
+      
       - name: team_nick_nm
         description: The commonly used nickname of the team
         tests:

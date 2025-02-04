@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: fact_injury_impact
+    description: Performance metrics for players joined with injury data, flagging if an injury was reported in a given week
+    columns:
+      - name: fact_injury_impact_sk
+        description: Surrogate key
+        tests:
+          - not_null
+          - unique
+
+      - name: player_id
+        description: Unique identifier for the player
+        tests:
+          - not_null
+      
+      - name: player_nm
+        description: Player name
+
+      - name: season_nr
+        description: Season year
+        tests:
+          - not_null
+
+      - name: week_nr
+        description: Game week number
+        tests:
+          - not_null
+
+      - name: total_fantasy_points_nr
+        description: Total standard fantasy points accumulated in the week
+
+      - name: total_fantasy_points_ppr_nr
+        description: Total PPR fantasy points accumulated in the week
+
+      - name: has_injury_fl
+        description: Indicator flag if the player had an injury report in the week
+        tests:
+          - not_null

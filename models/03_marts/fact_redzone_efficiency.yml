@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: fact_redzone_efficiency
+    description: Aggregated red zone efficiency metrics per team based on plays inside the red zone (yardline_100 <= 20)
+    columns:
+      - name: fact_redzone_efficiency_sk
+        description: Surrogate key
+        tests:
+          - not_null
+          - unique
+
+      - name: team_nick_nm
+        description: Offensive team playing the red zone drives
+        tests:
+          - not_null
+
+      - name: redzone_plays_nr
+        description: Total number of plays in the red zone
+
+      - name: redzone_touchdowns_nr
+        description: Total number of touchdowns scored from the red zone
+
+      - name: avg_yards_gained
+        description: Average yards gained on red zone plays
+
+      - name: avg_epa
+        description: Average expected points added (EPA) on red zone plays
+
+      - name: touchdown_rate
+        description: Touchdown conversion rate in the red zone (touchdowns/red zone plays)

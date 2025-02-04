@@ -4,6 +4,12 @@ models:
   - name: dim_teams
     description: Reference table containing key identifiers, names, and abbreviations for NFL teams.
     columns:
+      - name: dim_teams_sk
+        description: Surrogate key
+        tests:
+          - not_null
+          - unique
+
       - name: team_id
         description: A unique identifier assigned to each NFL team
 
