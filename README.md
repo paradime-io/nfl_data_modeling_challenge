@@ -190,7 +190,7 @@ That said, I wanted to challenge myself by working with sports data for the firs
 
 I chose to focus on NFL performance post-COVID, expanding the dataset with additional years and incorporating injury data—a topic that naturally piqued my curiosity.
 
-[Include link to Lightdash dashboard TODO]
+Lightdash Dashboard: https://app.lightdash.cloud/projects/13c79b94-129c-4176-aa3e-aba26d4cbacf/dashboards/e7677c88-1a3e-4d0f-b654-f57e188871f2.
 
 ## Data Sources
 
@@ -226,10 +226,12 @@ TODO
 
 ## Insights
 
+** Most Common Injuries **
 Lower Body injuries are the most common and are observed across all positions, accounting for 400 injuries, followed by Upper Body injuries (242).
 
 Linebackers (LB), Cornerbacks (CB), and Safeties (S) suffer the most injuries. These positions require quick movements, high impact tackles, and frequent contact, making them injury-prone.
 
+** Types of Injuries **
 Lower Body injuries dominate over other injuries across most positions, especially for LBs and WRs. This suggests that speed-based positions (WR, S) suffer the most lower body injuries, likely due to running, cutting, and tackling.
 
 Head injuries are most common among running backs (RB) and safeties (S). Safeties (S) have the highest count of head injuries, almost doubled the count of RBs.
@@ -238,6 +240,33 @@ Core/abdomen injuries are primarily seen in LB, OT, PR, QB, TE, and WR, with lin
 
 This aligns with their roles — RBs frequently absorb direct hits while running through defenses, while safeties initiate high-speed tackles, increasing head injury risks.
 
+** Injury Status among positions **
+
+Linebackers (LB) and defensive tackles (DT) have the highest counts of IR-R, a designation for players who are "out" but eligible to return after a set period.
+Cornerbacks (CB) and Safeties (S) lead in "Questionable" status, meaning they have a 50/50 chance of playing in the next game due to injury.
+Interestingly, offensive tackle (OT) is the only position with PUP-R designations, which typically result from offseason injuries.
+Wide receivers (WR) have the highest IR-R counts, followed by LB, TE, DE, and CB, indicating these positions frequently deal with injuries that require temporary removal but allow a return later in the season.
+
+** Injury Details by Position **
+
+No position is completely immune to moderate to severe injuries.
+
+Defensive Tackles (DTs) have the highest number of surgeries.
+Linebackers (LBs), Wide Receivers (WRs), Centers (Cs), and Defensive Ends (DEs) have similar surgery counts (around 20), which is still half of the DT total.
+Safeties (S) have the highest number of concussions.
+Cornerbacks (CBs) have the widest variety of injuries, with 10 cases each of surgery, concussion, fracture, and dislocation.
+Defensive Ends (DEs) and Running Backs (RBs) are the only positions where sprains have been reported.
+
+** Seeing Red: The Red Zone **
+
+Across teams from 2021 to 2024, the average per game included nearly 5 targets, 5 rushing attempts, 3 pass completions, and 10 red zone opportunities.
+
+Performance Trends Over Time:
+- Opportunities remained the highest over time, which aligns with their definition as chances to make a play.
+- 2021 was the strongest year for red zone performance across teams, except for total rush attempts, where 2024 showed slightly better results.
+- 2022 was the weakest year, showing the lowest totals for opportunities, pass completions, and rush attempts, though these metrics improved over time.
+- 2023 struggled with targets, and numbers have yet to recover to 2021 levels.
+- Pass completions remain the lowest among all performance indicators, while rushing attempts and targets are more closely aligned.
 
 ## Conclusions
 
