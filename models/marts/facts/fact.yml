@@ -89,10 +89,25 @@ models:
     columns:
       - name: severe_injuries
         description: "Count of severe injuries for the player and given year."
+        meta:
+          metrics:
+            total_severe_injuries:
+              type: sum
+              label: "Total severe injuries"
       - name: moderate_injuries
         description: "Count of moderate injuries for the player and given year."
+        meta:
+          metrics:
+            total_moderate_injuries:
+              type: sum
+              label: "Total moderate injuries"
       - name: minor_injuries
         description: "Count of minor injuries for the player and given year."
+        meta:
+          metrics:
+            total_minor_injuries:
+              type: sum
+              label: "Total minor injuries"
       - name: position
         description: "Unique identifier for the position."
       - name: body_area
@@ -105,4 +120,21 @@ models:
         description: "The season year for which injury data is recorded."
       - name: injuries_in_year
         description: "Total number of injuries a player had in the given year."
+        meta:
+          metrics:
+            total_injuries_in_year:
+              type: sum
+              label: "Total injuries"
+      - name: injury_impact_index
+        meta:
+          metrics:
+            injury_impact_index:
+              type: sum
+              label: "Injury impact Index"
+      - name: position_injury_risk
+        meta:
+          metrics:
+            position_injury_risk:
+              type: sum
+              label: "Position Injury Risk"
 
