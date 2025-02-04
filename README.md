@@ -72,6 +72,8 @@ I used two primary datasets:
 ## Visuals & Key Metrics
 
 ### General Analysis
+Added two general visuals just to have a better understanding about the dataset:
+
 1. **Number of players by position**  
 
 ![Visualization](viz/number_of_players_per_position.png)
@@ -85,25 +87,47 @@ I used two primary datasets:
 
 ![Visualization](viz/ppr_by_final_year.png)
 
+I had an assupmtion that final year performances would be better then every other season. However, we don't yet see that on this chart, so I continued my analysis:
+
 ![Visualization](viz/ppr_by_first_year.png)
+
+Taking a look at this visual we can see that players in their first contract year perform worse. Could be because of rookie seasons.
 
 ![Visualization](viz/ppr_by_first_final_year.png)
 
-For better interpretation I created these categories:
+Adding both flags to the analysis shows some interesting insights, but for better interpretation I created these categories based on the two flags:
 
 ![Visualization](viz/ppr_by_contract_status.png)
 
+We can see that it is actually players in "Mid-contract" perform best, right ahead of players in their final year. Players on 1-year contract perform worst.
 
-4. **Fantasy PPR by first contract year of a multi-year contract**  
 
+4. **Mid-contract performance breakdown** (by contract year & position)
+Having seen this I wanted to better understand "Mid-contract" players so I broke Avg PPR down by which year of the contract the players are in:
+
+![Visualization](viz/mid_contract_by_contract_year.png)
+
+Players in their 6th year perform best, while players in their second year have the lowest Avg PPR.
+
+Also checked a position breakdown:
+
+![Visualization](viz/mid_contract_by_position.png)
+
+Quarterbacks are the best-performers, while Tight-ends are the worst.
+
+5. **Fantasy PPR by first contract year of a multi-year contract**  
+
+ 
 ![Visualization](viz/first_year_contract_by_contract_length.png)
+
 
 ![Visualization](viz/final_year_contract_by_position.png)
 
- 
-5. **Mid-contract performance breakdown** (by contract year & position)  
 
-![Visualization](viz/mid_contract_by_contract_year.png)
+ 
+  
+
+
 
 ### Availability & Fantasy Performance
 6. **PPR vs. Average Games Played**  
