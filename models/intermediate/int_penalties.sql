@@ -46,7 +46,7 @@ player_display_name AS (
         psg.player_display_name             AS player_display_name
     FROM
         pass_and_run par
-    JOIN
+    LEFT JOIN
         player_stats_by_game psg
     ON
         par.penalty_player_id = psg.player_id
