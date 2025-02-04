@@ -134,3 +134,36 @@ models:
         meta:
           dimension:
             type: string
+  - name: int_weight
+    description: Weight of players by season and position
+    columns:
+      - name: player_id
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: season_x
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: weight
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: position_x
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: full_position_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: full_position_group_name
+        description: ""
+        meta:
+          dimension:
+            type: string
