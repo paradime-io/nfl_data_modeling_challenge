@@ -72,7 +72,8 @@ I used two primary datasets:
 ## Visuals & Key Metrics
 
 ### General Analysis
-Added two general visuals just to have a better understanding about the dataset:
+
+I included two general visuals to gain a clearer understanding of the dataset:
 
 1. **Number of players by position**  
 
@@ -87,33 +88,34 @@ Added two general visuals just to have a better understanding about the dataset:
 
 ![Visualization](viz/ppr_by_final_year.png)
 
-I had an assupmtion that final year performances would be better then every other season. However, we don't yet see that on this chart, so I continued my analysis:
+I initially assumed that players' performances in their final year would be better than in any other season. However, this trend isn't apparent in the chart, so I proceeded with further analysis:
 
 ![Visualization](viz/ppr_by_first_year.png)
 
-Taking a look at this visual we can see that players in their first contract year perform worse. Could be because of rookie seasons.
+Looking at this visual, we can observe that players in their first contract year tend to perform worse, likely due to the challenges of rookie seasons.
 
 ![Visualization](viz/ppr_by_first_final_year.png)
 
-Adding both flags to the analysis shows some interesting insights, but for better interpretation I created these categories based on the two flags:
+Incorporating both flags into the analysis reveals some interesting insights. To improve interpretation, I’ve created these categories based on the two flags:
 
 ![Visualization](viz/ppr_by_contract_status.png)
 
-We can see that it is actually players in "Mid-contract" perform best, right ahead of players in their final year. Players on 1-year contract perform worst.
+It’s clear that players in the 'Mid-contract' phase perform the best, followed closely by those in their final year. Players on 1-year contracts have the lowest performance.
 
 
 4. **Mid-contract performance breakdown** (by contract year & position)
-Having seen this I wanted to better understand "Mid-contract" players so I broke Avg PPR down by which year of the contract the players are in:
+
+After observing this, I wanted to gain a deeper understanding of 'Mid-contract' players, so I broke down the average PPR by the specific year of the contract the players are in:
 
 ![Visualization](viz/mid_contract_by_contract_year.png)
 
-Players in their 6th year perform best, while players in their second year have the lowest Avg PPR.
+Players in their 6th year perform the best, while those in their second year have the lowest average PPR.
 
-Also checked a position breakdown:
+I also analyzed the breakdown by position:
 
 ![Visualization](viz/mid_contract_by_position.png)
 
-Quarterbacks are the best-performers, while Tight-ends are the worst.
+Quarterbacks are the top performers, while tight ends rank the lowest.
 
 5. **Fantasy PPR by first contract year of a multi-year contract**  
 
