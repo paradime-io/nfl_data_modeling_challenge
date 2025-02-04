@@ -220,14 +220,31 @@ I chose to focus on NFL performance post-COVID, expanding the dataset with addit
 4. Developed additional intermediate and fact models for injury history and points allowed by defense.
 5. Implemented tests (not-null, uniqueness) where applicable. There’s an opportunity to enhance testing with additional packages. I’d recommend involving someone with domain expertise to define acceptable behavior.
 
-## Visualizations
+## Visualizations 
 
-[Include screenshots or links to Lightdash dashboards]
+TODO
 
 ## Insights
 
-[Detail your findings, supported by data and visuals]
+Lower Body injuries are the most common and are observed across all positions, accounting for 400 injuries, followed by Upper Body injuries (242).
+
+Linebackers (LB), Cornerbacks (CB), and Safeties (S) suffer the most injuries. These positions require quick movements, high impact tackles, and frequent contact, making them injury-prone.
+
+Lower Body injuries dominate over other injuries across most positions, especially for LBs and WRs. This suggests that speed-based positions (WR, S) suffer the most lower body injuries, likely due to running, cutting, and tackling.
+
+Head injuries are most common among running backs (RB) and safeties (S). Safeties (S) have the highest count of head injuries, almost doubled the count of RBs.
+
+Core/abdomen injuries are primarily seen in LB, OT, PR, QB, TE, and WR, with linebackers (LB) experiencing the highest count. These injuries likely stem from high-impact collisions, blocking, and twisting motions during tackles or receptions.
+
+This aligns with their roles — RBs frequently absorb direct hits while running through defenses, while safeties initiate high-speed tackles, increasing head injury risks.
+
 
 ## Conclusions
 
-[Summarize key takeaways and recommendations]
+**Injuries**
+Lower Body Injuries Are the Most Common for NFL players, which suggests leg strength & conditioning programs should be a focus for teams.
+Defensive Players (LBs, CBs, and Safeties) have high injury rates, likely due to tackling and coverage responsibilities.
+
+
+
+
