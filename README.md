@@ -17,6 +17,11 @@
       - [How Long Do Injuries Keep Players Out?](#how-long-do-injuries-keep-players-out)
       - [Analyzing Injuries by Position](#analyzing-injuries-by-position)
       - [Who Gets the Most Concussions and Common Injuries?](#who-gets-the-most-concussions-and-common-injuries)
+   - [Fantasy Football: Top Players & Teams](#breaking-down-fantasy-football-performance-positions-top-scorers-and-consistency)
+      - [Fantasy Points by Position: Who Scores the Most?](#fantasy-points-by-position-who-scores-the-most)
+      - [Top Fantasy Scorers by Position](#top-fantasy-scorers-by-position)
+      - [Most Consistent Top Fantasy Players](#most-consistent-top-fantasy-players)
+      - [Team Fantasy Points: Scoring and Defense Trends](#team-fantasy-points-scoring-and-defense-trends)
 5. [Conclusions](#conclusions)
 
 ## Introduction
@@ -31,6 +36,7 @@ I have a confession to make: I’m not American, and I’m not a sports fan. So 
 
 My goal was to get familiar with the data and analyze injuries—especially concussions. I’d heard they were a big concern in football, so I wanted to see how common they actually were. Were certain positions more at risk? 
 
+And then, maybe, I’d take a look at actual fantasy football stats.
 
 ## My Lightdash Dashboards
 [Dashboard 1: Getting to know data](https://app.lightdash.cloud/projects/36657ff5-d0ec-483b-98ad-eb25393cb88c/dashboards/1952d76f-0aad-4234-a6cf-290f5628f897/view)
@@ -218,7 +224,7 @@ I analyzed which positions had the highest counts of the most common injuries—
 - **Injuries don’t always predict team performance**—teams with more injuries tend to win less, but there’s no strict correlation.  
 - **Concussions don’t sideline players for long**—on average, players miss only **1.4 weeks** for a concussion, while foot, thigh, ankle, and knee injuries, as well as illnesses, take longer to recover from.  
 
-### Breaking Down Fantasy Football Performance: Positions, Top Scorers, and Consistency
+### Fantasy Football: Top Players & Teams
 
 In the final section, I focused on analyzing Fantasy Football (FF) data, as this challenge is centered around understanding and evaluating fantasy football performance
 
