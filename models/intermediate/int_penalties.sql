@@ -14,8 +14,9 @@ nfl_teams AS (
 ),
 
 player_stats_by_game AS (
-    SELECT
-        *
+    SELECT DISTINCT
+        player_id,
+        player_display_name        
     FROM
         {{ ref('player_stats_by_game')}}
 ),
@@ -62,7 +63,7 @@ pos_team_plays AS (
         nfl_teams nt 
     ON
         pdn.offense_team = nt.abbreviation        
-    ),
+),
 
 def_team_plays AS (
     SELECT
@@ -74,7 +75,7 @@ def_team_plays AS (
         nfl_teams nt 
     ON
         pbp.defending_team = nt.abbreviation        
-    ),
+),
 
 pen_team_plays AS (
     SELECT
@@ -107,9 +108,7 @@ offense_or_defense AS (
         pen_team_plays ptp
 ),
 
-/*
-De-normalise scores for the penalty teams onto the table
-*/
+-- De-normalise scores for the penalty teams onto the table
 
 pens_with_game_details AS (
     SELECT
@@ -166,3 +165,4 @@ SELECT
     * 
 FROM 
     penalty_win_or_loss
+
