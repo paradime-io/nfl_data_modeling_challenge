@@ -124,8 +124,8 @@ models:
           dimension:
             type: number
           metrics:
-            name: avg_weight
-            type: average
+            avg_weight:
+              type: average
       - name: position_x
         description: ""
         meta:
