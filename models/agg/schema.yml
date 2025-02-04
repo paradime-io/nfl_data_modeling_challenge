@@ -1,0 +1,93 @@
+version: 2
+
+models:
+
+  - name: agg_consistency_score
+    description: "Aggregated model calculating the Consistency Score for each player."
+    columns:
+      - name: PLAYER_ID
+        description: "Unique identifier for the player."
+      - name: CONSISTENCY_SCORE
+        description: "Standard deviation of weekly fantasy points, representing consistency."
+
+  - name: agg_red_zone_efficiency
+    description: "Aggregated model calculating Red Zone Efficiency for each player."
+    columns:
+      - name: PLAYER_ID
+        description: "Unique identifier for the player."
+      - name: RED_ZONE_EFFICIENCY
+        description: "Percentage of red zone targets that result in touchdowns."
+
+  - name: agg_injury_propensity
+    description: "Aggregated model calculating Injury Propensity for each player."
+    columns:
+      - name: PLAYER_ID
+        description: "Unique identifier for the player."
+      - name: INJURY_PROPENSITY
+        description: "Average number of games missed due to injury."
+
+  - name: agg_touchdown_rate
+    description: "Aggregated model calculating Touchdown Rate for each player."
+    columns:
+      - name: PLAYER_ID
+        description: "Unique identifier for the player."
+      - name: TOUCHDOWN_RATE
+        description: "Percentage of plays (pass attempts, carries, targets) that result in a touchdown."
+
+  - name: agg_dominance_rate
+    description: "Aggregated model calculating Dominance Rate for each player."
+    columns:
+      - name: PLAYER_ID
+        description: "Unique identifier for the player."
+      - name: DOMINANCE_RATE
+        description: "Percentage of team's total fantasy points that a player accounts for."
+
+  - name: agg_roi
+    description: "Aggregated model calculating Return on Investment (ROI) for each player."
+    columns:
+      - name: PLAYER_ID
+        description: "Unique identifier for the player."
+      - name: ROI
+        description: "Ratio of total fantasy points to maximum salary."
+
+  - name: agg_season_schedule
+    description: "Aggregated metrics for season and schedule information."
+    columns:
+      - name: regular_season_weeks
+        description: "Total number of weeks in the regular season."
+      - name: avg_games_per_week
+        description: "Average number of games per week (rounded)."
+      - name: total_games
+        description: "Total number of games in the season."
+        
+  - name: agg_player_experience
+    description: "Aggregated data for player experience distribution."
+    columns:
+      - name: experience_level
+        description: "Experience level category (Rookie, 1-2 Years, etc.)."
+      - name: player_count
+        description: "Number of players in each experience level category."
+  
+  - name: agg_top_players_stats
+    description: "Ranks players by total fantasy points for each position and week/season"
+    columns:
+      - name: PLAYER_ID
+        description: "Player's ID."
+      - name: PLAYER_NAME
+        description: "Player's full name."
+      - name: TEAM
+        description: "Team abbreviation."
+      - name: POSITION
+        description: "Player's primary position."
+      - name: WEEK
+        description: "Week number (or NULL if showing season total)."
+      - name: FANTASY_POINTS
+        description: "Fantasy points scored by the player for the given week/season."
+        meta:
+          metrics:
+            total_fantasy_points:
+                description: "Total fantasy points scored in the given week/season."
+                type: sum
+            avg_fantasy_points:
+                description: "Average fantasy points scored in the given week/season."
+                type: average

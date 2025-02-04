@@ -15,7 +15,7 @@ WITH pbp_data AS (
         RUSHER_PLAYER_ID,
         RECEIVER_PLAYER_ID,
         FANTASY_PLAYER_ID,
-        FANTASY
+        FANTASY_PLAYER_NAME
     FROM
         {{ source('nfl_data_py', 'PLAYER_BY_PLAYER_DATA') }}
 )

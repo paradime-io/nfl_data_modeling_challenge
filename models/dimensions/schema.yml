@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: dim_players
+    description: "Dimension table containing information about NFL players."
+    columns:
+      - name: PLAYER_ID
+        description: "Unique identifier for the player."
+        meta:
+          metrics:
+            total_players:
+              type: count_distinct
+
+      - name: PLAYER_NAME
+        description: "Player's full name."
+      - name: TEAM
+        description: "Team abbreviation."
+      - name: POSITION
+        description: "Player's primary position."
+      - name: YEARS_EXP
+        description: "Number of years of NFL experience."
+      - name: AGE
+        description: "Player's age."
+
+  - name: dim_teams
+    description: "Dimension table containing information about NFL teams."
+    columns:
+      - name: TEAM
+        description: "Team abbreviation."
+        meta:
+          metrics:
+            total_teams:
+              type: count_distinct  
+      - name: TEAM_NAME
+        description: "Full name of the team."
+      - name: TEAM_CONF
+        description: "Conference the team belongs to (e.g., AFC, NFC)."
+      - name: TEAM_DIVISION
+        description: "Division the team belongs to (e.g., North, South, East, West)."
+
+  - name: dim_games
+    description: "Dimension table containing information about NFL games."
+    columns:
+      - name: GAME_ID
+        description: "Unique identifier for the game."
+        meta:
+          metrics:
+            total_games:
+              type: count_distinct
+
+      - name: SEASON
+        description: "NFL season year."
+      - name: GAME_TYPE
+        description: "Game type."
+      - name: WEEK
+        description: "Week number."
+      - name: AWAY_TEAM
+        description: "Away team abbreviation."
+      - name: HOME_TEAM
+        description: "Home team abbreviation."
+      - name: GAME_DATE
+        description: "Date of the game."

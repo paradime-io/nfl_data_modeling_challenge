@@ -1,12 +1,9 @@
 WITH player_stats AS (
     SELECT
         PLAYER_ID,
-        PLAYER_NAME,
-        POSITION,
+        RECENT_TEAM as TEAM,
         SEASON,
         WEEK,
-        RECENT_TEAM,
-        OPPONENT_TEAM,
         COMPLETIONS,
         ATTEMPTS,
         PASSING_YARDS,
@@ -22,7 +19,7 @@ WITH player_stats AS (
         RECEIVING_TDS,
         FANTASY_POINTS
     FROM
-        {{ source('nfl_data_py', 'PLAYER_STATS') }}
+        {{ ref('stg_player_stats') }}
 )
 SELECT
     *

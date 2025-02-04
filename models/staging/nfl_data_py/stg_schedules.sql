@@ -2,6 +2,7 @@ WITH schedules AS (
     SELECT
         GAME_ID,
         SEASON,
+        GAME_TYPE,
         WEEK,
         AWAY_TEAM,
         HOME_TEAM,

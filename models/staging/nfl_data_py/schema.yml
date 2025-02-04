@@ -1,13 +1,13 @@
 version: 2
 
 models:
-  - name: stg_draft_data
-    description: "Staging model for draft data."
-    # columns:
-    #   - name: PLAYER_ID
-    #     tests:
-    #       - not_null
-    #       - unique
+  # - name: stg_draft_data
+  #   description: "Staging model for draft data."
+  #   # columns:
+  #   #   - name: PLAYER_ID
+  #   #     tests:
+  #   #       - not_null
+  #   #       - unique
 
   - name: stg_injury_data
     description: "Staging model for injury data."
@@ -57,3 +57,11 @@ models:
       - name: PLAYER_ID
         tests:
           - not_null
+
+  - name: stg_teams_data
+    description: "Staging model for NFL team data."
+    columns:
+      - name: TEAM_ABBR
+        tests:
+          - not_null
+          - unique

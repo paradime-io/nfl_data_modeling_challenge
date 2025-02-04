@@ -96,8 +96,8 @@ sources:
             description: "Player ID of the receiver."
           - name: FANTASY_PLAYER_ID
             description: "Player ID for fantasy purposes."
-          - name: FANTASY
-            description: "Fantasy points for the play."
+          - name: FANTASY_PLAYER_NAME
+            description: "Player Name for fantasy purposes."
 
       - name: PLAYER_STATS
         description: "Weekly player statistics."
@@ -112,6 +112,8 @@ sources:
             description: "The season year."
           - name: WEEK
             description: "The week of the season."
+          - name: RECENT_TEAM
+            description: "Player' team."
           - name: OPPONENT_TEAM
             description: "Opponent team."
           - name: COMPLETIONS
@@ -152,6 +154,8 @@ sources:
             description: "Unique identifier for the game."
           - name: SEASON
             description: "The season year."
+          - name: GAME_TYPE
+            description: "Game Type"
           - name: WEEK
             description: "The week of the season."
           - name: AWAY_TEAM
@@ -220,3 +224,19 @@ sources:
             description: "Years of experience in the NFL."
           - name: AGE
             description: "Player's age."
+
+      - name: TEAMS_DATA
+        description: "Raw data for NFL teams."
+        columns:
+          - name: TEAM_ABBR
+            description: "Team abbreviation."
+          - name: TEAM_NAME
+            description: "Full team name."
+          - name: TEAM_ID
+            description: "Unique identifier for the team."
+          - name: TEAM_NICK
+            description: "Team nickname."
+          - name: TEAM_CONF
+            description: "Team conference."
+          - name: TEAM_DIVISION
+            description: "Team division."

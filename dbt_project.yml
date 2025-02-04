@@ -20,10 +20,13 @@ models:
     staging:
       +materialized: view
       +schema: staging
-    # intermediate:
-    #   +schema: intermediate
-    #   +materialized: view
-    # marts:
-    #   +schema: marts
-    #   +materialized: table
+    dimensions:
+      +schema: marts
+      +materialized: table
+    facts:
+      +schema: marts
+      +materialized: table
+    agg:
+      +schema: marts
+      +materialized: view
 

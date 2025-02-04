@@ -1,0 +1,82 @@
+version: 2
+
+models:
+
+  - name: fact_player_stats
+    description: "Fact table containing player statistics for each game."
+    columns:
+      - name: PLAYER_ID
+        description: "Unique identifier for the player."
+      - name: TEAM
+        description: "Player's Team"
+      - name: SEASON
+        description: "NFL season year."
+      - name: WEEK
+        description: "Week number."
+      - name: COMPLETIONS
+        description: "Number of passing completions."
+      - name: ATTEMPTS
+        description: "Number of passing attempts."
+      - name: PASSING_YARDS
+        description: "Total passing yards."
+      - name: PASSING_TDS
+        description: "Number of passing touchdowns."
+      - name: INTERCEPTIONS
+        description: "Number of interceptions thrown."
+      - name: SACKS
+        description: "Number of times the quarterback was sacked."
+      - name: CARRIES
+        description: "Number of rushing attempts."
+      - name: RUSHING_YARDS
+        description: "Total rushing yards."
+      - name: RUSHING_TDS
+        description: "Number of rushing touchdowns."
+      - name: RECEPTIONS
+        description: "Number of receptions."
+      - name: TARGETS
+        description: "Number of times a player was targeted with a pass."
+      - name: RECEIVING_YARDS
+        description: "Total receiving yards."
+      - name: RECEIVING_TDS
+        description: "Number of receiving touchdowns."
+      - name: FANTASY_POINTS
+        description: "Total fantasy points scored by the player."
+        meta:
+          metrics:
+            total_pts:
+              type: sum
+      
+
+  - name: fact_red_zone
+    description: "Fact table containing red zone statistics for players in each game."
+    columns:
+      - name: PLAYER_ID
+        description: "Unique identifier for the player."
+      - name: PLAYER_NAME
+        description: "Name of the player."
+      - name: GAME_ID
+        description: "Unique identifier for the game."
+      - name: RED_ZONE_TARGETS
+        description: "Number of red zone targets."
+      - name: RED_ZONE_TDS
+        description: "Number of red zone touchdowns."
+
+  - name: fact_injuries
+    description: "Fact table containing injury information for players."
+    columns:
+      - name: PLAYER_ID
+        description: "Unique identifier for the player."
+      - name: PLAYER_NAME
+        description: "Name of the player."
+      - name: GAMES_MISSED
+        description: "Number of games missed due to injury."
+
+  - name: fact_salaries
+    description: "Fact table containing player salaries for each season."
+    columns:
+      - name: PLAYER_ID
+        description: "Unique identifier for the player."
+      - name: TEAM
+        description: "Player's Team"
+      - name: SALARY
+        description: "Player's salary."
