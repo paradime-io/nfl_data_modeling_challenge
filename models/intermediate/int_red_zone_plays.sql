@@ -2,6 +2,7 @@
 
 WITH red_zone_plays AS (
     SELECT
+        year,
         play_id,
         fantasy_player_id,
         fantasy_player_name,

@@ -2,6 +2,7 @@
 
 WITH aggregated_stats AS (
     SELECT
+        year,
         fantasy_player_id,
         fantasy_player_name,
         COUNT(CASE 
@@ -15,10 +16,11 @@ WITH aggregated_stats AS (
         END) AS total_pass_completions
     FROM {{ ref('int_red_zone_plays') }}
     GROUP BY 
-        fantasy_player_id, fantasy_player_name
+        year, fantasy_player_id, fantasy_player_name
 )
 
 SELECT 
+    year,
     fantasy_player_id,
     fantasy_player_name,
     (total_rush_attempts + total_targets) AS total_opportunities,
@@ -26,4 +28,4 @@ SELECT
     total_targets,
     total_pass_completions
 FROM aggregated_stats
-ORDER BY total_rush_attempts DESC
+ORDER BY year, total_rush_attempts DESC

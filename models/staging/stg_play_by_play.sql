@@ -125,6 +125,8 @@ add_red_zone AS (
         END AS in_red_zone
     FROM 
         source
+
+    WHERE fantasy_player_id IS NOT NULL
 )
 
 SELECT 

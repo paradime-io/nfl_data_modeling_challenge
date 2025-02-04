@@ -32,6 +32,7 @@ models:
   - name: int_red_zone_plays
     description: "Intermediate model extracting plays that occur in the red zone, excluding certain penalties and non-plays."
     columns:
+      - name: year
       - name: play_id
         description: "Unique identifier for each play."
       - name: fantasy_player_id
