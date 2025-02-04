@@ -31,7 +31,7 @@ To explore these questions, I combined player performance data with contract his
 I used two primary datasets:  
 
 - **NFL_PLAYERS_STATS_2015_2025** – A game-level dataset of NFL player statistics from the past 10 years, pulled using the `nfl_data_py` API (script provided by Paradime).  
-- **NFL_CONTRACTS** – A dataset containing 20+ years of player contract history. I scraped this data from [OverTheCap](https://overthecap.com/contract-history) using a custom Python script ([scripts/nfl_contract_scraper.py]).
+- **NFL_CONTRACTS** – A dataset containing 20+ years of player contract history. I scraped this data from [OverTheCap](https://overthecap.com/contract-history) using a custom Python script(scripts/nfl_contract_scraper.py).
 
 ---
 
@@ -49,11 +49,11 @@ I used two primary datasets:
    - Longer contracts (4-6 years) mean some players might not have multiple contract periods within a shorter window.  
    - I avoided older data to minimize the impact of changes in the game’s style and rules.  
 
-2. Built two **staging models**:  
+2. Built two **staging models**(models/staging):  
    - `stg_contracts` – Cleaned and structured contract data.  
    - `stg_player_stats_by_game` – Organized player performance on a per-game basis.  
 
-3. Created an **intermediate model** (`int_fantasy_points`) to:  
+3. Created an **intermediate model**(models/intermediate/int_fantasy_points.sql) to:  
    - Aggregate performance data at the **season level**.  
    - Select the **top 100** players from each season based on:
      - **Total PPR points** (important for season-long leagues).  
@@ -62,7 +62,7 @@ I used two primary datasets:
 
    This approach ensures we don’t exclude high-performing but injury-prone players solely due to missed games.  
 
-4. Built **fact models** to analyze different aspects:  
+4. Built **fact models**(models/marts/facts) to analyze different aspects:  
    - `fct_contract_year` – Identifies players' **first and last contract years** within the 10-year period.  
    - `fct_player_availability` – Focuses on how **games played** affects fantasy performance.  
 
