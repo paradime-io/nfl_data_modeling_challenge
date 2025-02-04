@@ -334,3 +334,7 @@ models:
         description: "NFL GSIS (Game Statistics & Information System) ID."
       - name: smart_id
         description: "A unique identifier used internally or externally."
+  - name: stg_play_by_play_all
+    description: "Unioning raw play-by-play data Seasons 2018-2023"
+  - name: stg_player_stats_all
+    description: "Player stats for Seasons 2018-2023"

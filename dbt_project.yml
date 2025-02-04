@@ -19,7 +19,7 @@ models:
   nfl:
     staging:
       +schema: staging
-      +materialized: view
+      +materialized: table
     intermediate:
       +schema: intermediate
       +materialized: view

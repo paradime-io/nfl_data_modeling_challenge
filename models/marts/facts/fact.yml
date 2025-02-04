@@ -42,3 +42,5 @@ models:
         description: "Total number of red zone targets (pass attempts) directed to the player."
       - name: total_pass_completions
         description: "Total number of red zone passes completed to the player."
+  - name: fct_weight
+    description: "Weight of players by position and season"

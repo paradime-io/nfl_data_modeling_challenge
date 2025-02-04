@@ -974,4 +974,17 @@ sources:
             description: "Overall draft pick number used to select the player."
           - name: AGE
             description: "Player's age at the time of the game."
-
+  - name: vlikar
+    database: VIKTORLIKAR5XZ9H_ANALYTICS
+    schema: DBT_VIKTOR_LIKAR_STAGING
+    tables:
+      - name: raw_nfl_player_stats
+        description: "Player stats retrieved using the Python script for Seasons 2018-2023"
+      - name: raw_nfl_play_by_play_1
+        description: "Play-by-play stats retrieved using the Python script for Seasons 2018-2023 sliced to parts for Snowflake ingestion Part 1"
+      - name: raw_nfl_play_by_play_2
+        description: "Play-by-play stats retrieved using the Python script for Seasons 2018-2023 sliced to parts for Snowflake ingestion Part 2"
+      - name: raw_nfl_play_by_play_3
+        description: "Play-by-play stats retrieved using the Python script for Seasons 2018-2023 sliced to parts for Snowflake ingestion Part 3"
+      - name: nfl_positions
+        description: "Long name for positions and position groups"
