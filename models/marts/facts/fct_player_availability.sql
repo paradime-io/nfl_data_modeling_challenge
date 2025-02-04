@@ -5,8 +5,8 @@ WITH player_availability AS (
         SEASON,
         YEARS_EXPERIENCE,
         GAMES_PLAYED,
-        TOTAL_FANTASY_POINTS_PPR,
-        AVG_FANTASY_POINTS_PPR_PER_GAME,
+        TOTAL_PPR,
+        AVG_PPR_PER_GAME,
         -- 3-Year Rolling Avg of Games Played
         CASE 
             WHEN COUNT(*) OVER (
@@ -36,8 +36,8 @@ WITH player_availability AS (
         max(YEARS_EXPERIENCE) as YEARS_EXPERIENCE,
         avg(games_played) as avg_games_played,
         sum(games_played) as total_games_played,
-        avg(total_fantasy_points_ppr) as avg_total_fantasy_points_ppr,
-        avg(AVG_FANTASY_POINTS_PPR_PER_GAME) as avg_fantasy_points_per_ppr_per_game
+        avg(total_ppr) as avg_total_ppr,
+        avg(AVG_PPR_PER_GAME) as avg_ppr_per_game
     FROM player_availability
     group by 
         player_name,

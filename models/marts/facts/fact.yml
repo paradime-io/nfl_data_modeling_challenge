@@ -161,12 +161,12 @@ models:
         tests:
           - not_null
 
-      - name: avg_total_fantasy_points_ppr
+      - name: avg_total_ppr
         description: "The average total PPR fantasy points scored per season."
         tests:
           - not_null
 
-      - name: avg_fantasy_points_per_ppr_per_game
+      - name: avg_ppr_per_game
         description: "The average PPR fantasy points scored per game."
         tests:
           - not_null

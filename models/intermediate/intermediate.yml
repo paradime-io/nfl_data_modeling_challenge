@@ -33,7 +33,7 @@ models:
         description: "Total standard fantasy points the player accumulated in the season."
         tests:
           - not_null
-      - name: total_fantasy_points_ppr
+      - name: total_ppr
         description: "Total PPR fantasy points the player accumulated in the season."
         tests:
           - not_null
@@ -45,7 +45,7 @@ models:
         description: "Average fantasy points per game for standard scoring."
         tests:
           - not_null
-      - name: avg_fantasy_points_ppr_per_game
+      - name: avg_ppr_per_game
         description: "Average fantasy points per game for PPR scoring."
         tests:
           - not_null

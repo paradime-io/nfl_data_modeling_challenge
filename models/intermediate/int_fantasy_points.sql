@@ -10,10 +10,10 @@ with fantasy_ppr as (
         rookie_year,
         sum(targets) as total_targets,
         sum(fantasy_points) as total_fantasy_points,
-        sum(fantasy_points_ppr) as total_fantasy_points_ppr,
+        sum(fantasy_points_ppr) as total_ppr,
         count(distinct season_week) as games_played,
         round(sum(fantasy_points) / count(distinct season_week), 2) as avg_fantasy_points_per_game,
-        round(sum(fantasy_points_ppr) / count(distinct season_week), 2) as avg_fantasy_points_ppr_per_game
+        round(sum(fantasy_points_ppr) / count(distinct season_week), 2) as avg_ppr_per_game
     from 
         {{ ref('stg_player_stats_by_game') }}
     where season_type = 'REG'
@@ -28,9 +28,9 @@ with fantasy_ppr as (
     select 
         *,
         rank() over (partition by season order by total_fantasy_points desc) as standard_rank,
-        rank() over (partition by season order by total_fantasy_points_ppr desc) as ppr_rank,
+        rank() over (partition by season order by total_ppr desc) as ppr_rank,
         rank() over (partition by season order by avg_fantasy_points_per_game desc) as standard_rank_by_avg,
-        rank() over (partition by season order by avg_fantasy_points_ppr_per_game desc) as ppr_rank_by_avg,
+        rank() over (partition by season order by avg_ppr_per_game desc) as ppr_rank_by_avg,
     from fantasy_ppr
 
 ), filtering as (
@@ -43,8 +43,9 @@ with fantasy_ppr as (
 
 
 ) 
-select
+select 
     p.*
 from ppr_ranking as p
 inner join filtering as f
 on p.player_id = f.player_id
+qualify count(distinct player_name) over (partition by position) > 10 --there are four positions represented by only 1 player and it 
