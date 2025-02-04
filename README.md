@@ -37,6 +37,8 @@ My goal was to get familiar with the data and analyze injuries—especially conc
 
 [Dashboard 2: NFL Injuries in 2023](https://app.lightdash.cloud/projects/36657ff5-d0ec-483b-98ad-eb25393cb88c/dashboards/4b526e28-a13d-45bb-83f8-14efd23b7e4c/view)
 
+[Dashboard 3: Fantasy Football scores in 2023](https://app.lightdash.cloud/projects/36657ff5-d0ec-483b-98ad-eb25393cb88c/dashboards/b97611fa-ead3-4253-a290-d9d3c197f3f4)
+
 ## Data Sources
 
 I used the following data sources:  
@@ -216,15 +218,37 @@ I analyzed which positions had the highest counts of the most common injuries—
 - **Injuries don’t always predict team performance**—teams with more injuries tend to win less, but there’s no strict correlation.  
 - **Concussions don’t sideline players for long**—on average, players miss only **1.4 weeks** for a concussion, while foot, thigh, ankle, and knee injuries, as well as illnesses, take longer to recover from.  
 
-### Fantasy Points in Season 2023
+### Breaking Down Fantasy Football Performance: Positions, Top Scorers, and Consistency
+
+In the final section, I focused on analyzing Fantasy Football (FF) data, as this challenge is centered around understanding and evaluating fantasy football performance
+
+#### Fantasy Points by Position: Who Scores the Most?
+
+To understand how different positions contribute to fantasy football scoring, I analyzed the average points scored per position during the regular season. I found that only five positions—Quarterback (QB), Running Back (RB), Wide Receiver (WR), Tight End (TE), and Fullback (FB)—significantly impact fantasy points. Other positions scored six or fewer points on average, with some even averaging below zero!  
+
+To keep the focus on key contributors, the bar chart highlights only the top five scoring positions.
 
 ![Average fantasy points by position](images/part3/avg-fantasy-points-by-position.png)
 
+#### Top Fantasy Scorers by Position
+
+To highlight the standout performers, I identified the top-scoring player at each key fantasy position (QB, RB, WR, TE, and FB).
+
 ![Top scoring players](images/part3/top-scorers.png)
+
+#### Most Consistent Top Fantasy Players
+
+Consistency is key in fantasy football, so I analyzed the 20 highest-scoring players at each position and identified the most consistent performer based on the lowest standard deviation in their weekly scores. The graph below shows each player’s weekly fantasy points, revealing that even the most consistent players still experience notable variance in their performance.
 
 ![Most consistent top scoring players](images/part3/most-consistent-players.png)
 
+#### Team Fantasy Points: Scoring and Defense Trends
+
+To analyze team performance in fantasy football, I looked at fantasy points scored and allowed by position. Some teams, like San Francisco (SF), Detroit (DET), Baltimore (BAL), Buffalo (BUF), Dallas (DAL), Kansas City (KC), and Miami (MIA), scored the most fantasy points, meaning their players were strong fantasy assets.
+
 ![Fantasy points scored by position](images/part3/fantasy-points-scored-by-position.png)
+
+On the other hand, Detroit (DET), Philadelphia (PHI), Washington (WAS), and Arizona (ARI) allowed the most fantasy points to opponents. This suggests that players going up against these teams had good chances of scoring well in fantasy football. Detroit appeared in both categories, meaning their games were often high-scoring, which could have made their matchups particularly fantasy-friendly.
 
 ![Fantasy points allowed by position](images/part3/fantasy-points-allowed-by-position.png)
 
