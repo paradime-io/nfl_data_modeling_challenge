@@ -8,6 +8,10 @@ models:
         description: "Unique identifier for the player."
         tests:
           - not_null
+        meta:
+          metrics:
+            nr_of_players:
+              type: count_distinct
           
       - name: player_name
         description: "The full name of the player."
