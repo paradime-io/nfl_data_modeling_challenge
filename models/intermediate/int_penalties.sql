@@ -1,4 +1,5 @@
 -- int_penalties.sql
+
 WITH game_details AS (
     SELECT
         *
