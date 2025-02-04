@@ -126,6 +126,7 @@ models:
           metrics:
             avg_weight:
               type: average
+              round: 0
       - name: position_x
         description: ""
         meta:
