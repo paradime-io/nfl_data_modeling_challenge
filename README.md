@@ -226,7 +226,7 @@ TODO
 
 ## Insights
 
-** Most Common Injuries **
+** Worth it: Most Common Injuries **
 Lower Body injuries are the most common and are observed across all positions, accounting for 400 injuries, followed by Upper Body injuries (242).
 
 Linebackers (LB), Cornerbacks (CB), and Safeties (S) suffer the most injuries. These positions require quick movements, high impact tackles, and frequent contact, making them injury-prone.
@@ -268,11 +268,29 @@ Performance Trends Over Time:
 - 2023 struggled with targets, and numbers have yet to recover to 2021 levels.
 - Pass completions remain the lowest among all performance indicators, while rushing attempts and targets are more closely aligned.
 
+** Top Performers in the Red Zone **
+
+A clear trend emerges among the top red zone performers over the years.
+
+Rushing & Total Opportunities:
+- The top 5 players for total opportunities and red zone rush attempts feature the same key names: J. Jacobs, B. Robinson, J. Mixon, and J. Taylor.
+- J. Taylor leads in total opportunities over the years, followed closely by J. Jacobs.
+- However, when looking at total rush attempts, their rankings flip, with J. Jacobs surpassing J. Taylor.
+
+Pass Completions & Targets:
+- The top 5 for total pass completions and targets introduce new names, including T. Kelce, A. St. Brown, and J. Chase.
+- T. Kelce and A. St. Brown tie for the most pass completions in the red zone.
+- D. Adams leads all players in total targets.
+
 ## Conclusions
 
 **Injuries**
 Lower Body Injuries Are the Most Common for NFL players, which suggests leg strength & conditioning programs should be a focus for teams.
 Defensive Players (LBs, CBs, and Safeties) have high injury rates, likely due to tackling and coverage responsibilities.
+
+**Red Zone Performance**
+The red zone remains a key battleground, with J. Taylor and J. Jacobs dominating rushing opportunities, while T. Kelce and A. St. Brown lead in pass completions. 
+Over the years, 2021 stood out as the strongest for overall performance, while 2022 saw the biggest decline, with gradual recovery since.
 
 
 
