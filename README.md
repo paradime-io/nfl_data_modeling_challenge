@@ -119,6 +119,7 @@ Quarterbacks are the top performers, while tight ends rank the lowest.
 
 5. **Fantasy PPR by first contract year of a multi-year contract**  
 
+I wanted better understanding of the first contract year performances too, even
  
 ![Visualization](viz/first_year_contract_by_contract_length.png)
 
