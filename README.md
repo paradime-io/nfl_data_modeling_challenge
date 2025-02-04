@@ -119,19 +119,28 @@ Quarterbacks are the top performers, while tight ends rank the lowest.
 
 5. **Fantasy PPR by final contract year of a multi-year contract**  
 
-I wanted better understanding of the final contract year performances too, as they were second best. I checked a position breakdown:
+Since final contract year performances were the second best, I wanted to gain a better understanding of them as well. I analyzed the breakdown by position:
  
 ![Visualization](viz/final_year_contract_by_position.png)
 
-
+The breakdown shows the same order: quarterbacks, wide receivers, running backs, and tight ends.
 
 
 ### Availability & Fantasy Performance
 6. **PPR vs. Average Games Played**  
 
+Next, I wanted to explore whether a player’s performance is influenced by the average number of games they've played each season throughout their career.
+
 ![Visualization](viz/avg_ppr_by_avg_games_played.png)
 
+Interestingly, average PPR is heavily influenced by the number of games played. Players who average around 1 game per season tend to have high PPR, but this isn’t relevant, as fantasy managers typically avoid drafting players with such limited playing time. I would highlight players who average around 8 games per season, as they show a significantly higher average than players with 9 or fewer games. However, the highest average PPR belongs to players who average around 15 games per season. As a fantasy football manager, I would definitely focus on these players, as they not only have the best skill —availability— but also the highest average PPR, making them a valuable asset to any fantasy team.
+
 7. **Availability breakdown by position**  
+
+![Visualization](viz/QB_games_played.png)
+![Visualization](viz/RB_games_played.png)
+![Visualization](viz/TE_games_played.png)
+![Visualization](viz/WR_games_played.png)
 
 ---
 
