@@ -23,6 +23,8 @@ For this edition of Paradime's data modeling challenge, I set out to uncover ins
 
 To explore these questions, I combined player performance data with contract history, using dbt™, Snowflake, and visualization tools.
 
+[Dashboard](https://app.lightdash.cloud/projects/df0c18fb-7380-4ffb-97ff-8807c7bcf839/dashboards/d4b436c0-d2a8-48de-aa2a-ead861aff88a/view)
+
 ---
 
 ## Data Sources
