@@ -84,6 +84,7 @@ models:
             combination_of_columns:
               - team_id
               - injury_status
+              - injury_details
               - position
               - body_area
     columns:
@@ -117,7 +118,8 @@ models:
       - name: injury_status
       - name: team_name
         description: "Name for the player's team."
-      - name: injuries_in_year
+      - name: injury_details
+      - name: injuries
         description: "Total number of injuries a player had in the given year."
         meta:
           metrics:
@@ -130,10 +132,4 @@ models:
             impact_index:
               type: sum
               label: "Injury impact Index"
-      - name: position_injury_risk
-        meta:
-          metrics:
-            position_risk:
-              type: sum
-              label: "Position Injury Risk"
 

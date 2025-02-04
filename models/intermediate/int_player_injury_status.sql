@@ -25,8 +25,8 @@ SELECT
         -- Categorize injury severity based on injury_type
         CASE 
             WHEN lower(injury_details) IN ('fracture', 'surgery', 'concussion', 'dislocated') THEN 'Severe'
-            WHEN lower(injury_type) IN ('sprain', 'strain') THEN 'Moderate'
-            WHEN lower(injury_type) = 'spasms' THEN 'Minor'
+            WHEN lower(injury_details) IN ('sprain', 'strain') THEN 'Moderate'
+            WHEN lower(injury_details) = 'spasms' THEN 'Minor'
             ELSE 'Unknown'
         END AS injury_severity
 

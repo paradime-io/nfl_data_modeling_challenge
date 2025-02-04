@@ -4,6 +4,7 @@ SELECT
     position,
     body_area,
     injury_status,
+    injury_details,
 
     -- Count total injuries per team, position, year, and body area
     COUNT(*) AS injuries,
@@ -19,13 +20,7 @@ SELECT
         WHEN injury_severity = 'Moderate' THEN 2
         WHEN injury_severity = 'Minor' THEN 1
         ELSE 0
-    END) AS injury_impact_index,
-
-    -- Injury Risk Factor (per position)
-    ROUND(
-        (COUNT(*) * 100.0) / SUM(COUNT(*)) OVER (PARTITION BY team_id),
-        2
-    ) AS position_injury_risk
+    END) AS injury_impact_index
 
 FROM {{ ref('int_player_injury_status') }}
-GROUP BY team_id, team_name, position, body_area, injury_status
+GROUP BY team_id, team_name, position, body_area, injury_status, injury_details
