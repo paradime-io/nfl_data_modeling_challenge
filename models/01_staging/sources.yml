@@ -121,3 +121,20 @@ sources:
 
           - name: touchdown
             description: indicator if the play resulted in a touchdown
+
+      - name: nfl_teams
+        description: This table contains information about NFL teams, including their identifiers, names, and abbreviations.
+        columns:
+          - name: team_abbr
+            description: The official abbreviation of the NFL team, typically consisting of three letters (e.g., 'KC' for Kansas City Chiefs).
+
+          - name: team_name
+            description: The full name of the NFL team, including the city or region and team name (e.g., 'Kansas City Chiefs').
+
+          - name: team_id
+            description: A unique identifier assigned to each NFL team for reference in the dataset.
+
+          - name: team_nick
+            description: The commonly used nickname of the team, often a shortened or alternative version of the official name (e.g., 'Chiefs' for Kansas City Chiefs).
+
+

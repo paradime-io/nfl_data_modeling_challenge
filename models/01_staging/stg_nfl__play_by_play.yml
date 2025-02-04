@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: stg_nfl__play_by_play
+    description: Staging model for nfl play-by-play data with standardized naming conventions
+    columns:
+      - name: play_id
+        description: Unique identifier for each play
+        tests:
+          - not_null
+
+      - name: game_id
+        description: Unique game identifier
+        tests:
+          - not_null
+
+      - name: game_dt
+        description: Game date
+        tests:
+          - not_null
+
+      - name: week_nr
+        description: Game week number
+        tests:
+          - not_null
+
+      - name: posteam_abbr_desc
+        description: Offensive team during the play
+
+      - name: defteam_abbr_desc
+        description: Defensive team during the play
+
+      - name: play_tp
+        description: Type of play (e.g., pass, rush, etc.)
+
+      - name: yards_gained_nr
+        description: Yards gained in the play
+
+      - name: epa_nr
+        description: Expected points added during the play
+
+      - name: is_touchdown_fl
+        description: Indicator if the play resulted in a touchdown
+      
+      - name: yardline_100_nr
+        description: "Yard line from the defending team's end zone (1 to 100)."

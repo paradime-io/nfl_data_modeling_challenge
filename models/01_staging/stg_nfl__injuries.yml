@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: stg_nfl__injuries
+    description: Staging model for nfl injuries data with standardized naming conventions
+    columns:
+      - name: season_nr
+        description: Nfl season year
+        tests:
+          - not_null
+
+      - name: game_tp
+        description: Type of game (e.g. regular, postseason)
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['CON', 'DIV', 'REG', 'WC']
+
+      - name: team_abbr_desc
+        description: Team abbreviation
+        tests:
+          - not_null
+
+      - name: week_nr
+        description: Game week number
+        tests:
+          - not_null
+
+      - name: gsis_id
+        description: Unique nfl identifier for the player
+        tests:
+          - not_null
+
+      - name: player_nm
+        description: Player full name
+        tests:
+          - not_null
+
+      - name: player_position_desc
+        description: Player position description
+        tests:
+          - not_null
+
+      - name: injury_desc
+        description: Description of the reported injury
+
+      - name: report_st
+        description: Status of the injury report
+
+      - name: practice_st
+        description: Player practice status
+        
+      - name: modified_ts
+        description: Timestamp of the last update
+        tests:
+          - not_null

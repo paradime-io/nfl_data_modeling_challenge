@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_teams
+    description: Reference table containing key identifiers, names, and abbreviations for NFL teams.
+    columns:
+      - name: team_id
+        description: A unique identifier assigned to each NFL team
+
+      - name: team_nm
+        description: The full name of the NFL team, including the city or region and team name (e.g., 'Kansas City Chiefs').
+
+      - name: team_nick_nm
+        description: The commonly used nickname of the team, often a shortened or alternative version of the official name (e.g., 'Chiefs' for Kansas City Chiefs).
+
+      - name: team_abbr_desc
+        description: The official abbreviation of the NFL team, typically consisting of three letters (e.g., 'KC' for Kansas City Chiefs).

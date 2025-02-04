@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: stg_nfl__player_stats_by_game
+    description: Staging model for NFL player stats by game with standardized naming conventions
+    columns:
+      - name: player_id
+        description: Unique player identifier
+        tests:
+          - not_null
+
+      - name: player_nm
+        description: Player name
+        tests:
+          - not_null
+
+      - name: player_position_desc
+        description: Player position description
+        tests:
+          - not_null
+
+      - name: season_nr
+        description: Season year
+        tests:
+          - not_null
+
+      - name: week_nr
+        description: Game week number
+        tests:
+          - not_null
+
+      - name: team_abbr_desc
+        description: Team abbreviation
+        tests:
+          - not_null
+
+      - name: passing_yards_nr
+        description: Passing yards achieved in the game
+
+      - name: passing_tds_nr
+        description: Passing touchdowns achieved in the game
+
+      - name: rushing_yards_nr
+        description: Rushing yards achieved in the game
+
+      - name: rushing_tds_nr
+        description: Rushing touchdowns achieved in the game
+
+      - name: receptions_nr
+        description: Number of receptions
+
+      - name: receiving_yards_nr
+        description: Receiving yards achieved in the game
+
+      - name: receiving_tds_nr
+        description: Receiving touchdowns achieved in the game
+
+      - name: fantasy_points_nr
+        description: Standard fantasy points
+
+      - name: fantasy_points_ppr_nr
+        description: Ppr fantasy points

@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: agg_team_defense
+    description: Aggregated defensive performance metrics per team and week
+    columns:
+      - name: team_nick_nm
+        description: The commonly used nickname of the team
+        tests:
+          - not_null
+
+      - name: week_nr
+        description: Game week number
+        tests:
+          - not_null
+
+      - name: total_plays_nr
+        description: Total number of plays faced by the defense
+
+      - name: total_yards_allowed_nr
+        description: Total yards allowed by the defense
+
+      - name: total_epa_allowed_nr
+        description: Total expected points added (EPA) allowed by the defense
+
+      - name: total_touchdowns_allowed_nr
+        description: Total number of touchdowns allowed by the defense

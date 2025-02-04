@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: agg_player_performance
+    description: Aggregated performance metrics for NFL players per week and season
+    columns:
+      - name: player_id
+        description: Unique identifier for the player
+        tests:
+          - not_null
+
+      - name: season_nr
+        description: Season year
+        tests:
+          - not_null
+
+      - name: week_nr
+        description: Game week number
+        tests:
+          - not_null
+
+      - name: total_passing_yards_nr
+        description: Total passing yards accumulated in the week
+
+      - name: total_passing_tds_nr
+        description: Total passing touchdowns accumulated in the week
+
+      - name: total_rushing_yards_nr
+        description: Total rushing yards accumulated in the week
+
+      - name: total_rushing_tds_nr
+        description: Total rushing touchdowns accumulated in the week
+
+      - name: total_receptions_nr
+        description: Total receptions accumulated in the week
+
+      - name: total_receiving_yards_nr
+        description: Total receiving yards accumulated in the week
+
+      - name: total_receiving_tds_nr
+        description: Total receiving touchdowns accumulated in the week
+
+      - name: total_fantasy_points_nr
+        description: Total standard fantasy points accumulated in the week
+
+      - name: total_fantasy_points_ppr_nr
+        description: Total PPR fantasy points accumulated in the week
+

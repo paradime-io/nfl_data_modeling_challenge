@@ -17,17 +17,13 @@ clean-targets:
 
 models:
   nfl:
-    staging:
+    01_staging:
       +schema: staging
       +materialized: view
-    intermediate:
+    02_intermediate:
       +schema: intermediate
       +materialized: view
-    marts:
-      dimensions:
-        +schema: dimensions
-        +materialized: view
-      facts:
-        +schema: facts
-        +materialized: table
+    03_marts:
+      +schema: marts
+      +materialized: table
 
