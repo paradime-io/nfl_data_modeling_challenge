@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: int_fantasy_points
-    description: "Aggregates fantasy football PPR statistics and rankings for top-performing players."
+    description: "Aggregates fantasy football PPR data and ranks players based on total and average fantasy points per game. Filters to the top 100 players by PPR rankings."
     columns:
       - name: player_id
         description: "Unique identifier for the player."
@@ -10,54 +10,66 @@ models:
           - not_null
         meta:
           metrics:
-            nr_of_players:
+            number_of_players:
               type: count_distinct
-          
+
       - name: player_name
-        description: "The full name of the player."
+        description: "Name of the player."
         tests:
           - not_null
+
       - name: position
-        description: "The player's position (e.g., QB, RB, WR, TE)."
+        description: "Player's position (e.g., QB, RB, WR, TE)."
         tests:
           - not_null
+
       - name: recent_team
-        description: "The most recent team the player played for."
-      - name: years_experience
-        description: "The number of years the player has been in the league, calculated as (season - rookie year)."
-        tests:
-          - not_null
+        description: "Most recent team the player was on."
+
       - name: season
-        description: "The season year for which the statistics are recorded."
+        description: "Season year of the recorded stats."
         tests:
           - not_null
+
+      - name: rookie_year
+        description: "Year the player was a rookie."
+        tests:
+          - not_null
+
+      - name: years_experience
+        description: "Number of years the player has been in the league."
+
+      - name: is_rookie_season
+        description: "Indicator if the player is in their rookie season (1 = Yes, 0 = No)."
+
       - name: total_targets
-        description: "Total number of targets the player received in the season."
+        description: "Total targets received by the player in the season."
+
       - name: total_fantasy_points
-        description: "Total standard fantasy points the player accumulated in the season."
-        tests:
-          - not_null
+        description: "Total fantasy points scored in the season."
+
       - name: total_ppr
-        description: "Total PPR fantasy points the player accumulated in the season."
-        tests:
-          - not_null
+        description: "Total fantasy points in PPR scoring format."
+
       - name: games_played
-        description: "Total number of games played by the player in the season."
+        description: "Number of games played by the player in the season."
         tests:
           - not_null
+
       - name: avg_fantasy_points_per_game
-        description: "Average fantasy points per game for standard scoring."
-        tests:
-          - not_null
+        description: "Average standard fantasy points per game."
+
       - name: avg_ppr_per_game
-        description: "Average fantasy points per game for PPR scoring."
-        tests:
-          - not_null
+        description: "Average PPR fantasy points per game."
+
       - name: standard_rank
-        description: "Player ranking for the season based on total fantasy points (standard scoring)."
+        description: "Ranking based on total standard fantasy points for the season."
+
       - name: ppr_rank
-        description: "Player ranking for the season based on total fantasy points (PPR scoring)."
+        description: "Ranking based on total PPR points for the season."
+
       - name: standard_rank_by_avg
-        description: "Player ranking for the season based on average fantasy points per game (standard scoring)."
+        description: "Ranking based on average standard fantasy points per game."
+
       - name: ppr_rank_by_avg
-        description: "Player ranking for the season based on average fantasy points per game (PPR scoring)."
+        description: "Ranking based on average PPR fantasy points per game."

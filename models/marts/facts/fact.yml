@@ -50,7 +50,7 @@ models:
       - name: avg_fantasy_points_per_game
         description: "Average fantasy points per game in standard scoring."
 
-      - name: avg_fantasy_points_ppr_per_game
+      - name: avg_ppr_per_game
         description: "Average fantasy points per game in PPR scoring."
         meta:
           metrics:
@@ -78,9 +78,9 @@ models:
           metrics:
             avg_ppr_rank_by_avg:
               type: average
-
-      - name: year_signed
-        description: "The year the player signed a contract."
+      
+      - name: is_rookie_season
+        description: "Indicator if the player is in their rookie season (1 = Yes, 0 = No)."
 
       - name: contract_length_years
         description: "Length of the contract in years."

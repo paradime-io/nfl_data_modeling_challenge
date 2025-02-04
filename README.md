@@ -73,17 +73,40 @@ I used two primary datasets:
 
 ### General Analysis
 1. **Number of players by position**  
+
+![Visualization](viz/number_of_players_per_position.png)
+
 2. **PPR distribution per position**  
 
+![Visualization](viz/ppr_per_position.png)
+
 ### Contracts & Fantasy Performance
-3. **Fantasy PPR by first contract year**  
-4. **Fantasy PPR by final contract year**  
-5. **Comparing first-year vs. final-year performance**  
-6. **Mid-contract performance breakdown** (by contract year & position)  
-7. **1-year deals & PPR trends** (lowest average PPR?)  
+3. **PPR by is_final_year**  
+
+![Visualization](viz/ppr_by_final_year.png)
+
+![Visualization](viz/ppr_by_first_year.png)
+
+![Visualization](viz/ppr_by_first_final_year.png)
+
+For better interpretation I created these categories:
+
+![Visualization](viz/ppr_by_contract_status.png)
+
+
+4. **Fantasy PPR by first contract year of a multi-year contract**  
+
+![Visualization](viz/first_year_contract_by_contract_length.png)
+
+![Visualization](viz/final_year_contract_by_position.png)
+
+ 
+5. **Mid-contract performance breakdown** (by contract year & position)  
+
+![Visualization](viz/mid_contract_by_contract_year.png)
 
 ### Availability & Fantasy Performance
-8. **PPR vs. Average Games Played**  
+6. **PPR vs. Average Games Played**  
 
 ![Visualization](viz/avg_ppr_by_avg_games_played.png)
 

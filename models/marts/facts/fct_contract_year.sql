@@ -36,7 +36,7 @@ with recursive year_cte (season) as (
         int.ppr_rank,
         int.standard_rank_by_avg,
         int.ppr_rank_by_avg,
-        --con.year_signed,
+        int.is_rookie_season,
         con.years as contract_length_years,
         con.value,
         con.apy,

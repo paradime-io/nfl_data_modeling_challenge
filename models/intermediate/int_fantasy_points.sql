@@ -8,6 +8,7 @@ with fantasy_ppr as (
         season - rookie_year as years_experience,
         season,
         rookie_year,
+        case when season = rookie_year then 1 else 0 end as is_rookie_season,
         sum(targets) as total_targets,
         sum(fantasy_points) as total_fantasy_points,
         sum(fantasy_points_ppr) as total_ppr,
