@@ -184,27 +184,41 @@ For guidance on what a successful submission may look like, check out examples f
 
 ## Introduction
 
-[Brief overview: What you aimed to achieve and why it matters]
-[Include link to Lightdash dashboard]
+I'll admit — I don't know much about sports. The only reason I’ve heard of Travis Kelce is because I’m a Swiftie, and that’s where my knowledge stops.
+
+That said, I wanted to challenge myself by working with sports data for the first time and experimenting with Paradmine/Lightdash.
+
+I chose to focus on NFL performance post-COVID, expanding the dataset with additional years and incorporating injury data—a topic that naturally piqued my curiosity.
+
+[Include link to Lightdash dashboard TODO]
 
 ## Data Sources
 
-- [Fantasy Football Data (Snowflake)](... link or details ...)
-- [Additional Data Set 1] - [Description]
-- [Additional Data Set 2] - [Description]
+- Fantasy Football Data (Snowflake). This only included data for 2023.
+- Fantasy Football Data. Reran the script (nfl_play_by_play_2023.py and nfl_player_stats_by_game_2023.py) to get historical data for 2021-2024.
+- Injury NFL Data by accessing sports.core.api.espn.com/v2/sports/football/leagues/nfl/teams/{TEAM_ID}/injuries.
 
 ## Methodology
+
+1. Executed nfl_play_by_play_2023.py and nfl_player_stats_by_game_2023.py to retrieve historical data from 2021 to 2024.
+2. Loaded the historical performance data into Snowflake, built source models, and combined them into a staging model in dbt.
+3. Ran a script to ingest NFL injury data, deduplicated the dataset, and excluded player names due to inconsistencies—focusing instead on team and position. Created a source model and an intermediate model for injury data.
 
 ### Tools Used
 
 - Paradime for dbt™ modeling and SQL
 - Snowflake for data warehousing
 - Lightdash for visualization
-- [Any other tools/techniques used]
+- Python script for data extraction
+- ChatGPT to understand sports
 
 ### Applied Techniques
 
-[Discuss transformations, tests, and models built]
+1. Added a sources layer for light renaming of historical performance data.
+2. Updated stg_play_by_player to incorporate historical data.
+3. Modified existing intermediate models to include the year field.
+4. Developed additional intermediate and fact models for injury history and points allowed by defense.
+5. Implemented tests (not-null, uniqueness) where applicable. There’s an opportunity to enhance testing with additional packages. I’d recommend involving someone with domain expertise to define acceptable behavior.
 
 ## Visualizations
 
