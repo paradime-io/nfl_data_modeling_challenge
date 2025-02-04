@@ -157,7 +157,7 @@ models:
         description: ""
         meta:
           dimension:
-            type: string
+            type: number
           metrics:
             avg_winning_wp:
               type: average
