@@ -1,0 +1,21 @@
+version: 2
+
+exposures:
+
+  - name: nfl_dash_results
+    type: dashboard
+    maturity: high
+    url: https://app.lightdash.cloud/projects/f661a422-a5cb-46d9-9f0c-79b443b00694/dashboards/49af509c-c067-4a7d-94d3-07e05a64d881/view
+    description: >
+      Visualizations for the dbt Data Modeling Challenge - Fantasy Football Edition
+
+    depends_on:
+      - ref('agg_player_performance')
+      - ref('agg_team_defense')
+      - ref('dim_teams')
+      - ref('fact_injury_impact')
+      - ref('fact_redzone_efficiency')
+
+    owner:
+      name: Arthur Rogerio
+      email: arthurogerio800@gmail.com
