@@ -117,18 +117,12 @@ I also analyzed the breakdown by position:
 
 Quarterbacks are the top performers, while tight ends rank the lowest.
 
-5. **Fantasy PPR by first contract year of a multi-year contract**  
+5. **Fantasy PPR by final contract year of a multi-year contract**  
 
-I wanted better understanding of the first contract year performances too, even
+I wanted better understanding of the final contract year performances too, as they were second best. I checked a position breakdown:
  
-![Visualization](viz/first_year_contract_by_contract_length.png)
-
-
 ![Visualization](viz/final_year_contract_by_position.png)
 
-
- 
-  
 
 
 
@@ -137,7 +131,7 @@ I wanted better understanding of the first contract year performances too, even
 
 ![Visualization](viz/avg_ppr_by_avg_games_played.png)
 
-9. **Availability breakdown by position**  
+7. **Availability breakdown by position**  
 
 ---
 
