@@ -31,7 +31,7 @@ To explore these questions, I combined player performance data with contract his
 I used two primary datasets:  
 
 - **NFL_PLAYERS_STATS_2015_2025** – A game-level dataset of NFL player statistics from the past 10 years, pulled using the `nfl_data_py` API (script provided by Paradime).  
-- **NFL_CONTRACTS** – A dataset containing 20+ years of player contract history. I scraped this data from [OverTheCap](https://overthecap.com/contract-history) using a custom Python script(scripts/nfl_contract_scraper.py).
+- **NFL_CONTRACTS** – A dataset containing 20+ years of player contract history. I scraped this data from [OverTheCap](https://overthecap.com/contract-history) using a custom [Python script](scripts/nfl_contract_scraper.py).
 
 ---
 
@@ -49,7 +49,7 @@ I used two primary datasets:
    - Longer contracts (4-6 years) mean some players might not have multiple contract periods within a shorter window.  
    - I avoided older data to minimize the impact of changes in the game’s style and rules.  
 
-2. Built two **staging models**(models/staging):  
+2. Built two **[staging models]**(models/staging):  
    - `stg_contracts` – Cleaned and structured contract data.  
    - `stg_player_stats_by_game` – Organized player performance on a per-game basis.  
 
