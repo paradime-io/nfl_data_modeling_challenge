@@ -222,6 +222,8 @@ I analyzed which positions had the highest counts of the most common injuries—
 
 ![Top scoring players](images/part3/top-scorers.png)
 
+![Most consistent top scoring players](images/part3/most-consistent-players.png)
+
 ![Fantasy points scored by position](images/part3/fantasy-points-scored-by-position.png)
 
 ![Fantasy points allowed by position](images/part3/fantasy-points-allowed-by-position.png)
