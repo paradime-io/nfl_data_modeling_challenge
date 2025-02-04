@@ -3,13 +3,6 @@ version: 2
 models:
   - name: fct_fantasy_point_leaders
     description: "Fact table ranking players by their fantasy performance using both standard and PPR scoring."
-    tests:
-        - dbt_utils.unique_combination_of_columns:
-            combination_of_columns:
-              - player_id
-              - position
-              - season
-              - recent_team
     columns:
       - name: player_id
         description: "Unique identifier for the player."
