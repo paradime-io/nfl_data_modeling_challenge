@@ -1,6 +1,7 @@
 # dbt™ Data Modeling Challenge - Fantasy Football Edition
+# Submission by Peter Newall, Feb 4th 2025
 
-Welcome to the **dbt™ Data Modeling Challenge - Fantasy Football Edition!** This global hack-a-thon invites you to transform raw fantasy football data into insightful, data-driven insights. You'll use Paradime, Snowflake, and Lightdash to model, explore, and visualize data—showcasing your analytics engineering expertise and vying for prizes up to $1,500.
+Thank you for letting me take part in the **dbt™ Data Modeling Challenge - Fantasy Football Edition!**. README's are an important part of everybody's work in GitHub but, if you want to go straight to a video of my Lightdash dashboards, click on https://vimeo.com/1053564798?share=copy and the password is 'paradime'.
 
 ## 📋 Table of Contents
 
