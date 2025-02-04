@@ -25,9 +25,21 @@ models:
 
       - name: total_yards_allowed_nr
         description: Total yards allowed by the defense
+        meta:
+          metrics:
+            total_yards_allowed:
+              type: sum
 
       - name: total_epa_allowed_nr
         description: Total expected points added (EPA) allowed by the defense
+        meta:
+          metrics:
+            total_epa_allowed:
+              type: sum
 
       - name: total_touchdowns_allowed_nr
         description: Total number of touchdowns allowed by the defense
+        meta:
+          metrics:
+            total_touchdowns_allowed:
+              type: sum

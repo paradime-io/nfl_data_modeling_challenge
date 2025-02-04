@@ -51,7 +51,15 @@ models:
 
       - name: total_fantasy_points_nr
         description: Total standard fantasy points accumulated in the week
+        meta:
+          metrics:
+            total_fantasy_points:
+              type: sum
 
       - name: total_fantasy_points_ppr_nr
         description: Total PPR fantasy points accumulated in the week
+        meta:
+          metrics:
+            total_fantasy_points_ppr:
+              type: sum
 

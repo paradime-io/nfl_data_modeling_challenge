@@ -17,15 +17,35 @@ models:
 
       - name: redzone_plays_nr
         description: Total number of plays in the red zone
+        meta:
+          metrics:
+            redzone_plays:
+              type: sum
 
       - name: redzone_touchdowns_nr
         description: Total number of touchdowns scored from the red zone
+        meta:
+          metrics:
+            redzone_touchdowns:
+              type: sum
 
-      - name: avg_yards_gained
+      - name: avg_yards_gained_nr
         description: Average yards gained on red zone plays
+        meta:
+          metrics:
+            avg_yards_gained:
+              type: avg
 
-      - name: avg_epa
+      - name: avg_epa_nr
         description: Average expected points added (EPA) on red zone plays
+        meta:
+          metrics:
+            avg_epa:
+              type: avg
 
-      - name: touchdown_rate
+      - name: touchdown_rate_nr
         description: Touchdown conversion rate in the red zone (touchdowns/red zone plays)
+        meta:
+          metrics:
+            touchdown_rate:
+              type: avg
