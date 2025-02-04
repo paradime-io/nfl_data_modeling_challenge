@@ -3,3 +3,4 @@ select
     winning_team_wp,
     1-winning_team_wp as losing_team_wp
 from {{ref('int_win_prob')}}
+where game_time is not null
