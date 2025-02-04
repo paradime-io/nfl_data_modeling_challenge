@@ -92,8 +92,6 @@ models:
   - name: int_player_injury_status
     description: "Intermediate model for injury data. Aggregated based on team_id, year and position."
     columns:
-      - name: year
-        description: "Year of injury."
       - name: position
         description: "Position."
       - name: team_id

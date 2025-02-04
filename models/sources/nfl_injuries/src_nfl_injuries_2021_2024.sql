@@ -1,6 +1,5 @@
 
     SELECT
-        year,
         player_name,
         team_id,
         position,
