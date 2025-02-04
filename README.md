@@ -142,18 +142,19 @@ Interestingly, average PPR is heavily influenced by the number of games played. 
 ![Visualization](viz/TE_games_played.png)
 ![Visualization](viz/WR_games_played.png)
 
+For each of the four positions, the same trend is observed: as availability increases, average PPR also increases.
+
 ---
 
 ## Insights & Findings
-- **Do players perform better in contract years?**  
-- **Do rookies outperform veterans on a per-game basis?**  
-- **Does missing games predict future unavailability?**  
+- The analysis narrows down to just four positions in the top 100 players: QB, RB, WR, and TE.
+- Players do not perform better in their final contract year. Instead, players in the "mid contract" phase tend to perform the best. Although final contract year players are a close second, drafting players from either of these two categories is generally more favorable.
+- For "mid contract" players, longer contract durations are linked to better performance. This makes sense, as rookies often improve over time.
+- Among both "mid contract" and "final year" players, QBs are the top performers, followed by wide receivers, running backs, and tight ends.
+- Players on a one-year deal should be avoided.
+- Availability clearly correlates with total PPR points, but it turns out to be also correlated with average PPR.
 
 ---
 
 ## Final Thoughts
-This analysis helps fantasy football managers identify undervalued players by considering both **contract status** and **availability trends**. By modeling these factors, we can make data-driven draft decisions and reduce risk when selecting players.  
-
----
-
-Feel free to customize further if you want to expand on the insights section or add specific visualizations! 🚀
+In summary, fantasy football managers should prioritize players with proven availability, especially those in their "mid-contract" phase who show a balance of experience and performance. By focusing on players who offer both skill and durability, managers can build more robust and reliable fantasy teams.
