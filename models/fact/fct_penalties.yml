@@ -127,3 +127,8 @@ models:
         meta:
           dimension:
             type: string
+      - name: penalty_power_of_one
+        description: ""
+        meta:
+          dimension:
+            type: number
