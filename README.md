@@ -1,7 +1,8 @@
 # dbt™ Data Modeling Challenge - Fantasy Football Edition
 
 Welcome to the **dbt™ Data Modeling Challenge - Fantasy Football Edition!**
-By Shruti Taware
+
+*Prepared by **✋ [Shruti Taware](https://www.linkedin.com/in/shrutitaware/)***
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -14,12 +15,12 @@ By Shruti Taware
 ## Introduction
 This dashboard provides insights into **quarterback passing performance** for the season, helping to identify efficiency, consistency, and top performers in fantasy football. The analysis focuses on key metrics like **fantasy points, passing yards, efficiency, and team impact**, offering valuable insights for football analysts & leadership. 
 
-https://app.lightdash.cloud/projects/00e3115e-4dd6-42a8-acea-cce8593196c8/dashboards/d0acaa60-e0e5-493c-807a-19dfed8f96cd/view
+🔗 **[View the Lightdash Dashboard](https://app.lightdash.cloud/projects/00e3115e-4dd6-42a8-acea-cce8593196c8/dashboards/d0acaa60-e0e5-493c-807a-19dfed8f96cd/view)**
 
 ## **Methodology**  
 
 ## **Data Sources**  
-- ** Source NFL Fantasy Football Data (Snowflake)** – Player performance metrics, including passing yards, fantasy points, and efficiency.  
+- **Source NFL Fantasy Football Data (Snowflake)** – Player performance metrics, including passing yards, fantasy points, and efficiency.  
 - **Play-by-Play Data** – Play-level details such as completions, air yards, and yards after catch.  
 - **Fact Models: fct_qb_passing_performance** – Aggregated team-level statistics related to fantasy points and quarterback contributions.  
 
