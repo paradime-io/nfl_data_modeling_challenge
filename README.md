@@ -158,81 +158,103 @@ A panel of five independent judges will assess each submission based on the foll
 For guidance on what a successful submission may look like, check out examples from [previous dbt™ Data Modeling Challenge winners](#need-a-spark-of-inspiration).
 
 
-🏆 NFL Fantasy Player Performance Analysis
 
-"Big moments create big players. Just ask Kobe—clutch isn't just a stat; it's a mentality."
+
+
+
+
+
+
+# 🏆 NFL Fantasy Player Performance Analysis
+
+"*Big moments create big players. Just ask Kobe—clutch isn't just a stat; it's a mentality.*"
 
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Data Sources](#data-sources)
+2. [Data Sources and Data Lineage](#data-sources)
+   - [Sources and Seeds](#registration-and-verification)
+   - [Intermediate Layer](#account-setup)
+   - [Mart Layer](#support-and-faqs)
 3. [Methodology](#methodology)
-4. [Visualizations](#visualizations)
-5. [Insights](#insights)
-6. [Conclusions](#conclusions)
+   - [Tools Used](#registration-and-verification)
+   - [Data Preparation and Cleaning](#account-setup)
+4. [Key Metrics in the Analytics](#visualizations)
+   - [Red Zone Efficiency](#red-zone-efficiency)
+   - [Clutch Players Model](#clutch-players-model)
+   - [Expected Fantasy Points](#expected-fantasy-points)
+5. [Ultimate Fantasy Player Performance](#insights)
+   - [The Fantasy MVPs](#the-fantasy-mvps)
+   - [Clutch Performance vs The "Kobe Bryant of the NFL"](#clutch-performance-vs-the-kobe-bryant-of-the-nfl)
+   - [Fantasy Points Over Expections](#fantasy-points-over-expectations)
+6. [Conclusions and Takeaways](#conclusions-and-takeaways)
 
 ## Introduction
+
 When it comes to fantasy football, not all points are created equal. Some players thrive under pressure, some dominate the red zone, and others outperform their expectations week in and week out. This analysis dives into NFL player efficiency across three key dimensions—Red Zone Efficiency, Clutch Performance, and Expected Fantasy Points—to create a single source of truth for fantasy football dominance.
 
 If Kobe Bryant taught us anything, it's that clutch players rise to the occasion. This analysis aims to answer:
 
-Who are the most efficient players in the red zone?
-Who steps up when the game is on the line?
-Who consistently outperforms fantasy expectations?
+- **Who are the most efficient players in the red zone?
+- **Who steps up when the game is on the line?
+- **Who consistently outperforms fantasy expectations?
+
 Using Paradime, dbt™, Snowflake, and Lightdash, we built a fact-based model that transforms raw play-by-play data into actionable insights for fantasy football analysts, DFS players, and hardcore fans.
-[Include link to Lightdash dashboard]
+
 
 ## 🕸️ Data Sources and Data Lineage
+
 Our analysis is built on three core models:
-1️⃣ Red Zone Efficiency (who dominates near the end zone?)
-2️⃣ Clutch Performance (who delivers when it matters most?)
-3️⃣ Expected Fantasy Points (who overperforms expectations?)
+1️⃣ Red Zone Efficiency (*who dominates near the end zone?*)
+2️⃣ Clutch Performance (*who delivers when it matters most?*)
+3️⃣ Expected Fantasy Points (*who overperforms expectations?*)
 
 These models leverage pre-loaded datasets and transformations in Paradime to create a unified marts table for fantasy player performance.
 
-## 📌 Sources and Seeds
-We built our analysis using the following data sources:
+### 📌 Sources and Seeds
 
-stg_play_by_play → Play-by-play data of all NFL games in 2023
-stg_player_stats_by_game → Individual game-level performance data
+We built our analysis using the following data sources:
+- **stg_play_by_play → Play-by-play data of all NFL games in 2023
+- **stg_player_stats_by_game → Individual game-level performance data
+
 📊 Intermediate Layer
 We constructed three key intermediate models:
 
-int_red_zone_efficiency 🏟️ (Red Zone Performance)
-int_clutch_players 🏀 (Performance Under Pressure)
-int_expected_fantasy_points 🔮 (Fantasy Expectations vs. Reality)
+- **int_red_zone_efficiency 🏟️ (Red Zone Performance)
+- **int_clutch_players 🏀 (Performance Under Pressure)
+- **int_expected_fantasy_points 🔮 (Fantasy Expectations vs. Reality)
+
 Each model aggregates play-level data to compute meaningful player-level stats.
 
-## 🏆 Mart Layer
+### 🏆 Mart Layer
 The final marts table combines all key player metrics into a single source of truth:
+- **fct_fantasy_player_performance
 
-fct_fantasy_player_performance
 This fact table allows us to analyze fantasy MVPs, overachievers, and clutch performers.
 
 ## 🧪 Methodology
 ### ⚒️ Tools Used
-Paradime → dbt™ transformations and SQL modeling
-Snowflake → Data storage & processing
-Lightdash → Data visualization
-dbt Tests → Data quality validation
-## 🧼 Data Preparation & Cleaning
+- **Paradime → dbt™ transformations and SQL modeling
+- **Snowflake → Data storage & processing
+- **Lightdash → Data visualization
+- **dbt Tests → Data quality validation
+
+### 🧼 Data Preparation & Cleaning
 To ensure clean, accurate data, we:
+- **Removed duplicate records across sources
+- **Applied data validation tests (e.g., ensuring unique player IDs)
+- **Standardized naming conventions for player attributes
 
-Removed duplicate records across sources
-Applied data validation tests (e.g., ensuring unique player IDs)
-Standardized naming conventions for player attributes
-
-### Applied Techniques
-##🔑 Key Metrics in the Analysis
-## 1️⃣ Red Zone Efficiency 🏟️
+## Applied Techniques
+###🔑 Key Metrics in the Analysis
+### 1️⃣ Red Zone Efficiency 🏟️
 The best fantasy players convert opportunities into touchdowns. If you can’t score in the red zone, you can’t win—just ask any fantasy owner who started a struggling RB in Week 10.
 
 Red Zone Efficiency is calculated based on:
-
-Red Zone Rush Attempts
-Red Zone Pass Completions
-Red Zone Targets
-Red Zone Touchdowns
+- **Red Zone Rush Attempts
+- **Red Zone Pass Completions
+- **Red Zone Targets
+- **Red Zone Touchdowns
 We use these stats to compute: Red Zone TD Rate = Red Zone Touchdowns / Red Zone Opportunities
 
 This helps us identify elite red zone performers, i.e., players who turn goal-line carries and inside-the-20 targets into actual points.
@@ -242,7 +264,7 @@ This helps us identify elite red zone performers, i.e., players who turn goal-li
 [Include screenshots or links to Lightdash dashboards]
 
 
-## 2️⃣ Clutch Players Model 🏀
+### 2️⃣ Clutch Players Model 🏀
 "When the game is on the line, some players shrink… but legends rise." 🏆
 
 Inspired by Kobe Bryant's clutch performances, we define clutch plays as:
@@ -260,7 +282,7 @@ Expected Points Added (EPA) in crunch time
 "Kobe Bryant’s Mamba Mentality was about delivering in high-pressure situations. Our clutch model finds the NFL equivalent of Kobe—players who don't just put up numbers, but deliver when the game is on the line."
 
 
-## 3️⃣ Expected Fantasy Points 🔮
+### 3️⃣ Expected Fantasy Points 🔮
 "Great fantasy players aren't just good—they exceed expectations."
 
 Using play-by-play and player stat data, we calculate:
@@ -287,17 +309,18 @@ Expected Fantasy Points vs. Actual Fantasy Points
 [Include screenshots or links to Lightdash dashboards]
 
 ## 🔥 Final Verdict:
-"If you're building a fantasy dynasty, C-Mac is your Kobe—unstoppable in the clutch and elite when it counts."
+"*If you're building a fantasy dynasty, C-Mac is your Kobe—unstoppable in the clutch and elite when it counts.*"
 
 
-### 📊 Conclusion
-✅ Red Zone Efficiency matters → Top-tier players turn opportunities into points
-✅ Clutch Performance is the difference-maker → Big moments define big players
-✅ Expected Fantasy Points reveal sleepers → Overachievers = Fantasy gold
+##  📊 Conclusion
+### ✅ Red Zone Efficiency matters → Top-tier players turn opportunities into points
+### ✅ Clutch Performance is the difference-maker → Big moments define big players
+### ✅ Expected Fantasy Points reveal sleepers → Overachievers = Fantasy gold
 
-## 🔮 Winning Your Fantasy League:
+### 🔮 Winning Your Fantasy League:
 
-Draft high red zone efficiency players
-Target clutch performers in tight games
-Find players who consistently exceed expectations
-"Mamba Mentality meets Fantasy Football—if you want to win, draft like Kobe." 🏆
+- **Draft high red zone efficiency players
+- **Target clutch performers in tight games
+- **Find players who consistently exceed expectations
+
+"*Mamba Mentality meets Fantasy Football—if you want to win, draft like Kobe.*" 🏆
