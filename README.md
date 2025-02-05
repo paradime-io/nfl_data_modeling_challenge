@@ -195,9 +195,9 @@ When it comes to fantasy football, not all points are created equal. Some player
 
 If Kobe Bryant taught us anything, it's that clutch players rise to the occasion. This analysis aims to answer:
 
-- **Who are the most efficient players in the red zone?
-- **Who steps up when the game is on the line?
-- **Who consistently outperforms fantasy expectations?
+- **Who are the most efficient players in the red zone?**
+- **Who steps up when the game is on the line?**
+- **Who consistently outperforms fantasy expectations?**
 
 Using Paradime, dbt™, Snowflake, and Lightdash, we built a fact-based model that transforms raw play-by-play data into actionable insights for fantasy football analysts, DFS players, and hardcore fans.
 
