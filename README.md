@@ -62,8 +62,33 @@ This table presents the win rates for all NFL teams, broken down by overall win 
 It’s clear that some teams perform significantly better on their home turf, indicating the importance of crowd support and familiarity with the playing environment. 
 Conversely, teams with strong away records, such as Kansas City, demonstrate resilience and adaptability.
 
+4. Total Cap and Fantasy Points relationship
+![NFL spend and positions](snapshots/avg-ppr.png)
+Due to limited available data and time constraints, the dataset was not fully cleaned and it had not been ready for analysis yet.
 ## Insights
-[Detail your findings, supported by data and visuals]
+1. Physical Metrics and Performance:
+
+Positions requiring strength and blocking, such as offensive and defensive linemen, have the highest average BMI and weight.
+
+Speed positions like wide receivers and defensive backs maintain a relatively lower BMI to balance speed and agility with physical durability.
+
+2. Momentum and Game Outcomes:
+
+Win probability trends suggest that once momentum shifts in favor of a team, it’s difficult to reverse.
+
+By halftime, many games are already decided in terms of win probability exceeding 75%.
+
+3. Team Win Rates:
+
+Teams like the Kansas City Chiefs and Baltimore Ravens have consistently high win rates both at home and away.
+
+Some teams struggle significantly on the road, underscoring the impact of home advantage.
+
+There’s a wide variation in performance consistency, with certain teams excelling across all conditions.
 
 ## Conclusions
-[Summarize key takeaways and recommendations]
+This analysis highlights key trends in NFL performance and player attributes. 
+BMI distribution confirms that while player weights vary by position, all are well above "normal" BMI ranges, reflecting specialized athletic builds. 
+Win probability trends show that most games are effectively decided by halftime, with the leading team having a strong advantage. 
+Win rate analysis reveals significant differences in home and away performance, emphasizing the impact of home-field advantage and other external factors. 
+These findings provide a clearer picture of team dynamics and player roles in the NFL.
