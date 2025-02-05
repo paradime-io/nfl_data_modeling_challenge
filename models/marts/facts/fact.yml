@@ -186,13 +186,22 @@ models:
         meta:
           dimension:
             type: number
-
       - name: wins
         description: ""
         meta:
           dimension:
             type: number
-      - name: games
+      - name: all_games
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: home_games
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: away_games
         description: ""
         meta:
           dimension:

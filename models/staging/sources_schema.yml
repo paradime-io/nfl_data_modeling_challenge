@@ -988,3 +988,5 @@ sources:
         description: "Play-by-play stats retrieved using the Python script for Seasons 2018-2023 sliced to parts for Snowflake ingestion Part 3"
       - name: nfl_positions
         description: "Long name for positions and position groups"
+      - name: nfl_teams
+        description: "Full names of NFL teams"

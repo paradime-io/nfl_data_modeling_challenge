@@ -1,0 +1,1 @@
+select * from {{source('vlikar', 'nfl_teams')}}

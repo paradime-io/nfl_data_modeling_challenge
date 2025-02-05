@@ -12,7 +12,7 @@ from {{ref('stg_play_by_play_all')}}
 group by 1,2,3
 )
 select
-    *,
-    case when winner = home_team then 1 else 0 end as home_win,
-    case when winner = away_team then 1 else 0 end as away_win
-from game_results
+    gr.*,
+    case when gr.winner = gr.home_team then 1 else 0 end as home_win,
+    case when gr.winner = gr.away_team then 1 else 0 end as away_win
+from game_results gr
