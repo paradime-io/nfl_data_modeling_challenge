@@ -15,29 +15,31 @@ Thank you for letting me take part in the **dbt™ Data Modeling Challenge - Fan
 ## Introduction
 The broad goal here was to deliver insights on the dynamics, patterns and strategies of NFL with immediately meaningful visualisations.
 
-There are three dashboards focusing on different aspects of NFL:
-- #The Hard Yards# - in a territory-based sport, what teams and strategies are most successful?
-- #Passers and Rushers# - looks in more detail and on a game-by-game basis at how effective the different teams and players have been
-- #Penalties# - which teams have lost discipline and let penalties have a bearing on results?
+So there are three dashboards focusing on different aspects of NFL:
+- # The Hard Yards - in a territory-based sport, what teams and strategies are most successful?
+- # Passers and Rushers - looks in more detail and on a game-by-game basis at how effective the different teams and players have been
+- # Penalties - which teams have lost discipline and let penalties have a bearing on results?
 
-These dashboards were all built in Lightdash run locally in a docker image so no links available, but they can all be seen in the demo video available at https://vimeo.com/1053564798?share=copy, password 'paradime'.
+These dashboards were all built in Lightdash run locally in a Docker image so no links available, but they can all be seen in the demo video available at https://vimeo.com/1053564798?share=copy, password 'paradime'.
 
 Also, as Lightdash now offers a dashboards-as-code facility to download the yaml definitions of all dashboards and charts in a project, these have been provided in the ldash_yamls folder. 
 
 ## Data Sources
-- [Fantasy Football Data (Snowflake)](... link or details ...)
-- [Additional Data Set 1] - [Description]
-- [Additional Data Set 2] - [Description]
+- The Fantasy Football Data provided in Snowflake, with particular focus on the raw data provided in the public schema
+(images/snowflake_datasets.png)
+- An nfl_teams.csv loaded into the seeds folder to look up the full names for the three-letter abbreviations for the teams in the provided data
 
 ## Methodology
 ### Tools Used
 - Paradime for dbt™ modeling and SQL
 - Snowflake for data warehousing
-- Lightdash for visualization
-- [Any other tools/techniques used]
+- Lightdash for visualization (run locally in Docker image)
 
 ### Applied Techniques
-[Discuss transformations, tests, and models built]
+Each of the dashboards is built on a different fact table as follows:
+- # The Hard Yards - fct_team_yards
+- # Passers and Rushers - fct_player_yards
+- # Penalties - fct_penalties
 
 ## Visualizations
 [Include screenshots or links to Lightdash dashboards]
