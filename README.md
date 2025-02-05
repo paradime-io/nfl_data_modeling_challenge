@@ -49,26 +49,38 @@ We used dbt to wrangle the data into shape, employing:
 
 ## Visualizations <a name="visualizations"></a>
 
-*   **Overall Metrics of the Season** <br>
-![image](images/overall-metrics.png)
+*   **Overall Metrics of the Season** <br><br>
+![image](images/overall-metrics.png)<br><br>
 
-*   **Top Performers Over Season:** 
-Who consistently brought the heat?<br>
+*   **Top Performers Over Season:** <br>
+Who consistently brought the heat?<br><br>
 ![image](/images/perf1.png)<br>
 ![image](images/perf2.png)<br>
 ![image](images/perf3.png)<br>
-![image](images/perf4.png)<br>
+![image](images/perf4.png)<br><br>
 
 
-*   **Consistency vs. Average Points:** [Screenshot or link to chart] - Finding the reliable scorers.
-*   **Position Consistency:** [Screenshot or link to chart] - Comparing consistency across positions.
-*   **Red Zone Efficiency for Most Touchdowns:** [Screenshot or link to chart] - Who's cashing in on scoring opportunities?
-*   **Highest ROI Players:** [Screenshot or link to chart] - The value hunters' dream chart.
-*   **Highest Paid Players vs. ROI:** [Screenshot or link to chart] - Are the big salaries worth it?
-*   **Highest Scored Players vs. ROI:** [Screenshot or link to chart] - Performance vs. value.
-*   **Report Status Over Season:** [Screenshot or link to chart] - The injury toll over time.
-*   **Teams with Most Injury:** [Screenshot or link to chart] - Injury hotspots.
-*   **Top Injuries Percentage:** [Screenshot or link to chart] - The most common injuries.
+*   **Consistent Performers:**<br>
+Finding the reliable scorers <br><br>
+![image](/images/con1.png)<br>
+![image](images/con2.png)<br>
+![image](images/con3.png)<br><br>
+
+
+*   **Red Zone Efficiency for Most Touchdowns:** <br>
+ Who's cashing in on scoring opportunities? <br><br>
+ ![image](/images/red1.png)<br><br>
+
+*   **Highest ROI Players:** <br>
+The value hunters' dream chart. <br><br>
+ ![image](/images/roi1.png)<br>
+ ![image](/images/roi2.png)<br><br>
+
+
+*   **Injury Propensity:** <br>
+Are injuries affecting teams/players? <br><br>
+ ![image](/images/injury1.png)<br><br>
+
 
 ## Insights <a name="insights"></a>
 
