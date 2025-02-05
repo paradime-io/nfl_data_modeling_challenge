@@ -220,7 +220,7 @@ models:
             avg_win_rate:
               type: average
               round: 1
-              format: percentage
+              format: percent
       - name: home_win_rate
         description: ""
         meta:
@@ -230,7 +230,7 @@ models:
             avg_home_win_rate:
               type: average
               round: 1
-              format: percentage
+              format: percent
       - name: away_win_rate
         description: ""
         meta:
@@ -240,4 +240,4 @@ models:
             avg_away_win_rate:
               type: average
               round: 1
-              format: percentage
+              format: percent
