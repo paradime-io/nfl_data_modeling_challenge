@@ -9,7 +9,7 @@
 6. [Conclusions](#conclusions)
 
 ## Introduction
-This analysis leverages the 2023 NFL season data to predict the winner of Super Bowl 2025 between the Kansas City Chiefs and Philadelphia Eagles. By analyzing play-by-play efficiency metrics, quarterback performance, and red zone effectiveness, we provide a data-driven prediction for this highly anticipated matchup.
+This analysis leverages the 2023 NFL season data to predict the winner of Super Bowl 2025 between the Kansas City Chiefs and Philadelphia Eagles. By analyzing play-by-play efficiency metrics, quarterback performance, and red zone effectiveness, I provided a data-driven prediction for this highly anticipated matchup.
 
 [Include link to Lightdash dashboard]
 
@@ -81,7 +81,7 @@ Primary datasets used:
 
 ## Conclusions
 
-Based on our comprehensive analysis of the 2023 regular season data, we predict [Team] to win Super Bowl 2025 with a [X]% probability. Key factors supporting this prediction:
+Based on my comprehensive analysis of the 2023 regular season data, we predict [Team] to win Super Bowl 2025 with a [X]% probability. Key factors supporting this prediction:
 
 1. **Superior Efficiency Metrics**
    - [Specific metrics and values]
