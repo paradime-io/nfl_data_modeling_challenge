@@ -1,11 +1,47 @@
 # dbt™ Data Modeling Challenge - Fantasy Football Edition
-# Submission by Peter Newall, Feb 4th 2025
+<p align=center># Submission by Peter Newall, Feb 4th 2025</p>
 
-Thank you for letting me take part in the **dbt™ Data Modeling Challenge - Fantasy Football Edition!**. README's are an important part of everybody's work in GitHub but, if you want to go straight to a video of my Lightdash dashboards, click on https://vimeo.com/1053564798?share=copy and the password is 'paradime'.
+Thank you for letting me take part in the **dbt™ Data Modeling Challenge - Fantasy Football Edition!** README's are an important part of everybody's work in GitHub but, if you want to go straight to a video of my Lightdash dashboards, click on https://vimeo.com/1053564798?share=copy and the password is 'paradime'.
 
 ## 📋 Table of Contents
 
-1. [Getting Started](#-getting-started)
+1. [Introduction](#introduction)
+2. [Data Sources](#data-sources)
+3. [Methodology](#methodology)
+4. [Visualizations](#visualizations)
+5. [Insights](#insights)
+6. [Conclusions](#conclusions)
+
+## Introduction
+[Brief overview: What you aimed to achieve and why it matters]
+[Include link to Lightdash dashboard]
+
+## Data Sources
+- [Fantasy Football Data (Snowflake)](... link or details ...)
+- [Additional Data Set 1] - [Description]
+- [Additional Data Set 2] - [Description]
+
+## Methodology
+### Tools Used
+- Paradime for dbt™ modeling and SQL
+- Snowflake for data warehousing
+- Lightdash for visualization
+- [Any other tools/techniques used]
+
+### Applied Techniques
+[Discuss transformations, tests, and models built]
+
+## Visualizations
+[Include screenshots or links to Lightdash dashboards]
+
+## Insights
+[Detail your findings, supported by data and visuals]
+
+## Conclusions
+[Summarize key takeaways and recommendations]
+
+
+1. [Introduction](#-getting-started)
    - [Registration and Verification](#registration-and-verification)
    - [Account Setup](#account-setup)
    - [Support and FAQs](#support-and-faqs)
@@ -158,38 +194,3 @@ A panel of five independent judges will assess each submission based on the foll
 # Example Submission Template
 For guidance on what a successful submission may look like, check out examples from [previous dbt™ Data Modeling Challenge winners](#need-a-spark-of-inspiration).
 
-## Table of Contents
-1. [Introduction](#introduction)
-2. [Data Sources](#data-sources)
-3. [Methodology](#methodology)
-4. [Visualizations](#visualizations)
-5. [Insights](#insights)
-6. [Conclusions](#conclusions)
-
-## Introduction
-[Brief overview: What you aimed to achieve and why it matters]
-[Include link to Lightdash dashboard]
-
-## Data Sources
-- [Fantasy Football Data (Snowflake)](... link or details ...)
-- [Additional Data Set 1] - [Description]
-- [Additional Data Set 2] - [Description]
-
-## Methodology
-### Tools Used
-- Paradime for dbt™ modeling and SQL
-- Snowflake for data warehousing
-- Lightdash for visualization
-- [Any other tools/techniques used]
-
-### Applied Techniques
-[Discuss transformations, tests, and models built]
-
-## Visualizations
-[Include screenshots or links to Lightdash dashboards]
-
-## Insights
-[Detail your findings, supported by data and visuals]
-
-## Conclusions
-[Summarize key takeaways and recommendations]
