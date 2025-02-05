@@ -205,9 +205,9 @@ Using Paradime, dbt™, Snowflake, and Lightdash, we built a fact-based model th
 ## 🕸️ Data Sources and Data Lineage
 
 Our analysis is built on three core models:
-**1️⃣ Red Zone Efficiency (*who dominates near the end zone?*)**
-**2️⃣ Clutch Performance (*who delivers when it matters most?*)**
-**3️⃣ Expected Fantasy Points (*who overperforms expectations?*)**
+1. ** Red Zone Efficiency (*who dominates near the end zone?*)**
+2. ** Clutch Performance (*who delivers when it matters most?*)**
+3. ** Expected Fantasy Points (*who overperforms expectations?*)**
 
 These models leverage pre-loaded datasets and transformations in Paradime to create a unified marts table for fantasy player performance.
 
@@ -246,9 +246,9 @@ To ensure clean, accurate data, we:
 - **Standardized naming conventions for player attributes**
 
 ## Applied Techniques
-###🔑 Key Metrics in the Analysis
+### 🔑 Key Metrics in the Analysis
 ### 1️⃣ Red Zone Efficiency 🏟️
-The best fantasy players convert opportunities into touchdowns. If you can’t score in the red zone, you can’t win—just ask any fantasy owner who started a struggling RB in Week 10.
+"*The best fantasy players convert opportunities into touchdowns. If you can’t score in the red zone, you can’t win—just ask any fantasy owner who started a struggling RB in Week 10.
 
 Red Zone Efficiency is calculated based on:
 - **Red Zone Rush Attempts**
@@ -264,7 +264,8 @@ This helps us identify elite red zone performers, i.e., players who turn goal-li
 [Include screenshots or links to Lightdash dashboards]
 
 
-### 2️⃣ Clutch Players Model 🏀
+
+### 2️⃣ Clutch Players Model 🏈
 "*When the game is on the line, some players shrink… but legends rise.*" 🏆
 
 Inspired by Kobe Bryant's clutch performances, we define clutch plays as:
@@ -274,12 +275,15 @@ Inspired by Kobe Bryant's clutch performances, we define clutch plays as:
 - **Touchdowns scored under pressure**
 - **Expected Points Added (EPA) in crunch time**
 
-### 📊 Top Clutch Performers:
+ 📊 Top Clutch Performers:
 
 [Include screenshots or links to Lightdash dashboards]
 
-### 🏀 Kobe Bryant Comparison:
+By ranking players based on clutch EPA and clutch TDs, we reveal who fantasy owners can trust when they need a big game-winning moment.
+
+ 🏀 Kobe Bryant Comparison:
 "*Kobe Bryant’s Mamba Mentality was about delivering in high-pressure situations. Our clutch model finds the NFL equivalent of Kobe—players who don't just put up numbers, but deliver when the game is on the line.*"
+
 
 
 ### 3️⃣ Expected Fantasy Points 🔮
@@ -291,7 +295,7 @@ Using play-by-play and player stat data, we calculate:
 - **Actual Fantasy Points (AFP) → What the player actually scored**
 - **Fantasy Overperformance → (AFP - XFP)**
 
-### 📊 Fantasy Overachievers:
+📊 Fantasy Overachievers:
 
 [Include screenshots or links to Lightdash dashboards]
 
@@ -300,15 +304,15 @@ Overperformers are league winners because they return more value than expected�
 ## 🏆 Ultimate Fantasy Player Performance
 Now, let’s combine everything into one final ranking based on:
 
-- **Red Zone Efficiency**
-- **Clutch Performance**
-- **Expected Fantasy Points vs. Actual Fantasy Points**
+1. **Red Zone Efficiency**
+2. **Clutch Performance**
+3. **Expected Fantasy Points vs. Actual Fantasy Points**
 
-### 📊 Fantasy MVPs:
+📊 Fantasy MVPs:
 
 [Include screenshots or links to Lightdash dashboards]
 
-### 🔥 Final Verdict:
+🔥 Final Verdict:
 "*If you're building a fantasy dynasty, C-Mac is your Kobe—unstoppable in the clutch and elite when it counts.*"
 
 
