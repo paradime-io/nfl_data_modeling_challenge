@@ -1,6 +1,6 @@
 # 🏈 NFL Fantasy Football Edition - dbt™ Data Modeling Challenge
 
-Project for the dbt™ Data Modeling Challenge - Social Media Edition, Hosted by Paradime!
+Project for the dbt™ Data Modeling Challenge - Fantasy Football Edition, Hosted by Paradime!
 
 *by **👊 [Ramyashree Shetty](https://www.linkedin.com/in/ramyashree-shetty/)***
 
