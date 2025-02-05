@@ -61,17 +61,17 @@ To add the dashboard to the dbt`s lineage view, an exposure was created to repre
 
 | Abbreviation of Nature | Description and recommended taxonomy | Data type |
 |------------------------|--------------------------------------|-----------|
-| dt                     | Data                                 | Date      |
-| dm                     | DataHora                             | DateTime  |
+| dt                     | Date                                 | Date      |
+| dm                     | DateTime                             | DateTime  |
 | ts                     | Timestamp                            | Time      |
-| tp                     | Tipo                                 | String    |
-| desc                   | Descrição                            | String    |
+| tp                     | Type                                 | String    |
+| desc                   | Description                          | String    |
 | fl                     | Flag                                 | Bool      |
-| id                     | Identificador                        | String    |
-| nm                     | Nome                                 | String    |
-| nr                     | Número                               | Integer/Numérico|
+| id                     | Identifier                           | String    |
+| nm                     | Name                                 | String    |
+| nr                     | Number                               | Integer/Numeric|
 | st                     | Status                               | String    |
-| sk                     | Chave Surrogada                      | Integer   |
+| sk                     | Surrogate Key                        | Integer   |
 
 ## Methodology
 
@@ -108,28 +108,37 @@ Our dashboards provide multiple perspectives on NFL fantasy football data:
    - **Key Metrics:** `total_fantasy_points` (standard) and `total_fantasy_points_ppr` (Points Per Reception).
    - **Visualization:** Bar chart ranking players, with filters for season and week.
 
+   ![image](images/dataviz1.png)
+
 2. **Team Defense Impact**
    - **Objective:** Evaluate defensive performance.
    - **Key Metrics & Visualizations:**
      - **Defensive Yards Allowed by Team:** Bar chart exibiting `total_yards_allowed`.
+     
+     ![image](images/dataviz2.png)
+
      - **Defensive EPA Allowed:** Bar/column chart displaying `total_epa_allowed`.
+
+     ![image](images/dataviz3.png)
+
      - **Defensive Touchdowns Allowed:** Bar chart com `total_touchdowns_allowed`.
+
+     ![image](images/dataviz4.png)
 
 3. **Red Zone Efficiency**
    - **Objective:** Measure offensive performance in high-pressure situations.
    - **Key Metrics:** `redzone_plays_nr`, `redzone_touchdowns_nr`, `avg_yards_gained`, `avg_epa`, e `touchdown_rate`.
 
+   ![image](images/dataviz5.png)
+
 4. **Injury Impact**
    - **Objective:** Comparar a performance dos jogadores com e sem lesões.
    - **Key Metrics:** `total_fantasy_points` e `total_fantasy_points_ppr` diferenciados por `injury_flag`.
 
-*Incluir capturas de tela ou links diretos para os dashboards interativos no Lightdash conforme a disponibilidade.*
+   ![image](images/dataviz6.png)
 
----
 
 ## Insights
-
-*(Esta seção será atualizada à medida que os dados das visualizações forem analisados. Seguem alguns insights preliminares baseados nas análises realizadas:)*
 
 - **Top Performers:**  
   Players who consistently accumulate high total_fantasy_points stand out, but differences emerge when comparing the standard system with the PPR system. This indicates that players with many receptions may be valued differently in PPR leagues.
@@ -165,28 +174,76 @@ Our dashboards provide multiple perspectives on NFL fantasy football data:
 
 
 - **Injury Impact:**  
-  A análise preliminar sugere que jogadores com lesões relatadas apresentam uma redução significativa na produção de pontos, sublinhando a importância de monitorar o status de saúde para decisões de escalação.
+  Preliminary analysis suggests that players with reported injuries experience a significant reduction in point production, underscoring the importance of monitoring health status for roster decisions.
+  - Players without injuries had an average of 2,794.32 points. Injured players dropped to 826.92 points. Average difference of 1,967.4 points, showing that injuries have a highly negative impact on overall performance.
+  - Players without injuries averaged 3,772.32 points. Injured players dropped to 1,128.92 points. Average difference of 2,643.4 points, indicating that the impact of injuries is even more severe in the PPR format, where receptions make a significant difference. (PPR)
+  - Injuries drastically reduce players' scoring in both formats. In PPR, the impact is even greater, possibly because players who rely on receptions (WRs and TEs) are more vulnerable to injuries and drops in playing volume.
+  - The average drop of over 2,000 fantasy points suggests that in most cases, injured players fail to make a significant impact even when they return. This suggests that fielding players returning from injury can be a big risk, especially if they are not fully recovered.
+  - In fantasy leagues, teams should monitor injury reports and avoid players who are recovering from serious injuries. Depending on the type of injury (muscle, concussion, knee), players may lose explosiveness, playing volume, and even essential snaps.
+  - For Fantasy Football: Avoid players who are listed as questionable and not guaranteed to play in the game. If a player is returning from injury, it is important to analyze how his playing volume is being adjusted. For Betting: Games where a team loses a key player to injury can have a significant impact on the point line, as offensive production drops considerably.
 
-*Os insights serão refinados conforme novos dados e análises sejam incorporados.*
+- **Touchdown Rate**
+  - The Ravens have the highest touchdown rate, standing out as one of the most lethal offenses. The Bills, Lions and 49ers are also among the best, suggesting well-organized and effective offenses.
+  - The Raiders have the lowest touchdown rate, suggesting offensive struggles and a lack of conversion of possessions into points. Other teams like the Panthers and Bears also perform poorly, indicating possible issues with predictable offensive calls or execution failures.
+  - Most teams have an efficiency between 12% and 14%, but there are some with much higher performance (above 17%) and others significantly lower.
+  - For Fantasy Football: Offensive players from teams like the Ravens and Bills are more valuable because their offenses are more likely to finish drives with touchdowns.
+  - For Betting: Teams with a low touchdown rate may indicate games with fewer points, favoring bets on the under total points.
+
+  ![image](images/dataviz8.png)
+
+- **Table Yards Gained vs EPA**
+  - Average EPA per play: -0.0204, indicating that most teams have a slightly negative impact on expected score per play.
+  - Average yards gained per play: 2.02 yards, a relatively low value, which suggests that many plays are short or without great impact.
+  - The Ravens lead as the most efficient team with a positive EPA, meaning their plays not only gain yards but also significantly increase expected scoring. Other efficient teams include the Bills and 49ers, indicating that their offensive calls are well-tuned to maximize impact on the scoreboard.
+  - The Giants have the worst average EPA, suggesting that their plays, even when they gain yards, do not have a real impact on the scoreboard. This could indicate problems with play-calling, execution, or a lack of offensive talent. Other teams like the Panthers and Bears also have negative EPA, reinforcing that gaining yards does not always translate into offensive success.
+  - Gaining a lot of yards doesn't always mean being efficient. Some teams gain a lot of yards without significantly increasing their scoring expectation.
+  - There are teams that, despite having a negative EPA, still accumulate good average yards. This may indicate that these teams rely heavily on long plays, but fail to convert those plays into points.
+  - For Fantasy Football: Players on teams like the Ravens and Bills can be more valuable as their plays not only gain yards but also result in more touchdowns.
+  - For Betting: Teams with low EPA, such as the Giants and Panthers, tend to struggle to convert drives into points, making games with these teams less likely to be high-scoring.
+  - For Season Evaluation: Teams that gain a lot of yards but have a negative EPA need to review their play-calling in the red zone and efficiency on third downs.
+
+  ![image](images/dataviz7.png)
 
 ---
 
 ## Conclusions
 
-Our analysis demonstrates that robust data modeling combined with interactive visualization can reveal critical insights into fantasy football performance. Key takeaways include:
+This project demonstrates the power of a robust, data-driven approach to unraveling complex trends in NFL fantasy football. By integrating multiple data sources—from detailed player and play-by-play statistics to injury reports—and processing them through a well-defined dbt pipeline, we have achieved the following:
 
-- **Defensive Excellence:**  
-  Reducing yards and EPA allowed correlates strongly with defensive success.
+- **Comprehensive Data Modeling:**  
+  Leveraging Python scripts with `nfl_data_py` for extraction, a systematic upload via Snowsight into a dedicated `raw_data` schema, and rigorous transformations in both the staging and marts layers, we standardized and enriched raw data into actionable models. These models not only ensure data quality through extensive testing but also enable clear aggregation of key metrics.
 
-- **Offensive Prowess in the Red Zone:**  
-  Efficient red zone performance is crucial for maximizing scoring opportunities.
+- **Actionable Insights:**  
+  - **Player Performance Variability:** Our analysis confirms that player rankings vary considerably between standard scoring and PPR systems, highlighting the necessity of aligning evaluations with league formats.
+  - **Defensive Efficiency:** The aggregation of defensive metrics (yards allowed, EPA allowed, and touchdowns conceded) reveals that strong defensive units directly impact offensive production, offering strategic cues for both fantasy managers and sports bettors.
+  - **Red Zone Conversion:** High red zone efficiency emerges as a critical driver of offensive success, emphasizing that effective play-calling and execution in short-yardage situations can markedly influence overall performance.
+  - **Injury Impact:** The pronounced decline in fantasy points for players with injury reports reinforces the need for vigilant roster management and underscores the risk of relying on players returning from injury.
 
-- **Injury Impact:**  
-  Monitoring injury status is essential, as injuries have a clear negative impact on player performance.
-
-These findings offer valuable guidance for fantasy football managers and set the stage for further predictive analysis with additional external data sources.
+- **Enhanced Decision-Making:**  
+  The interactive dashboards built in Lightdash translate these complex data transformations into clear, visual narratives. They empower stakeholders to quickly identify trends, assess matchup implications, and refine strategic decisions based on real-time performance metrics.
 
 ---
 
-*Thank you for reviewing this submission. We believe the combination of detailed data modeling, rigorous testing, and intuitive visualizations provides a strong foundation for actionable insights in the world of fantasy football.*
+## Next Steps
 
+Building on the solid foundation established by this project, future enhancements could further elevate the depth and utility of our analysis:
+
+- **Integration of Additional Data Sources:**  
+  - **Real-Time Data Feeds:** Incorporate live data sources (e.g., weather conditions, real-time injury updates, and play-by-play feeds) to refine insights during game days.
+  - **Expanded External Metrics:** Include complementary datasets such as advanced analytics (e.g., player tracking data) or betting odds to provide a broader context for performance evaluation.
+
+- **Advanced Analytics & Predictive Modeling:**  
+  - **Machine Learning:** Develop predictive models to forecast player performance and injury recovery trajectories, aiding in more informed roster decisions.
+  - **Scenario Analysis:** Implement "what-if" simulations (e.g., impact of a key injury on team performance) to explore potential outcomes and strategic adjustments.
+
+- **Dashboard Enhancements:**  
+  - **User Customization:** Allow end-users to create personalized dashboards with custom filters and metrics, enhancing interactivity and user engagement.
+  - **Granular Temporal Analysis:** Refine the temporal granularity in dashboards (e.g., intra-game analysis) to capture dynamic shifts in performance throughout a match.
+
+- **Continuous Feedback and Iteration:**  
+  - Solicit feedback from fantasy football managers, sports analysts, and bettors to identify new key metrics and improve dashboard usability.
+  - Regularly update models and visualizations as new data becomes available to ensure the analysis remains current and actionable.
+
+In conclusion, this project not only meets the challenge criteria by delivering high-quality data models, rigorous testing, and compelling visualizations but also lays the groundwork for future innovation in fantasy football analytics. The insights derived here are poised to offer a competitive edge in decision-making and strategic planning for fantasy football stakeholders.
+
+Thank you for exploring this analysis. Your feedback and collaboration will be invaluable as we continue to evolve this project.
