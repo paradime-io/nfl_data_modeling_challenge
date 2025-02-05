@@ -227,11 +227,13 @@ Link to Dashboard: https://app.lightdash.cloud/projects/13c79b94-129c-4176-aa3e-
 ## Insights
 
 **Worth it: Most Common Injuries**
+
 Lower Body injuries are the most common and are observed across all positions, accounting for 400 injuries, followed by Upper Body injuries (242).
 
 Linebackers (LB), Cornerbacks (CB), and Safeties (S) suffer the most injuries. These positions require quick movements, high impact tackles, and frequent contact, making them injury-prone.
 
 **Types of Injuries**
+
 Lower Body injuries dominate over other injuries across most positions, especially for LBs and WRs. This suggests that speed-based positions (WR, S) suffer the most lower body injuries, likely due to running, cutting, and tackling.
 
 Head injuries are most common among running backs (RB) and safeties (S). Safeties (S) have the highest count of head injuries, almost doubled the count of RBs.
