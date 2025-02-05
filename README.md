@@ -173,21 +173,21 @@ For guidance on what a successful submission may look like, check out examples f
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Data Sources and Data Lineage](#data-sources-and-data-lineage)
-   - [Sources and Seeds](#registration-and-verification)
-   - [Intermediate Layer](#account-setup)
-   - [Mart Layer](#support-and-faqs)
+   - [Sources and Seeds](#sources-and-seeds)
+   - [Intermediate Layer](#intermediate-layer)
+   - [Mart Layer](#mart-layer)
 3. [Methodology](#methodology)
-   - [Tools Used](#registration-and-verification)
-   - [Data Preparation and Cleaning](#account-setup)
-4. [Key Metrics in the Analytics](#visualizations)
+   - [Tools Used](#tools-used)
+   - [Data Preparation and Cleaning](#data-preparation-and-cleaning)
+4. [Key Metrics in the Analytics](#key-metrics-in-the-analytics)
    - [Red Zone Efficiency](#red-zone-efficiency)
    - [Clutch Players Model](#clutch-players-model)
    - [Expected Fantasy Points](#expected-fantasy-points)
-5. [Ultimate Fantasy Player Performance](#insights)
+5. [Ultimate Fantasy Player Performance](#ultimate-fantasy-player-performance)
    - [The Fantasy MVPs](#the-fantasy-mvps)
    - [Clutch Performance vs The "Kobe Bryant of the NFL"](#clutch-performance-vs-the-kobe-bryant-of-the-nfl)
    - [Fantasy Points Over Expections](#fantasy-points-over-expectations)
-6. [Conclusions and Takeaways](#conclusions-and-takeaways)
+6. [Conclusions](#conclusions-and-takeaways)
 
 ## 📢 Introduction
 
@@ -205,19 +205,19 @@ Using Paradime, dbt™, Snowflake, and Lightdash, we built a fact-based model th
 ## 🕸️ Data Sources and Data Lineage
 
 Our analysis is built on three core models:
-1. ** Red Zone Efficiency (*who dominates near the end zone?*)**
-2. ** Clutch Performance (*who delivers when it matters most?*)**
-3. ** Expected Fantasy Points (*who overperforms expectations?*)**
+1. **Red Zone Efficiency (*who dominates near the end zone?*)**
+2. **Clutch Performance (*who delivers when it matters most?*)**
+3. **Expected Fantasy Points (*who overperforms expectations?*)**
 
 These models leverage pre-loaded datasets and transformations in Paradime to create a unified marts table for fantasy player performance.
 
-### 📌 Sources and Seeds
+## 📌 Sources and Seeds
 
 We built our analysis using the following data sources:
 - **stg_play_by_play → Play-by-play data of all NFL games in 2023**
 - **stg_player_stats_by_game → Individual game-level performance data**
 
-📊 Intermediate Layer
+## 📊 Intermediate Layer
 We constructed three key intermediate models:
 
 - **int_red_zone_efficiency 🏟️ (*Red Zone Performance*)**
@@ -226,7 +226,7 @@ We constructed three key intermediate models:
 
 Each model aggregates play-level data to compute meaningful player-level stats.
 
-### 🏆 Mart Layer
+## 🏆 Mart Layer
 The final marts table combines all key player metrics into a single source of truth:
 - **fct_fantasy_player_performance**
 
@@ -245,8 +245,7 @@ To ensure clean, accurate data, we:
 - **Applied data validation tests (e.g., ensuring unique player IDs)**
 - **Standardized naming conventions for player attributes**
 
-## Applied Techniques
-### 🔑 Key Metrics in the Analysis
+## Applied Techniques - 🔑 Key Metrics in the Analysis
 ### 1️⃣ Red Zone Efficiency 🏟️
 "*The best fantasy players convert opportunities into touchdowns. If you can’t score in the red zone, you can’t win—just ask any fantasy owner who started a struggling RB in Week 10.
 
