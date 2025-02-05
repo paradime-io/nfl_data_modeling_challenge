@@ -23,6 +23,10 @@ models:
               label: "Total Fantasy Points"
       - name: total_fantasy_points_ppr
         description: "Total fantasy points scored by the player under PPR (points per reception) scoring across the considered period."
+        meta:
+          metrics:
+            sum_fantasy_points_ppr:
+              type: sum
       - name: games_played
         description: "Number of games (weeks) the player participated in."
         meta:
@@ -32,8 +36,16 @@ models:
               label: "Total Games Played"
       - name: avg_fantasy_points_per_game
         description: "Average standard fantasy points per game played."
+        meta:
+          metrics:
+            avg_fantasy_points_per_game_:
+              type: average
       - name: avg_fantasy_points_ppr_per_game
         description: "Average PPR fantasy points per game played."
+        meta:
+          metrics:
+            avg_fantasy_points_ppr_per_game_:
+              type: average
       - name: standard_rank
         description: "The player's rank among all players based on total standard fantasy points."
         meta:
@@ -117,62 +129,47 @@ models:
         description: "Type of season (e.g., regular, postseason)"
       - name: defteam
         description: "The defending team"
-      - name: total_fantasy_points_allowed_qb
-        description: "Total fantasy points allowed to quarterbacks"
-        meta:
-          metrics:
-            fantasy_points_allowed_qb:
-              type: sum
-              label: "Total fantasy points allowed to quarterbacks"
-      - name: total_fantasy_points_allowed_rb
-        description: "Total fantasy points allowed to running backs"
-        meta:
-          metrics:
-            fantasy_points_allowed_rb:
-              type: sum
-              label: "Total fantasy points allowed to running backs"
-      - name: total_fantasy_points_allowed_wrte
-        description: "Total fantasy points allowed to wide receivers and tight ends"
-        meta:
-          metrics:
-            fantasy_points_allowed_wrte:
-              type: sum
-              label: "Total fantasy points allowed to wide receivers and tight ends"
-      - name: total_rushing_yards_allowed
+      - name: total_rushing_yards
         description: "Total rushing yards allowed"
         meta:
           metrics:
-            rushing_yards_allowed:
-              type: sum
-              label: "Total rushing yards allowed"
+            avg_rushing_yards_allowed:
+              type: average
       - name: games_played
         description: "Number of games played"
         meta:
           metrics:
-            games_played:
+            games_played_:
               type: sum
               label: "Number of games played"
-      - name: unique_qbs_faced
-        description: "Number of unique quarterbacks faced"
+      - name: qbs_faced
+        description: "Number of quarterbacks faced"
         meta:
           metrics:
-            unique_qbs_faced:
-              type: sum
-              label: "Number of unique quarterbacks faced"
-      - name: unique_rbs_faced
-        description: "Number of unique running backs faced"
+            avg_qbs_faced:
+              type: average
+      - name: rbs_faced
+        description: "Number of running backs faced"
         meta:
           metrics:
-            sum_rbs_faced:
-              type: sum
-              label: "Sum of unique running backs faced"
-      - name: unique_wrs_faced
-        description: "Number of unique wide receivers faced"
+            avg_rbs_faced:
+              type: average
+      - name: wrs_faced
+        description: "Number of wide receivers faced"
         meta:
           metrics:
-            sum_unique_wrs_faced:
+            avg_wrs_faced:
+              type: average
+      - name: total_qb_points
+        meta:
+          metrics:
+            sum_qb_points:
               type: sum
-              label: "Sum of unique wide receivers faced"
+      - name: total_rb_points
+        meta:
+          metrics:
+            sum_rb_points:
+              type: sum
 
   - name: fct_player_injury_history
     description: Fact table containing the historical injury records for players.

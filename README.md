@@ -222,7 +222,7 @@ Lightdash Dashboard: https://app.lightdash.cloud/projects/13c79b94-129c-4176-aa3
 
 ## Visualizations
 
-TODO
+Link to Dashboard: https://app.lightdash.cloud/projects/13c79b94-129c-4176-aa3e-aba26d4cbacf/dashboards/e7677c88-1a3e-4d0f-b654-f57e188871f2/view.
 
 ## Insights
 
@@ -285,6 +285,33 @@ Pass Completions & Targets:
 - T. Kelce and A. St. Brown tie for the most pass completions in the red zone.
 - D. Adams leads all players in total targets.
 
+** Fantasy Points Allowed by Defense** 
+
+In the regular season:
+- Baltimore (BAL) had the worst performance in 2021, showed improvement, but returned to the bottom in 2024.
+- Houston (HOU) stood out in 2022, allowing the second highest average rushing yards over the last four years, but their performance has declined since.
+- Carolina (CAR) stood out in 2024, allowing the highest average rushing yards over the last four years —a clear 500-yard gap ahead of the next cluster of teams.
+
+The average number of RBs faced fluctuates significantly year over year. 
+Jacksonville (JAX) led in 2021, saw a sharp decline over the next two years, and then rebounded in 2024 with the highest average in the last four years.
+
+Denver faced the fewest average QBs in 2021, then peaked in 2022 and 2023 with one of the highest values before declining. 
+Meanwhile, Tennessee (TEN) has shown consistent improvement, recording the highest average QBs faced over the past two seasons.
+
+**Is it real? Or is it just fantasy?**
+
+From 2021 to 2024, Josh Allen, Jalen Hurts, Lamar Jackson, Jayden Daniels, Patrick Mahomes, and Joe Burrow led in average fantasy points per game, all surpassing the 20-point mark.
+
+When comparing average PPR fantasy points per game and total fantasy points, Josh Allen consistently ranks as the top performer.
+
+Josh Allen led in average fantasy points per game in 2021.
+
+In 2022, Jalen Hurts emerged as the top performer, with Josh Allen close behind.
+
+Carson Wentz had the highest average in 2023, narrowly beating Josh Allen, but then dropped off the radar.
+
+Lamar Jackson dominated in 2024, with Josh Allen once again right behind him.
+
 ## Conclusions
 
 **Injuries**
@@ -294,3 +321,10 @@ Defensive Players (LBs, CBs, and Safeties) have high injury rates, likely due to
 **Red Zone Performance**
 The red zone remains a key battleground, with J. Taylor and J. Jacobs dominating rushing opportunities, while T. Kelce and A. St. Brown lead in pass completions.
 Over the years, 2021 stood out as the strongest for overall performance, while 2022 saw the biggest decline, with gradual recovery since.
+
+**Defense Time**
+Carolina (CAR) had the worst rushing defense in 2024, allowing the highest average rushing yards over the last four years, with a 500-yard gap ahead of the next closest teams.
+
+**Fantasy Points**
+Josh Allen has been the most consistent top fantasy performer, leading in both average PPR points per game and total fantasy points across 2021-2024.
+
