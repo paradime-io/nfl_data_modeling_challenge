@@ -208,24 +208,44 @@ models:
         meta:
           dimension:
             type: string
-  - name: int_team_epa
+  - name: int_game_results
     columns:
-      - name: team
-        description: ""
-        meta:
-          dimension:
-            type: string
       - name: game_id
         description: ""
         meta:
           dimension:
             type: string
-      - name: type
+      - name: home_team
         description: ""
         meta:
           dimension:
             type: string
-      - name: epa
+      - name: away_team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: home_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: away_score
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: winner
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: home_win
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: away_win
         description: ""
         meta:
           dimension:
