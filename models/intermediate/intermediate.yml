@@ -208,3 +208,20 @@ models:
         meta:
           dimension:
             type: string
+  - name: int_team_epa
+    columns:
+      - name: team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: play_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: game_id
+        description: ""
+        meta:
+          dimension:
+            type: string

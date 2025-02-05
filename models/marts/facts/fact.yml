@@ -169,3 +169,30 @@ models:
           metrics:
             avg_losing_team_wp:
               type: average
+  - name: fct_team_offense
+    columns:
+      - name: team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: team_offensive_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: team_defensive_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: median_offensive_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: median_defensive_epa
+        description: ""
+        meta:
+          dimension:
+            type: number
