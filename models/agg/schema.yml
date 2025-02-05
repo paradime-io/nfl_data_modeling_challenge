@@ -7,24 +7,39 @@ models:
     columns:
       - name: PLAYER_ID
         description: "Unique identifier for the player."
+      - name: PLAYER_NAME
+        description: "Player's full name."
+      - name: TEAM
+        description: "Team abbreviation."
+      - name: POSITION
+        description: "Player's primary position."
       - name: CONSISTENCY_SCORE
         description: "Standard deviation of weekly fantasy points, representing consistency."
+      - name: FANTASY_POINTS
+        description: "Fantasy points scored by the player."
+        meta:
+          metrics:
+            total_fantasy_points:
+                description: "Total fantasy points of player."
+                type: sum
 
   - name: agg_red_zone_efficiency
     description: "Aggregated model calculating Red Zone Efficiency for each player."
     columns:
       - name: PLAYER_ID
         description: "Unique identifier for the player."
+      - name: PLAYER_NAME
+        description: "Player's full name."
+      - name: TEAM
+        description: "Team abbreviation."
+      - name: POSITION
+        description: "Player's primary position."
       - name: RED_ZONE_EFFICIENCY
         description: "Percentage of red zone targets that result in touchdowns."
-
-  - name: agg_injury_propensity
-    description: "Aggregated model calculating Injury Propensity for each player."
-    columns:
-      - name: PLAYER_ID
-        description: "Unique identifier for the player."
-      - name: INJURY_PROPENSITY
-        description: "Average number of games missed due to injury."
+      - name: TOTAL_TARGETS
+        description: "Total targets."
+      - name: TOTAL_TDS
+        description: "Total touchdowns."
 
   - name: agg_touchdown_rate
     description: "Aggregated model calculating Touchdown Rate for each player."
@@ -43,12 +58,37 @@ models:
         description: "Percentage of team's total fantasy points that a player accounts for."
 
   - name: agg_roi
-    description: "Aggregated model calculating Return on Investment (ROI) for each player."
+    description: "Calculates Return on Investment (ROI) for players based on total fantasy points and salary."
     columns:
       - name: PLAYER_ID
         description: "Unique identifier for the player."
-      - name: ROI
-        description: "Ratio of total fantasy points to maximum salary."
+      - name: PLAYER_NAME
+        description: "Player's full name."
+      - name: POSITION
+        description: "Player's primary position."
+      - name: TEAM
+        description: "Player's team"
+      - name: FANTASY_POINTS
+        description: "Fantasy points scored by the player."
+        meta:
+          metrics:
+            total_fantasy_points:
+                description: "Total fantasy points of player."
+                type: sum
+      - name: SALARY
+        description: "Player's salary."
+        meta:
+          metrics:
+            max_salary:
+                description: "Max salary of a player."
+                type: max
+
+      # - name: TOTAL_FANTASY_POINTS
+      #   description: "Total fantasy points scored by the player."
+      # - name: SALARY
+      #   description: "Player's salary."
+      # - name: ROI
+      #   description: "Return on Investment, calculated as TOTAL_FANTASY_POINTS / SALARY. A higher value indicates better ROI."
 
   - name: agg_season_schedule
     description: "Aggregated metrics for season and schedule information."

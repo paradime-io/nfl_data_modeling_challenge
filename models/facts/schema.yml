@@ -64,12 +64,24 @@ models:
   - name: fact_injuries
     description: "Fact table containing injury information for players."
     columns:
+      - name: TEAM
+        description: "The player's team."
       - name: PLAYER_ID
         description: "Unique identifier for the player."
+        meta:
+          metrics:
+            total_player_injury:
+              type: count_distinct
       - name: PLAYER_NAME
         description: "Name of the player."
-      - name: GAMES_MISSED
-        description: "Number of games missed due to injury."
+      - name: REPORT_PRIMARY_INJURY
+        description: "Primary injury reported."
+      - name: REPORT_STATUS
+        description: "Injury status (e.g., Out, Questionable)."
+        meta:
+          metrics:
+            total_injury:
+              type: count
 
   - name: fact_salaries
     description: "Fact table containing player salaries for each season."
