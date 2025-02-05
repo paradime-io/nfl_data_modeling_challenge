@@ -49,9 +49,17 @@ We used dbt to wrangle the data into shape, employing:
 
 ## Visualizations <a name="visualizations"></a>
 
-*   **Top Performers Over Season:** [Screenshot or link to chart] - Who consistently brought the heat?
-*   **Average Fantasy Points Over Week:** [Screenshot or link to chart] - The weekly ebb and flow of fantasy points.
-*   **Top Performers Table:** [Screenshot or link to chart] - The fantasy elite, ranked by points.
+*   **Overall Metrics of the Season** <br>
+![image](images/overall-metrics.png)
+
+*   **Top Performers Over Season:** 
+Who consistently brought the heat?<br>
+![image](/images/perf1.png)<br>
+![image](images/perf2.png)<br>
+![image](images/perf3.png)<br>
+![image](images/perf4.png)<br>
+
+
 *   **Consistency vs. Average Points:** [Screenshot or link to chart] - Finding the reliable scorers.
 *   **Position Consistency:** [Screenshot or link to chart] - Comparing consistency across positions.
 *   **Red Zone Efficiency for Most Touchdowns:** [Screenshot or link to chart] - Who's cashing in on scoring opportunities?
@@ -72,4 +80,4 @@ We used dbt to wrangle the data into shape, employing:
 
 ## Conclusions <a name="conclusions"></a>
 
-This dashboard empowers you to become a true "Value Hunter" in your fantasy league.  By combining data-driven insights with a bit of savvy, you can build a winning team without breaking the bank (or your salary cap).  Remember, it's not just about chasing stars; it's about finding the players who shine brightest for their cost.  Now go forth and conquer your league!
+This dashboard empowers you to become a true "Value Hunter" in your fantasy league.  By combining data-driven insights with a bit of savvy, you can build a winning team without breaking the bank (or your salary cap).  Remember, it's not just about chasing stars; it's about finding the players who shine brightest for their cost!
