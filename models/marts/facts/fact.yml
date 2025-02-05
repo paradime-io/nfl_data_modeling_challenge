@@ -10,6 +10,10 @@ models:
         description: "Name of the player."
       - name: position
         description: "Player's position (e.g., QB, RB, WR, TE)."
+      - name: season
+        description: "Player's season"
+      - name: season_week
+        description: "Player's season week number."
       - name: recent_team
         description: "The player's most recent team."
       - name: total_fantasy_points
