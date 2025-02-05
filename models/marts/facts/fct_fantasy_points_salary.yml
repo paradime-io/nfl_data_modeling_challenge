@@ -32,13 +32,22 @@ models:
         meta:
           dimension:
             type: number
+          metrics:
+            sum_points:
+              type: sum
       - name: spend
         description: ""
         meta:
           dimension:
             type: number
+          metrics:
+            spend_sum:
+              type: sum
       - name: spend_per_points
         description: ""
         meta:
           dimension:
             type: number
+          metrics:
+            avg_spend:
+              type: average
