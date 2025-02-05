@@ -2,6 +2,8 @@ SELECT
     player_id,
     player_name,
     position,
+    season,
+    season_week,
     recent_team,
     total_fantasy_points,
     total_fantasy_points_ppr,
