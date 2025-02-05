@@ -1,0 +1,1436 @@
+name: Passer Yards
+description: Passer Yards stacked bar
+tableName: fct_player_yards
+updatedAt: "2025-02-03T17:16:54.247Z"
+metricQuery:
+  exploreName: fct_player_yards
+  dimensions:
+    - fct_player_yards_game_details
+    - fct_player_yards_game_date_day
+    - fct_player_yards_passer_player_name
+  metrics:
+    - fct_player_yards_total_passing_yards_total_passing_yards
+  filters:
+    dimensions:
+      id: 5bafd9b4-4f64-450b-b0af-6e2321dc3f83
+      and:
+        - id: f8e5c28f-295f-4559-a065-69d96440e8cc
+          target:
+            fieldId: fct_player_yards_passer_player_name
+          values:
+            - 1
+          operator: notNull
+          required: false
+  sorts:
+    - fieldId: fct_player_yards_game_date_day
+      descending: false
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics:
+    - name: total_pass_completions_total_pass_completions
+      label: Total pass completions
+      description: "Sum of Total pass completions on the table Fct player yards "
+      uuid: 2b32278e-9f83-44b8-a547-77556ed60912
+      sql: ${TABLE}.total_pass_completions
+      table: fct_player_yards
+      type: sum
+      baseDimensionName: total_pass_completions
+      formatOptions:
+        type: default
+        separator: default
+    - name: total_passing_yards_total_passing_yards
+      label: Total passing yards
+      description: "Sum of Total passing yards on the table Fct player yards "
+      uuid: 4f36a247-704a-4c38-8413-244fc19ce3d2
+      sql: ${TABLE}.total_passing_yards
+      table: fct_player_yards
+      type: sum
+      baseDimensionName: total_passing_yards
+      formatOptions:
+        type: default
+        separator: default
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: fct_player_yards_game_details
+      yField:
+        - fct_player_yards_total_passing_yards_total_passing_yards
+      flipAxes: true
+    eChartsConfig:
+      legend:
+        show: true
+        type: plain
+        orient: horizontal
+      series:
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: C.Stroud
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: B.Purdy
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: P.Mahomes
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: S.Howell
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: J.Dobbs
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: J.Allen
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: Z.Wilson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: K.Cousins
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: B.Mayfield
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: D.Ridder
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: J.Herbert
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: J.Garoppolo
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: B.Young
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: D.Jones
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: T.Tagovailoa
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: G.Smith
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: M.Stafford
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: M.Jones
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: D.Watson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: J.Fields
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: K.Pickett
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: J.Winston
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: R.Tannehill
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: R.Wilson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: J.Hurts
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: D.Carr
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: J.Burrow
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: A.O'Connell
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: C.Beathard
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: T.Boyle
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: J.Love
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: J.Goff
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: M.Trubisky
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: T.Siemian
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: T.Taylor
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: C.Rush
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: D.Prescott
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: G.Minshew
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: T.Bagent
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: C.Tune
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: P.Walker
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: B.Rypien
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: T.Hill
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: T.Lawrence
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: T.DeVito
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: L.Jackson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: D.Thompson-Robinson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: K.Murray
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: K.Allen
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: B.Zappe
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: W.Levis
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: T.Heinicke
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: J.Flacco
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: S.Darnold
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: T.Huntley
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: J.Browning
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: B.Mann
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: J.Hall
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: M.White
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: B.Hoyer
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: D.Lock
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: J.Meyers
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: D.Mills
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: B.Gabbert
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: D.Henry
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: T.Morstead
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: R.Doubs
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: C.Kirk
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: D.Wicks
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: D.Bellinger
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: T.Boyd
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: M.Mariota
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: L.Cooke
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: J.Smith
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: J.Chase
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: D.Dallas
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: K.Trask
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: D.Samuel
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: G.Wilson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: C.Akers
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: A.St. Brown
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: T.Atwell
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: N.Peterman
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: C.Wilson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: A.Richardson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: A.Rodgers
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: A.Dalton
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: C.Godwin
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: B.Anger
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: D.Singletary
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: P.Campbell
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: D.London
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: J.Jacobs
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: K.Toney
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: M.Cunningham
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: M.Willis
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_passer_player_name
+                  value: J.Hekker
+          yAxisIndex: 0
+dashboardSlug: passers-and-rushers
+slug: copy-of-passer-yards-1738602629771
+tableConfig:
+  columnOrder:
+    - fct_player_yards_game_details
+    - fct_player_yards_game_date_day
+    - fct_player_yards_passer_player_name
+    - fct_player_yards_total_passing_yards_total_passing_yards
+spaceSlug: shared
+version: 1
+downloadedAt: "2025-02-05T00:32:56.754Z"

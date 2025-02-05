@@ -1,0 +1,153 @@
+name: Penalties
+description: Penalties
+updatedAt: "2025-02-04T20:58:00.165Z"
+tiles:
+  - x: 21
+    "y": 0
+    h: 9
+    w: 15
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: penalties-to-win-or-lose
+  - x: 0
+    "y": 9
+    h: 2
+    w: 36
+    tabUuid: null
+    type: markdown
+    properties:
+      title: ""
+      hideTitle: false
+      content: >-
+        The first two charts below 👇 **Most Frequent Offense Penalty Types**
+        &amp; **Most Frequent Defense Penalty Types** show that a False Start is
+        the most frequently penalised offence for the offense 😉 whilst
+        Defensive Pass Interference is the most frequent offence for the
+        defense.
+
+
+        The **Red Zone Penalties** chart below👇 shows that the Cowboys, Jets
+        &amp; Broncos lead the way in playing on the edge &amp; conceding in the
+        red zone whilst the **Most Frequent Offenders** chart 👉 indicates that
+        Jawaan Taylor has the leading track record for conceding penalties.
+  - x: 0
+    "y": 0
+    h: 9
+    w: 15
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: penalties-and-yardages
+  - x: 27
+    "y": 11
+    h: 9
+    w: 9
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: most-frequent-offenders
+  - x: 15
+    "y": 0
+    h: 9
+    w: 6
+    tabUuid: null
+    type: markdown
+    properties:
+      title: ""
+      hideTitle: false
+      content: >-
+        The two other dashboards in this submission have looked at how
+        effectively teams on the offense can gain yards by passing or rushing.
+        Penalties are different in that they can apply to both the offense and
+        defense teams.
+
+
+        #### Penalties and Yardages 👈 
+
+        A scatter chart showing by team the number of penalties conceded on the
+        y-axis and the number of yards conceded on the x-axis. The Houston
+        Texans have conceded the most penalties (128) but the 49'ers the most
+        yardage (1,076)
+
+
+        #### Penalties to Win or Lose 👉
+
+        Shows for each team the number of penalties they have conceded in a win
+        (in blue) and the number they have conceded in a loss (in orange).
+        Penalties have not worked well for the Panthers. Of their 103 penalties,
+        96 of them have been conceded in losses.
+  - x: 0
+    "y": 11
+    h: 9
+    w: 9
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: most-frequent-offense-penalty-types
+  - x: 18
+    "y": 11
+    h: 9
+    w: 9
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: red-zone-penalties
+  - x: 9
+    "y": 11
+    h: 9
+    w: 9
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: copy-of-most-frequent-offense-penalty-types-1738623222601
+filters:
+  metrics: []
+  dimensions:
+    - id: 45f78b69-985a-4324-8963-919c116c3fa5
+      target:
+        fieldId: fct_penalties_game_date_day
+        fieldName: game_date_day
+        tableName: fct_penalties
+      values:
+        - "2023-09-01"
+        - "2024-02-29"
+      disabled: false
+      operator: inBetween
+      tileTargets:
+        1c5d8f7a-a261-4192-8e29-34830c38cb6f:
+          fieldId: fct_penalties_game_date_day
+          tableName: fct_penalties
+        52a52e0d-d549-4acf-b68a-21ad5154ca76:
+          fieldId: fct_penalties_game_date_day
+          tableName: fct_penalties
+        75abdefc-de88-4c54-b6c8-ea59c18dff6a:
+          fieldId: fct_penalties_game_date_day
+          tableName: fct_penalties
+        b44aa87f-310a-48c6-9981-9ba4a36bae6f:
+          fieldId: fct_penalties_game_date_day
+          tableName: fct_penalties
+        bf7243e9-f250-4eff-a17b-b517b80941e1:
+          fieldId: fct_penalties_game_date_day
+          tableName: fct_penalties
+        f0e53e82-6d72-4dbc-927c-ab2d50371244:
+          fieldId: fct_penalties_game_date_day
+          tableName: fct_penalties
+  tableCalculations: []
+tabs: []
+slug: penalties
+spaceSlug: pmff
+version: 1
+downloadedAt: "2025-02-05T00:32:56.867Z"

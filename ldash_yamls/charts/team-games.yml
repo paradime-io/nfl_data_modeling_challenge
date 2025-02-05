@@ -1,0 +1,40 @@
+name: Team Games
+description: Team Games table
+tableName: fct_team_yards
+updatedAt: "2025-02-03T00:50:18.519Z"
+metricQuery:
+  exploreName: fct_team_yards
+  dimensions:
+    - fct_team_yards_game_date_day
+    - fct_team_yards_game_details
+  metrics: []
+  filters: {}
+  sorts:
+    - fieldId: fct_team_yards_game_date_day
+      descending: true
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics: []
+  customDimensions: []
+chartConfig:
+  type: table
+  config:
+    columns: {}
+    metricsAsRows: false
+    showSubtotals: false
+    hideRowNumbers: false
+    showTableNames: false
+    showResultsTotal: false
+    showRowCalculation: false
+    showColumnCalculation: false
+    conditionalFormattings: []
+dashboardSlug: passers-and-rushers
+slug: team-games
+tableConfig:
+  columnOrder:
+    - fct_team_yards_game_date_day
+    - fct_team_yards_game_details
+spaceSlug: shared
+version: 1
+downloadedAt: "2025-02-05T00:32:56.754Z"

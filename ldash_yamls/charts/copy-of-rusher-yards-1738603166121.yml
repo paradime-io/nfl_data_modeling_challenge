@@ -1,0 +1,217 @@
+name: Top Rushers by Position
+description: Top Rushers by Position stacked bar
+tableName: fct_player_yards
+updatedAt: "2025-02-03T17:23:52.026Z"
+metricQuery:
+  exploreName: fct_player_yards
+  dimensions:
+    - fct_player_yards_player_display_name
+    - fct_player_yards_position
+  metrics:
+    - fct_player_yards_total_rushing_yards_total_rushing_yards
+  filters:
+    dimensions:
+      id: 180e0c0a-80d1-4e83-8bf0-aab62beef5af
+      and:
+        - id: e6b0c18a-44ca-4d6d-98fc-9dec91321894
+          target:
+            fieldId: fct_player_yards_rusher_player_name
+          values:
+            - 1
+          operator: notNull
+          required: false
+  sorts:
+    - fieldId: fct_player_yards_total_rushing_yards_total_rushing_yards
+      descending: false
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics:
+    - name: total_rushing_yards_total_rushing_yards
+      label: Total rushing yards
+      description: "Sum of Total rushing yards on the table Fct player yards "
+      uuid: 7c26bb67-0c67-48d9-9d81-7cc29abcf867
+      sql: ${TABLE}.total_rushing_yards
+      table: fct_player_yards
+      type: sum
+      baseDimensionName: total_rushing_yards
+      formatOptions:
+        type: default
+        separator: default
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: fct_player_yards_player_display_name
+      yField:
+        - fct_player_yards_total_rushing_yards_total_rushing_yards
+      flipAxes: true
+    eChartsConfig:
+      legend:
+        show: true
+      series:
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_player_display_name
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_position
+                  value: P
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_player_display_name
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_position
+                  value: WR
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_player_display_name
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_position
+                  value: TE
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_player_display_name
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_position
+                  value: FB
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_player_display_name
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_position
+                  value: ILB
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_player_display_name
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_position
+                  value: RB
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_player_display_name
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_position
+                  value: QB
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_player_display_name
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_position
+                  value: FS
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_player_display_name
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_position
+                  value: SS
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_player_display_name
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_position
+                  value: OLB
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_player_display_name
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_position
+                  value: CB
+          yAxisIndex: 0
+dashboardSlug: passers-and-rushers
+slug: copy-of-rusher-yards-1738603166121
+tableConfig:
+  columnOrder:
+    - fct_player_yards_player_display_name
+    - fct_player_yards_position
+    - fct_player_yards_total_rushing_yards_total_rushing_yards
+spaceSlug: shared
+version: 1
+downloadedAt: "2025-02-05T00:32:56.754Z"

@@ -1,0 +1,81 @@
+name: Most Frequent Defense Penalty Types
+description: Most Frequent Defense Penalty Types
+tableName: fct_penalties
+updatedAt: "2025-02-03T23:08:05.680Z"
+metricQuery:
+  exploreName: fct_penalties
+  dimensions:
+    - fct_penalties_penalty_type
+  metrics:
+    - fct_penalties_defense_penalty_total_defense_penalties
+  filters:
+    dimensions:
+      id: 204eede8-85d9-4396-ad29-2e3c6f736965
+      and:
+        - id: a2e385d4-8c2c-486f-b1cd-975e8b21733f
+          target:
+            fieldId: fct_penalties_defense_penalty
+          values:
+            - "0"
+          operator: notEquals
+          required: false
+  sorts:
+    - fieldId: fct_penalties_defense_penalty_total_defense_penalties
+      descending: false
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics:
+    - name: offense_penalty_total_offense_penalties
+      label: Total Offense Penalties
+      description: "Sum of Offense penalty on the table Fct penalties "
+      uuid: 58118af4-9713-4064-95e5-69fec86e7558
+      sql: ${TABLE}.offense_penalty
+      table: fct_penalties
+      type: sum
+      baseDimensionName: offense_penalty
+      formatOptions:
+        type: default
+        separator: default
+    - name: defense_penalty_total_defense_penalties
+      label: Total Defense Penalties
+      description: "Sum of Defense penalty on the table Fct penalties "
+      uuid: 255d3a3a-5c1d-4e36-b1fa-1e253ec4e46b
+      sql: ${TABLE}.defense_penalty
+      table: fct_penalties
+      type: sum
+      baseDimensionName: defense_penalty
+      formatOptions:
+        type: default
+        separator: default
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: fct_penalties_penalty_type
+      yField:
+        - fct_penalties_defense_penalty_total_defense_penalties
+      flipAxes: true
+    eChartsConfig:
+      series:
+        - type: bar
+          color: "#91cc75"
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_penalties_penalty_type
+            yRef:
+              field: fct_penalties_defense_penalty_total_defense_penalties
+          yAxisIndex: 0
+dashboardSlug: penalties
+slug: copy-of-most-frequent-offense-penalty-types-1738623222601
+tableConfig:
+  columnOrder:
+    - fct_penalties_penalty_type
+    - fct_penalties_defense_penalty_total_defense_penalties
+spaceSlug: pmff
+version: 1
+downloadedAt: "2025-02-05T00:32:56.753Z"

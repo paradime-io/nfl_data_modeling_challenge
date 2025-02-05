@@ -1,0 +1,140 @@
+name: Top Rushing Percentages (of Total Yards Gained)
+description: Top Rushing Percentages bar
+tableName: fct_team_yards
+updatedAt: "2025-02-03T13:01:17.902Z"
+metricQuery:
+  exploreName: fct_team_yards
+  dimensions:
+    - fct_team_yards_offense_team_name
+  metrics:
+    - fct_team_yards_total_yards_gained_total_yards_gained
+    - fct_team_yards_total_adj_passing_yards_total_adj_passing_yards
+    - fct_team_yards_total_adj_rushing_yards_total_adj_rushing_yards
+  filters: {}
+  sorts:
+    - fieldId: rushing_as_of_yards_gained_1
+      descending: false
+  limit: 500
+  metricOverrides: {}
+  tableCalculations:
+    - name: passing_as_of_yards_gained_1
+      displayName: Passing as % of Yards Gained
+      sql: >
+        CAST(${fct_team_yards.total_adj_passing_yards_total_adj_passing_yards}
+        AS FLOAT) /
+
+        CAST(${fct_team_yards.total_yards_gained_total_yards_gained} AS FLOAT)
+      format:
+        type: percent
+        round: 2
+        currency: USD
+        separator: default
+      type: number
+    - name: rushing_as_of_yards_gained_1
+      displayName: Rushing as % of Yards Gained
+      sql: >-
+        CAST(${fct_team_yards.total_adj_rushing_yards_total_adj_rushing_yards}
+        AS FLOAT) /
+
+        CAST(${fct_team_yards.total_yards_gained_total_yards_gained} AS FLOAT)
+      format:
+        type: percent
+        currency: USD
+        separator: default
+      type: number
+  additionalMetrics:
+    - name: total_yards_gained_total_yards_gained
+      label: Total yards gained
+      description: "Sum of Sum of Total yards gained on the table Fct team yards "
+      uuid: 2641ade8-a95d-40c1-a9f2-472eee59de46
+      sql: ${TABLE}.total_yards_gained
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: total_yards_gained
+      formatOptions:
+        type: default
+        separator: default
+    - name: total_passing_yards_total_passing_yards
+      label: Total passing yards
+      description: "Sum of Sum of Total passing yards on the table Fct team yards "
+      uuid: 4722a530-b881-4887-abdc-f5b09a073401
+      sql: ${TABLE}.total_passing_yards
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: total_passing_yards
+      formatOptions:
+        type: default
+        separator: default
+    - name: total_rushing_yards_total_rushing_yards
+      label: Total rushing yards
+      description: "Sum of Sum of Total rushing yards on the table Fct team yards "
+      uuid: 4e36202d-9449-4c01-ba83-486a50814991
+      sql: ${TABLE}.total_rushing_yards
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: total_rushing_yards
+      formatOptions:
+        type: default
+        separator: default
+    - name: total_adj_passing_yards_total_adj_passing_yards
+      label: Total adj passing yards
+      description: "Sum of Total adj passing yards on the table Fct team yards "
+      uuid: 60268bd7-6f1a-4818-b1b2-4bce0576209a
+      sql: ${TABLE}.total_adj_passing_yards
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: total_adj_passing_yards
+      formatOptions:
+        type: default
+        separator: default
+    - name: total_adj_rushing_yards_total_adj_rushing_yards
+      label: Total adj rushing yards
+      description: "Sum of Total adj rushing yards on the table Fct team yards "
+      uuid: 4177de82-b791-4afd-8855-25d3c4208338
+      sql: ${TABLE}.total_adj_rushing_yards
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: total_adj_rushing_yards
+      formatOptions:
+        type: default
+        separator: default
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: fct_team_yards_offense_team_name
+      yField:
+        - rushing_as_of_yards_gained_1
+      flipAxes: true
+    eChartsConfig:
+      yAxis:
+        - max: ".45"
+          min: ".30"
+        - {}
+      series:
+        - type: bar
+          color: "#91cc75"
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_offense_team_name
+            yRef:
+              field: rushing_as_of_yards_gained_1
+          smooth: false
+          yAxisIndex: 0
+dashboardSlug: hard-yards
+slug: copy-of-passing-vs-rushing-percentages-1738448840200
+tableConfig:
+  columnOrder:
+    - fct_team_yards_offense_team_name
+    - fct_team_yards_total_yards_gained_total_yards_gained
+    - fct_team_yards_total_adj_passing_yards_total_adj_passing_yards
+    - fct_team_yards_total_adj_rushing_yards_total_adj_rushing_yards
+    - passing_as_of_yards_gained_1
+    - rushing_as_of_yards_gained_1
+spaceSlug: pmff
+version: 1
+downloadedAt: "2025-02-05T00:32:56.754Z"

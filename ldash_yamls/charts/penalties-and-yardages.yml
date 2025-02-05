@@ -1,0 +1,488 @@
+name: Penalties and Yardages
+description: Penalties and Yardages scatter
+tableName: fct_penalties
+updatedAt: "2025-02-03T22:29:42.596Z"
+metricQuery:
+  exploreName: fct_penalties
+  dimensions:
+    - fct_penalties_penalty_team_name
+  metrics:
+    - fct_penalties_penalty_team_total_penalties
+    - fct_penalties_penalty_yards_total_penalty_yards
+  filters: {}
+  sorts: []
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics:
+    - name: penalty_team_total_penalties
+      label: Total Penalties
+      description: "Count of Count of Penalty team on the table Fct penalties "
+      uuid: 955376b5-c00a-4ea3-bfa2-04f5cbc7ba91
+      sql: ${TABLE}.penalty_team
+      table: fct_penalties
+      type: count
+      baseDimensionName: penalty_team
+      formatOptions:
+        type: default
+        separator: default
+    - name: penalty_yards_total_penalty_yards
+      label: Total Penalty Yards
+      description: "Sum of Penalty yards on the table Fct penalties "
+      uuid: 898ab295-bf27-4c31-91df-e9405fb96e5b
+      sql: ${TABLE}.penalty_yards
+      table: fct_penalties
+      type: sum
+      baseDimensionName: penalty_yards
+      formatOptions:
+        type: default
+        separator: default
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: fct_penalties_penalty_yards_total_penalty_yards
+      yField:
+        - fct_penalties_penalty_team_total_penalties
+      flipAxes: false
+      showGridX: true
+    eChartsConfig:
+      xAxis:
+        - max: "1200"
+          min: "500"
+        - {}
+      yAxis:
+        - name: Nr of Penalties
+        - {}
+      legend:
+        type: scroll
+        right: 20px
+        orient: horizontal
+      series:
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Detroit Lions
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: San Francisco 49ers
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Baltimore Ravens
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Kansas City Chiefs
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Washington Commanders
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Arizona Cardinals
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: New York Jets
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Carolina Panthers
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Cleveland Browns
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Dallas Cowboys
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: New York Giants
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Chicago Bears
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Houston Texans
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Seattle Seahawks
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Denver Broncos
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Miami Dolphins
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: New England Patriots
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Philadelphia Eagles
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Tampa Bay Buccaneers
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Tennessee Titans
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Cincinnati Bengals
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Green Bay Packers
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Pittsburgh Steelers
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: New Orleans Saints
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Buffalo Bills
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Atlanta Falcons
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Jacksonville Jaguars
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Los Angeles Rams
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Las Vegas Raiders
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Minnesota Vikings
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Indianapolis Colts
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: top
+          encode:
+            xRef:
+              field: fct_penalties_penalty_yards_total_penalty_yards
+            yRef:
+              field: fct_penalties_penalty_team_total_penalties
+              pivotValues:
+                - field: fct_penalties_penalty_team_name
+                  value: Los Angeles Chargers
+          yAxisIndex: 0
+dashboardSlug: penalties
+slug: penalties-and-yardages
+tableConfig:
+  columnOrder:
+    - fct_penalties_penalty_team_name
+    - fct_penalties_penalty_team_total_penalties
+    - fct_penalties_penalty_yards_total_penalty_yards
+spaceSlug: pmff
+version: 1
+downloadedAt: "2025-02-05T00:32:56.753Z"

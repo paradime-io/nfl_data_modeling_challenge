@@ -1,0 +1,167 @@
+name: The Hard Yards
+description: Yards gained by team
+updatedAt: "2025-02-04T20:34:24.793Z"
+tiles:
+  - x: 0
+    "y": 0
+    h: 8
+    w: 15
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: yards-gained
+  - x: 0
+    "y": 8
+    h: 2
+    w: 36
+    tabUuid: null
+    type: markdown
+    properties:
+      title: ""
+      hideTitle: false
+      content: >-
+        Of the two measures that make up a team's total yards gained, total
+        passing yards are always lkely to be a higher number than total rushing
+        yards. Nonetheless the first two charts below 👇 **Top Passing
+        Percentages** &amp; **Top Rushing Percentages**
+
+        below highlight those teams which have optimised either passing &amp;/or
+        rushing as a percentage of their total yards gained. 
+
+        Then the chart **Win Percentages** 👉 shows for which teams there is any
+        correlation between their effectiveness in passing &amp; rushing on one
+        hand &amp; the percentage of games they win on the other. The Baltimore
+        Ravens are an interesting example. They do not appear in the chart for
+        **Top Passing Percentages** but are number 3 in the chart for **Top
+        Rushing Percentages** and are first in terms of **Win Percentages**.
+  - x: 24
+    "y": 10
+    h: 13
+    w: 12
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: win-loss-table
+  - x: 0
+    "y": 10
+    h: 13
+    w: 12
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: copy-of-yards-gained-1738423184957
+  - x: 21
+    "y": 0
+    h: 8
+    w: 15
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: yardage-differentials
+  - x: 12
+    "y": 10
+    h: 13
+    w: 12
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: copy-of-passing-vs-rushing-percentages-1738448840200
+  - x: 15
+    "y": 0
+    h: 8
+    w: 6
+    tabUuid: null
+    type: markdown
+    properties:
+      title: ""
+      hideTitle: false
+      content: >-
+        NFL is a game of territory. Yards gained by a team are likely to have a
+        bearing on the number of games they win. This dashboard is called The
+        Hard Yards &amp; analyses the relationship between yards won &amp; games
+        won &amp; whether teams can have strategies for winning those extra
+        yards.
+
+
+        #### Total Yards Gained by Team 👈 
+
+        Total yards gained aka total offense is shown by the blue dots whilst
+        the columns below show the numbers of passing yards (orange) and rushing
+        yards (green) that make up the total yards gained for each team.
+
+
+        #### Yardage Differentials 👉
+
+        Yardage differential is the cumulative yardage amount by which a team
+        out-performs or under-performs their opponents.
+filters:
+  metrics: []
+  dimensions:
+    - id: 470b2346-12fc-4cb7-a362-1a9dd00b60d6
+      target:
+        fieldId: fct_team_yards_game_date_month
+        fieldName: game_date_month
+        tableName: fct_team_yards
+      values:
+        - "2023-09-01"
+        - "2024-02-29"
+      disabled: false
+      operator: inBetween
+      tileTargets:
+        1053ed6f-4a2b-40e7-9c93-64e82b1f1807:
+          fieldId: fct_team_yards_game_date_month
+          tableName: fct_team_yards
+        54580ac1-34cd-4082-aa1f-30c93e3d7d8f:
+          fieldId: fct_team_yards_game_date_month
+          tableName: fct_team_yards
+        7088212b-1c58-4922-ac63-89a38e5266f8:
+          fieldId: fct_team_yards_game_date_month
+          tableName: fct_team_yards
+        b3c8e486-e3d5-47f7-9f87-a87b69527035:
+          fieldId: fct_team_yards_game_date_month
+          tableName: fct_team_yards
+        c7e2bf4f-ca22-4715-8cdd-d7c3d77f4967:
+          fieldId: fct_team_yards_game_date_month
+          tableName: fct_team_yards
+    - id: 9ed568b3-3a33-433c-a66c-a1be8ab360ff
+      target:
+        fieldId: fct_team_yards_season_type
+        fieldName: season_type
+        tableName: fct_team_yards
+      values:
+        - POST
+        - REG
+      disabled: false
+      operator: equals
+      tileTargets:
+        1053ed6f-4a2b-40e7-9c93-64e82b1f1807:
+          fieldId: fct_team_yards_season_type
+          tableName: fct_team_yards
+        54580ac1-34cd-4082-aa1f-30c93e3d7d8f:
+          fieldId: fct_team_yards_season_type
+          tableName: fct_team_yards
+        7088212b-1c58-4922-ac63-89a38e5266f8:
+          fieldId: fct_team_yards_season_type
+          tableName: fct_team_yards
+        b3c8e486-e3d5-47f7-9f87-a87b69527035:
+          fieldId: fct_team_yards_season_type
+          tableName: fct_team_yards
+        c7e2bf4f-ca22-4715-8cdd-d7c3d77f4967:
+          fieldId: fct_team_yards_season_type
+          tableName: fct_team_yards
+  tableCalculations: []
+tabs: []
+slug: hard-yards
+spaceSlug: pmff
+version: 1
+downloadedAt: "2025-02-05T00:32:56.867Z"

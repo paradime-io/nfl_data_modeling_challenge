@@ -1,0 +1,106 @@
+name: Most Frequent Offenders
+description: Most Frequent Offenders
+tableName: fct_penalties
+updatedAt: "2025-02-04T17:05:13.440Z"
+metricQuery:
+  exploreName: fct_penalties
+  dimensions:
+    - fct_penalties_penalty_player_name
+    - fct_penalties_penalty_team_name
+  metrics:
+    - fct_penalties_penalty_yards_total_yards_conceded
+    - fct_penalties_penalty_power_of_one_nr_of_penalties
+  filters:
+    metrics:
+      id: 3c670079-0985-45de-91a7-1d3fcad52453
+      and:
+        - id: a2df2388-7bf6-4489-98df-70312ccd33bc
+          target:
+            fieldId: fct_penalties_penalty_power_of_one_nr_of_penalties
+          values:
+            - 10
+          operator: greaterThan
+    dimensions:
+      id: 8cbecaa5-8a30-440a-99e1-6aa6c6134f27
+      and:
+        - id: 84bd4210-1972-413d-89c9-d0640d744a18
+          target:
+            fieldId: fct_penalties_penalty_player_name
+          values:
+            - 1
+          operator: notNull
+          required: false
+  sorts:
+    - fieldId: fct_penalties_penalty_power_of_one_nr_of_penalties
+      descending: false
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics:
+    - name: penalty_yards_total_yards_conceded
+      label: Total Yards Conceded
+      description: "Sum of Penalty yards on the table Fct penalties "
+      uuid: e94a790c-8532-4149-833d-5f4c7fe25b7f
+      sql: ${TABLE}.penalty_yards
+      table: fct_penalties
+      type: sum
+      baseDimensionName: penalty_yards
+      formatOptions:
+        type: default
+        separator: default
+    - name: penalty_power_of_one_nr_of_penalties
+      label: Nr of Penalties
+      description: "Sum of Penalty power of one on the table Fct penalties "
+      uuid: 40439e19-394d-4107-a9c4-95991dd07d8a
+      sql: ${TABLE}.penalty_power_of_one
+      table: fct_penalties
+      type: sum
+      baseDimensionName: penalty_power_of_one
+      formatOptions:
+        type: default
+        separator: default
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: fct_penalties_penalty_player_name
+      yField:
+        - fct_penalties_penalty_power_of_one_nr_of_penalties
+        - fct_penalties_penalty_yards_total_yards_conceded
+      flipAxes: true
+    eChartsConfig:
+      xAxis:
+        - name: Penalised Player
+      series:
+        - type: bar
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_penalties_penalty_player_name
+            yRef:
+              field: fct_penalties_penalty_power_of_one_nr_of_penalties
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_penalties_penalty_player_name
+            yRef:
+              field: fct_penalties_penalty_yards_total_yards_conceded
+          yAxisIndex: 0
+dashboardSlug: penalties
+slug: most-frequent-offenders
+tableConfig:
+  columnOrder:
+    - fct_penalties_penalty_player_name
+    - fct_penalties_penalty_team_name
+    - fct_penalties_penalty_yards_total_yards_conceded
+    - fct_penalties_penalty_power_of_one_nr_of_penalties
+spaceSlug: pmff
+version: 1
+downloadedAt: "2025-02-05T00:32:56.754Z"

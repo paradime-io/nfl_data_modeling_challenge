@@ -1,0 +1,240 @@
+name: Passers and Rushers
+description: Passers and Rushers - Total Offense
+updatedAt: "2025-02-04T17:54:42.040Z"
+tiles:
+  - x: 0
+    "y": 11
+    h: 2
+    w: 36
+    tabUuid: null
+    type: markdown
+    properties:
+      title: ""
+      hideTitle: false
+      content: >-
+        Whatever the mix of passing &amp; rushing in a team's game plan, they
+        will want to be able to measure who are their most effective passers and
+        rushers. This is done on a game-per-game basis in the stacked charts
+        below 👇 **Passer Yards** &amp; **Rusher Yards** where the legends show
+        the names of the players who made the passes or the rushes.
+
+
+        Then the charts on the right 👉 **Top Passers by Position** &amp; **Top
+        Rushers by Position** aggregate the yardages by player &amp; position.
+        Inevitably, quarter-backs dominate the passers chart whilst the rushers
+        chart is more varied, reflecting the need to have pace as a threat
+        across the pitch.
+  - x: 0
+    "y": 25
+    h: 4
+    w: 36
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: stats-detail
+  - x: 13
+    "y": 13
+    h: 12
+    w: 13
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: rusher-yards
+  - x: 0
+    "y": 13
+    h: 12
+    w: 13
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: copy-of-passer-yards-1738602629771
+  - x: 21
+    "y": 2
+    h: 9
+    w: 15
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: copy-of-score-differential-trend-1738597740601
+  - x: 26
+    "y": 18
+    h: 7
+    w: 10
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: copy-of-rusher-yards-1738603166121
+  - x: 0
+    "y": 0
+    h: 2
+    w: 6
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: copy-of-stats-detail-1738600310765
+  - x: 30
+    "y": 0
+    h: 2
+    w: 6
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: copy-of-stats-detail-1738601241708
+  - x: 12
+    "y": 0
+    h: 2
+    w: 6
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: copy-of-stats-detail-1738600587140
+  - x: 24
+    "y": 0
+    h: 2
+    w: 6
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: copy-of-stats-detail-1738601138197
+  - x: 0
+    "y": 2
+    h: 9
+    w: 15
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: score-differential-trend
+  - x: 18
+    "y": 0
+    h: 2
+    w: 6
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: copy-of-stats-detail-1738601016833
+  - x: 6
+    "y": 0
+    h: 2
+    w: 6
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: copy-of-stats-detail-1738600457222
+  - x: 26
+    "y": 13
+    h: 5
+    w: 10
+    tabUuid: null
+    type: saved_chart
+    properties:
+      title: ""
+      hideTitle: false
+      chartSlug: passer-yards
+  - x: 15
+    "y": 2
+    h: 9
+    w: 6
+    tabUuid: null
+    type: markdown
+    properties:
+      title: ""
+      hideTitle: false
+      content: >-
+        Following on from the Hard Yards dashboard, this Passers and Rushers
+        dashboards looks in more detail at the mix of strategies teams have used
+        to win yards. The two charts to the left and right here illustrate how
+        much a side's success in scoring more than the opposition depends on
+        winning the yardage battle.
+
+
+        #### Score Differential Trend 👈 
+
+        A team's score differential is the margin by which they win or lose from
+        game to game shown as a cumulative or running total.
+
+
+        #### Yardage Differential Trend 👉
+
+        A team's yardage differential is the margin by which they win or lose
+        the yardage battle from game to game shown as a cumulative or running
+        total.
+
+
+        The shape of the trends in these charts tend to be very similar, showing
+        the bearing that winning yards has on winning games.
+filters:
+  metrics: []
+  dimensions:
+    - id: c646605c-b823-480f-836d-3e86641f09c0
+      target:
+        fieldId: fct_player_yards_offense_team_name
+        fieldName: offense_team_name
+        tableName: fct_player_yards
+      values:
+        - Baltimore Ravens
+      disabled: false
+      operator: equals
+      tileTargets:
+        3e1d0ec6-f563-4266-9230-03f12414e116:
+          fieldId: fct_team_yards_offense_team_name
+          tableName: fct_team_yards
+        45c9ed18-23a7-443e-87a9-bcaaa146c14e:
+          fieldId: fct_player_yards_offense_team_name
+          tableName: fct_player_yards
+        7d7a7a9d-f448-45ed-89a3-6d2e54d40d12:
+          fieldId: fct_team_yards_offense_team_name
+          tableName: fct_team_yards
+        9c1edd96-4f77-4e1a-8c53-b1c701b27b4c:
+          fieldId: fct_team_yards_offense_team_name
+          tableName: fct_team_yards
+        a5ca3a85-a44e-4da3-96f0-f5d10d1012ad:
+          fieldId: fct_team_yards_offense_team_name
+          tableName: fct_team_yards
+        b1144e1c-6a04-4718-9ea9-5a6e5416f204:
+          fieldId: fct_team_yards_offense_team_name
+          tableName: fct_team_yards
+        ba656b64-8dde-4455-b8e9-d22534d82c7c:
+          fieldId: fct_team_yards_offense_team_name
+          tableName: fct_team_yards
+        bb9b991d-7f09-4bc5-b360-55fc7bc01035:
+          fieldId: fct_team_yards_offense_team_name
+          tableName: fct_team_yards
+        ce4d9d21-d120-4806-a197-54b791241117:
+          fieldId: fct_team_yards_offense_team_name
+          tableName: fct_team_yards
+        cf623e5c-05cf-4a0e-bd05-6f147816a663:
+          fieldId: fct_team_yards_offense_team_name
+          tableName: fct_team_yards
+        ed3587ac-1949-4bad-bbc9-ac4411088a82:
+          fieldId: fct_player_yards_offense_team_name
+          tableName: fct_player_yards
+  tableCalculations: []
+tabs: []
+slug: passers-and-rushers
+spaceSlug: shared
+version: 1
+downloadedAt: "2025-02-05T00:32:56.867Z"

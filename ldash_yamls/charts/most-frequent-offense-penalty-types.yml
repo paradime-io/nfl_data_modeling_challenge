@@ -1,0 +1,70 @@
+name: Most Frequent Offense Penalty Types
+description: Most Frequent Offense Penalty Types
+tableName: fct_penalties
+updatedAt: "2025-02-03T22:54:29.283Z"
+metricQuery:
+  exploreName: fct_penalties
+  dimensions:
+    - fct_penalties_penalty_type
+  metrics:
+    - fct_penalties_offense_penalty_total_offense_penalties
+  filters:
+    dimensions:
+      id: e4d32fe3-ce9e-42a0-8757-7b65a8e433a3
+      and:
+        - id: a2e385d4-8c2c-486f-b1cd-975e8b21733f
+          target:
+            fieldId: fct_penalties_offense_penalty
+          values:
+            - "0"
+          operator: notEquals
+          required: false
+  sorts:
+    - fieldId: fct_penalties_offense_penalty_total_offense_penalties
+      descending: false
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics:
+    - name: offense_penalty_total_offense_penalties
+      label: Total Offense Penalties
+      description: "Sum of Offense penalty on the table Fct penalties "
+      uuid: 5a9d9b23-5fb9-47f0-ad4a-82126263dc72
+      sql: ${TABLE}.offense_penalty
+      table: fct_penalties
+      type: sum
+      baseDimensionName: offense_penalty
+      formatOptions:
+        type: default
+        separator: default
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: fct_penalties_penalty_type
+      yField:
+        - fct_penalties_offense_penalty_total_offense_penalties
+      flipAxes: true
+    eChartsConfig:
+      series:
+        - type: bar
+          color: "#ee6666"
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_penalties_penalty_type
+            yRef:
+              field: fct_penalties_offense_penalty_total_offense_penalties
+          yAxisIndex: 0
+dashboardSlug: penalties
+slug: most-frequent-offense-penalty-types
+tableConfig:
+  columnOrder:
+    - fct_penalties_penalty_type
+    - fct_penalties_offense_penalty_total_offense_penalties
+spaceSlug: pmff
+version: 1
+downloadedAt: "2025-02-05T00:32:56.753Z"

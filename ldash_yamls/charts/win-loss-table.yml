@@ -1,0 +1,170 @@
+name: Win Percentages
+description: Win Percentage bar
+tableName: fct_team_yards
+updatedAt: "2025-02-03T13:01:52.516Z"
+metricQuery:
+  exploreName: fct_team_yards
+  dimensions:
+    - fct_team_yards_offense_team_name
+  metrics:
+    - fct_team_yards_total_yards_gained_total_yards_gained
+    - fct_team_yards_opponent_yards_gained_total_opponent_yards_gained
+    - fct_team_yards_yards_win_total_yards_wins
+    - fct_team_yards_yards_loss_total_yards_losses
+    - fct_team_yards_home_win_total_home_wins
+    - fct_team_yards_home_loss_total_home_losses
+    - fct_team_yards_away_win_total_away_wins
+    - fct_team_yards_away_loss_total_away_losses
+  filters: {}
+  sorts:
+    - fieldId: win_percentage_1
+      descending: false
+  limit: 500
+  metricOverrides: {}
+  tableCalculations:
+    - name: win_percentage_1
+      displayName: Win Percentage
+      sql: |
+        (
+        ${fct_team_yards.home_win_total_home_wins} +
+        ${fct_team_yards.away_win_total_away_wins}
+        ) / (
+        ${fct_team_yards.home_win_total_home_wins} +
+        ${fct_team_yards.home_loss_total_home_losses} +
+        ${fct_team_yards.away_win_total_away_wins} +
+        ${fct_team_yards.away_loss_total_away_losses}
+        )
+      format:
+        type: percent
+        round: 2
+        currency: USD
+        separator: default
+      type: number
+  additionalMetrics:
+    - name: yards_win_total_yards_wins
+      label: Total Yards Wins
+      description: "Sum of Yards win on the table Fct team yards "
+      uuid: bb1fb530-6a2b-48e1-a5c9-055dbb799757
+      sql: ${TABLE}.yards_win
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: yards_win
+      formatOptions:
+        type: default
+        separator: default
+    - name: total_yards_gained_total_yards_gained
+      label: Total yards gained
+      description: "Sum of Total yards gained on the table Fct team yards "
+      uuid: 2d50185d-ecee-4645-aac8-42147c8ea29e
+      sql: ${TABLE}.total_yards_gained
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: total_yards_gained
+      formatOptions:
+        type: default
+        separator: default
+    - name: opponent_yards_gained_total_opponent_yards_gained
+      label: Total Opponent yards gained
+      description: "Sum of Opponent yards gained on the table Fct team yards "
+      uuid: 830aaa35-fc0b-41af-bd61-d0782ca7e8af
+      sql: ${TABLE}.opponent_yards_gained
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: opponent_yards_gained
+      formatOptions:
+        type: default
+        separator: default
+    - name: yards_loss_total_yards_losses
+      label: Total Yards Losses
+      description: "Sum of Yards loss on the table Fct team yards "
+      uuid: 44532b26-37ad-4760-a605-578c2b66e345
+      sql: ${TABLE}.yards_loss
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: yards_loss
+      formatOptions:
+        type: default
+        separator: default
+    - name: home_win_total_home_wins
+      label: Total Home Wins
+      description: "Sum of Home win on the table Fct team yards "
+      uuid: 95ac11cc-acfb-40f8-929d-75add6935e52
+      sql: ${TABLE}.home_win
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: home_win
+      formatOptions:
+        type: default
+        separator: default
+    - name: home_loss_total_home_losses
+      label: Total Home Losses
+      description: "Sum of Home loss on the table Fct team yards "
+      uuid: 8e703088-58a1-4f7c-a4ad-0245c26108c3
+      sql: ${TABLE}.home_loss
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: home_loss
+      formatOptions:
+        type: default
+        separator: default
+    - name: away_win_total_away_wins
+      label: Total Away Wins
+      description: "Sum of Away win on the table Fct team yards "
+      uuid: cf002198-6dce-4463-8410-2c657cd780aa
+      sql: ${TABLE}.away_win
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: away_win
+      formatOptions:
+        type: default
+        separator: default
+    - name: away_loss_total_away_losses
+      label: Total Away Losses
+      description: "Sum of Away loss on the table Fct team yards "
+      uuid: a5dd0338-3fbf-4e2b-9621-152591439cc7
+      sql: ${TABLE}.away_loss
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: away_loss
+      formatOptions:
+        type: default
+        separator: default
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: fct_team_yards_offense_team_name
+      yField:
+        - win_percentage_1
+      flipAxes: true
+    eChartsConfig:
+      series:
+        - type: bar
+          color: "#73c0de"
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_offense_team_name
+            yRef:
+              field: win_percentage_1
+          yAxisIndex: 0
+dashboardSlug: hard-yards
+slug: win-loss-table
+tableConfig:
+  columnOrder:
+    - fct_team_yards_offense_team_name
+    - fct_team_yards_total_yards_gained_total_yards_gained
+    - fct_team_yards_opponent_yards_gained_total_opponent_yards_gained
+    - fct_team_yards_yards_win_total_yards_wins
+    - fct_team_yards_yards_loss_total_yards_losses
+    - fct_team_yards_home_win_total_home_wins
+    - fct_team_yards_home_loss_total_home_losses
+    - fct_team_yards_away_win_total_away_wins
+    - fct_team_yards_away_loss_total_away_losses
+    - win_percentage_1
+spaceSlug: pmff
+version: 1
+downloadedAt: "2025-02-05T00:32:56.754Z"

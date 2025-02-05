@@ -1,0 +1,82 @@
+name: Red Zone Penalties
+description: Red Zone Penalties bar
+tableName: fct_penalties
+updatedAt: "2025-02-04T17:33:58.655Z"
+metricQuery:
+  exploreName: fct_penalties
+  dimensions:
+    - fct_penalties_penalty_team_name
+    - fct_penalties_in_red_zone
+  metrics:
+    - fct_penalties_penalty_team_name_nr_of_penalties
+  filters:
+    metrics:
+      id: 59da5a1b-a551-4115-94dc-0260fe1dcb9c
+      and:
+        - id: 5c63fcbd-3705-4e62-91de-ce7894363713
+          target:
+            fieldId: fct_penalties_penalty_team_name_nr_of_penalties
+          values:
+            - 15
+          operator: greaterThan
+    dimensions:
+      id: 59166bb6-d5a0-4584-8c05-33ba4674f70d
+      and:
+        - id: c145523c-a4ec-4081-88d9-c855be7e8de8
+          target:
+            fieldId: fct_penalties_in_red_zone
+          values:
+            - true
+          operator: equals
+          required: false
+  sorts:
+    - fieldId: fct_penalties_penalty_team_name_nr_of_penalties
+      descending: false
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics:
+    - name: penalty_team_name_nr_of_penalties
+      label: Nr of Penalties
+      description: "Count of Penalty team name on the table Fct penalties "
+      uuid: 63f064d3-330b-4e58-9a97-1dd1ae90c3a4
+      sql: ${TABLE}.penalty_team_name
+      table: fct_penalties
+      type: count
+      baseDimensionName: penalty_team_name
+      formatOptions:
+        type: default
+        separator: default
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: fct_penalties_penalty_team_name
+      yField:
+        - fct_penalties_penalty_team_name_nr_of_penalties
+      flipAxes: true
+    eChartsConfig:
+      series:
+        - type: bar
+          color: "#73c0de"
+          label:
+            show: true
+            position: right
+          stack: stack-all-series
+          encode:
+            xRef:
+              field: fct_penalties_penalty_team_name
+            yRef:
+              field: fct_penalties_penalty_team_name_nr_of_penalties
+          yAxisIndex: 0
+dashboardSlug: penalties
+slug: red-zone-penalties
+tableConfig:
+  columnOrder:
+    - fct_penalties_penalty_team_name
+    - fct_penalties_in_red_zone
+    - fct_penalties_penalty_team_name_nr_of_penalties
+spaceSlug: pmff
+version: 1
+downloadedAt: "2025-02-05T00:32:56.754Z"

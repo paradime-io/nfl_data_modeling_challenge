@@ -1,0 +1,167 @@
+name: Games Played
+description: Games Played BV
+tableName: fct_team_yards
+updatedAt: "2025-02-03T16:35:34.013Z"
+metricQuery:
+  exploreName: fct_team_yards
+  dimensions:
+    - fct_team_yards_offense_team_name
+  metrics:
+    - fct_team_yards_games_played_games_played
+    - fct_team_yards_home_win_home_wins
+    - fct_team_yards_away_win_away_wins
+    - fct_team_yards_offense_score_total_offense_score
+    - fct_team_yards_opponent_score_total_opponent_score
+    - fct_team_yards_total_yards_gained_total_yards_gained
+    - fct_team_yards_opponent_yards_gained_opponent_yards_gained
+    - fct_team_yards_total_passing_yards_total_passing_yards
+  filters: {}
+  sorts:
+    - fieldId: fct_team_yards_offense_team_name
+      descending: false
+  limit: 500
+  metricOverrides: {}
+  tableCalculations:
+    - name: win_percentage
+      displayName: Win Percentage
+      sql: |-
+        (
+        ${fct_team_yards.home_win_home_wins} +
+        ${fct_team_yards.away_win_away_wins}
+        ) / (
+        ${fct_team_yards.games_played_games_played}
+        )
+      format:
+        type: percent
+        round: 2
+        currency: USD
+        separator: default
+      type: number
+    - name: passing_of_total_yards
+      displayName: Passing % of Total Yards
+      sql: |-
+
+        ${fct_team_yards.total_passing_yards_total_passing_yards} /
+        ${fct_team_yards.total_yards_gained_total_yards_gained}
+      format:
+        type: percent
+        round: 0
+        currency: USD
+        separator: default
+      type: number
+  additionalMetrics:
+    - name: games_played_games_played
+      label: Games played
+      description: "Sum of Games played on the table Fct team yards "
+      uuid: d1df7e43-29eb-47b4-986a-f365a10f6e18
+      sql: ${TABLE}.games_played
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: games_played
+      formatOptions:
+        type: default
+        separator: default
+    - name: away_win_away_wins
+      label: Away Wins
+      description: "Sum of Away wins on the table Fct team yards "
+      uuid: beea6973-47a5-4fcd-8e5c-073179295f1c
+      sql: ${TABLE}.away_win
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: away_win
+      formatOptions:
+        type: default
+        separator: default
+    - name: home_win_home_wins
+      label: Home Wins
+      description: "Sum of Home Wins on the table Fct team yards "
+      uuid: b218774e-e72c-436d-a67e-454d87cff0af
+      sql: ${TABLE}.home_win
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: home_win
+      formatOptions:
+        type: default
+        separator: default
+    - name: offense_score_total_offense_score
+      label: Total Offense Score
+      description: "Sum of Total Offense score on the table Fct team yards "
+      uuid: 817be414-fdb0-41ab-873c-db439f45c045
+      sql: ${TABLE}.offense_score
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: offense_score
+      formatOptions:
+        type: default
+        separator: default
+    - name: opponent_score_total_opponent_score
+      label: Total Opponent Score
+      description: "Sum of Opponent score on the table Fct team yards "
+      uuid: a478ef09-afa5-4fa3-92ba-b26bb568ad70
+      sql: ${TABLE}.opponent_score
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: opponent_score
+      formatOptions:
+        type: default
+        separator: default
+    - name: total_yards_gained_total_yards_gained
+      label: Total Yards Gained
+      description: "Sum of Total yards gained on the table Fct team yards "
+      uuid: dbd9461c-54c0-4fc8-a891-d9f4b18ad99f
+      sql: ${TABLE}.total_yards_gained
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: total_yards_gained
+      formatOptions:
+        type: default
+        separator: default
+    - name: opponent_yards_gained_opponent_yards_gained
+      label: Opponent Yards Gained
+      description: "Sum of Opponent yards gained on the table Fct team yards "
+      uuid: 4b5003d3-4dc8-4fd0-88c0-be8b98f9b6ef
+      sql: ${TABLE}.opponent_yards_gained
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: opponent_yards_gained
+      formatOptions:
+        type: default
+        separator: default
+    - name: total_passing_yards_total_passing_yards
+      label: Total Passing Yards
+      description: "Sum of Total passing yards on the table Fct team yards "
+      uuid: 1d613892-4159-419c-bb7a-73a771b474b9
+      sql: ${TABLE}.total_passing_yards
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: total_passing_yards
+      formatOptions:
+        type: default
+        separator: default
+  customDimensions: []
+chartConfig:
+  type: big_number
+  config:
+    flipColors: false
+    selectedField: fct_team_yards_games_played_games_played
+    showComparison: false
+    comparisonFormat: raw
+    showBigNumberLabel: false
+dashboardSlug: passers-and-rushers
+slug: copy-of-stats-detail-1738600457222
+tableConfig:
+  columnOrder:
+    - fct_team_yards_offense_team_name
+    - fct_team_yards_games_played_games_played
+    - fct_team_yards_home_win_home_wins
+    - fct_team_yards_away_win_away_wins
+    - win_percentage
+    - fct_team_yards_offense_score_total_offense_score
+    - fct_team_yards_opponent_score_total_opponent_score
+    - fct_team_yards_total_yards_gained_total_yards_gained
+    - fct_team_yards_opponent_yards_gained_opponent_yards_gained
+    - fct_team_yards_total_passing_yards_total_passing_yards
+    - passing_of_total_yards
+spaceSlug: shared
+version: 1
+downloadedAt: "2025-02-05T00:32:56.753Z"

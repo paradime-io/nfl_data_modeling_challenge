@@ -13,8 +13,16 @@ Thank you for letting me take part in the **dbt™ Data Modeling Challenge - Fan
 6. [Conclusions](#conclusions)
 
 ## Introduction
-[Brief overview: What you aimed to achieve and why it matters]
-[Include link to Lightdash dashboard]
+The broad goal here was to deliver insights on the dynamics, patterns and strategies of NFL with immediately meaningful visualisations.
+
+There are three dashboards focusing on different aspects of NFL:
+- #The Hard Yards# - in a territory-based sport, what teams and strategies are most successful?
+- #Passers and Rushers# - looks in more detail and on a game-by-game basis at how effective the different teams and players have been
+- #Penalties# - which teams have lost discipline and let penalties have a bearing on results?
+
+These dashboards were all built in Lightdash run locally in a docker image so no links available, but they can all be seen in the demo video available at https://vimeo.com/1053564798?share=copy, password 'paradime'.
+
+Also, as Lightdash now offers a dashboards-as-code facility to download the yaml definitions of all dashboards and charts in a project, these have been provided in the ldash_yamls folder. 
 
 ## Data Sources
 - [Fantasy Football Data (Snowflake)](... link or details ...)

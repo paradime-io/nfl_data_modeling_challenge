@@ -1,0 +1,492 @@
+name: Yardage Differential Trend
+description: Yardage Differential Trend
+tableName: fct_team_yards
+updatedAt: "2025-02-03T16:02:03.443Z"
+metricQuery:
+  exploreName: fct_team_yards
+  dimensions:
+    - fct_team_yards_offense_team_name
+    - fct_team_yards_game_date_day
+  metrics:
+    - fct_team_yards_total_yards_gained_total_yards_gained
+    - fct_team_yards_opponent_yards_gained_opponent_yards_gained
+    - fct_team_yards_yards_differential_yards_differential
+  filters: {}
+  sorts:
+    - fieldId: fct_team_yards_offense_team_name
+      descending: false
+    - fieldId: fct_team_yards_game_date_day
+      descending: false
+  limit: 500
+  metricOverrides: {}
+  tableCalculations:
+    - name: running_total_of_yards_differential_1
+      displayName: Running total of Yards differential
+      sql: >
+        SUM(${fct_team_yards.yards_differential_yards_differential}) OVER(ORDER
+        BY "fct_team_yards_offense_team_name" ASC,
+        "fct_team_yards_game_date_day" ASC  ROWS BETWEEN UNBOUNDED PRECEDING AND
+        CURRENT ROW)
+      format:
+        type: number
+        round: 0
+        currency: USD
+        separator: default
+      type: number
+  additionalMetrics:
+    - name: offense_score_offense_score
+      label: Offense score
+      description: "Sum of Offense score on the table Fct team yards "
+      uuid: 9233f4ee-32e0-420d-95c2-566c170da7df
+      sql: ${TABLE}.offense_score
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: offense_score
+      formatOptions:
+        type: default
+        separator: default
+    - name: opponent_score_opponent_score
+      label: Opponent score
+      description: "Sum of Opponent score on the table Fct team yards "
+      uuid: bfcd67c5-ab11-4c26-89d7-87cf2be476bb
+      sql: ${TABLE}.opponent_score
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: opponent_score
+      formatOptions:
+        type: default
+        separator: default
+    - name: score_differential_score_differential
+      label: Score differential
+      description: "Sum of Score differential on the table Fct team yards "
+      uuid: 7f1b0cf9-c5fe-43bd-84cb-b1b152429e16
+      sql: ${TABLE}.score_differential
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: score_differential
+      formatOptions:
+        type: default
+        separator: default
+    - name: total_yards_gained_total_yards_gained
+      label: Total yards gained
+      description: "Sum of Total yards gained on the table Fct team yards "
+      uuid: c82aa176-20ad-4623-bdae-1d98df1ef122
+      sql: ${TABLE}.total_yards_gained
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: total_yards_gained
+      formatOptions:
+        type: default
+        separator: default
+    - name: opponent_yards_gained_opponent_yards_gained
+      label: Opponent yards gained
+      description: "Sum of Opponent yards gained on the table Fct team yards "
+      uuid: f275b003-6f13-4ed2-99d6-58a32b505737
+      sql: ${TABLE}.opponent_yards_gained
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: opponent_yards_gained
+      formatOptions:
+        type: default
+        separator: default
+    - name: yards_differential_yards_differential
+      label: Yards differential
+      description: "Sum of Yards differential on the table Fct team yards "
+      uuid: 30e411f4-6a4f-4e80-acbe-fbad26518a9e
+      sql: ${TABLE}.yards_differential
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: yards_differential
+      formatOptions:
+        type: default
+        separator: default
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: fct_team_yards_game_date_day
+      yField:
+        - running_total_of_yards_differential_1
+      flipAxes: false
+    eChartsConfig:
+      legend:
+        show: false
+      series:
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Arizona Cardinals
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Atlanta Falcons
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Baltimore Ravens
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Buffalo Bills
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Carolina Panthers
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Chicago Bears
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Cincinnati Bengals
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Cleveland Browns
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Dallas Cowboys
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Denver Broncos
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Detroit Lions
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Green Bay Packers
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Houston Texans
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Indianapolis Colts
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Jacksonville Jaguars
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Kansas City Chiefs
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Las Vegas Raiders
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Los Angeles Chargers
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Los Angeles Rams
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Miami Dolphins
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Minnesota Vikings
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: New England Patriots
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: New Orleans Saints
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: New York Giants
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: New York Jets
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Philadelphia Eagles
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: Pittsburgh Steelers
+          yAxisIndex: 0
+        - type: scatter
+          label:
+            show: true
+            position: right
+          encode:
+            xRef:
+              field: fct_team_yards_game_date_day
+            yRef:
+              field: running_total_of_yards_differential_1
+              pivotValues:
+                - field: fct_team_yards_offense_team_name
+                  value: San Francisco 49ers
+          yAxisIndex: 0
+dashboardSlug: passers-and-rushers
+slug: copy-of-score-differential-trend-1738597740601
+tableConfig:
+  columnOrder:
+    - fct_team_yards_offense_team_name
+    - fct_team_yards_game_date_day
+    - fct_team_yards_total_yards_gained_total_yards_gained
+    - fct_team_yards_opponent_yards_gained_opponent_yards_gained
+    - fct_team_yards_yards_differential_yards_differential
+    - running_total_of_yards_differential_1
+spaceSlug: shared
+version: 1
+downloadedAt: "2025-02-05T00:32:56.754Z"

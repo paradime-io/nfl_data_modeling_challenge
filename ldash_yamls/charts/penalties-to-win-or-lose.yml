@@ -1,0 +1,85 @@
+name: Penalties to Win or Lose
+description: Penalties to Win or Lose
+tableName: fct_penalties
+updatedAt: "2025-02-03T22:41:49.700Z"
+metricQuery:
+  exploreName: fct_penalties
+  dimensions:
+    - fct_penalties_penalty_team_name
+  metrics:
+    - fct_penalties_penalty_team_win_total_penalties_in_a_win
+    - fct_penalties_penalty_team_loss_total_penalties_in_a_loss
+  filters: {}
+  sorts:
+    - fieldId: fct_penalties_penalty_team_name
+      descending: false
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics:
+    - name: penalty_team_win_total_penalties_in_a_win
+      label: Total Penalties in a win
+      description: "Sum of Penalty team win on the table Fct penalties "
+      uuid: d0761925-100c-404b-b1a5-03bfdf7d40a8
+      sql: ${TABLE}.penalty_team_win
+      table: fct_penalties
+      type: sum
+      baseDimensionName: penalty_team_win
+      formatOptions:
+        type: default
+        separator: default
+    - name: penalty_team_loss_total_penalties_in_a_loss
+      label: Total Penalties in a loss
+      description: "Sum of Penalty team loss on the table Fct penalties "
+      uuid: 2bf0339a-535f-46a9-a6eb-35e10be48e80
+      sql: ${TABLE}.penalty_team_loss
+      table: fct_penalties
+      type: sum
+      baseDimensionName: penalty_team_loss
+      formatOptions:
+        type: default
+        separator: default
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: fct_penalties_penalty_team_name
+      yField:
+        - fct_penalties_penalty_team_win_total_penalties_in_a_win
+        - fct_penalties_penalty_team_loss_total_penalties_in_a_loss
+      flipAxes: false
+    eChartsConfig:
+      series:
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: stack-all-series
+          encode:
+            xRef:
+              field: fct_penalties_penalty_team_name
+            yRef:
+              field: fct_penalties_penalty_team_win_total_penalties_in_a_win
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: stack-all-series
+          encode:
+            xRef:
+              field: fct_penalties_penalty_team_name
+            yRef:
+              field: fct_penalties_penalty_team_loss_total_penalties_in_a_loss
+          yAxisIndex: 0
+dashboardSlug: penalties
+slug: penalties-to-win-or-lose
+tableConfig:
+  columnOrder:
+    - fct_penalties_penalty_team_name
+    - fct_penalties_penalty_team_win_total_penalties_in_a_win
+    - fct_penalties_penalty_team_loss_total_penalties_in_a_loss
+spaceSlug: pmff
+version: 1
+downloadedAt: "2025-02-05T00:32:56.753Z"

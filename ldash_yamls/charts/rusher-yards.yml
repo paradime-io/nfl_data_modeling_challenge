@@ -1,0 +1,2809 @@
+name: Rusher Yards
+description: Rusher Yards stacked bar
+tableName: fct_player_yards
+updatedAt: "2025-02-03T13:19:24.724Z"
+metricQuery:
+  exploreName: fct_player_yards
+  dimensions:
+    - fct_player_yards_game_details
+    - fct_player_yards_game_date_day
+    - fct_player_yards_rusher_player_name
+  metrics:
+    - fct_player_yards_total_rushing_yards_total_rushing_yards
+  filters:
+    dimensions:
+      id: 180e0c0a-80d1-4e83-8bf0-aab62beef5af
+      and:
+        - id: e6b0c18a-44ca-4d6d-98fc-9dec91321894
+          target:
+            fieldId: fct_player_yards_rusher_player_name
+          values:
+            - 1
+          operator: notNull
+          required: false
+  sorts:
+    - fieldId: fct_player_yards_game_date_day
+      descending: false
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics:
+    - name: total_rushing_yards_total_rushing_yards
+      label: Total rushing yards
+      description: "Sum of Total rushing yards on the table Fct player yards "
+      uuid: 705bc7e2-323b-4de5-975a-180ea195303c
+      sql: ${TABLE}.total_rushing_yards
+      table: fct_player_yards
+      type: sum
+      baseDimensionName: total_rushing_yards
+      formatOptions:
+        type: default
+        separator: default
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: fct_player_yards_game_details
+      yField:
+        - fct_player_yards_total_rushing_yards_total_rushing_yards
+      flipAxes: true
+    eChartsConfig:
+      legend:
+        show: true
+      series:
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: B.Robinson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: null
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Allgeier
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: K.Ingram
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Jones
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Conner
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Ridder
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Dobbs
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: R.Moore
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: E.Demercado
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Hill
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: G.Edwards
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: L.Jackson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Burrow
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Williams
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Mixon
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Prescott
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Pollard
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: R.Dowdle
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: H.Luepke
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: C.Lamb
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: M.Stafford
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: K.Williams
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Jones
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: M.Breida
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: S.Barkley
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Mason
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Samuel
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: C.McCaffrey
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: G.Smith
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: K.Walker
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: Z.Charbonnet
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: L.Shenault
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: B.Young
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: C.Hubbard
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: M.Sanders
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Love
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: A.Dillon
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: P.Taylor
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: C.Stroud
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Pierce
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Sermon
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: G.Minshew
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: A.Mattison
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: C.Akers
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Williams
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Carr
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Hill
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: C.Edmonds
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: R.White
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: B.Mayfield
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: C.Rodriguez
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: A.Gibson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: S.Howell
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: C.Samuel
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: Z.Flowers
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Watson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Ford
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: K.Hunt
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: H.Bryant
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: C.Reynolds
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Gibbs
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Dobbins
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Singletary
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: N.Brown
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Ogunbowale
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Cook
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: Z.Moss
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: K.Drake
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: M.Gordon
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: C.Edwards-Helaire
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: I.Pacheco
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: P.Mahomes
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: P.Nacua
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Achane
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: C.Brooks
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Tagovailoa
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: C.Austin
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Warren
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: N.Harris
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Huntley
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Cook
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Allen
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: L.Murray
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: R.Wilson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.McLaughlin
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: S.Perine
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: M.Mims
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Lawrence
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Agnew
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Etienne
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Harris
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Bigsby
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Garoppolo
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Jacobs
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Tucker
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: Z.White
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: R.Mostert
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: B.Berrios
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: E.Elliott
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Douglas
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Taylor
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: Z.Wilson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Harty
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: K.Turpin
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: A.Jones
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: A.Beck
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: K.Cousins
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: A.Thielen
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Fields
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: K.Herbert
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: V.Jones
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: R.Johnson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Scott
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Foreman
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: C.Kmet
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Goff
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Montgomery
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Reed
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: S.Clifford
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: R.Rice
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: K.Toney
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: S.Moore
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Reeves-Maybin
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: K.Gainwell
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Hurts
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: R.Tannehill
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: R.Jarrett
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Johnson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Henry
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Chandler
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: K.Allen
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: E.Hull
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: R.Stevenson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: R.Shaheed
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: S.Ahmed
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Funk
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: M.Jones
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: A.Ekeler
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: G.Everett
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: E.Mitchell
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: A.Richardson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: B.Scott
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Vaughn
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Herbert
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: K.Pickett
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Burks
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Dallas
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: S.Tucker
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Chase
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Kelley
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: E.Ezukanma
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Swift
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: B.Purdy
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: N.Chubb
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: M.Brown
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Jackson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: G.Brightwell
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: E.Moore
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Spears
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Montgomery
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: C.Evans
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: R.Penny
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Duvernay
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Waddle
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: M.Burton
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: K.Raymond
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: I.Spiller
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.McKinnon
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: T.Atwell
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: M.Williams
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Davis
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: B.Skowronek
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: C.Brown
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: E.Dotson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: A.Davis
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: P.Hendershot
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: D.Thompkins
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: P.Strong
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: K.Juszczyk
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: K.Pitts
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: A.St. Brown
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: J.Cabinda
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: A.Ingold
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: K.Nixon
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: Z.Knight
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: K.Miller
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: N.Bawden
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: G.Davis
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: A.Dalton
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: M.Goodwin
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: V.Jefferson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: X.Gipson
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: A.Prentice
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: L.Thomas
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_rushing_yards_total_rushing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_game_details
+            yRef:
+              field: fct_player_yards_total_rushing_yards_total_rushing_yards
+              pivotValues:
+                - field: fct_player_yards_rusher_player_name
+                  value: E.Turner
+          yAxisIndex: 0
+dashboardSlug: passers-and-rushers
+slug: rusher-yards
+tableConfig:
+  columnOrder:
+    - fct_player_yards_game_details
+    - fct_player_yards_game_date_day
+    - fct_player_yards_rusher_player_name
+    - fct_player_yards_total_rushing_yards_total_rushing_yards
+spaceSlug: shared
+version: 1
+downloadedAt: "2025-02-05T00:32:56.754Z"

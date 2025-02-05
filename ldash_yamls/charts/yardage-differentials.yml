@@ -1,0 +1,56 @@
+name: Yardage Differentials
+description: Yardage Differentials by team
+tableName: fct_team_yards
+updatedAt: "2025-02-03T12:59:06.939Z"
+metricQuery:
+  exploreName: fct_team_yards
+  dimensions:
+    - fct_team_yards_offense_team_name
+  metrics:
+    - fct_team_yards_yards_differential_yards_differential
+  filters: {}
+  sorts: []
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics:
+    - name: yards_differential_yards_differential
+      label: Yards differential
+      description: "Sum of Yards differential on the table Fct team yards "
+      uuid: 74ce8b96-9e69-482b-a614-45439eb148f7
+      sql: ${TABLE}.yards_differential
+      table: fct_team_yards
+      type: sum
+      baseDimensionName: yards_differential
+      formatOptions:
+        type: default
+        separator: default
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: fct_team_yards_offense_team_name
+      yField:
+        - fct_team_yards_yards_differential_yards_differential
+    eChartsConfig:
+      series:
+        - type: bar
+          label:
+            show: true
+            position: inside
+          encode:
+            xRef:
+              field: fct_team_yards_offense_team_name
+            yRef:
+              field: fct_team_yards_yards_differential_yards_differential
+          yAxisIndex: 0
+dashboardSlug: hard-yards
+slug: yardage-differentials
+tableConfig:
+  columnOrder:
+    - fct_team_yards_offense_team_name
+    - fct_team_yards_yards_differential_yards_differential
+spaceSlug: pmff
+version: 1
+downloadedAt: "2025-02-05T00:32:56.753Z"

@@ -1,0 +1,146 @@
+name: Top Passers by Position
+description: Top Passers by Position stacked bar
+tableName: fct_player_yards
+updatedAt: "2025-02-03T17:18:22.660Z"
+metricQuery:
+  exploreName: fct_player_yards
+  dimensions:
+    - fct_player_yards_player_display_name
+    - fct_player_yards_position
+  metrics:
+    - fct_player_yards_total_passing_yards_total_passing_yards
+  filters:
+    dimensions:
+      id: 1b5a7777-4791-4b4f-8cc1-6af689db9fe1
+      and:
+        - id: 6a7bd08e-e11b-4bc9-ae12-1c1cce960bfb
+          target:
+            fieldId: fct_player_yards_total_passing_yards
+          values:
+            - 1
+          operator: notNull
+          required: false
+  sorts:
+    - fieldId: fct_player_yards_total_passing_yards_total_passing_yards
+      descending: false
+  limit: 500
+  metricOverrides: {}
+  tableCalculations: []
+  additionalMetrics:
+    - name: total_pass_completions_total_pass_completions
+      label: Total pass completions
+      description: "Sum of Total pass completions on the table Fct player yards "
+      uuid: 9895fd77-21d0-45d0-9964-79516548c016
+      sql: ${TABLE}.total_pass_completions
+      table: fct_player_yards
+      type: sum
+      baseDimensionName: total_pass_completions
+      formatOptions:
+        type: default
+        separator: default
+    - name: total_passing_yards_total_passing_yards
+      label: Total passing yards
+      description: "Sum of Total passing yards on the table Fct player yards "
+      uuid: c9278e5c-45ca-40e4-a8e9-d3d324542aa3
+      sql: ${TABLE}.total_passing_yards
+      table: fct_player_yards
+      type: sum
+      baseDimensionName: total_passing_yards
+      formatOptions:
+        type: default
+        separator: default
+  customDimensions: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: fct_player_yards_player_display_name
+      yField:
+        - fct_player_yards_total_passing_yards_total_passing_yards
+      flipAxes: true
+    eChartsConfig:
+      legend:
+        show: true
+        type: plain
+        orient: horizontal
+      series:
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_player_display_name
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_position
+                  value: WR
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_player_display_name
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_position
+                  value: QB
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_player_display_name
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_position
+                  value: RB
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_player_display_name
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_position
+                  value: P
+          yAxisIndex: 0
+        - type: bar
+          label:
+            show: true
+            position: inside
+          stack: fct_player_yards_total_passing_yards_total_passing_yards
+          encode:
+            xRef:
+              field: fct_player_yards_player_display_name
+            yRef:
+              field: fct_player_yards_total_passing_yards_total_passing_yards
+              pivotValues:
+                - field: fct_player_yards_position
+                  value: OLB
+          yAxisIndex: 0
+dashboardSlug: passers-and-rushers
+slug: passer-yards
+tableConfig:
+  columnOrder:
+    - fct_player_yards_player_display_name
+    - fct_player_yards_position
+    - fct_player_yards_total_passing_yards_total_passing_yards
+spaceSlug: shared
+version: 1
+downloadedAt: "2025-02-05T00:32:56.754Z"
