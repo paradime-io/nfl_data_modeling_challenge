@@ -1,7 +1,5 @@
 # dbt™ Data Modeling Challenge - Fantasy Football Edition
-<p align=center> 
 # Submission by Peter Newall, Feb 4th 2025 
-</p>
 
 Thank you for letting me take part in the **dbt™ Data Modeling Challenge - Fantasy Football Edition!** README's are an important part of everybody's work in GitHub but, if you want to go straight to a video of my Lightdash dashboards, click on https://vimeo.com/1053564798?share=copy and the password is 'paradime'.
 
@@ -72,7 +70,15 @@ the offense or the defense team.
 ![fct_penalties DAG](images/fct_player_yards.png)
 
 ## Visualizations
-[Include screenshots or links to Lightdash dashboards]
+For each dashboard, there are 3 screenshots - one of the entire dashboard and one each of the upper & lower sections where the commentary
+will be more easily read.
+
+#The Hard Yards
+![Hard Yards All](images/hard_yards_all.png)
+
+![Hard Yards Upper](images/hard_yards_upper.png)
+
+![Hard Yards Lower](images/hard_yards_lower.png)
 
 ## Insights
 [Detail your findings, supported by data and visuals]
