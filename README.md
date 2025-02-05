@@ -1,161 +1,4 @@
-# dbt™ Data Modeling Challenge - Fantasy Football Edition
-
-Welcome to the **dbt™ Data Modeling Challenge - Fantasy Football Edition!** This global hack-a-thon invites you to transform raw fantasy football data into insightful, data-driven insights. You'll use Paradime, Snowflake, and Lightdash to model, explore, and visualize data—showcasing your analytics engineering expertise and vying for prizes up to $1,500.
-
-## 📋 Table of Contents
-
-1. [Getting Started](#-getting-started)
-   - [Registration and Verification](#registration-and-verification)
-   - [Account Setup](#account-setup)
-   - [Support and FAQs](#support-and-faqs)
-2. [Competition Details](#-competition-details)
-3. [Tools and Resources](#-tools-and-resources)
-4. [Building Your Project](#-building-your-project)
-5. [Additional NFL Data](#-additional-nfl-data)
-6. [Submission Guidelines](#-submission-guidelines)
-7. [Judging Criteria](#-judging-criteria)
-8. [Prizes](#-prizes)
-9. [Example Submission](#example-submission-template)
-
-## 🏈 Getting Started
-
-### Registration and Verification
-Make sure you meet the [Entry Requirements](#) before registering
-
-- **Register**: Complete the [registration form](#)
-- **Verification**: Paradime will review your application. If approved, you'll receive credentials via email to begin.
-
-### Account Setup
-
-After approval, you'll receive two emails:
-
-1. **Snowflake Account Credentials**: Contains your Snowflake account details. Search for "*Snowflake Credentials: dbt™ Data Modeling Challenge - Fantasy Football Edition*."
-2. **Paradime Platform Invitation**: An invitation to access the Paradime Platform. Search for "*[Paradime] Activate your account*."
-
-**Additional Guidance**: Detailed setup tutorials will be provided in your Snowflake confirmation email.
-
-### Support and FAQs
-
-- **Slack Community**: Join **#fantasy-football-challenge** on [Paradime's Slack](https://paradimers.slack.com/join/shared_invite/zt-1mzax4sb8-jgw~hXRlDHAx~KN0az18bw#/shared-invite/email)
-- **Additional Questions**: Check documentation or ask in Slack
-- **Troubleshooting Emails**: Search for "mail@paradime.retool-email.com" in your registration email
-
-## 🏈 Competition Details
-
-**Key Dates:**
-- **Start:** January 2, 2025
-- **Submission Deadline:** February 4, 2025, 11:59 PM PT
-- **Winners Announced:** February 6, 2025 (right before the Superbowl!)
-
-**Who Should Participate?**
-- Data Analysts, Analytics Engineers, Data Engineers, Data Scientists, and SQL/dbt™ enthusiasts
-- Individual submissions only (no teams)
-- Experience with SQL, dbt™, Git, and basic data visualization required
-
-## ⚙️ Tools and Resources
-
-1. **[Paradime](https://www.paradime.io/)**
-   - SQL, dbt™ development, and AI-assisted analytics engineering
-   - [Documentation](https://docs.paradime.io/app-help) | [Code IDE Tutorial](https://app.arcade.software/share/7kRyaYbPoGc5ofmJfmvY) | [Commands Panel](https://www.youtube.com/watch?v=wQtIn-tnnbg) | [DinoAI Tutorial](https://www.youtube.com/watch?v=KqiosgQFsuk)
-
-2. **[Lightdash](https://www.lightdash.com/)**
-   - Open-source BI for dbt™ metrics and visualizations
-   - [Documentation](https://docs.lightdash.com/) | [Tutorial](https://www.youtube.com/watch?v=Z4Y0KM0MroQ)
-
-3. **[Snowflake](https://www.snowflake.com/en/)**
-   - Cloud data platform for storage and compute
-
-4. **GitHub**
-   - Version control and project submission platform
-
-## 🛠 Building Your Project
-
-### Need a Spark of Inspiration?
-
-Check out these resources:
-
-- **[Winning Strategies for Paradime's Movie Data Modeling Challenge](https://www.paradime.io/blog/winning-strategies-movie-challenge)**: Learn the strategies, best practices, and insights uncovered from winning participants in previous Data Modeling Challenges.  
-- Explore winning submissions from Paradime's recent Data Modeling Challenges:
-  - **[Bruno De Lima's Submission](https://github.com/paradime-io/social-media-data-modeling-challenge/tree/bruno-lima)**: 1st Place winner from Paradime's dbt Data Modeling Challenge - Socal Media Edition.  
-  - **[Spence Perry's Submission](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/tree/nba-spence-perry)**: 1st place winner from Paradime's dbt Data Modeling Challenge - NBA Edition.  
-  - **[Isin Pesch's Submission](https://github.com/paradime-io/paradime-dbt-movie-challenge/blob/movie-isin-pesch-deel-com/)**: 1st place winner from Paradime's dbt Data Modeling Challenge - Movie Edition.
-
-### Step 1: Master Required Tools
-- Explore Paradime's code IDE, AI development, data explorer, and lineage tools
-- Understand Snowflake schemas and tables in your fantasy football datasets
-- Learn to connect dbt™ models and build Lightdash dashboards
-
-### Step 2: Explore and Enhance the Data
-- Examine pre-loaded fantasy football datasets
-- Consider external data sources to enhance analysis (injury reports, game results, weather conditions, draft prospects, depth charts, etc.)
-
-### Step 3: Generate Insights
-Uncover NFL insights related to fantasy football—the possibilities are endless!
-
-**Potential Insight Areas with Pre-Loaded Datasets:**  
-- **Top Performers by Week/Season**: Using [player_stats_by_game](https://github.com/paradime-io/nfl_data_modeling_challenge/blob/main/models/staging/stg_player_stats_by_game.sql), identify highest-scoring players each week and over the season.  
-- **Team Defense Impact**: Using [play_by_play](https://github.com/paradime-io/nfl_data_modeling_challenge/blob/main/models/staging/stg_play_by_play.sql), determine which defenses give up the most fantasy points by position.  
-- **Red Zone Efficiency**: Using [play_by_play](https://github.com/paradime-io/nfl_data_modeling_challenge/blob/main/models/staging/stg_play_by_play.sql), pinpoint which players or teams excel in scoring opportunities inside the 20-yard line.
-
-**Potential Insight Areas with External Datasets:**  
-- Top scoring players by week/season  
-- Player consistency analysis (boom/bust metrics)  
-- Impact of team matchups on player performance  
-- Identifying players with high injury propensity  
-- Forecasting 2025 draft prospects  
-
-### Step 4: Visualize with Lightdash
-- Create clear, informative dashboards w/ written conclusions
-- Use dbt™ models as metric sources (optional)
-- Ensure visualizations support your conclusions
-
-## 🌟 Additional NFL Data
-
-If you want to pull additional NFL data for your analysis, you can use the **nfl_data_py** library, the same tool we used to pre-load datasets into Snowflake:
-
-- **GitHub Repo**: [nfl_data_py](https://github.com/nflverse/nfl_data_py)
-
-For reference, the scripts we used to load the pre-loaded datasets can be found in the [**Scripts**](https://github.com/paradime-io/nfl_data_modeling_challenge/tree/main/scripts) folder of this repository.
-
-## 📤 Submission Guidelines
-
-**Deadline**: February 4, 2025, 11:59 PM PT
-
-**Submission Process**:
-1. Complete your dbt™ project in Paradime
-2. Build Lightdash visualizations
-3. Commit code, documentation, and README.md to GitHub
-4. Email parker@paradime.io:
-   - Subject: "<Your_Name> - Fantasy Football Data Modeling Challenge Submission"
-   - Include GitHub branch link
-  
-Need help? follow this [step-by-step tutorial](https://app.arcade.software/share/mpoE0fK5HknHZJ3xLVVs) to submit your project. 
-
-## 🎯 Judging Criteria
-
-A panel of five independent judges will assess each submission based on the following categories. Each category is scored on a scale of 1-10:
-
-1. **Value of Insights**: Are the findings relevant and valuable for fantasy football analysis?
-2. **Complexity of Insights**: Do you connect multiple datasets and implement advanced transformations?
-3. **Quality of Materials**: Is your code clean, your dbt™ models well-structured, and your visualizations high-quality?
-4. **Integration of New Data**: Have you effectively incorporated additional datasets to enhance your analysis?
-
-## 🏆 Why Join This Challenge?
-
-- **Showcase Your Skills**: Demonstrate your SQL, dbt™, and analytics engineering expertise.
-- **Work with Modern Tools**: Gain hands-on experience with Paradime, Snowflake, and Lightdash.
-- **Build Your Portfolio**: Enhance your professional profile with a compelling analytics project.
-- **Network**: Connect with a community of data professionals and industry experts.
-- **Win Prizes**: Compete for Amazon gift cards worth up to $1,500!
-
-**Prizes:**
-- **1st Place**: $1,500 Amazon gift card  
-- **2nd Place**: $1,000 Amazon gift card  
-- **3rd Place**: $500 Amazon gift card
-
----
-# Example Submission Template
-For guidance on what a successful submission may look like, check out examples from [previous dbt™ Data Modeling Challenge winners](#need-a-spark-of-inspiration).
+# Super Bowl 2025 Prediction Analysis: KC vs PHI
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -166,29 +9,98 @@ For guidance on what a successful submission may look like, check out examples f
 6. [Conclusions](#conclusions)
 
 ## Introduction
-[Brief overview: What you aimed to achieve and why it matters]
+This analysis leverages the 2023 NFL season data to predict the winner of Super Bowl 2025 between the Kansas City Chiefs and Philadelphia Eagles. By analyzing play-by-play efficiency metrics, quarterback performance, and red zone effectiveness, we provide a data-driven prediction for this highly anticipated matchup.
+
 [Include link to Lightdash dashboard]
 
 ## Data Sources
-- [Fantasy Football Data (Snowflake)](... link or details ...)
-- [Additional Data Set 1] - [Description]
-- [Additional Data Set 2] - [Description]
+Primary datasets used:
+- **Play-by-Play Data (2023 Season)**
+  - Contains detailed play-level information
+  - Includes EPA (Expected Points Added), WPA (Win Probability Added)
+  - Red zone and scoring play details
+  
+- **Player Statistics by Game (2023 Season)**
+  - Player-level performance metrics
+  - Game-by-game statistics
+  - Advanced metrics like air yards and EPA
 
 ## Methodology
-### Tools Used
-- Paradime for dbt™ modeling and SQL
-- Snowflake for data warehousing
-- Lightdash for visualization
-- [Any other tools/techniques used]
 
-### Applied Techniques
-[Discuss transformations, tests, and models built]
+### Data Pipeline Architecture
+1. **Staging Layer**
+   - Standardized play-by-play data (`stg_play_by_play`)
+   - Cleaned player statistics (`stg_player_stats_by_game`)
+
+2. **Intermediate Layer**
+   - Team performance metrics (`int_team_performance`)
+   - QB analysis (`int_qb_performance`)
+
+3. **Analytics Layer**
+   - Team comparisons (`fct_team_comparison`)
+   - Final prediction model (`fct_superbowl_prediction`)
+
+### Key Metrics and Calculations
+- **Team Efficiency**: Season-long EPA/play
+- **Red Zone Performance**: Touchdown conversion rate in red zone situations
+- **Quarterback Impact**: QB-specific EPA and success rates
+- **Win Probability Model**: Weighted combination of key performance indicators
 
 ## Visualizations
-[Include screenshots or links to Lightdash dashboards]
+[Include key screenshots from Lightdash dashboard]
+
+1. **Team Efficiency Comparison**
+   - Bar chart comparing EPA/play
+   - Red zone efficiency metrics
+   - QB performance indicators
+
+2. **Win Probability Distribution**
+   - Current win probability for each team
+   - Historical win probability trends
+
+3. **Performance Summary Table**
+   - Key metrics side-by-side
+   - Direct team comparisons
 
 ## Insights
-[Detail your findings, supported by data and visuals]
+
+1. **Team Efficiency Analysis**
+   - [Team A] shows higher EPA/play at [X]
+   - Red zone efficiency favors [Team B] at [Y]%
+   - [Additional efficiency insights]
+
+2. **Quarterback Performance**
+   - [QB1] demonstrates superior EPA/play
+   - [QB2] shows better performance in [specific situation]
+   - [Detailed QB comparison]
+
+3. **Situational Analysis**
+   - Red zone performance differences
+   - Third down conversion rates
+   - Game script adaptation
 
 ## Conclusions
-[Summarize key takeaways and recommendations]
+
+Based on our comprehensive analysis of the 2023 regular season data, we predict [Team] to win Super Bowl 2025 with a [X]% probability. Key factors supporting this prediction:
+
+1. **Superior Efficiency Metrics**
+   - [Specific metrics and values]
+   - [Comparative advantages]
+
+2. **Quarterback Advantage**
+   - [QB performance details]
+   - [Situational strengths]
+
+3. **Red Zone Effectiveness**
+   - [Conversion rates]
+   - [Scoring efficiency]
+
+### Model Limitations
+- Based on regular season performance only
+- Does not account for playoff experience
+- Weather and neutral site factors not considered
+
+## Future Enhancements
+1. Integration of weather data
+2. Historical Super Bowl performance analysis
+3. Player-specific matchup analysis

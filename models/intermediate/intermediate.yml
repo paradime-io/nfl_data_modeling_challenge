@@ -56,3 +56,59 @@ models:
         description: "Flag (0/1) if a penalty occurred on this play."
       - name: penalty_type
         description: "Type of penalty called during this play, if any."
+
+  - name: int_team_performance
+    description: "Team performance metrics aggregated from play-by-play data"
+    meta:
+      lightdash:
+        join_to_source: []
+    columns:
+      - name: team
+        description: "Team abbreviation"
+        meta:
+          dimension:
+            type: string
+      - name: season_avg_epa
+        description: "Average EPA per play for the season"
+        meta:
+          dimension:
+            type: number
+      - name: red_zone_efficiency
+        meta:
+          dimension:
+            type: number
+      - name: season_avg_wpa
+        meta:
+          dimension:
+            type: number
+      - name: total_plays_run
+        meta:
+          dimension:
+            type: number
+
+  - name: int_qb_performance
+    description: "Quarterback performance metrics"
+    meta:
+      lightdash:
+        join_to_source: []
+    columns:
+      - name: player_name
+        meta:
+          dimension:
+            type: string
+      - name: team
+        meta:
+          dimension:
+            type: string
+      - name: total_pass_yards
+        meta:
+          dimension:
+            type: number
+      - name: total_attempts
+        meta:
+          dimension:
+            type: number
+      - name: total_completions
+        meta:
+          dimension:
+            type: number
