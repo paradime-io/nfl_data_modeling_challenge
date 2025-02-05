@@ -70,15 +70,29 @@ the offense or the defense team.
 ![fct_penalties DAG](images/fct_player_yards.png)
 
 ## Visualizations
-For each dashboard, there are 3 screenshots - one of the entire dashboard and one each of the upper & lower sections where the commentary
-will be more easily read.
+For each dashboard, there are 3 screenshots - one of the entire dashboard and two close-ups, one each of the upper & lower sections 
+where the commentary will be more easily read.
 
-#The Hard Yards
-![Hard Yards All](images/hard_yards_all.png)
+### The Hard Yards
+![Hard Yards All](images/Hard_Yards_all.png)
 
-![Hard Yards Upper](images/hard_yards_upper.png)
+![Hard Yards Upper](images/Hard_Yards_upper.png)
 
-![Hard Yards Lower](images/hard_yards_lower.png)
+![Hard Yards Lower](images/Hard_Yards_lower.png)
+
+### Passers and Rushers
+![Passers and Rushers All](images/Passers_and_Rushers_all.png)
+
+![Passers and Rushers Upper](images/Passers_and_Rushers_upper.png)
+
+![Passers and Rushers Lower](images/Passers_and_Rushers_lower.png)
+
+### Penalties
+![Penalties All](images/Penalties_all.png)
+
+![Penalties Upper](images/Penalties_upper.png)
+
+![Penalties Lower](images/Penalties_lower.png)
 
 ## Insights
 [Detail your findings, supported by data and visuals]
