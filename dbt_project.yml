@@ -24,10 +24,12 @@ models:
       +schema: intermediate
       +materialized: view
     marts:
+      +schema: marts
+      +materialized: table
       dimensions:
-        +schema: dimensions
-        +materialized: view
+        # +schema: dimensions
+        +materialized: table
       facts:
-        +schema: facts
+        # +schema: facts
         +materialized: table
 

@@ -56,3 +56,86 @@ models:
         description: "Flag (0/1) if a penalty occurred on this play."
       - name: penalty_type
         description: "Type of penalty called during this play, if any."
+
+  - name: int_red_zone_performance
+    description: 
+      Intermediate table that calculates player efficiency in the red zone. 
+      It aggregates rushing attempts, passing completions, targets, and touchdowns 
+      when a player is inside the opponent’s 20-yard line. 
+      This table helps evaluate how well players capitalize on scoring opportunities.
+    columns:
+      - name: fantasy_player_id
+        description: "Unique identifier for each fantasy player."
+      - name: fantasy_player_name
+        description: "Full name of the player."
+      - name: red_zone_opportunities
+        description: 
+          Total number of times the player had a red zone opportunity, 
+          calculated as the sum of rushing attempts and pass targets inside the 20-yard line.
+      - name: red_zone_rush_attempts
+        description: "Number of rushing attempts made by the player in the red zone."
+      - name: red_zone_pass_completions
+        description: "Number of completed passes caught by the player in the red zone."
+      - name: red_zone_targets
+        description: "Total pass targets a player received in the red zone."
+      - name: red_zone_touchdowns
+        description: "Number of touchdowns the player scored in the red zone."
+      - name: red_zone_td_rate
+        description: 
+          The player's touchdown rate in the red zone, calculated as 
+          `red_zone_touchdowns / red_zone_opportunities`. 
+          This metric highlights scoring efficiency inside the 20-yard line.
+
+  - name: int_clutch_performance
+    description: "Intermediate table identifying clutch players based on performance in crucial game moments (last 5 minutes, close score games)."
+    columns:
+      - name: fantasy_player_id
+        description: "Unique identifier for the player in fantasy data."
+      - name: fantasy_player_name
+        description: "Full name of the player."
+      - name: clutch_play_count
+        description: "Total number of high-pressure plays in the final 5 minutes of the game where the score differential is within 3 points."
+      - name: clutch_epa
+        description: "Total expected points added (EPA) during clutch plays, reflecting player impact."
+      - name: clutch_touchdowns
+        description: "Total touchdowns scored in clutch moments."
+
+  - name: int_expected_fantasy_points
+    description: "Intermediate table for calculating expected fantasy points vs. actual fantasy points."
+    columns:
+      - name: player_id
+        description: "Unique identifier for the player."
+      - name: player_name
+        description: "Full name of the player."
+      - name: expected_fantasy_points
+        description: "Total expected fantasy points based on rushing, receiving, and scoring opportunities."
+      - name: actual_fantasy_points
+        description: "Total actual fantasy points scored by the player."
+      - name: fantasy_points_over_expectation
+        description: "Difference between actual and expected fantasy points, showing if a player is overperforming or underperforming."
+
+  - name: int_day_of_week_performance
+    description: 
+      Aggregates player fantasy performance by weekdays vs. weekends to analyze trends 
+      based on different game day schedules. Helps determine if short rest (weekdays) 
+      impacts performance compared to full-rest weekend games.
+    columns:
+      - name: fantasy_player_id
+        description: "Unique identifier for the player."
+      - name: fantasy_player_name
+        description: "Player's full name."
+      - name: game_day_category
+        description: 
+          Categorizes games as either 'Weekday' (Monday to Friday) or 'Weekend' (Saturday and Sunday). 
+          Helps compare player performance between short-rest and full-rest scenarios.
+      - name: games_played
+        description: "Total number of games played by the player in the given category."
+      - name: total_fantasy_points
+        description: "Total PPR fantasy points scored by the player on weekdays vs. weekends."
+      - name: avg_fantasy_points_per_game
+        description: 
+          Average fantasy points scored per game in the given category, 
+          calculated as total_fantasy_points / games_played.
+      - name: red_zone_touchdowns
+        description: 
+          Total touchdown
