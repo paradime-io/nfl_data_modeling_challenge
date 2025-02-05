@@ -4,7 +4,7 @@ WITH source AS (
     FROM 
         {{ source('nfl', 'play_by_play') }}
 ),
-
+ 
 renamed AS (
     SELECT 
         -- Play identifiers
