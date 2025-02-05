@@ -1,0 +1,69 @@
+version: 2
+models:
+  - name: fct_qb_passing_performance
+    columns:
+      - name: season
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: season_week
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: player_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: total_pass_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_air_yards
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_yac
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: total_fantasy_points
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: games_played
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: avg_pass_yards_per_game
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: avg_fantasy_points_per_game
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: air_yards_percentage
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: fantasy_points_per_yard
+        description: ""
+        meta:
+          dimension:
+            type: number
