@@ -1,8 +1,8 @@
 with team_aggregated as (
     select
         team,
-        AVG(offensive_epa) AS TEAM_OFFENSIVE_EPA, 
-        AVG(defensive_epa) AS TEAM_DEFENSIVE_EPA,
+        AVG(case when type ='offense' then epa else null end) AS TEAM_OFFENSIVE_EPA, 
+        AVG(case when type ='defense' then epa else null end) AS TEAM_DEFENSIVE_EPA,
         count(distinct game_id) as games_played
     from {{ref('int_team_epa')}}
     group by team

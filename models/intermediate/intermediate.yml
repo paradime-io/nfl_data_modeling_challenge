@@ -215,13 +215,18 @@ models:
         meta:
           dimension:
             type: string
-      - name: play_epa
-        description: ""
-        meta:
-          dimension:
-            type: number
       - name: game_id
         description: ""
         meta:
           dimension:
             type: string
+      - name: type
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: epa
+        description: ""
+        meta:
+          dimension:
+            type: number
