@@ -36,6 +36,9 @@ This dashboard provides insights into **quarterback passing performance** for th
 - **Data Validations**: Ensuring consistency in player stats and fantasy scoring methods.  
 
 ## Visualizations & Insights
+
+![plot](https://github.com/paradime-io/nfl_data_modeling_challenge/blob/shruti-taware/images/QB-Dashboard.png)
+
 ### **1️⃣ Most Efficient QB**  
 - **Metric:** Fantasy Points per Yard  
 - **Insight:** Identifies quarterbacks who generate the most fantasy points per passing yard.  
