@@ -181,18 +181,30 @@ models:
         meta:
           dimension:
             type: number
+          metrics:
+            avg_offensive_epa:
+              type: average
       - name: team_defensive_epa
         description: ""
         meta:
           dimension:
             type: number
+          metrics:
+            avg_defensive_epa:
+              type: average
       - name: median_offensive_epa
         description: ""
         meta:
           dimension:
             type: number
+          metrics:
+            med_median_off:
+              type: median
       - name: median_defensive_epa
         description: ""
         meta:
           dimension:
             type: number
+          metrics:
+            med_def_epa:
+              type: median
