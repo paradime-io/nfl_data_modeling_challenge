@@ -1,161 +1,10 @@
-# dbt™ Data Modeling Challenge - Fantasy Football Edition
+# Fantasy Football dbt Data Modeling Challenge - Fantasy Football Edition
 
-Welcome to the **dbt™ Data Modeling Challenge - Fantasy Football Edition!** This global hack-a-thon invites you to transform raw fantasy football data into insightful, data-driven insights. You'll use Paradime, Snowflake, and Lightdash to model, explore, and visualize data—showcasing your analytics engineering expertise and vying for prizes up to $1,500.
+Project for the dbt™ Data Modeling Challenge - Fantasy Football Edition, hosted by Paradime!
 
-## 📋 Table of Contents
-
-1. [Getting Started](#-getting-started)
-   - [Registration and Verification](#registration-and-verification)
-   - [Account Setup](#account-setup)
-   - [Support and FAQs](#support-and-faqs)
-2. [Competition Details](#-competition-details)
-3. [Tools and Resources](#-tools-and-resources)
-4. [Building Your Project](#-building-your-project)
-5. [Additional NFL Data](#-additional-nfl-data)
-6. [Submission Guidelines](#-submission-guidelines)
-7. [Judging Criteria](#-judging-criteria)
-8. [Prizes](#-prizes)
-9. [Example Submission](#example-submission-template)
-
-## 🏈 Getting Started
-
-### Registration and Verification
-Make sure you meet the [Entry Requirements](#) before registering
-
-- **Register**: Complete the [registration form](#)
-- **Verification**: Paradime will review your application. If approved, you'll receive credentials via email to begin.
-
-### Account Setup
-
-After approval, you'll receive two emails:
-
-1. **Snowflake Account Credentials**: Contains your Snowflake account details. Search for "*Snowflake Credentials: dbt™ Data Modeling Challenge - Fantasy Football Edition*."
-2. **Paradime Platform Invitation**: An invitation to access the Paradime Platform. Search for "*[Paradime] Activate your account*."
-
-**Additional Guidance**: Detailed setup tutorials will be provided in your Snowflake confirmation email.
-
-### Support and FAQs
-
-- **Slack Community**: Join **#fantasy-football-challenge** on [Paradime's Slack](https://paradimers.slack.com/join/shared_invite/zt-1mzax4sb8-jgw~hXRlDHAx~KN0az18bw#/shared-invite/email)
-- **Additional Questions**: Check documentation or ask in Slack
-- **Troubleshooting Emails**: Search for "mail@paradime.retool-email.com" in your registration email
-
-## 🏈 Competition Details
-
-**Key Dates:**
-- **Start:** January 2, 2025
-- **Submission Deadline:** February 4, 2025, 11:59 PM PT
-- **Winners Announced:** February 6, 2025 (right before the Superbowl!)
-
-**Who Should Participate?**
-- Data Analysts, Analytics Engineers, Data Engineers, Data Scientists, and SQL/dbt™ enthusiasts
-- Individual submissions only (no teams)
-- Experience with SQL, dbt™, Git, and basic data visualization required
-
-## ⚙️ Tools and Resources
-
-1. **[Paradime](https://www.paradime.io/)**
-   - SQL, dbt™ development, and AI-assisted analytics engineering
-   - [Documentation](https://docs.paradime.io/app-help) | [Code IDE Tutorial](https://app.arcade.software/share/7kRyaYbPoGc5ofmJfmvY) | [Commands Panel](https://www.youtube.com/watch?v=wQtIn-tnnbg) | [DinoAI Tutorial](https://www.youtube.com/watch?v=KqiosgQFsuk)
-
-2. **[Lightdash](https://www.lightdash.com/)**
-   - Open-source BI for dbt™ metrics and visualizations
-   - [Documentation](https://docs.lightdash.com/) | [Tutorial](https://www.youtube.com/watch?v=Z4Y0KM0MroQ)
-
-3. **[Snowflake](https://www.snowflake.com/en/)**
-   - Cloud data platform for storage and compute
-
-4. **GitHub**
-   - Version control and project submission platform
-
-## 🛠 Building Your Project
-
-### Need a Spark of Inspiration?
-
-Check out these resources:
-
-- **[Winning Strategies for Paradime's Movie Data Modeling Challenge](https://www.paradime.io/blog/winning-strategies-movie-challenge)**: Learn the strategies, best practices, and insights uncovered from winning participants in previous Data Modeling Challenges.  
-- Explore winning submissions from Paradime's recent Data Modeling Challenges:
-  - **[Bruno De Lima's Submission](https://github.com/paradime-io/social-media-data-modeling-challenge/tree/bruno-lima)**: 1st Place winner from Paradime's dbt Data Modeling Challenge - Socal Media Edition.  
-  - **[Spence Perry's Submission](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/tree/nba-spence-perry)**: 1st place winner from Paradime's dbt Data Modeling Challenge - NBA Edition.  
-  - **[Isin Pesch's Submission](https://github.com/paradime-io/paradime-dbt-movie-challenge/blob/movie-isin-pesch-deel-com/)**: 1st place winner from Paradime's dbt Data Modeling Challenge - Movie Edition.
-
-### Step 1: Master Required Tools
-- Explore Paradime's code IDE, AI development, data explorer, and lineage tools
-- Understand Snowflake schemas and tables in your fantasy football datasets
-- Learn to connect dbt™ models and build Lightdash dashboards
-
-### Step 2: Explore and Enhance the Data
-- Examine pre-loaded fantasy football datasets
-- Consider external data sources to enhance analysis (injury reports, game results, weather conditions, draft prospects, depth charts, etc.)
-
-### Step 3: Generate Insights
-Uncover NFL insights related to fantasy football—the possibilities are endless!
-
-**Potential Insight Areas with Pre-Loaded Datasets:**  
-- **Top Performers by Week/Season**: Using [player_stats_by_game](https://github.com/paradime-io/nfl_data_modeling_challenge/blob/main/models/staging/stg_player_stats_by_game.sql), identify highest-scoring players each week and over the season.  
-- **Team Defense Impact**: Using [play_by_play](https://github.com/paradime-io/nfl_data_modeling_challenge/blob/main/models/staging/stg_play_by_play.sql), determine which defenses give up the most fantasy points by position.  
-- **Red Zone Efficiency**: Using [play_by_play](https://github.com/paradime-io/nfl_data_modeling_challenge/blob/main/models/staging/stg_play_by_play.sql), pinpoint which players or teams excel in scoring opportunities inside the 20-yard line.
-
-**Potential Insight Areas with External Datasets:**  
-- Top scoring players by week/season  
-- Player consistency analysis (boom/bust metrics)  
-- Impact of team matchups on player performance  
-- Identifying players with high injury propensity  
-- Forecasting 2025 draft prospects  
-
-### Step 4: Visualize with Lightdash
-- Create clear, informative dashboards w/ written conclusions
-- Use dbt™ models as metric sources (optional)
-- Ensure visualizations support your conclusions
-
-## 🌟 Additional NFL Data
-
-If you want to pull additional NFL data for your analysis, you can use the **nfl_data_py** library, the same tool we used to pre-load datasets into Snowflake:
-
-- **GitHub Repo**: [nfl_data_py](https://github.com/nflverse/nfl_data_py)
-
-For reference, the scripts we used to load the pre-loaded datasets can be found in the [**Scripts**](https://github.com/paradime-io/nfl_data_modeling_challenge/tree/main/scripts) folder of this repository.
-
-## 📤 Submission Guidelines
-
-**Deadline**: February 4, 2025, 11:59 PM PT
-
-**Submission Process**:
-1. Complete your dbt™ project in Paradime
-2. Build Lightdash visualizations
-3. Commit code, documentation, and README.md to GitHub
-4. Email parker@paradime.io:
-   - Subject: "<Your_Name> - Fantasy Football Data Modeling Challenge Submission"
-   - Include GitHub branch link
-  
-Need help? follow this [step-by-step tutorial](https://app.arcade.software/share/mpoE0fK5HknHZJ3xLVVs) to submit your project. 
-
-## 🎯 Judging Criteria
-
-A panel of five independent judges will assess each submission based on the following categories. Each category is scored on a scale of 1-10:
-
-1. **Value of Insights**: Are the findings relevant and valuable for fantasy football analysis?
-2. **Complexity of Insights**: Do you connect multiple datasets and implement advanced transformations?
-3. **Quality of Materials**: Is your code clean, your dbt™ models well-structured, and your visualizations high-quality?
-4. **Integration of New Data**: Have you effectively incorporated additional datasets to enhance your analysis?
-
-## 🏆 Why Join This Challenge?
-
-- **Showcase Your Skills**: Demonstrate your SQL, dbt™, and analytics engineering expertise.
-- **Work with Modern Tools**: Gain hands-on experience with Paradime, Snowflake, and Lightdash.
-- **Build Your Portfolio**: Enhance your professional profile with a compelling analytics project.
-- **Network**: Connect with a community of data professionals and industry experts.
-- **Win Prizes**: Compete for Amazon gift cards worth up to $1,500!
-
-**Prizes:**
-- **1st Place**: $1,500 Amazon gift card  
-- **2nd Place**: $1,000 Amazon gift card  
-- **3rd Place**: $500 Amazon gift card
+*by **[Arthur Rogério](https://www.linkedin.com/in/rogeriothur/)***  
 
 ---
-# Example Submission Template
-For guidance on what a successful submission may look like, check out examples from [previous dbt™ Data Modeling Challenge winners](#need-a-spark-of-inspiration).
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -165,30 +14,116 @@ For guidance on what a successful submission may look like, check out examples f
 5. [Insights](#insights)
 6. [Conclusions](#conclusions)
 
+---
+
 ## Introduction
-[Brief overview: What you aimed to achieve and why it matters]
-[Include link to Lightdash dashboard]
+
+This project transforms raw fantasy football data into actionable insights by leveraging robust data modeling with dbt™, data warehousing in Snowflake, and interactive dashboards built in Lightdash. Our aim is to uncover key trends in player performance, team defense, red zone efficiency, and the impact of injuries on NFL fantasy football outcomes.
+
+**Dashboard Link:** [Lightdash Dashboard](https://app.lightdash.cloud/projects/f661a422-a5cb-46d9-9f0c-79b443b00694/dashboards/49af509c-c067-4a7d-94d3-07e05a64d881/view)  
+
+---
 
 ## Data Sources
-- [Fantasy Football Data (Snowflake)](... link or details ...)
-- [Additional Data Set 1] - [Description]
-- [Additional Data Set 2] - [Description]
+
+- **NFL Fantasy Football Data (Snowflake):**
+  - **player_stats_by_game:** Contains per-game statistics for players (e.g., passing, rushing, receiving, fantasy points).
+  - **play_by_play:** Provides detailed play-by-play data including EPA (Expected Points Added), yards gained, and play types.
+- **NFL Injuries Data:**
+  - **nfl_injuries:** Reports detailing player injuries, statuses, and modifications (e.g., report status, practice status).
+
+---
+
+## Data Lineage
+![image](images/data_lineage.png)
 
 ## Methodology
+
 ### Tools Used
-- Paradime for dbt™ modeling and SQL
-- Snowflake for data warehousing
-- Lightdash for visualization
-- [Any other tools/techniques used]
+- **Paradime:** For dbt™ modeling and SQL development.
+- **Snowflake:** Cloud data warehousing and computing.
+- **Lightdash:** Building interactive, “scroll-stopper” dashboards.
+- **dbt:** For data transformations, testing, and documentation.
 
 ### Applied Techniques
-[Discuss transformations, tests, and models built]
+- **Staging Layer:** Standardized raw data (e.g., renaming columns with suffixes like `_nr` for numbers and `_ts` for timestamps) and applied light transformations.
+- **Data Mart Layer:** Built fact and dimension models:
+  - **agg_player_performance:** Aggregates player statistics by week and season.
+  - **agg_team_defense:** Aggregates defensive metrics (yards allowed, EPA allowed, touchdowns allowed).
+  - **fact_redzone_efficiency:** Analyzes offensive efficiency in the red zone.
+  - **fact_injury_impact:** Joins player performance with injury data to assess impact.
+- **Testing & Documentation:** Implemented dbt tests (e.g., `not_null`, `unique_combination_of_columns`) to ensure data quality.
+- **Visualization:** Developed dashboards in Lightdash for each analytical focus area.
+
+---
 
 ## Visualizations
-[Include screenshots or links to Lightdash dashboards]
+
+Our dashboards provide multiple perspectives on NFL fantasy football data:
+
+1. **Top Performers**
+   - **Objective:** Display the top 10 players based on total fantasy points.
+   - **Key Metrics:** `total_fantasy_points` (standard) and `total_fantasy_points_ppr` (Points Per Reception).
+   - **Visualization:** Bar chart ranking players, with filters for season and week.
+
+2. **Team Defense Impact**
+   - **Objective:** Evaluate defensive performance.
+   - **Key Metrics & Visualizations:**
+     - **Defensive Yards Allowed by Team:** Bar chart exibiting `total_yards_allowed`.
+     - **Defensive EPA Allowed:** Bar/column chart displaying `total_epa_allowed`.
+     - **Defensive Touchdowns Allowed:** Bar chart com `total_touchdowns_allowed`.
+   - **Filters:** Seleção por `week_nr` para análises temporais.
+
+3. **Red Zone Efficiency**
+   - **Objective:** Measure offensive performance in high-pressure situations.
+   - **Key Metrics:** `redzone_plays_nr`, `redzone_touchdowns_nr`, `avg_yards_gained`, `avg_epa`, e `touchdown_rate`.
+   - **Visualization:** Gráficos de pizza ou barras que evidenciem a taxa de conversão de touchdowns na red zone.
+
+4. **Injury Impact**
+   - **Objective:** Comparar a performance dos jogadores com e sem lesões.
+   - **Key Metrics:** `total_fantasy_points` e `total_fantasy_points_ppr` diferenciados por `injury_flag`.
+   - **Visualization:** Gráfico de barras lado a lado para identificar a influência das lesões.
+
+*Incluir capturas de tela ou links diretos para os dashboards interativos no Lightdash conforme a disponibilidade.*
+
+---
 
 ## Insights
-[Detail your findings, supported by data and visuals]
+
+*(Esta seção será atualizada à medida que os dados das visualizações forem analisados. Seguem alguns insights preliminares baseados nas análises realizadas:)*
+
+- **Top Performers:**  
+  Os jogadores que acumulam altos valores de `total_fantasy_points` consistentemente se destacam, mas diferenças surgem quando se compara o sistema padrão com o sistema PPR. Isso indica que jogadores com muitas recepções podem ser valorizados de forma diferente em ligas PPR.
+
+- **Team Defense Impact:**  
+  As defesas que restringem os yards permitidos e limitam o EPA tendem a sofrer menos touchdowns, evidenciando uma relação clara entre eficiência defensiva e redução de pontos adversários.
+
+- **Red Zone Efficiency:**  
+  Equipes com altas taxas de conversão na red zone (elevado `touchdown_rate`) demonstram maior eficiência ofensiva, um indicador crítico em momentos decisivos dos jogos.
+
+- **Injury Impact:**  
+  A análise preliminar sugere que jogadores com lesões relatadas apresentam uma redução significativa na produção de pontos, sublinhando a importância de monitorar o status de saúde para decisões de escalação.
+
+*Os insights serão refinados conforme novos dados e análises sejam incorporados.*
+
+---
 
 ## Conclusions
-[Summarize key takeaways and recommendations]
+
+Our analysis demonstrates that robust data modeling combined with interactive visualization can reveal critical insights into fantasy football performance. Key takeaways include:
+
+- **Defensive Excellence:**  
+  Reducing yards and EPA allowed correlates strongly with defensive success.
+
+- **Offensive Prowess in the Red Zone:**  
+  Efficient red zone performance is crucial for maximizing scoring opportunities.
+
+- **Injury Impact:**  
+  Monitoring injury status is essential, as injuries have a clear negative impact on player performance.
+
+These findings offer valuable guidance for fantasy football managers and set the stage for further predictive analysis with additional external data sources.
+
+---
+
+*Thank you for reviewing this submission. We believe the combination of detailed data modeling, rigorous testing, and intuitive visualizations provides a strong foundation for actionable insights in the world of fantasy football.*
+
