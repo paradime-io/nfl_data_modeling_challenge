@@ -44,7 +44,7 @@ We used dbt to wrangle the data into shape, employing:
 *   **Metric Calculation:**  Building our "value hunter" toolbox with custom metrics.
 
 ## Data Lineage
-![image](images/lineage.png)
+![lineage](images/lineage graph.png)
 
 
 ## Visualizations <a name="visualizations"></a>
