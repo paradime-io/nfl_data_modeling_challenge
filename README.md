@@ -25,17 +25,53 @@ This project transforms raw fantasy football data into actionable insights by le
 ---
 
 ## Data Sources
+Data was gathered from the following sources:
 
 - **NFL Fantasy Football Data (Snowflake):**
   - **player_stats_by_game:** Contains per-game statistics for players (e.g., passing, rushing, receiving, fantasy points).
   - **play_by_play:** Provides detailed play-by-play data including EPA (Expected Points Added), yards gained, and play types.
-- **NFL Injuries Data:**
   - **nfl_injuries:** Reports detailing player injuries, statuses, and modifications (e.g., report status, practice status).
+  - **nfl_teams:** Reference table containing key identifiers, names, and abbreviations for NFL teams.
 
 ---
 
 ## Data Lineage
 ![image](images/data_lineage.png)
+
+### Staging Layer
+- **Staging Layer:** Standardized raw data (e.g., renaming columns with suffixes like `_nr` for numbers and `_ts` for timestamps) and applied light transformations.
+   - stg_nfl__injuries
+   - stg_nfl__play_by_play
+   - stg_nfl__player_stats_by_game
+   - stg_nfl__teams
+
+### Marts Layer
+- **Marts Layer:** Built fact and dimension models:
+  - **agg_player_performance:** Aggregates player statistics by week and season.
+  - **agg_team_defense:** Aggregates defensive metrics (yards allowed, EPA allowed, touchdowns allowed).
+  - **fact_redzone_efficiency:** Analyzes offensive efficiency in the red zone.
+  - **fact_injury_impact:** Joins player performance with injury data to assess impact.
+  - **dim_teams:** Reference table containing key identifiers, names, and abbreviations for NFL teams
+
+### Exposures
+To add the dashboard to the dbt`s lineage view, an exposure was created to represent it.
+- `nfl_dash_results`
+
+### Column Taxonomy Pattern
+
+| Abbreviation of Nature | Description and recommended taxonomy | Data type |
+|------------------------|--------------------------------------|-----------|
+| dt                     | Data                                 | Date      |
+| dm                     | DataHora                             | DateTime  |
+| ts                     | Timestamp                            | Time      |
+| tp                     | Tipo                                 | String    |
+| desc                   | Descrição                            | String    |
+| fl                     | Flag                                 | Bool      |
+| id                     | Identificador                        | String    |
+| nm                     | Nome                                 | String    |
+| nr                     | Número                               | Integer/Numérico|
+| st                     | Status                               | String    |
+| sk                     | Chave Surrogada                      | Integer   |
 
 ## Methodology
 
@@ -44,16 +80,22 @@ This project transforms raw fantasy football data into actionable insights by le
 - **Snowflake:** Cloud data warehousing and computing.
 - **Lightdash:** Building interactive, “scroll-stopper” dashboards.
 - **dbt:** For data transformations, testing, and documentation.
+- **Python:** For extracting/creating sources
 
 ### Applied Techniques
-- **Staging Layer:** Standardized raw data (e.g., renaming columns with suffixes like `_nr` for numbers and `_ts` for timestamps) and applied light transformations.
-- **Data Mart Layer:** Built fact and dimension models:
-  - **agg_player_performance:** Aggregates player statistics by week and season.
-  - **agg_team_defense:** Aggregates defensive metrics (yards allowed, EPA allowed, touchdowns allowed).
-  - **fact_redzone_efficiency:** Analyzes offensive efficiency in the red zone.
-  - **fact_injury_impact:** Joins player performance with injury data to assess impact.
-- **Testing & Documentation:** Implemented dbt tests (e.g., `not_null`, `unique_combination_of_columns`) to ensure data quality.
-- **Visualization:** Developed dashboards in Lightdash for each analytical focus area.
+
+- **Data Extraction:**  
+  Developed 4 Python scripts using the `nfl_data_py` library to extract NFL data. The scripts generate CSV files that contain the raw data.
+
+- **Data Upload:**  
+  Uploaded the generated CSV files directly to my Snowflake database via Snowsight, creating a dedicated schema named `raw_data` to store these datasets.
+
+- **Staging Layer:**  
+  In the staging layer, I performed data cleaning, type casting, and standardized the column naming conventions to ensure consistency and reliability across the datasets.
+
+- **Marts Layer:**  
+  Aggregated and transformed the cleaned data to build fact and dimension models. These models were designed to drive the dashboards, enabling the calculation of key metrics and providing actionable insights.
+
 
 ---
 
@@ -72,17 +114,14 @@ Our dashboards provide multiple perspectives on NFL fantasy football data:
      - **Defensive Yards Allowed by Team:** Bar chart exibiting `total_yards_allowed`.
      - **Defensive EPA Allowed:** Bar/column chart displaying `total_epa_allowed`.
      - **Defensive Touchdowns Allowed:** Bar chart com `total_touchdowns_allowed`.
-   - **Filters:** Seleção por `week_nr` para análises temporais.
 
 3. **Red Zone Efficiency**
    - **Objective:** Measure offensive performance in high-pressure situations.
    - **Key Metrics:** `redzone_plays_nr`, `redzone_touchdowns_nr`, `avg_yards_gained`, `avg_epa`, e `touchdown_rate`.
-   - **Visualization:** Gráficos de pizza ou barras que evidenciem a taxa de conversão de touchdowns na red zone.
 
 4. **Injury Impact**
    - **Objective:** Comparar a performance dos jogadores com e sem lesões.
    - **Key Metrics:** `total_fantasy_points` e `total_fantasy_points_ppr` diferenciados por `injury_flag`.
-   - **Visualization:** Gráfico de barras lado a lado para identificar a influência das lesões.
 
 *Incluir capturas de tela ou links diretos para os dashboards interativos no Lightdash conforme a disponibilidade.*
 
@@ -93,13 +132,37 @@ Our dashboards provide multiple perspectives on NFL fantasy football data:
 *(Esta seção será atualizada à medida que os dados das visualizações forem analisados. Seguem alguns insights preliminares baseados nas análises realizadas:)*
 
 - **Top Performers:**  
-  Os jogadores que acumulam altos valores de `total_fantasy_points` consistentemente se destacam, mas diferenças surgem quando se compara o sistema padrão com o sistema PPR. Isso indica que jogadores com muitas recepções podem ser valorizados de forma diferente em ligas PPR.
+  Players who consistently accumulate high total_fantasy_points stand out, but differences emerge when comparing the standard system with the PPR system. This indicates that players with many receptions may be valued differently in PPR leagues.
+  - Players like Josh Allen, Jared Goff, and Davante Adams consistently rank among the top performers in both scoring formats.
+  - PPR Rewards Receptions: Some Wide receivers gain a significant boost in PPR scoring, highlighting the impact of frequent receptions.
+  - Standard vs. PPR Differences: Quarterbacks maintain high rankings in standard scoring, but reception-heavy players gain an edge in PPR, making player valuation highly dependent on league format.
+  - Strategic Considerations: Fantasy team managers should assess player performance based on league settings, as PPR leagues favor receivers who accumulate catches, while standard scoring relies more on touchdowns and yardage.
 
 - **Team Defense Impact:**  
-  As defesas que restringem os yards permitidos e limitam o EPA tendem a sofrer menos touchdowns, evidenciando uma relação clara entre eficiência defensiva e redução de pontos adversários.
+  Defenses that restrict yards allowed and limit EPA tend to concede fewer touchdowns, demonstrating a clear relationship between defensive efficiency and reduced opponent points.
+
+  - Defensive Yards Allowed by Team
+    - Best defense: The Jets allowed the fewest yards, suggesting a well-structured defense, possibly with an efficient secondary and strong pressure on the opposing quarterback.
+    - Worst Defense: The Commanders had the worst performance, giving up the most yards, which could indicate structural issues on the defensive line and secondary coverage.
+    - For Fantasy Football: Teams that face defenses like the Commanders have a high chance of an explosive offensive performance, making opposing quarterbacks and wide receivers valuable picks.
+    - For sports betting: Teams with weak defenses may have more high-scoring games, favoring bets on "over" total points.
+  - Defensive EPA Allowed
+    - The Browns lead with the most efficient defense, allowing the lowest EPA allowed. This suggests a well-tuned defensive scheme capable of stopping explosive plays and limiting scoring. The Ravens and Vikings also appear to have low EPA allowed values, indicating well-organized defenses.
+    - The Commanders have the most vulnerable defense, allowing the most EPA to their opponents, suggesting that facing them could be an excellent offensive opportunity. Teams like the Lions and Bills also have high EPA allowed values, which indicates difficulties in containing efficient offensive plays.
+    - For Fantasy Football: Attackers facing teams like the Commanders and Lions should be prioritized, as these defenses allow for many impactful plays.
+    - For Season Assessment: Teams like the Browns and Ravens can be more consistent on defense, making it harder for opponents to advance offensively.
+  - Defensive Touchdowns Allowed
+    - The Ravens have the most efficient defense, allowing just 74 total TDs, indicating excellent red zone containment and a solid defense. The Saints and Jets also perform well, reinforcing that these defenses are strong at preventing scoring.
+    - Commanders appear as the weakest defense, giving up the most touchdowns, suggesting structural problems and difficulties in defensive coverage. Other teams such as Lions and Bills also have high values, which could mean difficulties in containing opposing attacks.
 
 - **Red Zone Efficiency:**  
-  Equipes com altas taxas de conversão na red zone (elevado `touchdown_rate`) demonstram maior eficiência ofensiva, um indicador crítico em momentos decisivos dos jogos.
+  Teams with high red zone conversion rates (high `touchdown_rate`) demonstrate greater offensive efficiency, a critical indicator in decisive moments of games.
+  - The Ravens lead the way with the best red zone conversion rate, indicating a well-structured offense that is effective in short-yardage situations. Other teams with high efficiency include the Eagles and Bills, which suggests that their red zone plays are well-executed, with offensive calls that maximize scoring opportunities.
+  - The Raiders have the worst performance, suggesting they have trouble converting good drives into touchdowns. Teams like the Bears and Panthers also perform poorly, possibly indicating problems in the ground game, low QB effectiveness in the red zone, or predictable calls that make it difficult to execute TDs.
+  - For Fantasy Football: Offensive players from teams like the Ravens and Eagles have a higher chance of scoring TDs inside the red zone, making RBs and TEs from these teams interesting options.
+  - For Betting: Games involving the Raiders or Panthers may have fewer touchdowns and more field goal attempts, making under TD bets more valuable.
+  - For Season Assessment: Teams with low efficiency in the red zone need to improve offensive execution, either through tactical schemes or reinforcements in the roster.
+
 
 - **Injury Impact:**  
   A análise preliminar sugere que jogadores com lesões relatadas apresentam uma redução significativa na produção de pontos, sublinhando a importância de monitorar o status de saúde para decisões de escalação.
