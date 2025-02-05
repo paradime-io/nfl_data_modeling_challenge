@@ -42,13 +42,13 @@ Our analysis is built on three core models:
 
 These models leverage pre-loaded datasets and transformations in Paradime to create a unified marts table for fantasy player performance.
 
-## 📌 Sources and Seeds
+#### 📌 Sources and Seeds
 
 We built our analysis using the following data sources:
 - **stg_play_by_play → Play-by-play data of all NFL games in 2023**
 - **stg_player_stats_by_game → Individual game-level performance data**
 
-## 📊 Intermediate Layer
+#### 📊 Intermediate Layer
 We constructed three key intermediate models:
 
 - **int_red_zone_efficiency 🏟️ (*Red Zone Performance*)**
@@ -57,27 +57,27 @@ We constructed three key intermediate models:
 
 Each model aggregates play-level data to compute meaningful player-level stats.
 
-## 🏆 Mart Layer
+#### 🏆 Mart Layer
 The final marts table combines all key player metrics into a single source of truth:
 - **fct_fantasy_player_performance**
 
 This fact table allows us to analyze fantasy MVPs, overachievers, and clutch performers.
 
 ## 🧪 Methodology
-## ⚒️ Tools Used
+#### ⚒️ Tools Used
 - **Paradime → dbt™ transformations and SQL modeling**
 - **Snowflake → Data storage & processing**
 - **Lightdash → Data visualization**
 - **dbt Tests → Data quality validation**
 
-## 🧼 Data Preparation & Cleaning
+#### 🧼 Data Preparation & Cleaning
 To ensure clean, accurate data, we:
 - **Removed duplicate records across sources**
 - **Applied data validation tests (e.g., ensuring unique player IDs)**
 - **Standardized naming conventions for player attributes**
 
 ## 🔑 Key Metrics in the Analysis
-## 1️⃣ Red Zone Efficiency 🏟️
+### 1️⃣ Red Zone Efficiency 🏟️
 "*The best fantasy players convert opportunities into touchdowns. If you can’t score in the red zone, you can’t win—just ask any fantasy owner who started a struggling RB in Week 10.
 
 Red Zone Efficiency is calculated based on:
@@ -89,13 +89,13 @@ We use these stats to compute: Red Zone TD Rate = Red Zone Touchdowns / Red Zone
 
 This helps us identify elite red zone performers, i.e., players who turn goal-line carries and inside-the-20 targets into actual points.
 
-📊 Top Red Zone Converters:
+#### 📊 Top Red Zone Converters:
 
 [Include screenshots or links to Lightdash dashboards]
 
 
 
-## 2️⃣ Clutch Players Model 🏈
+### 2️⃣ Clutch Players Model 🏈
 "*When the game is on the line, some players shrink… but legends rise.*" 🏆
 
 Inspired by Kobe Bryant's clutch performances, we define clutch plays as:
@@ -105,18 +105,18 @@ Inspired by Kobe Bryant's clutch performances, we define clutch plays as:
 - **Touchdowns scored under pressure**
 - **Expected Points Added (EPA) in crunch time**
 
-📊 Top Clutch Performers:
+#### 📊 Top Clutch Performers:
 
 [Include screenshots or links to Lightdash dashboards]
 
 By ranking players based on clutch EPA and clutch TDs, we reveal who fantasy owners can trust when they need a big game-winning moment.
 
-🏀 Kobe Bryant Comparison:
+#### 🏀 Kobe Bryant Comparison:
 "*Kobe Bryant’s Mamba Mentality was about delivering in high-pressure situations. Our clutch model finds the NFL equivalent of Kobe—players who don't just put up numbers, but deliver when the game is on the line.*"
 
 
 
-## 3️⃣ Expected Fantasy Points 🔮
+### 3️⃣ Expected Fantasy Points 🔮
 "*Great fantasy players aren't just good—they exceed expectations.*"
 
 Using play-by-play and player stat data, we calculate:
@@ -125,7 +125,7 @@ Using play-by-play and player stat data, we calculate:
 - **Actual Fantasy Points (AFP) → What the player actually scored**
 - **Fantasy Overperformance → (AFP - XFP)**
 
-📊 Fantasy Overachievers:
+#### 📊 Fantasy Overachievers:
 
 [Include screenshots or links to Lightdash dashboards]
 
@@ -138,7 +138,7 @@ Now, let’s combine everything into one final ranking based on:
 2. **Clutch Performance**
 3. **Expected Fantasy Points vs. Actual Fantasy Points**
 
-## 📊 Fantasy MVPs:
+#### 📊 Fantasy MVPs:
 
 [Include screenshots or links to Lightdash dashboards]
 
@@ -146,7 +146,7 @@ Now, let’s combine everything into one final ranking based on:
 "*If you're building a fantasy dynasty, C-Mac is your Kobe—unstoppable in the clutch and elite when it counts.*"
 
 
-##  📊 Conclusion
+## 📊 Conclusion
 1. **✅ Red Zone Efficiency matters → Top-tier players turn opportunities into points**
 2. **✅ Clutch Performance is the difference-maker → Big moments define big players**
 3. **✅ Expected Fantasy Points reveal sleepers → Overachievers = Fantasy gold**
