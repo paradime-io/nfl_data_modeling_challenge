@@ -250,3 +250,35 @@ models:
         meta:
           dimension:
             type: number
+  - name: int_fantasy_points_pos
+    columns:
+      - name: season
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: position
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: full_position_group_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: team_full_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: ppr_points
+        description: ""
+        meta:
+          dimension:
+            type: number

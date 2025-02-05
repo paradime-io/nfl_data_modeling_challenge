@@ -990,3 +990,4 @@ sources:
         description: "Long name for positions and position groups"
       - name: nfl_teams
         description: "Full names of NFL teams"
+      - name: raw_team_spending

@@ -1,0 +1,19 @@
+version: 2
+models:
+  - name: stg_team_spend
+    columns:
+      - name: team
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: position
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: spending
+        description: ""
+        meta:
+          dimension:
+            type: number

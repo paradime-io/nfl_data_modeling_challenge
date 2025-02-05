@@ -1,0 +1,1 @@
+select * from {{source('vlikar', 'raw_team_spending')}}

@@ -9,8 +9,9 @@
 6. [Conclusions](#conclusions)
 
 ## Introduction
-[Brief overview: What you aimed to achieve and why it matters]
-[Include link to Lightdash dashboard]
+In this challenge, my goal was to explore NFL data and generate meaningful insights that can help fantasy football players and analysts. 
+The analysis leverages historical data from the 2018-2023 seasons to identify patterns, trends, and anomalies in player and team performance. 
+This report highlights key findings and showcases the power of data modeling and visualization in understanding the game.
 
 ## Data Sources
 - NFL player_stats data Seasons 2018-2023
