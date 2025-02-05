@@ -1,0 +1,14 @@
+version: 2
+models:
+  - name: stg_nfl_teams
+    columns:
+      - name: team_abbr
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: team_full_name
+        description: ""
+        meta:
+          dimension:
+            type: string

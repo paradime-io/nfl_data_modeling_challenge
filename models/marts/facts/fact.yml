@@ -206,3 +206,23 @@ models:
         meta:
           dimension:
             type: number
+      - name: team_full_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: win_rate
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: home_win_rate
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: away_win_rate
+        description: ""
+        meta:
+          dimension:
+            type: number
