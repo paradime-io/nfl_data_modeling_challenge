@@ -185,9 +185,7 @@ For guidance on what a successful submission may look like, check out examples f
    - [Expected Fantasy Points](#expected-fantasy-points)
 5. [Ultimate Fantasy Player Performance](#ultimate-fantasy-player-performance)
    - [The Fantasy MVPs](#the-fantasy-mvps)
-   - [Clutch Performance vs The "Kobe Bryant of the NFL"](#clutch-performance-vs-the-kobe-bryant-of-the-nfl)
-   - [Fantasy Points Over Expections](#fantasy-points-over-expectations)
-6. [Conclusions](#conclusions-and-takeaways)
+6. [Conclusions](#conclusions)
 
 ## 📢 Introduction
 
@@ -233,20 +231,20 @@ The final marts table combines all key player metrics into a single source of tr
 This fact table allows us to analyze fantasy MVPs, overachievers, and clutch performers.
 
 ## 🧪 Methodology
-### ⚒️ Tools Used
+## ⚒️ Tools Used
 - **Paradime → dbt™ transformations and SQL modeling**
 - **Snowflake → Data storage & processing**
 - **Lightdash → Data visualization**
 - **dbt Tests → Data quality validation**
 
-### 🧼 Data Preparation & Cleaning
+## 🧼 Data Preparation & Cleaning
 To ensure clean, accurate data, we:
 - **Removed duplicate records across sources**
 - **Applied data validation tests (e.g., ensuring unique player IDs)**
 - **Standardized naming conventions for player attributes**
 
-## Applied Techniques - 🔑 Key Metrics in the Analysis
-### 1️⃣ Red Zone Efficiency 🏟️
+## 🔑 Key Metrics in the Analysis
+## 1️⃣ Red Zone Efficiency 🏟️
 "*The best fantasy players convert opportunities into touchdowns. If you can’t score in the red zone, you can’t win—just ask any fantasy owner who started a struggling RB in Week 10.
 
 Red Zone Efficiency is calculated based on:
@@ -258,13 +256,13 @@ We use these stats to compute: Red Zone TD Rate = Red Zone Touchdowns / Red Zone
 
 This helps us identify elite red zone performers, i.e., players who turn goal-line carries and inside-the-20 targets into actual points.
 
-### 📊 Top Red Zone Converters:
+📊 Top Red Zone Converters:
 
 [Include screenshots or links to Lightdash dashboards]
 
 
 
-### 2️⃣ Clutch Players Model 🏈
+## 2️⃣ Clutch Players Model 🏈
 "*When the game is on the line, some players shrink… but legends rise.*" 🏆
 
 Inspired by Kobe Bryant's clutch performances, we define clutch plays as:
@@ -274,18 +272,18 @@ Inspired by Kobe Bryant's clutch performances, we define clutch plays as:
 - **Touchdowns scored under pressure**
 - **Expected Points Added (EPA) in crunch time**
 
- 📊 Top Clutch Performers:
+📊 Top Clutch Performers:
 
 [Include screenshots or links to Lightdash dashboards]
 
 By ranking players based on clutch EPA and clutch TDs, we reveal who fantasy owners can trust when they need a big game-winning moment.
 
- 🏀 Kobe Bryant Comparison:
+🏀 Kobe Bryant Comparison:
 "*Kobe Bryant’s Mamba Mentality was about delivering in high-pressure situations. Our clutch model finds the NFL equivalent of Kobe—players who don't just put up numbers, but deliver when the game is on the line.*"
 
 
 
-### 3️⃣ Expected Fantasy Points 🔮
+## 3️⃣ Expected Fantasy Points 🔮
 "*Great fantasy players aren't just good—they exceed expectations.*"
 
 Using play-by-play and player stat data, we calculate:
@@ -307,7 +305,7 @@ Now, let’s combine everything into one final ranking based on:
 2. **Clutch Performance**
 3. **Expected Fantasy Points vs. Actual Fantasy Points**
 
-📊 Fantasy MVPs:
+## 📊 Fantasy MVPs:
 
 [Include screenshots or links to Lightdash dashboards]
 
