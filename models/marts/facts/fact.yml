@@ -216,13 +216,25 @@ models:
         meta:
           dimension:
             type: number
+          metrics:
+            avg_win_rate:
+              type: average
+              round: 1
       - name: home_win_rate
         description: ""
         meta:
           dimension:
             type: number
+          metrics:
+            avg_home_win_rate:
+              type: average
+              round: 1
       - name: away_win_rate
         description: ""
         meta:
           dimension:
             type: number
+          metrics:
+            avg_away_win_rate:
+              type: average
+              round: 1
