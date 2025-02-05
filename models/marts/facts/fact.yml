@@ -22,6 +22,10 @@ models:
         description: "Total fantasy points scored by the player under PPR (points per reception) scoring across the considered period."
       - name: games_played
         description: "Number of games (weeks) the player participated in."
+        meta:
+          metrics:
+            total_games_played:
+              type: sum
       - name: avg_fantasy_points_per_game
         description: "Average standard fantasy points per game played."
       - name: avg_fantasy_points_ppr_per_game
