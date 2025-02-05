@@ -1,5 +1,7 @@
 # dbt™ Data Modeling Challenge - Fantasy Football Edition
-<p align=center> # Submission by Peter Newall, Feb 4th 2025 </p>
+<p align=center> 
+# Submission by Peter Newall, Feb 4th 2025 
+</p>
 
 Thank you for letting me take part in the **dbt™ Data Modeling Challenge - Fantasy Football Edition!** README's are an important part of everybody's work in GitHub but, if you want to go straight to a video of my Lightdash dashboards, click on https://vimeo.com/1053564798?share=copy and the password is 'paradime'.
 
@@ -16,9 +18,9 @@ Thank you for letting me take part in the **dbt™ Data Modeling Challenge - Fan
 The broad goal here was to deliver insights on the dynamics, patterns and strategies of NFL with immediately meaningful visualisations.
 
 So there are three dashboards focusing on different aspects of NFL:
-- ** The Hard Yards ** - in a territory-based sport, what teams and strategies are most successful?
-- ** Passers and Rushers ** - looks in more detail and on a game-by-game basis at how effective the different teams and players have been
-- ** Penalties ** - which teams have lost discipline and let penalties have a bearing on results?
+- **The Hard Yards** - in a territory-based sport, what teams and strategies are most successful?
+- **Passers and Rushers** - looks in more detail and on a game-by-game basis at how effective the different teams and players have been
+- **Penalties** - which teams have lost discipline and let penalties have a bearing on results?
 
 These dashboards were all built in Lightdash run locally in a Docker image so no links available, but they can all be seen in the demo video available at https://vimeo.com/1053564798?share=copy, password 'paradime'.
 
@@ -37,18 +39,36 @@ Also, as Lightdash now offers a dashboards-as-code facility to download the yaml
 
 ### Applied Techniques
 Each of the dashboards is built on a different fact table as follows:
-- ** The Hard Yards ** - fct_team_yards
-- ** Passers and Rushers ** - fct_player_yards
-- ** Penalties ** - fct_penalties
+- **The Hard Yards** - fct_team_yards
+- **Passers and Rushers** - fct_player_yards
+- **Penalties** - fct_penalties
 
-The paradime DAGs for these follow
-** fct_team_yards **
+There appear to be a wide range of insights waiting to be dug out of the public play_by_play data but the table is wide 
+at almost 400 columns and many of these hold a high number of null values. So various combinations of techniques had to
+be used, among them:
+- filtering
+- flattening
+- enriching
+- derived calculations
+- de-normalising
+
+Each fact table presented different challenges and their DAGs are included here to give some idea of the extent of the
+data modeling involved.
+
+**fct_team_yards**
+The play_by_play data is based on the possession or offense team, so it can refer to either of the two teams involved in the
+game. This fact table then has to be at the grain of game and offense team and make clear for any one row whether the offense team
+is the home team or the away team.
 ![fct_team_yards DAG](images/fct_team_yards.png)
 
-** fct_player_yards **
+**fct_player_yards**
+A similar challenge to fct_team_yards but at a different grain again as there can of course be many passers and rushers for one
+team in a game.
 ![fct_team_yards DAG](images/fct_player_yards.png)
 
-** fct_penalties **
+**fct_penalties**
+A different challenge again because where a play is recorded with respect to the offense team, a penalty can be called on either
+the offense or the defense team.
 ![fct_penalties DAG](images/fct_player_yards.png)
 
 ## Visualizations
