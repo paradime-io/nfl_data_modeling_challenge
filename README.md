@@ -88,7 +88,6 @@ Are injuries affecting teams/players? <br><br>
 *   **ROI is the Ultimate Value Metric:**  It's not just about points; it's about points *per dollar*.
 *   **Injuries Can Make or Break a Season:**  Staying on top of injury trends is crucial.
 *   **Knees and Ankles Take a Beating:**  Protect those joints!
-*   **(Hypothetical Example):**  "We found that [Player X], despite a mid-range salary, consistently outperformed players with much higher salaries, making him a true value pick. However, his late-season knee injury (as seen in the injury charts) raises concerns about his future performance."
 
 ## Conclusions <a name="conclusions"></a>
 
