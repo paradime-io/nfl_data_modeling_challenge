@@ -216,7 +216,7 @@ Lightdash Dashboard: https://app.lightdash.cloud/projects/13c79b94-129c-4176-aa3
 
 1. Added a sources layer for light renaming of historical performance data.
 2. Updated stg_play_by_player to incorporate historical data.
-3. Modified existing intermediate models to include the year field.
+3. Modified existing intermediate models to include additional fields.
 4. Developed additional intermediate and fact models for injury history and points allowed by defense.
 5. Implemented tests (not-null, uniqueness) where applicable. There’s an opportunity to enhance testing with additional packages. I’d recommend involving someone with domain expertise to define acceptable behavior.
 
@@ -226,12 +226,12 @@ Link to Dashboard: https://app.lightdash.cloud/projects/13c79b94-129c-4176-aa3e-
 
 ## Insights
 
-** Worth it: Most Common Injuries **
+**Worth it: Most Common Injuries**
 Lower Body injuries are the most common and are observed across all positions, accounting for 400 injuries, followed by Upper Body injuries (242).
 
 Linebackers (LB), Cornerbacks (CB), and Safeties (S) suffer the most injuries. These positions require quick movements, high impact tackles, and frequent contact, making them injury-prone.
 
-** Types of Injuries **
+**Types of Injuries**
 Lower Body injuries dominate over other injuries across most positions, especially for LBs and WRs. This suggests that speed-based positions (WR, S) suffer the most lower body injuries, likely due to running, cutting, and tackling.
 
 Head injuries are most common among running backs (RB) and safeties (S). Safeties (S) have the highest count of head injuries, almost doubled the count of RBs.
@@ -240,14 +240,14 @@ Core/abdomen injuries are primarily seen in LB, OT, PR, QB, TE, and WR, with lin
 
 This aligns with their roles — RBs frequently absorb direct hits while running through defenses, while safeties initiate high-speed tackles, increasing head injury risks.
 
-** Injury Status among positions **
+**Injury Status among positions**
 
 Linebackers (LB) and defensive tackles (DT) have the highest counts of IR-R, a designation for players who are "out" but eligible to return after a set period.
 Cornerbacks (CB) and Safeties (S) lead in "Questionable" status, meaning they have a 50/50 chance of playing in the next game due to injury.
 Interestingly, offensive tackle (OT) is the only position with PUP-R designations, which typically result from offseason injuries.
 Wide receivers (WR) have the highest IR-R counts, followed by LB, TE, DE, and CB, indicating these positions frequently deal with injuries that require temporary removal but allow a return later in the season.
 
-** Injury Details by Position **
+**Injury Details by Position**
 
 No position is completely immune to moderate to severe injuries.
 
@@ -257,7 +257,9 @@ Safeties (S) have the highest number of concussions.
 Cornerbacks (CBs) have the widest variety of injuries, with 10 cases each of surgery, concussion, fracture, and dislocation.
 Defensive Ends (DEs) and Running Backs (RBs) are the only positions where sprains have been reported.
 
-** Seeing Red: The Red Zone **
+
+
+**Seeing Red: The Red Zone**
 
 Across teams from 2021 to 2024, the average per game included nearly 5 targets, 5 rushing attempts, 3 pass completions, and 10 red zone opportunities.
 
@@ -269,7 +271,8 @@ Performance Trends Over Time:
 - 2023 struggled with targets, and numbers have yet to recover to 2021 levels.
 - Pass completions remain the lowest among all performance indicators, while rushing attempts and targets are more closely aligned.
 
-** Top Performers in the Red Zone **
+
+**Top Performers in the Red Zone**
 
 A clear trend emerges among the top red zone performers over the years.
 
@@ -285,7 +288,8 @@ Pass Completions & Targets:
 - T. Kelce and A. St. Brown tie for the most pass completions in the red zone.
 - D. Adams leads all players in total targets.
 
-** Fantasy Points Allowed by Defense** 
+
+**Fantasy Points Allowed by Defense** 
 
 In the regular season:
 - Baltimore (BAL) had the worst performance in 2021, showed improvement, but returned to the bottom in 2024.
@@ -297,6 +301,8 @@ Jacksonville (JAX) led in 2021, saw a sharp decline over the next two years, and
 
 Denver faced the fewest average QBs in 2021, then peaked in 2022 and 2023 with one of the highest values before declining. 
 Meanwhile, Tennessee (TEN) has shown consistent improvement, recording the highest average QBs faced over the past two seasons.
+
+
 
 **Is it real? Or is it just fantasy?**
 
@@ -312,19 +318,20 @@ Carson Wentz had the highest average in 2023, narrowly beating Josh Allen, but t
 
 Lamar Jackson dominated in 2024, with Josh Allen once again right behind him.
 
+
 ## Conclusions
 
-**Injuries**
+**Injuries:**
 Lower Body Injuries Are the Most Common for NFL players, which suggests leg strength & conditioning programs should be a focus for teams.
 Defensive Players (LBs, CBs, and Safeties) have high injury rates, likely due to tackling and coverage responsibilities.
 
-**Red Zone Performance**
+**Red Zone Performance:**
 The red zone remains a key battleground, with J. Taylor and J. Jacobs dominating rushing opportunities, while T. Kelce and A. St. Brown lead in pass completions.
 Over the years, 2021 stood out as the strongest for overall performance, while 2022 saw the biggest decline, with gradual recovery since.
 
-**Defense Time**
+**Defense Time:**
 Carolina (CAR) had the worst rushing defense in 2024, allowing the highest average rushing yards over the last four years, with a 500-yard gap ahead of the next closest teams.
 
-**Fantasy Points**
+**Fantasy Points:**
 Josh Allen has been the most consistent top fantasy performer, leading in both average PPR points per game and total fantasy points across 2021-2024.
 
