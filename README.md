@@ -259,13 +259,13 @@ We use these stats to compute: Red Zone TD Rate = Red Zone Touchdowns / Red Zone
 
 This helps us identify elite red zone performers, i.e., players who turn goal-line carries and inside-the-20 targets into actual points.
 
-## 📊 Top Red Zone Converters:
+### 📊 Top Red Zone Converters:
 
 [Include screenshots or links to Lightdash dashboards]
 
 
 ### 2️⃣ Clutch Players Model 🏀
-"When the game is on the line, some players shrink… but legends rise." 🏆
+"*When the game is on the line, some players shrink… but legends rise.*" 🏆
 
 Inspired by Kobe Bryant's clutch performances, we define clutch plays as:
 
@@ -274,11 +274,11 @@ Inspired by Kobe Bryant's clutch performances, we define clutch plays as:
 - **Touchdowns scored under pressure**
 - **Expected Points Added (EPA) in crunch time**
 
-## 📊 Top Clutch Performers:
+### 📊 Top Clutch Performers:
 
 [Include screenshots or links to Lightdash dashboards]
 
-## 🏀 Kobe Bryant Comparison:
+### 🏀 Kobe Bryant Comparison:
 "*Kobe Bryant’s Mamba Mentality was about delivering in high-pressure situations. Our clutch model finds the NFL equivalent of Kobe—players who don't just put up numbers, but deliver when the game is on the line.*"
 
 
@@ -291,7 +291,7 @@ Using play-by-play and player stat data, we calculate:
 - **Actual Fantasy Points (AFP) → What the player actually scored**
 - **Fantasy Overperformance → (AFP - XFP)**
 
-## 📊 Fantasy Overachievers:
+### 📊 Fantasy Overachievers:
 
 [Include screenshots or links to Lightdash dashboards]
 
@@ -308,16 +308,16 @@ Now, let’s combine everything into one final ranking based on:
 
 [Include screenshots or links to Lightdash dashboards]
 
-## 🔥 Final Verdict:
+### 🔥 Final Verdict:
 "*If you're building a fantasy dynasty, C-Mac is your Kobe—unstoppable in the clutch and elite when it counts.*"
 
 
 ##  📊 Conclusion
-✅ Red Zone Efficiency matters → Top-tier players turn opportunities into points
-✅ Clutch Performance is the difference-maker → Big moments define big players
-✅ Expected Fantasy Points reveal sleepers → Overachievers = Fantasy gold
-🔮 Winning Your Fantasy League:
+1. **✅ Red Zone Efficiency matters → Top-tier players turn opportunities into points**
+2. **✅ Clutch Performance is the difference-maker → Big moments define big players**
+3. **✅ Expected Fantasy Points reveal sleepers → Overachievers = Fantasy gold**
 
+**🔮 Winning Your Fantasy League:**
 - **Draft high red zone efficiency players**
 - **Target clutch performers in tight games**
 - **Find players who consistently exceed expectations**
