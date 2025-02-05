@@ -63,7 +63,7 @@ It’s clear that some teams perform significantly better on their home turf, in
 Conversely, teams with strong away records, such as Kansas City, demonstrate resilience and adaptability.
 
 4. Total Cap and Fantasy Points relationship
-![NFL spend and positions](snapshots/avg-ppr.png)
+![NFL spend and positions](snapshots/avg_ppr2.png)
 Due to limited available data and time constraints, the dataset was not fully cleaned and it had not been ready for analysis yet.
 ## Insights
 1. Physical Metrics and Performance:
