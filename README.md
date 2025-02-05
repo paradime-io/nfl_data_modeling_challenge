@@ -172,7 +172,7 @@ For guidance on what a successful submission may look like, check out examples f
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Data Sources and Data Lineage](#data-sources)
+2. [Data Sources and Data Lineage](#data-sources-and-data-lineage)
    - [Sources and Seeds](#registration-and-verification)
    - [Intermediate Layer](#account-setup)
    - [Mart Layer](#support-and-faqs)
@@ -189,7 +189,7 @@ For guidance on what a successful submission may look like, check out examples f
    - [Fantasy Points Over Expections](#fantasy-points-over-expectations)
 6. [Conclusions and Takeaways](#conclusions-and-takeaways)
 
-## Introduction
+## 📢 Introduction
 
 When it comes to fantasy football, not all points are created equal. Some players thrive under pressure, some dominate the red zone, and others outperform their expectations week in and week out. This analysis dives into NFL player efficiency across three key dimensions—Red Zone Efficiency, Clutch Performance, and Expected Fantasy Points—to create a single source of truth for fantasy football dominance.
 
@@ -205,9 +205,9 @@ Using Paradime, dbt™, Snowflake, and Lightdash, we built a fact-based model th
 ## 🕸️ Data Sources and Data Lineage
 
 Our analysis is built on three core models:
-1️⃣ Red Zone Efficiency (*who dominates near the end zone?*)
-2️⃣ Clutch Performance (*who delivers when it matters most?*)
-3️⃣ Expected Fantasy Points (*who overperforms expectations?*)
+- **1️⃣ Red Zone Efficiency (*who dominates near the end zone?*)**
+- **2️⃣ Clutch Performance (*who delivers when it matters most?*)**
+- **3️⃣ Expected Fantasy Points (*who overperforms expectations?*)**
 
 These models leverage pre-loaded datasets and transformations in Paradime to create a unified marts table for fantasy player performance.
 
