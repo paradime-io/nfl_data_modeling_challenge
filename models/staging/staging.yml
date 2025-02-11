@@ -334,3 +334,92 @@ models:
         description: "NFL GSIS (Game Statistics & Information System) ID."
       - name: smart_id
         description: "A unique identifier used internally or externally."
+
+  - name: stg_player_snap_counts
+    description: "Staging model for 2023 snap counts by player and week."
+    columns:
+      - name: pfr_player_id
+        description: "Player's Pro-Football-Reference ID"
+      - name: player_name
+        description: "Player's display name"
+      - name: position
+        description: "Player's position (e.g., QB, RB, WR, TE)"
+      - name: team
+        description: "The player's team at the time of the game"
+      - name: season
+        description: "Season year for these stats"
+      - name: game_id
+        description: "Unique identifier for a specific football game"
+      - name: game_type
+        description: "Type of the game (e.g., regular, wild card game, Super Bowl, etc.)"
+      - name: week
+        description: "Week of the season for these stats"
+      - name: opponent
+        description: "Opponent team for the game"
+      - name: offense_snaps
+        description: "Number of offensive snaps played"
+      - name: offense_pct
+        description: "Percent of offensive snaps played"
+      - name: defense_snaps
+        description: "Number of defensive snaps played"
+      - name: offense_pct
+        description: "Percent of defensive snaps played"
+      - name: special_teams_snaps
+        description: "Number of special teams snaps played"
+      - name: special_teams_pct
+        description: "Percent of special teams snaps played"
+
+  - name: stg_yearly_player_stats
+    description: "Staging model for regular season stats for each player by year with a specific focus on receiving-related stats"
+    columns:
+      - name: year
+        description: "Season year for these stats"
+      - name: player_id
+        description: "Player's PFR ID"
+      - name: player_name
+        description: "Player's display name"
+      - name: team
+        description: "The player's team at the time of the game"
+      - name: age
+        description: "Player's age at the time of the game."
+      - name: position
+        description: "Player's position (e.g., QB, RB, WR, TE)."
+      - name: birth_date
+        description: "Player's birth date."
+      - name: entry_year
+        description: "Year the player entered the league."
+      - name: rookie_year
+        description: "The player's rookie season."
+      - name: draft_club
+        description: "Team that drafted the player."
+      - name: draft_number
+        description: "Draft pick number used to select the player."
+      - name: game_type
+        description: "Type of the game (e.g., Regular, Postseason)."
+      - name: games_played
+        description: "Count of distinct games (weeks) the player participated in."
+      - name: targets
+        description: "Total number of passing targets the player received in the time period."
+      - name: receptions
+        description: "Total number of receptions the player had in the time period."
+      - name: receiving_yds
+        description: "Total receiving yards the player had in the time period."
+      - name: touchdowns
+      - name: receiving_yds
+        description: "Total touchdowns the player had in the time period."
+      - name: first_downs
+        description: "Total first downs the player had in the time period."
+      - name: yds_after_catch
+        description: "Total yards after the catch the player had in the time period."
+      - name: air_yds
+        description: "Yards that the football traveled in the air from the line of scrimmage to the intended receiver on a forward pass."
+      - name: target_share
+        description: "Percentage of a team's total targets that are thrown to a specific player"
+      - name: air_yds_share
+        description: "Percentage of a team's total air yards that are attributed to a specific player"
+      - name: wopr_x
+        description: "Weighted Opportunity Rating (WOPR) is calculated by combining a player's air yards share and target share. Represents the market share of targets for a received within a team."
+      - name: fantasy_points
+        description: "Standard fantasy football points scored."
+      - name: fantasy_points_ppr
+        description: "Fantasy points in PPR scoring format."

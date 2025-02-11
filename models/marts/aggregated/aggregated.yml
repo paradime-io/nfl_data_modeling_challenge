@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: agg_touchdown_plays
+    description: "Aggregated counts of 2023 rushing and pashing touchdowns by team, position, and game type."
+    columns:
+      - name: team
+        description: "The team who scored the touchdown"
+      - name: scorer_position
+        description: "Position of the player who scored the touchdown, grouped. If QB, RB, WR, TE, then position is shown. Otherwise, labeled as `Other position.`"
+      - name: game_type
+        description: "Indicates whether the game is regular season, postseason, etc."
+      - name: num_rush_touchdowns
+        description: "Number of rushing touchdowns"
+        meta:
+          metrics:
+            number_rush_tds:
+              type: sum
+      - name: num_pass_touchdowns
+        description: "Number of passing touchdowns"
+        meta:
+          metrics:
+            number_pass_tds:
+              type: sum
+      - name: num_other_touchdowns
+        description: "Number of other touchdowns (not labeled as rushing or passing plays)"
+        meta:
+          metrics:
+            number_other_tds:
+              type: sum
+      - name: num_total_touchdowns
+        description: "Number of total touchdowns, includes rushing, passing, and other"
+        meta:
+          metrics:
+            number_total_tds:
+              type: sum

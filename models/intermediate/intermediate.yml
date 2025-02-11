@@ -38,6 +38,8 @@ models:
         description: "Unique fantasy-related identifier for the player involved in the play."
       - name: fantasy_player_name
         description: "Name of the player involved in the play, relevant for fantasy purposes."
+      - name: possession_team
+        description: "Team in possession of the ball during the play."
       - name: play_type
         description: "Type of play (e.g., run, pass)."
       - name: incomplete_pass
@@ -56,3 +58,115 @@ models:
         description: "Flag (0/1) if a penalty occurred on this play."
       - name: penalty_type
         description: "Type of penalty called during this play, if any."
+
+  - name: int_player_receiving_stats
+    description: "Intermediate model focusing on year over year receiving stats"
+    columns:
+      - name: year
+        description: "Season year for these stats"
+      - name: player_id
+        description: "Player's Pro-Football-Reference ID"
+      - name: player_name
+        description: "Player's display name"
+      - name: team
+        description: "The player's team at the time of the game"
+      - name: age
+        description: "Player's age at the time of the game."
+      - name: position
+        description: "Player's position (e.g., QB, RB, WR, TE)."
+      - name: entry_year
+        description: "Year the player entered the league."
+      - name: rookie_year
+        description: "The player's rookie season."
+      - name: draft_number
+        description: "Draft pick number used to select the player."
+      - name: games_played
+        description: "Count of distinct games (weeks) the player participated in."
+      - name: targets
+        description: "Total number of passing targets the player received in the time period."
+      - name: receptions
+        description: "Total number of receptions the player had in the time period."
+      - name: receiving_yds
+        description: "Total receiving yards the player had in the time period."
+      - name: touchdowns
+        description: "Total touchdowns the player had in the time period."
+      - name: first_downs
+        description: "Total first downs the player had in the time period."
+      - name: yds_after_catch
+        description: "Total yards after the catch the player had in the time period."
+      - name: air_yds
+        description: "Yards that the football traveled in the air from the line of scrimmage to the intended receiver on a forward pass."
+      - name: target_share
+        description: "Percentage of a team's total targets that are thrown to a specific player"
+      - name: air_yds_share
+        description: "Percentage of a team's total air yards that are attributed to a specific player"
+      - name: wopr_x
+        description: "Weighted Opportunity Rating (WOPR) is calculated by combining a player's air yards share and target share. Represents the market share of targets for a received within a team."
+      - name: fantasy_points
+        description: "Standard fantasy football points scored."
+      - name: fantasy_points_ppr
+        description: "Fantasy points in PPR scoring format."
+      - name: offensive_snaps
+        description: "Total number of offensive snaps played"
+      - name: average_targets_per_snap
+        description: "Total number of targets divided by total offensive snaps"
+      - name: average_receptions_per_snap
+        description: "Total number of receptions divided by total offensive snaps"
+      - name: pct_targets_caught
+        description: "Percentage of targets that resulted in receptions"
+
+  - name: int_touchdown_plays
+    description: "Intermediate model of all rushing and passing touchdowns in the 2023 season"
+    columns:
+      - name: player_id
+        description: "Player's Pro-Football-Reference ID"
+      - name: player_name
+        description: "Player's display name"
+      - name: team
+        description: "The player's team at the time of the game"
+      - name: position
+        description: "Player's position (e.g., QB, RB, WR, TE)."
+      - name: years_experience
+        description: "Years of experience in the league."
+        meta:
+          metrics:
+            years_played:
+              type: average
+      - name: rookie_year
+        description: "The player's rookie season."
+      - name: draft_team
+        description: "Team that drafted the player."
+      - name: draft_number
+        description: "Draft pick number used to select the player."
+        meta:
+          metrics:
+            drafted_number:
+              type: average   
+      - name: plays_for_draft_team
+        description: "Boolean indicator of whether the player's current team is the same team that drafted them"
+      - name: play_id
+        description: "Unique identifier for each play."
+        meta:
+          metrics:
+            number_of_touchdowns:
+              type: count_distinct
+      - name: td_type
+        description: "Type of touchdown, either rush or pass"
+      - name: quarter
+        description: "Current quarter of the game (1-4, or OT periods)."
+      - name: down
+        description: "The current down number (1-4)."
+      - name: distance_to_goal
+        description: "Yard distance from the defending team's end zone (1-100), representing the offense's field position."
+        meta:
+          metrics:
+            distance_to_end_zone:
+              type: average
+      - name: home_team
+        description: "Abbreviation of the home team."
+      - name: away_team
+        description: "Abbreviation of the away team."
+      - name: possession_team_type
+        description: "Indicates if the possessing team is the home or away team"
+      - name: game_type
+        description: "Indicates whether the game is regular season, postseason, etc."

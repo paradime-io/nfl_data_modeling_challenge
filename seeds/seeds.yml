@@ -1,0 +1,6 @@
+seeds:
+  - name: seed_nfl_player_stats_yearly
+    description: "Regular season stats for each player by year (2018-2023)"
+  - name: seed_nfl_snap_counts_2023
+    description: "Snap counts for the 2023 season by player and week."
+    

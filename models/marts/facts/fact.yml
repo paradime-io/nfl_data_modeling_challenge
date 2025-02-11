@@ -14,18 +14,59 @@ models:
         description: "The player's most recent team."
       - name: total_fantasy_points
         description: "Total fantasy points scored by the player (standard scoring) across the considered period."
+        meta:
+          metrics:
+            grand_total_fantasy_points:
+              type: sum
       - name: total_fantasy_points_ppr
         description: "Total fantasy points scored by the player under PPR (points per reception) scoring across the considered period."
+        meta:
+          metrics:
+            grand_total_fantasy_points_ppr:
+              type: sum
       - name: games_played
         description: "Number of games (weeks) the player participated in."
+        meta:
+          metrics:
+            number_of_games_played:
+              type: sum
       - name: avg_fantasy_points_per_game
         description: "Average standard fantasy points per game played."
+        meta:
+          metrics:
+            avg_fantasy_points_ppr:
+              type: max
       - name: avg_fantasy_points_ppr_per_game
         description: "Average PPR fantasy points per game played."
+        meta:
+          metrics:
+            avg_ppr_fantasy_points_per_game:
+              type: max
       - name: standard_rank
         description: "The player's rank among all players based on total standard fantasy points."
+        meta:
+          metrics:
+            fantasy_point_rank:
+              type: max
       - name: ppr_rank
         description: "The player's rank among all players based on total PPR fantasy points."
+        meta:
+          metrics:
+            ppr_fantasy_point_rank:
+              type: max
+      - name: standard_rank_for_position
+        description: "The player's rank among players who play the same position based on total standard fantasy points."
+        meta:
+          metrics:
+            position_fantasy_point_rank:
+              type: max
+      - name: ppr_rank_for_position
+        description: "The player's rank among players who play the same position based on total PPR fantasy points."
+        meta:
+          metrics:
+            position_ppr_fantasy_point_rank:
+              type: max
+              
 
   - name: fct_red_zone_player_stats
     description: "Fact table summarizing player performance within the red zone, capturing rushing and passing opportunities."
@@ -42,3 +83,387 @@ models:
         description: "Total number of red zone targets (pass attempts) directed to the player."
       - name: total_pass_completions
         description: "Total number of red zone passes completed to the player."
+
+  - name: fct_player_receiving_stats
+    description: "Fact table focusing on 2023 receiving stats and fantasy points"
+    columns:
+      - name: year
+        description: "Season year for these stats"
+      - name: pfr_player_id
+        description: "Player's Pro-Football-Reference ID"
+      - name: player_name
+        description: "Player's display name"
+      - name: team
+        description: "The player's team at the time of the game"
+      - name: age
+        description: "Player's age at the time of the game."
+      - name: position
+        description: "Player's position (e.g., QB, RB, WR, TE)."
+      - name: is_wide_receiver
+        description: "Boolean indicator of whether player's position is wide receiver."
+      - name: games_played
+        description: "Count of distinct games (weeks) the player participated in."
+      - name: games_started
+        description: "Count of distinct games (weeks) the player was a starter."
+      - name: targets
+        description: "Total number of passing targets the player received in the time period."
+        meta:
+          metrics:
+            total_targets:
+              type: sum
+      - name: receptions
+        description: "Total number of receptions the player had in the time period."
+        meta:
+          metrics:
+            total_receptions:
+              type: sum
+      - name: receiving_yds
+        description: "Total receiving yards the player had in the time period."
+        meta:
+          metrics:
+            total_receiving_yds:
+              type: sum
+      - name: touchdowns
+        description: "Total touchdowns the player had in the time period."
+        meta:
+          metrics:
+            total_tds:
+              type: sum
+      - name: first_downs
+        description: "Total first downs the player had in the time period."
+        meta:
+          metrics:
+            total_first_downs:
+              type: sum
+      - name: yds_after_catch
+        description: "Total yards after the catch the player had in the time period."
+        meta:
+          metrics:
+            total_yds_after_catch:
+              type: sum
+      - name: yds_after_catch_per_rec
+        description: "Total yards after the catch per reception the player had in the time period."
+      - name: broken_tackles_on_rec
+        description: "Total broken tackles on receptions the player had in the time period."
+        meta:
+          metrics:
+            total_broken_tackles:
+              type: sum
+      - name: dropped_passes
+        description: "Total dropped passes the player had in the time period."
+        meta:
+          metrics:
+            total_dropped_passes:
+              type: sum
+      - name: drop_pct
+        description: "Percent of passes that the player dropped in the time period."
+        meta:
+          metrics:
+            drop_rate:
+              type: average        
+      - name: passer_rating_on_targets
+        description: "Calculated quarterback's passer rating based solely on the passes they attempt towards this specific receiver."
+      - name: pct_of_games_as_starter
+        description: "Total number of games as a starter divided by total games played"
+      - name: average_yds_per_reception
+        description: "Average number of yards per reception"
+        meta:
+          metrics:
+            average_yards_per_rec:
+              type: average 
+      - name: avg_receptions_per_target
+        description: "Average number of receptions per target"
+        meta:
+          metrics:
+            average_rec_per_target:
+              type: average 
+      - name: avg_td_per_target
+        description: "Average number of touchdowns per target"
+        meta:
+          metrics:
+            average_tds_per_target:
+              type: average 
+      - name: offensive_snaps
+        description: "Total number of offensive snaps played"
+        meta:
+          metrics:
+            total_offensive_snaps:
+              type: sum
+      - name: average_targets_per_snap
+        description: "Total number of targets divided by total offensive snaps"
+      - name: average_receptions_per_snap
+        description: "Total number of receptions divided by total offensive snaps"
+      - name: total_fantasy_points
+        description: "Total fantasy points that player received"
+        meta:
+          metrics:
+            grand_total_fantasy_points:
+              type: sum
+      - name: average_fantasy_points_per_game
+        description: "Average number of fantasy points that player received each week"
+        meta:
+          metrics:
+            average_points_per_game:
+              type: average 
+      - name: total_fantasy_points_ppr
+        description: "Total PPR fantasy points that player received"
+        meta:
+          metrics:
+            grand_total_ppr_fantasy_points:
+              type: sum
+
+  - name: fct_player_receiving_stats_yearly
+    description: "Fact table focusing on yearly receiving stats across multiple seasons"
+    columns:
+      - name: year
+        description: "Season year for these stats"
+      - name: player_id
+        description: "Player's Pro-Football-Reference ID"
+      - name: player_name
+        description: "Player's display name"
+      - name: team
+        description: "The player's team at the time of the game"
+      - name: age
+        description: "Player's age at the time of the game."
+      - name: position
+        description: "Player's position (e.g., QB, RB, WR, TE)."
+      - name: is_rb_wr_or_te
+        description: "Boolean indicator of whether player's position is wide receiver, running back, or tight end. Used for filtering down to these key positions in reporting."
+      - name: entry_year
+        description: "Year the player entered the league."
+      - name: rookie_year
+        description: "The player's rookie season."
+      - name: is_rookie_year
+        description: "Boolean indicator of whether season was a player's rookie year."
+      - name: draft_number
+        description: "Draft pick number used to select the player."
+      - name: games_played
+        description: "Count of distinct games (weeks) the player participated in."
+      - name: targets
+        description: "Total number of passing targets the player received in the time period."
+        meta:
+          metrics:
+            total_targets:
+              type: sum
+      - name: receptions
+        description: "Total number of receptions the player had in the time period."
+        meta:
+          metrics:
+            total_receptions:
+              type: sum
+      - name: receiving_yds
+        description: "Total receiving yards the player had in the time period."
+        meta:
+          metrics:
+            total_receiving_yds:
+              type: sum
+      - name: touchdowns
+        description: "Total touchdowns the player had in the time period."
+        meta:
+          metrics:
+            total_tds:
+              type: sum
+      - name: first_downs
+        description: "Total first downs the player had in the time period."
+        meta:
+          metrics:
+            total_first_downs:
+              type: sum
+      - name: yds_after_catch
+        description: "Total yards after the catch the player had in the time period."
+        meta:
+          metrics:
+            total_yds_after_catch:
+              type: sum
+      - name: air_yds
+        description: "Yards that the football traveled in the air from the line of scrimmage to the intended receiver on a forward pass."
+        meta:
+          metrics:
+            air_yards:
+              type: sum
+      - name: target_share
+        description: "Percentage of a team's total targets that are thrown to a specific player"
+        meta:
+          metrics:
+            tgt_share:
+              type: sum
+      - name: air_yds_share
+        description: "Percentage of a team's total air yards that are attributed to a specific player"
+        meta:
+          metrics:
+            air_yards_share:
+              type: sum
+      - name: wopr_x
+        description: "Weighted Opportunity Rating (WOPR) is calculated by combining a player's air yards share and target share. Represents the market share of targets for a received within a team."
+        meta:
+          metrics:
+            wopr:
+              type: max
+      - name: fantasy_points
+        description: "Standard fantasy football points scored."
+        meta:
+          metrics:
+            grand_total_fantasy_pts:
+              type: sum
+      - name: fantasy_points_ppr
+        description: "Fantasy points in PPR scoring format."
+        meta:
+          metrics:
+            grand_total_ppr_fantasy_pts:
+              type: sum
+      - name: offensive_snaps
+        description: "Total number of offensive snaps played"
+        meta:
+          metrics:
+            total_offensive_snaps:
+              type: sum
+      - name: average_targets_per_snap
+        description: "Total number of targets divided by total offensive snaps"
+        meta:
+          metrics:
+            avg_targets_per_snap:
+              type: max
+      - name: average_receptions_per_snap
+        description: "Total number of receptions divided by total offensive snaps"
+        meta:
+          metrics:
+            avg_receptions_per_snap:
+              type: max
+      - name: pct_targets_caught
+        description: "Percentage of targets that resulted in receptions"
+        meta:
+          metrics:
+            percent_targets_caught:
+              type: average
+      - name: pct_targets_that_were_tds
+        description: "Percentage of targets that resulted in touchdowns"
+        meta:
+          metrics:
+            percent_targets_that_were_tds:
+              type: average
+      - name: avg_targets_per_game
+        description: "Average number of targets per game played"
+        meta:
+          metrics:
+            avg_targets_per_gm:
+              type: max
+      - name: avg_receptions_per_game
+        description: "Average number of receptions per game played"
+        meta:
+          metrics:
+            avg_recs_per_gm:
+              type: max
+      - name: avg_fantasy_pts_per_game
+        description: "Average number of standard fantasy points per game played"
+        meta:
+          metrics:
+            avg_fantasy_pts_per_gm:
+              type: max
+      - name: avg_ppr_fantasy_pts_per_game
+        description: "Average number of PPR fantasy points per game played"
+        meta:
+          metrics:
+            avg_ppr_pts_per_gm:
+              type: max
+
+  - name: fct_red_zone_team_stats
+    description: "Fact table summarizing 2023 red zone stats by team"
+    columns:
+      - name: team
+        description: "Team in possession of the ball during the play."
+      - name: num_red_zone_plays
+        description: "Number of total red zone plays (excluding extra points and plays with holding penalties)."
+        meta:
+          metrics:
+            number_of_red_zone_plays:
+              type: sum
+      - name: num_incomplete_passes
+        description: "Number of total incomplete passes on red zone plays"
+        meta:
+          metrics:
+            number_of_incomplete_passes:
+              type: sum
+      - name: num_complete_passes
+        description: "Number of total complete passes on red zone plays"
+        meta:
+          metrics:
+            number_of_complete_passes:
+              type: sum
+      - name: num_pass_attempts
+        description: "Number of red zone plays that were pass attempts, regardless of whether they were completed"
+        meta:
+          metrics:
+            number_of_pass_attempts:
+              type: sum
+      - name: num_rush_attempts
+        description: "Number of red zone plays that were rush attempts"
+        meta:
+          metrics:
+            number_of_rush_attempts:
+              type: sum
+      - name: num_total_touchdowns
+        description: "Number of red zone plays that resulted in touchdowns"
+        meta:
+          metrics:
+            number_of_total_touchdowns:
+              type: sum
+      - name: num_pass_touchdowns
+        description: "Number of red zone pass plays that resulted in touchdowns"
+        meta:
+          metrics:
+            number_of_pass_touchdowns:
+              type: sum
+      - name: num_rush_touchdowns
+        description: "Number of red zone rush plays that resulted in touchdowns"
+        meta:
+          metrics:
+            number_of_rush_touchdowns:
+              type: sum
+      - name: red_zone_td_rank
+        description: "How team ranked vs. all others for number of total red zone touchdowns"
+        meta:
+          metrics:
+            rank_num_tds:
+              type: max
+      - name: pct_pass_plays
+        description: "Percent of red zone plays that were pass plays, regardless of whether they were completed"
+        meta:
+          metrics:
+            pct_pass_play:
+              type: average
+      - name: pct_rush_plays
+        description: "Percent of red zone plays that were rush plays"
+        meta:
+          metrics:
+            pct_rush_play:
+              type: average
+      - name: pct_pass_attempt_td_conversion
+        description: "Percent of red zone pass attempts that resulted in a touchdown"
+        meta:
+          metrics:
+            pct_pass_att_td_conversion:
+              type: average
+      - name: pct_rush_attempt_td_conversion
+        description: "Percent of red zone rush plays that resulted in a touchdown"
+        meta:
+          metrics:
+            pct_rush_att_td_conversion:
+              type: average
+      - name: pct_total_td_conversions
+        description: "Percent of all red zone plays that resulted in a touchdown"
+        meta:
+          metrics:
+            pct_total_td_conversion:
+              type: average
+      - name: pct_tds_that_were_rushes
+        description: "Percent of all red zone touchdowns that were rush plays"
+        meta:
+          metrics:
+            pct_tds_plays_that_were_rushes:
+              type: average
+      - name: pct_tds_that_were_passes
+        description: "Percent of all red zone touchdowns that were pass plays"
+        meta:
+          metrics:
+            pct_tds_plays_that_were_passes:
+              type: average

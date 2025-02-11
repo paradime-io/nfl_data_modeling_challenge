@@ -2,9 +2,12 @@
 
 WITH red_zone_plays AS (
     SELECT
-        play_id,
+        --play_id is not a unique ID, need to pull in game_id as well
+        CONCAT(game_id, ' ', play_id) as play_id,
+        --play_id,
         fantasy_player_id,
         fantasy_player_name,
+        possession_team,
         play_type,
         incomplete_pass,
         complete_pass,

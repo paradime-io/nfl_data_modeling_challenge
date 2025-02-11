@@ -4,7 +4,7 @@ SELECT
     position,
     recent_team,
     season,
-    season_week,
+    --season_week, -- Having this column here messed up the grain, so I removed it to get season totals
     SUM(targets) AS total_targets,
     SUM(fantasy_points) AS total_fantasy_points,
     SUM(fantasy_points_ppr) AS total_fantasy_points_ppr,
@@ -16,4 +16,5 @@ FROM
 WHERE 
     SEASON_TYPE = 'REG'
 GROUP BY 
-    player_id, player_name, position, recent_team, season, season_week
+    player_id, player_name, position, recent_team, season
+    --, season_week

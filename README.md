@@ -1,161 +1,6 @@
+This repository contains Katie Shaffer's entry in the 2025 dbt™ Data Modeling Challenge - Fantasy Football Edition.
+
 # dbt™ Data Modeling Challenge - Fantasy Football Edition
-
-Welcome to the **dbt™ Data Modeling Challenge - Fantasy Football Edition!** This global hack-a-thon invites you to transform raw fantasy football data into insightful, data-driven insights. You'll use Paradime, Snowflake, and Lightdash to model, explore, and visualize data—showcasing your analytics engineering expertise and vying for prizes up to $1,500.
-
-## 📋 Table of Contents
-
-1. [Getting Started](#-getting-started)
-   - [Registration and Verification](#registration-and-verification)
-   - [Account Setup](#account-setup)
-   - [Support and FAQs](#support-and-faqs)
-2. [Competition Details](#-competition-details)
-3. [Tools and Resources](#-tools-and-resources)
-4. [Building Your Project](#-building-your-project)
-5. [Additional NFL Data](#-additional-nfl-data)
-6. [Submission Guidelines](#-submission-guidelines)
-7. [Judging Criteria](#-judging-criteria)
-8. [Prizes](#-prizes)
-9. [Example Submission](#example-submission-template)
-
-## 🏈 Getting Started
-
-### Registration and Verification
-Make sure you meet the [Entry Requirements](#) before registering
-
-- **Register**: Complete the [registration form](#)
-- **Verification**: Paradime will review your application. If approved, you'll receive credentials via email to begin.
-
-### Account Setup
-
-After approval, you'll receive two emails:
-
-1. **Snowflake Account Credentials**: Contains your Snowflake account details. Search for "*Snowflake Credentials: dbt™ Data Modeling Challenge - Fantasy Football Edition*."
-2. **Paradime Platform Invitation**: An invitation to access the Paradime Platform. Search for "*[Paradime] Activate your account*."
-
-**Additional Guidance**: Detailed setup tutorials will be provided in your Snowflake confirmation email.
-
-### Support and FAQs
-
-- **Slack Community**: Join **#fantasy-football-challenge** on [Paradime's Slack](https://paradimers.slack.com/join/shared_invite/zt-1mzax4sb8-jgw~hXRlDHAx~KN0az18bw#/shared-invite/email)
-- **Additional Questions**: Check documentation or ask in Slack
-- **Troubleshooting Emails**: Search for "mail@paradime.retool-email.com" in your registration email
-
-## 🏈 Competition Details
-
-**Key Dates:**
-- **Start:** January 2, 2025
-- **Submission Deadline:** February 4, 2025, 11:59 PM PT
-- **Winners Announced:** February 6, 2025 (right before the Superbowl!)
-
-**Who Should Participate?**
-- Data Analysts, Analytics Engineers, Data Engineers, Data Scientists, and SQL/dbt™ enthusiasts
-- Individual submissions only (no teams)
-- Experience with SQL, dbt™, Git, and basic data visualization required
-
-## ⚙️ Tools and Resources
-
-1. **[Paradime](https://www.paradime.io/)**
-   - SQL, dbt™ development, and AI-assisted analytics engineering
-   - [Documentation](https://docs.paradime.io/app-help) | [Code IDE Tutorial](https://app.arcade.software/share/7kRyaYbPoGc5ofmJfmvY) | [Commands Panel](https://www.youtube.com/watch?v=wQtIn-tnnbg) | [DinoAI Tutorial](https://www.youtube.com/watch?v=KqiosgQFsuk)
-
-2. **[Lightdash](https://www.lightdash.com/)**
-   - Open-source BI for dbt™ metrics and visualizations
-   - [Documentation](https://docs.lightdash.com/) | [Tutorial](https://www.youtube.com/watch?v=Z4Y0KM0MroQ)
-
-3. **[Snowflake](https://www.snowflake.com/en/)**
-   - Cloud data platform for storage and compute
-
-4. **GitHub**
-   - Version control and project submission platform
-
-## 🛠 Building Your Project
-
-### Need a Spark of Inspiration?
-
-Check out these resources:
-
-- **[Winning Strategies for Paradime's Movie Data Modeling Challenge](https://www.paradime.io/blog/winning-strategies-movie-challenge)**: Learn the strategies, best practices, and insights uncovered from winning participants in previous Data Modeling Challenges.  
-- Explore winning submissions from Paradime's recent Data Modeling Challenges:
-  - **[Bruno De Lima's Submission](https://github.com/paradime-io/social-media-data-modeling-challenge/tree/bruno-lima)**: 1st Place winner from Paradime's dbt Data Modeling Challenge - Socal Media Edition.  
-  - **[Spence Perry's Submission](https://github.com/paradime-io/paradime-dbt-nba-data-challenge/tree/nba-spence-perry)**: 1st place winner from Paradime's dbt Data Modeling Challenge - NBA Edition.  
-  - **[Isin Pesch's Submission](https://github.com/paradime-io/paradime-dbt-movie-challenge/blob/movie-isin-pesch-deel-com/)**: 1st place winner from Paradime's dbt Data Modeling Challenge - Movie Edition.
-
-### Step 1: Master Required Tools
-- Explore Paradime's code IDE, AI development, data explorer, and lineage tools
-- Understand Snowflake schemas and tables in your fantasy football datasets
-- Learn to connect dbt™ models and build Lightdash dashboards
-
-### Step 2: Explore and Enhance the Data
-- Examine pre-loaded fantasy football datasets
-- Consider external data sources to enhance analysis (injury reports, game results, weather conditions, draft prospects, depth charts, etc.)
-
-### Step 3: Generate Insights
-Uncover NFL insights related to fantasy football—the possibilities are endless!
-
-**Potential Insight Areas with Pre-Loaded Datasets:**  
-- **Top Performers by Week/Season**: Using [player_stats_by_game](https://github.com/paradime-io/nfl_data_modeling_challenge/blob/main/models/staging/stg_player_stats_by_game.sql), identify highest-scoring players each week and over the season.  
-- **Team Defense Impact**: Using [play_by_play](https://github.com/paradime-io/nfl_data_modeling_challenge/blob/main/models/staging/stg_play_by_play.sql), determine which defenses give up the most fantasy points by position.  
-- **Red Zone Efficiency**: Using [play_by_play](https://github.com/paradime-io/nfl_data_modeling_challenge/blob/main/models/staging/stg_play_by_play.sql), pinpoint which players or teams excel in scoring opportunities inside the 20-yard line.
-
-**Potential Insight Areas with External Datasets:**  
-- Top scoring players by week/season  
-- Player consistency analysis (boom/bust metrics)  
-- Impact of team matchups on player performance  
-- Identifying players with high injury propensity  
-- Forecasting 2025 draft prospects  
-
-### Step 4: Visualize with Lightdash
-- Create clear, informative dashboards w/ written conclusions
-- Use dbt™ models as metric sources (optional)
-- Ensure visualizations support your conclusions
-
-## 🌟 Additional NFL Data
-
-If you want to pull additional NFL data for your analysis, you can use the **nfl_data_py** library, the same tool we used to pre-load datasets into Snowflake:
-
-- **GitHub Repo**: [nfl_data_py](https://github.com/nflverse/nfl_data_py)
-
-For reference, the scripts we used to load the pre-loaded datasets can be found in the [**Scripts**](https://github.com/paradime-io/nfl_data_modeling_challenge/tree/main/scripts) folder of this repository.
-
-## 📤 Submission Guidelines
-
-**Deadline**: February 4, 2025, 11:59 PM PT
-
-**Submission Process**:
-1. Complete your dbt™ project in Paradime
-2. Build Lightdash visualizations
-3. Commit code, documentation, and README.md to GitHub
-4. Email parker@paradime.io:
-   - Subject: "<Your_Name> - Fantasy Football Data Modeling Challenge Submission"
-   - Include GitHub branch link
-  
-Need help? follow this [step-by-step tutorial](https://app.arcade.software/share/mpoE0fK5HknHZJ3xLVVs) to submit your project. 
-
-## 🎯 Judging Criteria
-
-A panel of five independent judges will assess each submission based on the following categories. Each category is scored on a scale of 1-10:
-
-1. **Value of Insights**: Are the findings relevant and valuable for fantasy football analysis?
-2. **Complexity of Insights**: Do you connect multiple datasets and implement advanced transformations?
-3. **Quality of Materials**: Is your code clean, your dbt™ models well-structured, and your visualizations high-quality?
-4. **Integration of New Data**: Have you effectively incorporated additional datasets to enhance your analysis?
-
-## 🏆 Why Join This Challenge?
-
-- **Showcase Your Skills**: Demonstrate your SQL, dbt™, and analytics engineering expertise.
-- **Work with Modern Tools**: Gain hands-on experience with Paradime, Snowflake, and Lightdash.
-- **Build Your Portfolio**: Enhance your professional profile with a compelling analytics project.
-- **Network**: Connect with a community of data professionals and industry experts.
-- **Win Prizes**: Compete for Amazon gift cards worth up to $1,500!
-
-**Prizes:**
-- **1st Place**: $1,500 Amazon gift card  
-- **2nd Place**: $1,000 Amazon gift card  
-- **3rd Place**: $500 Amazon gift card
-
----
-# Example Submission Template
-For guidance on what a successful submission may look like, check out examples from [previous dbt™ Data Modeling Challenge winners](#need-a-spark-of-inspiration).
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -166,29 +11,114 @@ For guidance on what a successful submission may look like, check out examples f
 6. [Conclusions](#conclusions)
 
 ## Introduction
-[Brief overview: What you aimed to achieve and why it matters]
-[Include link to Lightdash dashboard]
+
+The objective of this challenge was to analyze and transform raw fantasy football NFL data to derive insights. I approached this challenge from the perspective of a fan looking to draft an NFL fantasy team. The ultimate goal being to maximize the chances of winning their fantasy league. 
+
+[Include link to Lightdash dashboard] [TO DO]
 
 ## Data Sources
-- [Fantasy Football Data (Snowflake)](... link or details ...)
-- [Additional Data Set 1] - [Description]
-- [Additional Data Set 2] - [Description]
+- [Fantasy Football Data (Snowflake)] - Tables preloaded by Paradime
+- Snap Counts - Snap counts for the 2023 season by player and week pulled from [nfl_py_data](https://github.com/nflverse/nfl_data_py) via Python script
+- Seasonal data: Regular season stats for each player by year (2018-2023) pulled from [nfl_py_data](https://github.com/nflverse/nfl_data_py) via Python script
 
 ## Methodology
 ### Tools Used
 - Paradime for dbt™ modeling and SQL
 - Snowflake for data warehousing
 - Lightdash for visualization
-- [Any other tools/techniques used]
 
 ### Applied Techniques
-[Discuss transformations, tests, and models built]
+
+I created several staging, intermediate, and fact models based on the data sources. I also utilized some of the preloaded models. The following models were leveraged in my final submission:
+
+Seed Files (sourced pulled from `nfl_py_data` via Python script)
+* `seed_nfl_player_stats_yearly`
+* `seed_nfl_snap_counts_2023`
+
+Staging Layer
+* `stg_player_snap_counts`
+* `stg_yearly_player_stats`
+
+Intermediate Layer
+* `int_player_receiving_stats` - Intermediate model combining yearly regular season receiving stats and 2023 snap counts
+* `int_touchdown_plays` - Intermediate model of all rushing and passing touchdowns in the 2023 season
+* `int_fantasy_points_leaders` - Preloaded intermediate model of player fantasy points for 2023 season. I identified an issue in the grain of this model. It was shown by week, but I believe it was intended to represent yearly aggregations. I updated this model and `fct_fantasy_points_leaders` accordingly.
+
+
+Mart Layer
+* `fct_player_receiving_stats_yearly` - Model for receiving player stats and fantasy points for 2018-2023 regular seasons
+* `agg_touchdown_plays` - Model for aggregated counts of 2023 rushing and pashing touchdowns by team, position, and game type. I adjusted the preloaded upstream  `stg_play_by_play` model, as I discovered `play_id` is not a unique identifier across games."
+* `fct_fantasy_points_leaders` - Preloaded model of player fantasy points for 2023 season
+
 
 ## Visualizations
-[Include screenshots or links to Lightdash dashboards]
+Here is my [Lightdash dashboard](https://app.lightdash.cloud/projects/ccbaf62f-52f2-4af9-9675-bbacf0556f82/dashboards/d6a57740-b426-47e7-a26d-911429577666/edit) containing the visualizations highlighted below.
 
 ## Insights
-[Detail your findings, supported by data and visuals]
+
+### Context: PPR Scoring
+
+My first step was to educate myself about fantasy football scoring. Most fantasy leagues now use a PPR (Points Per Reception) format. You receive points for touchdowns and yards as with standard scoring. However, you also receive points for each reception with PPR scoring. 
+
+For the 2023 season, 4 of the top 10 players in terms of PPR fantasy points were wide receivers.
+![Top 10 Players](./analyses/Visualizations/2023_Top_10_Players.png)
+
+While QBs often score a lot of points, it is typical to draft just 1 QB, but draft multiple receiving players (e.g., 2-3 WRs and 1 TE) in most leagues. With this knowledge in hand, I decided to focus on receiving players in my analysis.
+
+### Top Players (Based on 2023 PPR Points)
+I pulled a list of the the top 10 WRs or TEs in 2023 based on PPR points. There were no TEs in the top 10. 
+![Top 10 WRs](./analyses/Visualizations/2023_Top_10_WRs.png)
+
+It stood out to me that one player, Puka Nacua, was a rookie in 2023. After doing some research, I learned that Nacua:
+* Was drafted with the 177th pick, meaning he has the highest draft number of the 10 players in this list.
+* Broke the rookie records for both receiving yards and receptions ([Source](https://www.espn.com/nfl/story/_/id/39261306/rams-puka-nacua-breaks-nfl-rookie-receiving-yards-record))
+
+In general, for the top WRs, draft number was not a good predictor of performance. 4 of the top 10 were drafted with the 112th pick or later.
+![Top 10 WRs Draft Numbers](./analyses/Visualizations/2023_Top_WR_Draft_Numbers.png)
+
+## Snap Counts
+For these top 10 players, I looked at offensive snap counts. Did all these players participate in about the same number of plays in order to score these points or were some more efficient than others?
+
+![Average Points Per Snap](./analyses/Visualizations/2023_Avg_Pts_Per_Snap.png)
+
+Tyreek Hill was by far the most efficient point scorer. Every other player in the top 5 had over 1,000 snaps, but Hill played only 735 offensive snaps. He averaged a very impressive 0.51 PPR points per snap played! 
+
+Also of note, Keenan Allen, played only 13 regular season games. All other players in this list played at least 16 games. CeeDee Lamb had the second highest snap count in the list (1,075) and still maintained a ridiculous PPR per snap of 0.38.
+
+### Receiving Touchdowns
+I looked at receiving statistics over the past several seasons (2018-2023) in order to get an idea of any trends over time. 
+
+![Receiving TDs by Year](./analyses/Visualizations/Receiving_TDs_by_Year.png)
+
+The number of receiving touchdowns has been declining since 2020 and dropped precipitously in 2022. 
+
+![TDs by Position](./analyses/Visualizations/2023_TDs_by_Position.png)
+
+Despite this decline, WRs and TEs still accounted for 55% of regular season touchdowns in 2023 (41% and 14%, respectively.)
+
+Given the decline in receiving TDs, I wanted to see how 2023's top PPR scores stacked up to prior seasons (starting in 2018). Here are the top 10 PPR scores by a wide receiver in the last 5 seasons.
+
+![Top 10 PPR Scores for WR](./analyses/Visualizations/Top_10_PPR_Scores_2018_to_2023.png)
+
+CeeDee Lamb and Tyreek Hill's 2023 were only outdone by Cooper Kupp's 2021 season. Also, Tyreek Hill's 2022 season also made the top 10. Devante Adams is Mr. Consistent, scoring at least 336 points for 3 straight seasons. It is also worth highlighting that each of the past 5 seasons has had a different WR as number 1 in PPR.
+
+### Tight ends
+
+![TE and RB Receptions by Year](./analyses/Visualizations/TE_and_RB_Recs_by_Year.png)
+
+Overall, receptions by tight ends are trending up since 2018. In 2023, tight ends caught more receptions than running backs. (This isn't just due to the "Travis Kelce effect." The trend holds true even if you remove Kelce from the analysis.)
+
+When looking at reception rates for WR/TEs with at least 80 targets, there are 7 players with a 75% rate or higher in 2023. 5 of them are TEs.
+
+![Top Reception Rates](./analyses/Visualizations/2023_Reception_Rates.png)
 
 ## Conclusions
-[Summarize key takeaways and recommendations]
+Make sure you have a good understanding of the scoring system for your specific fantasy league before drafting any players. If you are in a league with PPR scoring, drafting top receiving players will be crucial to your success. Wide receivers will typically deliver the most points, as they have more targets, receptions, and touchdowns than other positions (despite an overall decline in passing TDs over the years).
+
+A player who is on the field more has more chances to score points. Though, some players like Tyreek Hill and Keenan Allen are highly efficient and scored in the top 10, even with fewer snaps than their counterparts. CeeDee Lamb was incredibly consistent, combining a high snap count and scoring efficiency to be the top player in the league at any position. However, each of the past 5 seasons has seen a different top scoring WR, so it will be tough for Lamb to retain his top spot in 2024. (Spoiler alert: He was indeed dethroned, finishing 5th among WRs in 2024.)
+
+Don't be tempted by the top draft picks. These players will likely be more expensive and draft number is not always a good indicator of performance (at least it wasn't for wide receivers in 2023). 
+
+While wide receivers get a lot of attention, don't sleep on tight ends. The number of receptions by tight ends has been trending upwards over the last several seasons. In 2023, they surpassed running backs for number of receptions. In terms of reception rates, many of the top players were tight ends.
+
+Tight ends are typically much cheaper than wide receivers to draft. Also, some leagues are "Tight End Premium," meaning that tight ends get more points per reception. For example, WR and RBs may get 1 point per reception, while TEs get 1.5 points. Drafting a reliable, sure-handed tight end could be the advantage that wins you the league.
