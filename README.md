@@ -1,3 +1,5 @@
+This repository contains Katie Shaffer's entry in the 2025 dbt™ Data Modeling Challenge - Fantasy Football Edition.
+
 # dbt™ Data Modeling Challenge - Fantasy Football Edition
 
 ## Table of Contents
